@@ -149,3 +149,4 @@ export const MissionSpotlightSection: React.FC<MissionSpotlightSectionProps> = (
     </section>
   );
 };
+

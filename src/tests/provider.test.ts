@@ -84,3 +84,4 @@ describe('MockSpaceDataProvider (Requirement 1, 2, 3)', () => {
     expect(planets.length).toBe(8);
   });
 });
+

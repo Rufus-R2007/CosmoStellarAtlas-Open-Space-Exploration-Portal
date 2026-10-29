@@ -22,3 +22,4 @@ export const LearningPage: React.FC = () => {
     />
   );
 };
+

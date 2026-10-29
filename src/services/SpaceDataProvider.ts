@@ -54,3 +54,4 @@ export interface SpaceDataProvider {
   setSimulatedDelay(ms: number): void;
   setSimulatedError(enabled: boolean): void;
 }
+

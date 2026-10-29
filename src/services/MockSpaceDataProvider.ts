@@ -221,3 +221,4 @@ export class MockSpaceDataProvider implements SpaceDataProvider {
 
 // Global Singleton Instance
 export const spaceService = new MockSpaceDataProvider(0);
+

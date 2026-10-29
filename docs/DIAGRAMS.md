@@ -217,4 +217,101 @@ erDiagram
         float simulatedRiskIndex
         string source
     }
+
+---
+
+## 6. Use Case Model: Phase 2 Planet Explorer & Comparison Lab
+```mermaid
+flowchart LR
+    User["Explorer / Astronomer"]
+
+    subgraph PlanetExplorer["Planet Explorer Module (/planets)"]
+        UC_View3D["Inspect 3D Planetary World (WebGL)"]
+        UC_2DFallback["Switch to Accessible 2D Canvas Fallback"]
+        UC_Controls["Manipulate Drag Rotation & Zoom Controls"]
+        UC_NavMode["Toggle Explore vs Solar Schematic Mode"]
+        UC_Weight["Calculate Interactive Relative Earth Weight"]
+        UC_Compare["Compare Two Worlds Side-by-Side"]
+        UC_Insights["Generate Deterministic Comparative Insights"]
+        UC_Scale["Analyze Solar System Logarithmic Scales"]
+        UC_Missions["Review Historical Planetary Missions"]
+        UC_Epoch["Filter Missions via Cosmic Time Machine Epoch"]
+        UC_Passport["Traverse via Discovery Passport Highlight"]
+    end
+
+    User --> UC_View3D
+    User --> UC_2DFallback
+    User --> UC_Controls
+    User --> UC_NavMode
+    User --> UC_Weight
+    User --> UC_Compare
+    User --> UC_Insights
+    User --> UC_Scale
+    User --> UC_Missions
+    User --> UC_Epoch
+    User --> UC_Passport
 ```
+
+---
+
+## 7. Sequence Diagram: Planet Selection & Rendering Pipeline
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as User / Explorer
+    participant Nav as SolarSystemNavigator
+    participant Page as PlanetsPage
+    participant Three as PlanetCanvas3D
+    participant TexGen as PlanetTextureGenerator
+    participant Info as PlanetInfoCenter
+    participant Comp as PlanetaryComparisonLab
+    participant Insights as PlanetaryInsightsEngine
+
+    User->>Nav: Click "Mars"
+    Nav->>Page: handleSelectPlanet("mars")
+    Page->>Page: setSearchParams({ id: "mars" })
+    
+    par Render 3D World
+        Page->>Three: Update planet prop (mars)
+        Three->>TexGen: generatePlanetTexture(mars, quality)
+        TexGen-->>Three: Return HTMLCanvasElement texture
+        Three->>Three: THREE.CanvasTexture & apply axialTilt (25.19°)
+        Three->>User: Animate 3D Mars with surface features
+    and Update Telemetry
+        Page->>Info: Render physical stats & landmarks
+        Info->>User: Display Mars ephemeris & weight calculator
+    and Sync Comparison
+        Page->>Comp: Set initialPlanetA = "mars"
+        Comp->>Insights: generateComparisonInsights(mars, planetB)
+        Insights-->>Comp: Return deterministic comparative findings
+        Comp->>User: Render side-by-side scale circles & insights
+    end
+```
+
+---
+
+## 8. Activity Diagram: Planetary Comparison & Insights Synthesis
+```mermaid
+flowchart TD
+    Start(["User Opens Planetary Comparison Lab"]) --> SelectA["Select Target Planet A"]
+    SelectA --> SelectB["Select Target Planet B"]
+    SelectB --> CheckSame{"Are Planet A and Planet B identical?"}
+    
+    CheckSame -- Yes --> ShowNotice["Display 'Identical Celestial Target Selected' Banner"]
+    ShowNotice --> GuideUser["Prompt User to Select Distinct Comparison World"]
+    
+    CheckSame -- No --> MathEngine["Execute computePlanetComparison(A, B)"]
+    MathEngine --> CalcRatios["Calculate Diameter, Mass, Gravity, and Orbit Ratios"]
+    CalcRatios --> InsightEngine["Execute PlanetaryInsightsEngine.generateComparisonInsights(A, B)"]
+    
+    InsightEngine --> EvalDim["Evaluate Dimensional Delta (Diameter / Volume)"]
+    InsightEngine --> EvalGrav["Evaluate Surface Gravity & Escape Delta"]
+    InsightEngine --> EvalOrb["Evaluate Solar Orbit & Heliocentric Distance"]
+    InsightEngine --> EvalAtm["Evaluate Atmospheric Barometric & Compositional Disparity"]
+    
+    EvalDim & EvalGrav & EvalOrb & EvalAtm --> Synthesize["Collate Structured Insight Findings"]
+    Synthesize --> RenderView["Render Side-by-Side Scale Circles, Metric Bars, and Insight Cards"]
+```
+
+```
+

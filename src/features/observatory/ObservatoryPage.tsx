@@ -99,3 +99,4 @@ export const ObservatoryPage: React.FC = () => {
     </div>
   );
 };
+

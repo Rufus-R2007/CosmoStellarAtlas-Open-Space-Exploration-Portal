@@ -22,3 +22,4 @@ export const MissionsPage: React.FC = () => {
     />
   );
 };
+

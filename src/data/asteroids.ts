@@ -482,3 +482,4 @@ export const asteroidsData: Asteroid[] = [
     source: 'synthetic',
   },
 ];
+

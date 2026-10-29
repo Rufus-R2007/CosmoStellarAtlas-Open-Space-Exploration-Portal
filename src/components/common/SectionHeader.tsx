@@ -44,3 +44,4 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
     </div>
   );
 };
+

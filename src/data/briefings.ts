@@ -52,3 +52,4 @@ export const briefingsData: Briefing[] = [
     source: 'synthetic',
   },
 ];
+

@@ -2,12 +2,13 @@
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue.svg)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-18.3-cyan.svg)](https://reactjs.org/)
+[![Three.js](https://img.shields.io/badge/Three.js-r182-black.svg)](https://threejs.org/)
 [![Vite](https://img.shields.io/badge/Vite-6.0-purple.svg)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC.svg)](https://tailwindcss.com/)
-[![Vitest](https://img.shields.io/badge/Vitest-Passed%20(11%2F11)-brightgreen.svg)](https://vitest.dev/)
+[![Vitest](https://img.shields.io/badge/Vitest-Passed%20(21%2F21)-brightgreen.svg)](https://vitest.dev/)
 [![License](https://img.shields.io/badge/License-MIT-amber.svg)](LICENSE)
 
-> **Software Engineering Micro Project — Phase 1 Foundation**  
+> **Software Engineering Micro Project — Phase 2 Interactive Planet Explorer**  
 > **Developer:** Rufus Samuel R  
 > **Institution:** Karunya Institute of Technology and Sciences  
 > **GitHub Repository:** [CosmoStellarAtlas-Open-Space-Exploration-Portal](https://github.com/Rufus-R2007/CosmoStellarAtlas-Open-Space-Exploration-Portal)
@@ -78,14 +79,53 @@ The system is designed with a strict **Zero External API Dependency** architectu
 
 ---
 
-## 5. System Architecture & Folder Structure
+## 5. Planet Explorer & 3D Planetarium (Phase 2 Flagship)
+
+1. **Procedural 3D Planetary Viewport (`PlanetCanvas3D`):**
+   - High-fidelity Three.js WebGL spherical renderer displaying all 8 major planets with custom procedural equirectangular surface maps, cloud and crater synthesis, accurate axial tilts, and directional solar illumination.
+   - Distinct procedural shaders for every world: Mercury (basalt impact cratering), Venus (thick sulfur-shrouded cloud bands), Earth (oceans, continents, polar caps, atmospheric glow), Mars (iron-oxide deserts, Olympus Mons caldera, polar frost), Jupiter (turbulent zonal bands, Great Red Spot eddy), Saturn (hydrocarbon golden bands, double-sided ring system), Uranus (methane-cyan tilt), and Neptune (azure storms and high-altitude cirrus).
+   - Interactive viewer controls: drag-to-rotate, touch interaction, scroll/button zoom, reset view, auto-rotation pause/play, high/low texture resolution toggle, and full-viewport modal expansion.
+2. **Accessible 2D Fallback Engine (`PlanetCanvasFallback`):**
+   - Pure HTML5 Canvas 2D fallback renderer with banded atmospheric rendering, craters, and rings, preventing blank screens on low-power devices, software-rendered browsers, or WebGL context failures.
+3. **Dual-Mode Solar System Navigator (`SolarSystemNavigator`):**
+   - **Explore Mode:** Interactive carousel of planetary cards with classification badges, order numbers, and physical highlights.
+   - **Solar System Schematic Mode:** True linear distance-ordered schematic array with scaled planetary markers, orbital radii, and asteroid belt marker.
+4. **Comprehensive Planet Information Center (`PlanetInfoCenter`):**
+   - Physical telemetry HUD: diameter, mass, surface gravity, day length, orbital period, mean surface temperature, and moon count.
+   - **Relative Weight Simulator:** Interactive calculator computing user weight on any target planet based on relative gravity (`W_planet = W_earth * g_rel`).
+   - **Atmospheric Composition:** Percentage progress bars detailing atmospheric chemistry (e.g., N2/O2 for Earth, CO2 for Venus/Mars, H2/He for gas giants).
+   - **Notable Features Dossier:** Detailed scientific summaries of major geological landmarks (e.g., Valles Marineris, Great Red Spot, Caloris Basin).
+5. **Planetary Comparison Lab (`PlanetaryComparisonLab`):**
+   - Side-by-side comparison of any two planets with instant swap action and duplicate target warning handling.
+   - Visual scale comparison rendering proportional celestial circles side-by-side.
+   - Dynamic comparison metric bars calculating mathematical ratios between Planet A and Planet B for diameter, mass, surface gravity, day duration, and heliocentric distance.
+   - **Planetary Insights Engine:** Deterministic rule-based expert analysis generating structured educational insights across dimensional, gravitational, thermal, orbital, and atmospheric domains without external LLM dependencies.
+6. **Scale of the Solar System Explorer (`ScaleExplorer`):**
+   - Interactive Recharts bar charts comparing all 8 worlds across Diameter (km), Orbital Distance (AU), and Orbital Period (Earth Years).
+   - Educational logarithmic scaling notes explaining spatial distribution challenges in astronomy.
+7. **Flight Heritage & Epoch Filtering (`PlanetRelatedMissions`):**
+   - Cross-module linkage displaying historical missions targeted to the selected world.
+   - Bidirectionally synchronized with the global Cosmic Time Machine epoch filter (`Epoch <= YYYY`), allowing users to simulate historical exploration states (e.g., what was known about Mars in 1969 vs 2024).
+8. **Smart Search & Filters (`PlanetFilters`):**
+   - Real-time search across names, codenames, and summaries.
+   - Classification filter pills: All Worlds, Terrestrial, Gas Giant, Ice Giant.
+   - Multi-parameter sorting: Distance from Sun, Diameter, Orbital Period, Surface Gravity.
+   - Safe empty state with one-click filter reset.
+9. **Planet Discovery Passport (`PlanetDiscoveryPassport`):**
+   - Highlights key scientific curiosities and provides immediate one-click navigation to recommended next exploration targets.
+10. **Deep Linking:**
+    - Full URL search query support (`#/planets?id=saturn`) enabling persistent bookmarking and direct links to any planet.
+
+---
+
+## 6. System Architecture & Folder Structure
 
 ```
 CosmoStellarAtlas-Open-Space-Exploration-Portal/
 ├── docs/                        # Formal Software Engineering Documentation
-│   ├── SRS.md                   # Software Requirements Specification
-│   ├── ARCHITECTURE.md          # System Architecture & Service Abstractions
-│   ├── DIAGRAMS.md              # UML & Mermaid Source Models
+│   ├── SRS.md                   # Software Requirements Specification (v1.1.0)
+│   ├── ARCHITECTURE.md          # System Architecture & 3D WebGL Pipeline
+│   ├── DIAGRAMS.md              # UML, Use Case, Sequence & Activity Diagrams
 │   ├── TRACEABILITY.md          # Requirements Traceability Matrix
 │   ├── DATASETS.md              # Dataset Provenance Specification
 │   └── ROADMAP.md               # 8-Phase Master Development Plan
@@ -96,17 +136,28 @@ CosmoStellarAtlas-Open-Space-Exploration-Portal/
 │   │   ├── common/              # Reusable UI Primitives (Cards, Badges, Buttons, etc.)
 │   │   └── layout/              # Navbar, Sidebar, Footer, and AppLayout Shell
 │   ├── data/                    # Deterministic Local Datasets
-│   │   ├── planets.ts           # 8 Major Planets with scientific attributes
+│   │   ├── planets.ts           # 8 Major Planets with scientific & visual configurations
 │   │   ├── missions.ts          # 18 Curated Historical Missions & Milestones
 │   │   ├── rovers.ts            # 4 Mars Rovers (Sojourner, Opportunity, Curiosity, etc.)
 │   │   ├── asteroids.ts         # 32 Curated & Synthetic Near-Earth Objects
 │   │   ├── launches.ts          # 16 Illustrative Spaceflight Launches
 │   │   └── briefings.ts         # 5 Research Briefings
 │   ├── features/
-│   │   ├── observatory/         # Full Observatory Dashboard Implementation
+│   │   ├── observatory/         # Full Observatory Dashboard Implementation (Phase 1)
 │   │   │   ├── components/      # Sections A through H
 │   │   │   └── ObservatoryPage.tsx
-│   │   ├── planets/             # Planet Explorer (Phase 2 Roadmap)
+│   │   ├── planets/             # Full Planet Explorer Implementation (Phase 2)
+│   │   │   ├── components/
+│   │   │   │   ├── comparison/  # Planetary Comparison Lab & visual scale
+│   │   │   │   ├── filters/     # Search input, classification pills & sort
+│   │   │   │   ├── info/        # Physical stats, relative weight & atmosphere
+│   │   │   │   ├── missions/    # Related missions & Cosmic Time Machine filter
+│   │   │   │   ├── navigator/   # Dual-mode Solar System Navigator
+│   │   │   │   ├── passport/    # Planet discovery passport highlight card
+│   │   │   │   ├── scale/       # Solar system scale Recharts visualizer
+│   │   │   │   └── viewer/      # Three.js 3D viewport, fallback & procedural textures
+│   │   │   ├── services/        # Deterministic PlanetaryInsightsEngine
+│   │   │   └── PlanetsPage.tsx  # Flagship Planet Explorer container
 │   │   ├── timeline/            # Cosmic Time Machine (Phase 3 Roadmap)
 │   │   ├── missions/            # Mission Control Center (Phase 4 Roadmap)
 │   │   ├── rovers/              # Mars Rover Explorer (Phase 5 Roadmap)
@@ -118,7 +169,8 @@ CosmoStellarAtlas-Open-Space-Exploration-Portal/
 │   ├── services/                # SpaceDataProvider Interface & Mock Implementation
 │   ├── store/                   # Zustand Global Store (useAppStore)
 │   ├── styles/                  # Tailwind CSS & Global Styles
-│   ├── tests/                   # Vitest Unit and Component Test Suite
+│   ├── tests/                   # Vitest Unit and Component Test Suite (21 tests)
+│   ├── utils/                   # Mathematical utilities (planetaryMath.ts)
 │   └── types/                   # TypeScript Data Contracts and Interfaces
 ├── index.html                   # HTML Entry Point
 ├── package.json                 # Dependency Manifest
@@ -129,7 +181,7 @@ CosmoStellarAtlas-Open-Space-Exploration-Portal/
 
 ---
 
-## 6. Offline Data Transparency & Provenance
+## 7. Offline Data Transparency & Provenance
 CosmoStellarAtlas strictly adheres to academic honesty:
 - **Curated Reference Data:** Astronomical measurements, physical constants, and historical spaceflight milestones are sourced from declassified NASA, ESA, and peer-reviewed records.
 - **Synthetic Demonstration Telemetry:** Approaching asteroid vectors and future launch logistics are deterministically modeled for educational simulation.
@@ -184,7 +236,7 @@ The compiled bundle will be output to the `dist/` directory, fully configured wi
 | Phase | Title | Focus Area | Status |
 | :---: | :--- | :--- | :---: |
 | **Phase 1** | **Foundation & Observatory Dashboard** | Core architecture, local provider, Observatory dashboard, 9-module shell, tests, and documentation. | **COMPLETED** |
-| **Phase 2** | **Planet Explorer** | Interactive 3D planet visualizer, atmospheric cross-sections, and gravity comparisons. | *Planned* |
+| **Phase 2** | **Planet Explorer & 3D Planetarium** | Interactive Three.js 3D viewport, procedural surface textures, accessible 2D fallback, dual-mode navigator, weight calculator, side-by-side comparison lab, insights engine, scale explorer, and historical epoch filtering. | **COMPLETED** |
 | **Phase 3** | **Cosmic Time Machine** | Full chronological scrubber, historical video/audio cards, and breakthrough markers. | *Planned* |
 | **Phase 4** | **Mission Control Center** | Detailed technical dossiers for Apollo, Voyager, Cassini, JWST; trajectory maps. | *Planned* |
 | **Phase 5** | **Mars Rover Explorer** | Tele-robotics deck, sol-by-sol raw optics viewer, sample tube cache tracker, Ingenuity logs. | *Planned* |

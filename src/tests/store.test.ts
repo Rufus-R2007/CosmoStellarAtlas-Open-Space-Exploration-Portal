@@ -38,3 +38,4 @@ describe('useAppStore (Requirement 4)', () => {
     expect(useAppStore.getState().simulateError).toBe(true);
   });
 });
+

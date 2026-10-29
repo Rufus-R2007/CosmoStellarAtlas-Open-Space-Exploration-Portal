@@ -3,7 +3,7 @@
 **Project Type:** Software Engineering Micro Project  
 **Author:** Rufus Samuel R  
 **Institution:** Karunya Institute of Technology and Sciences  
-**Version:** 1.0.0 (Phase 1 Foundation)  
+**Version:** 1.1.0 (Phase 2 Interactive Planet Explorer)  
 **Date:** October 2026  
 
 ---
@@ -22,7 +22,7 @@ Public interfaces for astronomical data and mission archives are often fragmente
 - **Academic Rigor:** Satisfy formal Software Engineering Micro Project requirements, including comprehensive SRS, UML diagrams, traceability matrices, and automated unit testing.
 
 ## 4. Scope
-### In Scope for Phase 1:
+### Implemented in Phase 1 (Core Foundation & Observatory Dashboard):
 - Core application foundation with React 18, TypeScript, Tailwind CSS, Zustand, and Vite.
 - Responsive mission-control navigation shell supporting 9 dedicated exploration modules.
 - Fully implemented **Observatory Dashboard** featuring:
@@ -41,8 +41,20 @@ Public interfaces for astronomical data and mission archives are often fragmente
 - Unit and component test suites in Vitest.
 - Static hosting compatibility for GitHub Pages deployment.
 
-### Out of Scope for Phase 1 (Scheduled for Phases 2–8):
-- 3D WebGL planet terrain explorer (Phase 2).
+### Implemented in Phase 2 (Interactive Planet Explorer & Comparison Lab):
+- **3D Planetary Viewer (`PlanetCanvas3D`):** Three.js WebGL spherical renderer rendering all 8 solar system worlds with procedural canvas textures, axial tilt angles, directional sun lighting, and Saturnian ring geometry.
+- **Accessible 2D Fallback (`PlanetCanvasFallback`):** HTML5 Canvas 2D fallback renderer with manual toggle and automatic WebGL context error interception.
+- **Viewer Telemetry Controls (`ViewerControls`):** Interactive mouse/touch drag rotation, zoom in/out, view reset, auto-rotation pause/resume, high/low texture resolution toggle, and full-viewport expansion.
+- **Dual-Mode Solar System Navigator (`SolarSystemNavigator`):** Switch between "Explore Mode" (cards with classification chips and order tags) and "Solar System Schematic Mode" (true linear distance order with proportional diameter markers).
+- **Comprehensive Planet Information Center (`PlanetInfoCenter`):** Physical telemetry cards, relative Earth-weight calculation simulator (`W_planet = W_earth * g_rel`), atmospheric percentage gas progress bars, and geological landmark dossier.
+- **Planetary Comparison Lab (`PlanetaryComparisonLab`):** Side-by-side metric comparison bars, dynamic visual scale circles, instant target swapping, duplicate target detection notice, and rule-based `PlanetaryInsightsEngine` producing deterministic observations across dimensional, thermal, orbital, and atmospheric domains.
+- **Scale of the Solar System Explorer (`ScaleExplorer`):** Comparative Recharts visualizations for Diameter (km), Orbital Distance (AU), and Orbital Period (Earth Years), with scientific scale explanations.
+- **Flight Heritage Dossier (`PlanetRelatedMissions`):** Cross-module linkage displaying historical missions targeted to the selected world, integrated with the global Cosmic Time Machine timeline epoch filter.
+- **Search, Filtering & Sorting (`PlanetFilters`):** Multi-attribute search input, classification pill filters (All, Terrestrial, Gas Giant, Ice Giant), sort order dropdown, and empty search recovery.
+- **Planet Discovery Passport (`PlanetDiscoveryPassport`):** Scientific fact highlight with one-click navigation to suggested planetary targets.
+- **Deep Linking:** URL search query parameter synchronization (`/planets?id=mars`) with bidirectional state synchronization.
+
+### Out of Scope for Phase 1 & 2 (Scheduled for Phases 3–8):
 - Full interactive temporal scrubber and audio archives (Phase 3).
 - Dedicated mission trajectory analyzer (Phase 4).
 - Sol-by-sol Martian camera viewer (Phase 5).
@@ -71,6 +83,16 @@ Public interfaces for astronomical data and mission archives are often fragmente
 | **FR-10** | Offline Data Transparency | The system shall display an unambiguous "Offline Demo / Local Engine" indicator with an explanatory provenance modal. | High |
 | **FR-11** | Visual FX Preference Toggling | The system shall allow users to toggle visual effects between High, Minimal, and Off, persisted in localStorage. | Medium |
 | **FR-12** | Resilient Error Handling | The system shall handle simulated data faults gracefully without application crash, presenting a retry interface. | High |
+| **FR-13** | 3D Planetary Visualization | The system shall render an interactive Three.js 3D viewport for each of the 8 major solar system worlds with mouse drag rotation, zoom, and auto-rotation toggle. | High |
+| **FR-14** | Procedural Planetary Textures | The system shall generate distinct procedural surface maps and atmospheric shaders locally without relying on runtime remote image assets. | High |
+| **FR-15** | 2D Canvas Fallback Mode | The system shall provide an accessible 2D HTML5 Canvas rendering fallback that activates automatically on WebGL failure or upon manual user selection. | High |
+| **FR-16** | Solar System Dual-Mode Navigator | The system shall provide an interactive planetary selector supporting both standard card view and true linear distance-ordered schematic view. | High |
+| **FR-17** | Planetary Physical Telemetry | The system shall display physical stats, atmospheric composition progress bars, key geological landmarks, and an interactive relative Earth-weight calculator. | High |
+| **FR-18** | Planetary Comparison Lab | The system shall permit side-by-side metric comparisons between any two planets, including relative dimension circles, ratio bars, and rule-based insights. | High |
+| **FR-19** | Scale of the Solar System Explorer | The system shall render comparative charts (Recharts) for diameter, distance from Sun (AU), and orbital period with logarithmic educational annotations. | Medium |
+| **FR-20** | Flight Heritage & Epoch Filtering | The system shall display historical space missions associated with the target planet and filter records according to the global Cosmic Time Machine epoch. | High |
+| **FR-21** | Planet Search & Multi-Filters | The system shall enable search filtering across planet name, codename, summary, and classification (Terrestrial, Gas Giant, Ice Giant) with an empty state recovery action. | High |
+| **FR-22** | Planet Discovery Passport | The system shall showcase an intriguing scientific fact highlight and suggest immediate one-click navigation to adjacent planetary worlds. | Medium |
 
 ## 7. Non-Functional Requirements (NFR)
 
@@ -90,3 +112,4 @@ Public interfaces for astronomical data and mission archives are often fragmente
 - No live external APIs (e.g., NASA Open APIs) are contacted during execution to ensure 100% demo uptime.
 - Local browser `localStorage` is available for saving user preferences and UI states.
 - Client hardware supports standard 2D HTML5 canvas acceleration.
+

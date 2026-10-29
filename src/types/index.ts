@@ -5,6 +5,30 @@ export interface PlanetAtmosphereGas {
   percentage: number;
 }
 
+export type PlanetProceduralType =
+  | 'mercury'
+  | 'venus'
+  | 'earth'
+  | 'mars'
+  | 'jupiter'
+  | 'saturn'
+  | 'uranus'
+  | 'neptune';
+
+export interface PlanetVisualConfiguration {
+  surfaceColor: string;
+  atmosphereColor?: string;
+  hasRings?: boolean;
+  ringInnerRadius?: number;
+  ringOuterRadius?: number;
+  ringColor?: string;
+  hasClouds?: boolean;
+  cloudSpeed?: number;
+  bumpScale?: number;
+  roughness?: number;
+  proceduralType: PlanetProceduralType;
+}
+
 export interface Planet {
   id: string; // e.g. 'mercury', 'venus', 'earth', etc.
   name: string;
@@ -14,20 +38,29 @@ export interface Planet {
   tagline: string;
   diameterKm: number;
   massKg: string;
+  massEarthRel: number;
   distanceFromSunAU: number;
+  averageDistanceFromSunKm: number;
   surfaceTempMeanC: number;
   surfaceTempRangeC: { min: number; max: number };
   gravityMs2: number;
   gravityEarthRel: number;
   moonsCount: number;
   orbitalPeriodDays: number;
+  orbitalVelocityKmS: number;
   rotationPeriodHours: number;
+  axialTiltDegrees: number;
   atmosphereComposition: PlanetAtmosphereGas[];
   summary: string;
   detailedDescription: string;
+  notableFeatures: string[];
+  discoveryPassportHighlight: string;
+  suggestedNextPlanetId: string;
   colorHex: string;
   accentColor: string;
+  visualConfiguration: PlanetVisualConfiguration;
   relatedMissionIds: string[];
+  sourceReference: string;
   source: DataSourceType;
 }
 

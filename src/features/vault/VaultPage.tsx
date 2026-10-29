@@ -22,3 +22,4 @@ export const VaultPage: React.FC = () => {
     />
   );
 };
+

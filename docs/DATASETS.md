@@ -14,7 +14,7 @@ CosmoStellarAtlas operates with complete local data independence to eliminate ex
 
 | Dataset | Location | Record Count | Classification | Key Attributes |
 | :--- | :--- | :---: | :--- | :--- |
-| **Planets** | `src/data/planets.ts` | 8 | **Curated** | Diameter, mass, AU distance, mean temp, gravity relative to Earth, moons count, orbital period, atmospheric gases, and mission cross-references. |
+| **Planets** | `src/data/planets.ts` | 8 | **Curated** | Diameter, mass, AU distance, mean temp, gravity relative to Earth, moons count, orbital period, atmospheric gases, axial tilt, average distance in km, notable features, procedural visual configurations (surfaceShaderStyle, craterDensity, ring dimensions, atmospheric colors), discovery passport highlights, suggested next targets, and mission cross-references. |
 | **Missions** | `src/data/missions.ts` | 18 | **Curated** | Launch date, agency, status, destination body, mission type, objectives, achievements, and detailed flight milestones. |
 | **Mars Rovers** | `src/data/rovers.ts` | 4 | **Curated** | Landing site, coordinates, status, total surface sols, distance traveled, sample count, and instrument arrays for Sojourner, Spirit/Opportunity, Curiosity, and Perseverance. |
 | **Asteroids** | `src/data/asteroids.ts` | 32 | **Hybrid (9 Curated / 23 Synthetic)** | Real objects (Apophis, Bennu, Ryugu, Didymos, Psyche, Eros, Phaethon, Toutatis, Florence) combined with deterministically simulated NEO approaches with hazard flags, miss distances, and risk indices. |
@@ -40,3 +40,4 @@ To replace the mock provider with live backend endpoints in future phases:
 2. Map incoming JSON payloads from services like NASA's NeoWS or JPL Horizons to the standard `Planet`, `Mission`, and `Asteroid` interfaces.
 3. Update `src/services/index.ts` to export the remote service instance.
 No UI component changes will be necessary because all frontend views consume data exclusively through the `SpaceDataProvider` interface.
+

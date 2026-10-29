@@ -247,3 +247,4 @@ export const CelestialCenterpiece: React.FC = () => {
     </div>
   );
 };
+
