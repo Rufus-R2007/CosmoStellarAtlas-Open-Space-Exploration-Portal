@@ -67,7 +67,8 @@ const navItems: NavItem[] = [
     name: 'Asteroid Watch & Lab',
     path: '/asteroids',
     icon: <ShieldAlert className="w-4 h-4" />,
-    badge: 'PHASE 6',
+    badge: 'ACTIVE',
+    isPhase1Active: true,
   },
   {
     name: 'Space Intelligence',

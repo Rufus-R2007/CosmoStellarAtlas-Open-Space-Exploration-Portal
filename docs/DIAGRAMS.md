@@ -926,3 +926,235 @@ erDiagram
         string relatedImageIds
     }
 ```
+
+---
+
+## 25. Phase 5 — Asteroid Watch & Planetary Defense Use Case Diagram
+```mermaid
+flowchart LR
+    User["Explorer / Academic Evaluator"]
+
+    subgraph Phase5_Asteroid_Watch["Phase 5 — Asteroid Watch & Planetary Defense Console"]
+        UC_Hero["Inspect Planetary Defense Fleet Overview & Statistics"]
+        UC_Canvas["Visualize 2D Orbital Encounter Flyby & Perigee Vectors"]
+        UC_Timeline["Scrub 2026–2035 Close-Approach Chronology"]
+        UC_Filter["Search & Multi-Filter Near-Earth Asteroid Catalog"]
+        UC_Inspect["Open Deep Asteroid Dossier Modal"]
+        UC_Simulate["Experiment in Planetary Defense What-If Physics Lab"]
+        UC_Curves["Analyze Dynamic Kinetic Energy vs Diameter & Velocity Curves"]
+        UC_Presets["Load Educational Scenario Presets (Chelyabinsk, Tunguska, DART)"]
+        UC_Education["Study NEO Survey Networks & Deflection Architectures"]
+    end
+
+    User --> UC_Hero
+    User --> UC_Canvas
+    User --> UC_Timeline
+    User --> UC_Filter
+    User --> UC_Inspect
+    User --> UC_Simulate
+    User --> UC_Curves
+    User --> UC_Presets
+    User --> UC_Education
+```
+
+---
+
+## 26. Phase 5 — Asteroid Selection & Filter Activity Diagram
+```mermaid
+flowchart TD
+    Start([User navigates to Asteroid Watch /asteroids]) --> LoadData[Fetch 50 Asteroid Records via SpaceDataProvider]
+    LoadData --> CheckURL{URL has ?id= parameter?}
+    CheckURL -- Yes --> SetSelected[Set selectedAsteroidId in useAppStore]
+    CheckURL -- No --> DefaultSelected[Default to first encounter record]
+    SetSelected --> RenderView[Render Overview, Canvas, Timeline, Catalog, What-If Lab]
+    DefaultSelected --> RenderView
+
+    RenderView --> UserAction{User Interaction}
+    UserAction -- Enter search query / change filters --> FilterMatrix[Apply Orbit, Category, Diameter, Dist, Vel filters]
+    FilterMatrix --> SortMatrix[Sort by Closest, Largest, Fastest, Date]
+    SortMatrix --> UpdateCatalog[Re-render Responsive Asteroid Card Deck]
+
+    UserAction -- Click Asteroid Card --> UpdateStore[Update selectedAsteroidId & sync URL query]
+    UpdateStore --> ReCenterCanvas[Center Trajectory on Orbital Radar Canvas]
+
+    UserAction -- Click Inspect Details --> OpenModal[Mount AsteroidDetailModal with full specs]
+    OpenModal --> ActionModal{User Action in Modal}
+    ActionModal -- Close / Esc --> DismissModal[Unmount AsteroidDetailModal]
+    ActionModal -- Click Test in What-If Lab --> MapParams[Convert diameter, velocity, density to simulation params]
+    MapParams --> ScrollLab[Update whatIfParameters in store & smooth-scroll to #whatif]
+```
+
+---
+
+## 27. Phase 5 — What-If Simulation Activity Diagram
+```mermaid
+flowchart TD
+    InitSim([What-If Lab Active]) --> ReadParams[Read SimulationParameters: d, v, rho, missDistance]
+    ReadParams --> Validate[Validate & Clamp: d in 10..1000m, v in 5..40km/s, rho in 1000..3500kg/m3]
+    
+    Validate --> Step1[Step 1: Calculate radius r = d / 2]
+    Step1 --> Step2[Step 2: Calculate spherical volume V = 4/3 * pi * r^3]
+    Step2 --> Step3[Step 3: Calculate mass m = rho * V in kg]
+    Step3 --> Step4[Step 4: Convert velocity v_ms = v_kms * 1000]
+    Step4 --> Step5[Step 5: Calculate kinetic energy E = 1/2 * m * v_ms^2 in Joules]
+    Step5 --> Step6[Step 6: Convert to TNT equivalents: kt = E / 4.184e12, Mt = E / 4.184e15]
+
+    Step6 --> DecoupleCheck{Miss Distance changed?}
+    DecoupleCheck -- Yes --> UpdateCanvasOnly[Update 2D Canvas perigee display without altering E]
+    DecoupleCheck -- No --> ContinueSim[Proceed to sensitivity analysis]
+    UpdateCanvasOnly --> ContinueSim
+
+    ContinueSim --> CalcSensitivity[Compute Sensitivity Multipliers: d*2 -> 8x, v*2 -> 4x, rho*2 -> 2x]
+    CalcSensitivity --> GenCurves[Generate Recharts points: Energy vs Diameter & Energy vs Velocity]
+    GenCurves --> GenInsights[Generate Explainable Physics Insights & Disclosures]
+    GenInsights --> RenderKPI[Render Live Metric Cards, Recharts Curves, and Narrative Dossiers]
+```
+
+---
+
+## 28. Phase 5 — Physics Calculation Sequence Diagram
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as Student / Evaluator
+    participant Lab as PlanetaryDefenseWhatIfLab
+    participant Store as useAppStore
+    participant Math as planetaryDefenseMath.ts
+    participant Recharts as Recharts Visualization Engine
+
+    User->>Lab: Adjust Diameter Slider (e.g., 100m -> 200m)
+    Lab->>Store: setWhatIfParameters({ diameterM: 200 })
+    Store-->>Lab: Updated whatIfParameters state
+    
+    Lab->>Math: calculateSimulationResult(parameters)
+    Math->>Math: calculateImpactRadius(200) -> 100m
+    Math->>Math: calculateSphereVolume(100) -> 4,188,790 m³
+    Math->>Math: calculateAsteroidMass(V, 2500) -> 10,471,975,512 kg
+    Math->>Math: convertVelocityKmSToMs(20) -> 20,000 m/s
+    Math->>Math: calculateKineticEnergy(m, 20,000) -> 2.094e18 Joules
+    Math->>Math: convertJoulesToMegatonsTNT(E) -> ~500.5 Mt
+    Math-->>Lab: SimulationResult { volume, mass, energyJ, megatons }
+
+    Lab->>Math: generateEnergyVsDiameterCurve(velocity, density)
+    Math-->>Lab: 20 curve coordinates [{ diameterM, energyMegatons }]
+
+    Lab->>Math: generateSensitivityBreakdown(parameters)
+    Math-->>Lab: SensitivityComparison[] (8x, 4x, 2x)
+
+    Lab->>Recharts: Render LineChart with ReferenceDot at active parameter
+    Lab-->>User: Display updated KPI Cards, Megatons, and Explainable Insights
+```
+
+---
+
+## 29. Phase 5 — Asteroid Watch Component Diagram
+```mermaid
+graph TD
+    subgraph Route_Page["Container Route (/asteroids)"]
+        AsteroidsPage["AsteroidsPage"]
+        QuickLinks["Quick-Link Anchor Bar (#radar, #timeline, #catalog, #whatif)"]
+    end
+
+    subgraph Feature_Components["Asteroid Feature Components"]
+        Hero["AsteroidWatchHero (Earth Canvas & Fleet Stats)"]
+        Canvas["OrbitalEncounterCanvas (2D Keplerian Trajectory HUD)"]
+        Timeline["CloseApproachTimeline (Chronology Scrubber)"]
+        Catalog["AsteroidExplorerSection (Search & Multi-Facet Filters)"]
+        DetailModal["AsteroidDetailModal (Physical Specs & CTA)"]
+        WhatIf["PlanetaryDefenseWhatIfLab (Physics Sliders & Charts)"]
+        Education["PlanetaryDefenseEducationPanel (Taxonomy & Mitigation)"]
+    end
+
+    subgraph Math_Lib["Pure Scientific Engine"]
+        DefenseMath["planetaryDefenseMath.ts"]
+        SensCalc["Sensitivity & Curve Generators"]
+        InsightsEngine["Explainable Physics Narrative Engine"]
+    end
+
+    subgraph Service_State["State & Data Service"]
+        AppStore["useAppStore (Zustand: selectedAsteroidId, whatIfParameters)"]
+        SpaceService["SpaceDataProvider (MockSpaceDataProvider)"]
+        AsteroidData[("asteroids.ts (50 records)")]
+    end
+
+    AsteroidsPage --> QuickLinks
+    AsteroidsPage --> Hero
+    AsteroidsPage --> Canvas
+    AsteroidsPage --> Timeline
+    AsteroidsPage --> Catalog
+    AsteroidsPage --> DetailModal
+    AsteroidsPage --> WhatIf
+    AsteroidsPage --> Education
+
+    WhatIf --> DefenseMath
+    WhatIf --> SensCalc
+    WhatIf --> InsightsEngine
+
+    AsteroidsPage --> AppStore
+    AsteroidsPage --> SpaceService
+    SpaceService --> AsteroidData
+```
+
+---
+
+## 30. Phase 5 — Updated Entity-Relationship Diagram (ERD)
+```mermaid
+erDiagram
+    ASTEROID ||--o{ SIMULATION_PARAMETERS : "transfers to"
+    SIMULATION_PARAMETERS ||--|| SIMULATION_RESULT : "evaluates to"
+    EDUCATIONAL_SCENARIO ||--|| SIMULATION_PARAMETERS : "presets"
+
+    ASTEROID {
+        string id PK
+        string name
+        string designation
+        int estimatedDiameterMeters
+        int estimatedDiameterMinM
+        int estimatedDiameterMaxM
+        int estimatedDiameterMeanM
+        boolean isPotentiallyHazardous
+        string closeApproachDate
+        float missDistanceKm
+        float missDistanceLunar
+        float relativeVelocityKmS
+        string orbitClass
+        float simulatedRiskIndex
+        string composition
+        string estimatedComposition
+        string syntheticCategory
+        string observationCategory
+        string syntheticClassification
+        string scenarioDescription
+        string educationalNotes
+        string dataStatus
+        string datasetReferenceDate
+        string source
+    }
+
+    SIMULATION_PARAMETERS {
+        float diameterM
+        float velocityKmS
+        float densityKgM3
+        float illustrativeMissDistanceKm
+    }
+
+    SIMULATION_RESULT {
+        float radiusM
+        float volumeM3
+        float massKg
+        float velocityMs
+        float kineticEnergyJ
+        float kineticEnergyKilotons
+        float kineticEnergyMegatons
+    }
+
+    EDUCATIONAL_SCENARIO {
+        string id PK
+        string name
+        string subtitle
+        string description
+        string historicalReference
+        string assumptions
+        string educationalSignificance
+    }
+```

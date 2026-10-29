@@ -1,6 +1,8 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { spaceService } from '../services';
+import { SimulationParameters } from '../types';
+import { DEFAULT_SIMULATION_PARAMETERS } from '../features/asteroids/utils/planetaryDefenseMath';
 
 export type VisualEffectsLevel = 'high' | 'minimal' | 'off';
 export type TelemetryUnits = 'metric' | 'imperial';
@@ -25,6 +27,15 @@ interface AppState {
   setInspectingImageId: (imageId: string | null) => void;
   userRoverNotes: Record<string, string>;
   saveUserRoverNote: (imageId: string, note: string) => void;
+
+  // Asteroid Watch & Planetary Defense What-If State
+  selectedAsteroidId: string | null;
+  setSelectedAsteroidId: (id: string | null) => void;
+  inspectingAsteroidId: string | null;
+  setInspectingAsteroidId: (id: string | null) => void;
+  whatIfParameters: SimulationParameters;
+  setWhatIfParameters: (params: Partial<SimulationParameters>) => void;
+  resetWhatIfParameters: () => void;
 
   // Visual Effects & System Accessibility
   visualEffects: VisualEffectsLevel;
@@ -80,6 +91,19 @@ export const useAppStore = create<AppState>()(
           },
         })),
 
+      // Asteroid Watch State Defaults
+      selectedAsteroidId: 'sim-2026-001',
+      setSelectedAsteroidId: (id: string | null) => set({ selectedAsteroidId: id }),
+      inspectingAsteroidId: null,
+      setInspectingAsteroidId: (id: string | null) => set({ inspectingAsteroidId: id }),
+      whatIfParameters: { ...DEFAULT_SIMULATION_PARAMETERS },
+      setWhatIfParameters: (params: Partial<SimulationParameters>) =>
+        set((state) => ({
+          whatIfParameters: { ...state.whatIfParameters, ...params },
+        })),
+      resetWhatIfParameters: () =>
+        set({ whatIfParameters: { ...DEFAULT_SIMULATION_PARAMETERS } }),
+
       visualEffects: 'high',
       setVisualEffects: (level: VisualEffectsLevel) => set({ visualEffects: level }),
 
@@ -113,6 +137,7 @@ export const useAppStore = create<AppState>()(
         telemetryUnits: state.telemetryUnits,
         selectedRoverId: state.selectedRoverId,
         userRoverNotes: state.userRoverNotes,
+        selectedAsteroidId: state.selectedAsteroidId,
       }),
     }
   )

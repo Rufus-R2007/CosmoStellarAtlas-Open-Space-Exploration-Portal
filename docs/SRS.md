@@ -3,7 +3,7 @@
 **Project Type:** Software Engineering Micro Project  
 **Author:** Rufus Samuel R  
 **Institution:** Karunya Institute of Technology and Sciences  
-**Version:** 1.3.0 (Phase 4 Mars Rover Explorer & Photo Discovery Lab)  
+**Version:** 1.4.0 (Phase 5 Asteroid Watch & Planetary Defense Simulation Lab)  
 **Date:** October 2026  
 
 ---
@@ -127,11 +127,43 @@ Public interfaces for astronomical data and mission archives are often fragmente
   - Direct links to dedicated Mission Control dossiers (`/missions/:missionId`).
   - Active module badge updated to `ACTIVE` across navigation shells and observatory dashboard.
 
-### Out of Scope for Phases 1–4 (Scheduled for Phases 5–8):
-- Kinetic impactor planetary defense simulation sandbox (Phase 5).
-- Asteroid radar observation matrix and orbital rendezvous calculator (Phase 6).
-- Force-directed knowledge graph and curriculum quizzes (Phase 7).
-- Persistent personal notes vault and exportable passport (Phase 8).
+### Implemented in Phase 5 (Asteroid Watch & Planetary Defense Simulation Lab):
+- **Asteroid Watch Hero & Aggregate Statistics (`AsteroidWatchHero`):**
+  - Atmospheric 2D Earth & particle encounter canvas.
+  - Calculated statistics: total catalog objects (50), synthetic encounters (42), closest historical miss distance (Apophis 0.08 LD / 31,600 km), largest diameter (Ceres / synthetic benchmark), and average diameter.
+  - Transparent provenance notices: Offline Simulation, Deterministic Dataset, Reference Date (2026-10-01).
+- **2D Orbital Encounter Explorer (`OrbitalEncounterCanvas`):**
+  - Interactive schematic 2D HTML5 canvas rendering Earth, Moon (1 Lunar Distance orbit / 384,400 km), and hyperbolic asteroid encounter trajectories.
+  - Directional vector arrows, closest approach perigee dotted vector, and dynamic distance telemetry HUD.
+  - Playback controls: Play/pause animation loop, animation speed toggles (0.5×, 1×, 2×), reset encounter, zoom controls (0.6× to 2.0×), and visibility toggles (trajectories, labels).
+- **Chronological Close-Approach Scrubber (`CloseApproachTimeline`):**
+  - Continuous horizontal event scrubber spanning 2026–2035 with chronological sorting.
+  - Previous/Next encounter stepper controls, sub-lunar distance highlight pills, and active event telemetry card with direct link to What-If Lab.
+- **Near-Earth Asteroid Catalog & Filter Matrix (`AsteroidExplorerSection`):**
+  - Free-text query matching designation, common name, and composition.
+  - Multi-facet filters: Orbit Class (Apollo, Aten, Amor, Atira), Category (Synthetic Encounter, Curated Benchmark), Estimated Diameter ranges (<50m, 50-140m, 140-500m, >500m), Miss Distance ranges (<1 LD, 1-5 LD, >5 LD), Velocity ranges (<15 km/s, 15-25 km/s, >25 km/s).
+  - Sorting by Closest Miss Distance, Largest Diameter, Highest Velocity, Earliest Date, and Latest Date.
+  - Interactive card deck with telemetry metrics, badges, modal inspector, and What-If Lab trigger.
+- **Asteroid Inspection Dossier Modal (`AsteroidDetailModal`):**
+  - Full-screen modal with physical specs, uncertainty bounds, bulk density, risk index, close approach data in kilometers and Lunar Distances, and "Test in What-If Lab" CTA.
+- **Planetary Defense What-If Simulation Lab (`PlanetaryDefenseWhatIfLab`):**
+  - Deterministic physics calculation engine ($r = d/2$, $V = \frac{4}{3}\pi r^3$, $m = \rho V$, $v_{\text{m/s}} = v_{\text{km/s}} \times 1000$, $E = \frac{1}{2}mv^2$, TNT conversions).
+  - Real-time parameter sliders: Diameter ($10\text{--}1000\text{ m}$), Velocity ($5\text{--}40\text{ km/s}$), Density ($1000\text{--}3500\text{ kg/m}^3$), and Illustrative Miss Distance ($10,000\text{--}5,000,000\text{ km}$).
+  - Live metric KPI cards: Asteroid Mass, Enclosed Volume, Velocity in m/s, Kinetic Energy in Joules, Kilotons TNT, and Megatons TNT.
+  - Interactive Recharts curves: Kinetic Energy vs Diameter (cubic curve $E \propto d^3$) and Kinetic Energy vs Velocity (quadratic parabola $E \propto v^2$) with active parameter reference dots.
+  - Parameter Sensitivity Matrix: Analytical table proving $8\times$ energy multiplier on doubled diameter, $4\times$ on doubled velocity, and $2\times$ on doubled density.
+  - 4 Educational Scenario Presets: Chelyabinsk-Scale (~20m airburst), Tunguska-Scale (~60m regional blast), Dimorphos / DART Target (~160m cratering threat), High-Velocity Retrograde Comet (~250m @ 38 km/s).
+  - Explainable Physics Engine: 5 narrative cards detailing spherical geometry, quadratic velocity delivery, material density variance, safe flyby geometry, and explicit model limitations.
+- **Academic Planetary Defense Foundations (`PlanetaryDefenseEducationPanel`):**
+  - Global survey systems review (ATLAS, Pan-STARRS, Catalina, NEO Surveyor) and orbital uncertainty error ellipses.
+  - Dynamic Orbit Taxonomy: Keplerian criteria for Apollo, Aten, Amor, and Atira classes.
+  - 4 Engineered Deflection Architectures: Kinetic Impactor (NASA DART heritage), Gravity Tractor, Ion Beam Shepherd / Laser Ablation, and Nuclear Standoff Detonation.
+  - Educational scientific ethics notice disclosing vacuum kinetic energy model limitations (no atmospheric hydrodynamic fragmentation or tsunami modeling).
+
+### Out of Scope for Phases 1–5 (Scheduled for Phases 6–8):
+- Force-directed deep-space knowledge graph and space intelligence briefings (Phase 6).
+- Curriculum quizzes, interactive learning hub, and celestial certification (Phase 7).
+- Persistent personal notes vault, planetary passport export, and custom bookmarks (Phase 8).
 
 ## 5. Stakeholders & User Roles
 1. **Academic Evaluator / Faculty Member:** Reviews system architecture, code quality, software documentation, and live demonstration reliability.
@@ -184,6 +216,16 @@ Public interfaces for astronomical data and mission archives are often fragmente
 | **FR-40** | Educational Surface Annotations & Provenance | The system shall render normalized percentage bounding box overlays with category tags, and transparently distinguish curated historical captures from illustrative demonstration visuals. | High |
 | **FR-41** | Mars Surface Journey Traverse | The system shall display an interactive topographic schematic canvas featuring landing site waypoints, elevation profiles, cumulative distances, and linked photo shortcuts with an illustrative disclaimer. | High |
 | **FR-42** | Rover Comparison Lab & Discovery Notes | The system shall provide side-by-side engineering comparisons between any two rovers with metric swapping, engineering evolution insights, and personal discovery notes persisted to localStorage. | High |
+| **FR-43** | Asteroid Watch Operations Hero | The system shall render a cinematic planetary defense hero with an animated Earth-particle encounter canvas, aggregate fleet metrics calculated from 50 records, and provenance badges. | High |
+| **FR-44** | 2D Orbital Encounter Canvas | The system shall render an interactive 2D schematic canvas displaying Earth, Moon (1 LD orbit), hyperbolic flyby trajectories, perigee vectors, dynamic distance HUD, zoom, speed controls, and scientific disclaimers. | High |
+| **FR-45** | Close-Approach Chronological Timeline | The system shall provide an interactive chronological timeline scrubber (2026–2035) with sub-lunar indicators, stepper buttons, and active event telemetry card with What-If Lab shortcut. | High |
+| **FR-46** | Multi-Facet Asteroid Catalog Explorer | The system shall enable searching and multi-filtering across orbit class (Apollo, Aten, Amor, Atira), synthetic category, diameter range, miss distance, and velocity with 5 sorting options. | High |
+| **FR-47** | Asteroid Inspection Dossier Modal | The system shall render a detailed modal displaying physical characteristics, uncertainty ranges, bulk density, simulated risk index, encounter data in km and Lunar Distances, and What-If Lab CTA. | High |
+| **FR-48** | Planetary Defense What-If Physics Engine | The system shall compute deterministic impact physics ($r = d/2$, $V = \frac{4}{3}\pi r^3$, $m = \rho V$, $v_{\text{m/s}} = v_{\text{km/s}} \times 1000$, $E = \frac{1}{2}mv^2$, TNT kilotons and megatons) with input sliders and KPI cards. | High |
+| **FR-49** | Dynamic Kinetic Energy Curves | The system shall render interactive Recharts curves showing Kinetic Energy vs. Diameter (cubic $E \propto d^3$) and Kinetic Energy vs. Velocity (quadratic $E \propto v^2$) with active parameter reference dots. | High |
+| **FR-50** | Parameter Sensitivity Variation Matrix | The system shall calculate an analytical sensitivity comparison proving $8\times$ energy change on doubled diameter, $4\times$ on doubled velocity, and $2\times$ on doubled density. | Medium |
+| **FR-51** | Explainable Physics & Educational Presets | The system shall provide 4 historical scenario presets (Chelyabinsk, Tunguska, Dimorphos, Comet) and 5 explainable narrative cards detailing mechanics and model limitations. | High |
+| **FR-52** | Academic Planetary Defense Foundations | The system shall provide comprehensive educational reference covering optical/radar NEO survey networks, orbital uncertainty ellipses, Keplerian orbit taxonomy, and 4 mitigation architectures. | Medium |
 
 ## 7. Non-Functional Requirements (NFR)
 
@@ -194,7 +236,7 @@ Public interfaces for astronomical data and mission archives are often fragmente
 | **NFR-03** | Portability & Deployment | Static build deployable to GitHub Pages with relative asset addressing and hash-based client routing. |
 | **NFR-04** | Accessibility & Motion | Supports semantic HTML, ARIA attributes, keyboard navigation, and reduced-motion user preferences. |
 | **NFR-05** | Maintainability & Types | 100% TypeScript compilation with zero type errors and strict type safety. |
-| **NFR-06** | Test Coverage | Automated test coverage spanning 54 unit and component test cases across 6 suites verifying all core features. |
+| **NFR-06** | Test Coverage | Automated test coverage spanning 80 unit and component test cases across 7 suites verifying all core features. |
 | **NFR-07** | Browser Compatibility | Fully operational across Chrome, Edge, Firefox, Safari, and mobile WebKit viewports. |
 | **NFR-08** | Visual Cohesion | Adherence to the AstroNav design specification (Hex tokens: #060B19, #20D9F2, #8565FA, #FFB45B, #D76B35, #9C4229, #E3A66B). |
 

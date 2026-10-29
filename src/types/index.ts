@@ -309,6 +309,9 @@ export interface Asteroid {
   name: string;
   designation: string;
   estimatedDiameterMeters: number;
+  estimatedDiameterMinM?: number;
+  estimatedDiameterMaxM?: number;
+  estimatedDiameterMeanM?: number;
   isPotentiallyHazardous: boolean;
   closeApproachDate: string;
   missDistanceKm: number;
@@ -317,7 +320,60 @@ export interface Asteroid {
   orbitClass: 'Apollo' | 'Aten' | 'Amor' | 'Atira' | 'Main Belt';
   simulatedRiskIndex: number; // 0.0 - 10.0
   composition: string;
+  estimatedComposition?: string;
+  syntheticCategory?: string;
+  observationCategory?: string;
+  syntheticClassification?: string;
+  scenarioDescription?: string;
+  description?: string;
+  dataStatus?: string;
+  datasetReferenceDate?: string;
+  educationalNotes?: string;
   source: DataSourceType;
+}
+
+export interface SimulationParameters {
+  diameterM: number;
+  velocityKmS: number;
+  densityKgM3: number;
+  illustrativeMissDistanceKm: number;
+}
+
+export interface SimulationResult {
+  radiusM: number;
+  volumeM3: number;
+  massKg: number;
+  velocityMs: number;
+  kineticEnergyJ: number;
+  kineticEnergyKilotons: number;
+  kineticEnergyMegatons: number;
+}
+
+export interface EducationalScenario {
+  id: string;
+  name: string;
+  subtitle: string;
+  description: string;
+  historicalReference?: string;
+  defaultParameters: SimulationParameters;
+  assumptions: string[];
+  educationalSignificance: string;
+}
+
+export interface SensitivityComparison {
+  parameter: string;
+  baselineValue: string;
+  doubledValue: string;
+  energyMultiplier: number;
+  mathematicalPrinciple: string;
+}
+
+export interface ExplainableInsight {
+  title: string;
+  category: 'size' | 'velocity' | 'density' | 'energy' | 'limitations' | 'geometry';
+  summary: string;
+  mathematicalFormula?: string;
+  detailedExplanation: string;
 }
 
 export interface LaunchEvent {

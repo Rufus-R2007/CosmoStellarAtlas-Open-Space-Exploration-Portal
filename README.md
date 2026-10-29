@@ -5,10 +5,10 @@
 [![Three.js](https://img.shields.io/badge/Three.js-r182-black.svg)](https://threejs.org/)
 [![Vite](https://img.shields.io/badge/Vite-6.0-purple.svg)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC.svg)](https://tailwindcss.com/)
-[![Vitest](https://img.shields.io/badge/Vitest-Passed%20(54%2F54)-brightgreen.svg)](https://vitest.dev/)
+[![Vitest](https://img.shields.io/badge/Vitest-Passed%20(80%2F80)-brightgreen.svg)](https://vitest.dev/)
 [![License](https://img.shields.io/badge/License-MIT-amber.svg)](LICENSE)
 
-> **Software Engineering Micro Project — Phase 4 Mars Rover Explorer & Photo Discovery Lab**  
+> **Software Engineering Micro Project — Phase 5 Asteroid Watch, Encounter Explorer & Planetary Defense Simulation Lab**  
 > **Developer:** Rufus Samuel R  
 > **Institution:** Karunya Institute of Technology and Sciences  
 > **GitHub Repository:** [CosmoStellarAtlas-Open-Space-Exploration-Portal](https://github.com/Rufus-R2007/CosmoStellarAtlas-Open-Space-Exploration-Portal)
@@ -245,16 +245,68 @@ Phase 4 introduces an aerospace-grade Mars Surface Operations Console and high-p
 
 ---
 
-## 8. System Architecture & Folder Structure
+## 8. Asteroid Watch & Planetary Defense Simulation Lab (Phase 5 Flagship)
+
+Phase 5 introduces a comprehensive, aerospace-grade planetary defense operations console (`#/asteroids`) designed around three core experiences:
+
+### Experience A — Near-Earth Encounter Catalog & Hero Overview
+- **Cinematic Planetary Defense Hero (`AsteroidWatchHero`):**
+  - Atmospheric 2D Earth & particle encounter canvas.
+  - Dynamically calculated fleet metrics from 50 records: Total Objects (50), Synthetic Encounters (42), Closest Historic Approach (99942 Apophis at 0.08 LD / 31,600 km), Largest Diameter (Ceres / synthetic benchmarks), and Average Diameter.
+  - Transparent provenance notices: Offline Simulation, Deterministic Dataset, Fixed Reference Date (`2026-10-01`).
+- **Multi-Facet Catalog Explorer (`AsteroidExplorerSection`):**
+  - Real-time search across designation (e.g. `Apophis`, `SIM-2026-001`), common name, and composition.
+  - Filter matrix: Orbit Class (Apollo, Aten, Amor, Atira), Category (Synthetic Encounter vs Curated Benchmark), Diameter ranges (<50m, 50-140m, 140-500m, >500m), Miss Distance (<1 LD, 1-5 LD, >5 LD), and Velocity (<15 km/s, 15-25 km/s, >25 km/s).
+  - 5-way sorting: Closest Miss Distance, Largest Diameter, Highest Velocity, Earliest Date, and Latest Date.
+  - Responsive card deck with telemetry metrics, hazard flags, perigee vectors, modal inspector, and direct What-If Lab trigger.
+- **Asteroid Inspection Dossier Modal (`AsteroidDetailModal`):**
+  - Full-screen modal with physical specs, uncertainty ranges (min/mean/max diameter), bulk density, simulated risk index, encounter telemetry in km and Lunar Distances, educational notes, and "Test in What-If Lab" CTA.
+
+### Experience B — 2D Orbital Encounter Explorer & Chronological Scrubber
+- **2D Orbital Encounter Canvas (`OrbitalEncounterCanvas`):**
+  - Interactive schematic 2D HTML5 canvas depicting Earth (center), Lunar geocentric orbit ($1\text{ LD} = 384,400\text{ km}$), and hyperbolic asteroid encounter trajectories.
+  - Directional vector arrows, closest approach perigee dotted vector, and dynamic distance telemetry HUD in both LD and kilometers.
+  - Playback controls: Play/pause animation loop, variable speed toggles (0.5×, 1×, 2×), reset encounter, interactive zoom scaling (0.6× to 2.0×), and layer visibility toggles.
+- **Chronological Close-Approach Scrubber (`CloseApproachTimeline`):**
+  - Continuous horizontal event scrubber spanning 2026–2035 with chronological sorting.
+  - Previous/Next encounter stepper controls, sub-lunar distance highlight pills, and active event telemetry card with one-click What-If Lab transfer.
+
+### Experience C — Planetary Defense What-If Simulation Lab & Academic Foundations
+- **Deterministic Kinetic Physics Engine (`PlanetaryDefenseWhatIfLab` & `planetaryDefenseMath.ts`):**
+  - Standard classical Newtonian calculations:
+    $$r = \frac{d}{2}, \quad V = \frac{4}{3}\pi r^3, \quad m = \rho V, \quad v_{\text{m/s}} = v_{\text{km/s}} \times 1000, \quad E_k = \frac{1}{2}mv^2$$
+  - International TNT equivalent conversions: $1\text{ kt} = 4.184 \times 10^{12}\text{ J}$, $1\text{ Mt} = 4.184 \times 10^{15}\text{ J}$.
+  - Strict Decoupling Architecture: Illustrative miss distance slider adjusts visual trajectory only—never altering kinetic impact calculations or fabricating collision probabilities.
+- **Interactive Recharts Kinetic Energy Curves:**
+  - *Energy vs. Diameter:* Cubic curve ($E \propto d^3$) with active diameter reference dot.
+  - *Energy vs. Velocity:* Quadratic parabola ($E \propto v^2$) with active velocity reference dot.
+- **Analytical Parameter Sensitivity Matrix:**
+  - Dynamic table proving exact kinetic energy multipliers: Doubling diameter yields $8\times$ energy ($2^3$), doubling velocity yields $4\times$ energy ($2^2$), doubling density yields $2\times$ energy ($2^1$).
+- **4 Educational Scenario Presets:**
+  - *Small Asteroid (Chelyabinsk-Scale, ~20m):* High-altitude airburst (~500 kt).
+  - *Medium Asteroid (Tunguska-Scale, ~60m):* Regional blast hazard (~15 Mt).
+  - *Large Asteroid (DART / Dimorphos Scale, ~160m):* Cratering hazard & kinetic deflection benchmark.
+  - *High-Velocity Cometary Fragment (~250m @ 38 km/s):* Extreme retrograde encounter demonstrating quadratic velocity dominance.
+- **Explainable Physics Engine & Disclosures:**
+  - 5 structured narrative cards detailing spherical geometry, quadratic velocity delivery, material density variance, safe flyby geometry, and explicit model limitations (vacuum energy vs. supercomputer hydrocodes).
+- **Academic Foundations Panel (`PlanetaryDefenseEducationPanel`):**
+  - Global survey systems review (ATLAS, Pan-STARRS, Catalina, NEO Surveyor) and orbital uncertainty error ellipses.
+  - Dynamic Orbit Taxonomy: Keplerian criteria for Apollo, Aten, Amor, and Atira classes.
+  - 4 Engineered Deflection Architectures: Kinetic Impactor (NASA DART heritage), Gravity Tractor, Ion Beam Shepherd / Laser Ablation, and Nuclear Standoff Detonation.
+
+---
+
+## 9. System Architecture & Folder Structure
 
 ```
 CosmoStellarAtlas-Open-Space-Exploration-Portal/
 ├── docs/                        # Formal Software Engineering Documentation
-│   ├── SRS.md                   # Software Requirements Specification (v1.3.0)
+│   ├── SRS.md                   # Software Requirements Specification (v1.4.0)
 │   ├── ARCHITECTURE.md          # System Architecture & Multi-Module Pipelines
-│   ├── DIAGRAMS.md              # 20 UML, Use Case, Sequence & Activity Diagrams
-│   ├── TRACEABILITY.md          # Requirements Traceability Matrix (FR-01 to FR-42)
-│   ├── DATASETS.md              # Dataset Provenance Specification
+│   ├── DIAGRAMS.md              # 25+ UML, Use Case, Sequence & Activity Diagrams
+│   ├── TRACEABILITY.md          # Requirements Traceability Matrix (FR-01 to FR-52)
+│   ├── SCIENTIFIC_MODEL.md      # Scientific Physics & Planetary Defense Model Specification
+│   ├── DATASETS.md              # Dataset Provenance Specification (50 Asteroids)
 │   └── ROADMAP.md               # 8-Phase Master Development Plan
 ├── src/
 │   ├── app/                     # Application Shell & Routing Configuration
@@ -270,7 +322,7 @@ CosmoStellarAtlas-Open-Space-Exploration-Portal/
 │   │   ├── roverImages.ts       # 24 Surface Captures with Normalized Annotations
 │   │   ├── roverWaypoints.ts    # 23 Traverse Waypoints across Landing Sites
 │   │   ├── roverVisualAssets.ts # High-Fidelity Scalable Vector Graphics Generator
-│   │   ├── asteroids.ts         # 32 Curated & Synthetic Near-Earth Objects
+│   │   ├── asteroids.ts         # 50 Curated & Synthetic Near-Earth Objects
 │   │   ├── launches.ts          # 16 Illustrative Spaceflight Launches
 │   │   └── briefings.ts         # 5 Research Briefings
 │   ├── features/
@@ -279,17 +331,16 @@ CosmoStellarAtlas-Open-Space-Exploration-Portal/
 │   │   ├── timeline/            # Cosmic Time Machine Implementation (Phase 3)
 │   │   ├── missions/            # Mission Control & Replay Implementation (Phase 3)
 │   │   ├── rovers/              # Mars Rover Explorer Console Implementation (Phase 4)
+│   │   ├── asteroids/           # Asteroid Watch & Planetary Defense Lab (Phase 5)
 │   │   │   ├── components/
-│   │   │   │   ├── comparison/  # Rover Comparison Lab & Engineering Evolution
-│   │   │   │   ├── gallery/     # Multi-Facet Camera Gallery & Search Matrix
-│   │   │   │   ├── hero/        # Mars Operations Hero with Atmospheric Dust Canvas
-│   │   │   │   ├── inspection/  # Flagship Image Inspection Lab Modal
-│   │   │   │   ├── journey/     # Topographic Surface Traverse Canvas
-│   │   │   │   ├── profile/     # Hardware Telemetry, Instruments & Concepts
-│   │   │   │   ├── selector/    # 5-Rover Interactive Fleet Selection Deck
-│   │   │   │   └── sol/         # Martian Sol Timeline Scrubber & Stepper
-│   │   │   └── RoversPage.tsx   # Mars Operations Console Container
-│   │   ├── asteroids/           # Asteroid Watch & Defense Lab (Phase 5 Roadmap)
+│   │   │   │   ├── education/   # Planetary Defense Academic Reference Panel
+│   │   │   │   ├── encounter/   # 2D Orbital Encounter Canvas & Close-Approach Timeline
+│   │   │   │   ├── explorer/    # Searchable Catalog Matrix & Detail Dossier Modal
+│   │   │   │   ├── hero/        # Planetary Defense Hero with Dynamic Statistics
+│   │   │   │   └── whatif/      # Flagship Planetary Defense What-If Simulation Lab
+│   │   │   ├── utils/
+│   │   │   │   └── planetaryDefenseMath.ts # Pure Deterministic Scientific Physics Engine
+│   │   │   └── AsteroidsPage.tsx # Planetary Defense Portal Container & URL Synchronization
 │   │   ├── intelligence/        # Space Intelligence (Phase 6 Roadmap)
 │   │   ├── learning/            # Learning Hub (Phase 7 Roadmap)
 │   │   ├── vault/               # Personal Space Vault (Phase 8 Roadmap)
@@ -297,7 +348,7 @@ CosmoStellarAtlas-Open-Space-Exploration-Portal/
 │   ├── services/                # SpaceDataProvider Interface & Mock Implementation
 │   ├── store/                   # Zustand Global Store (useAppStore)
 │   ├── styles/                  # Tailwind CSS & Global Styles
-│   ├── tests/                   # Vitest Test Suite (54 tests across 6 suites)
+│   ├── tests/                   # Vitest Test Suite (80 tests across 7 suites)
 │   ├── utils/                   # Mathematical utilities (planetaryMath.ts)
 │   └── types/                   # TypeScript Data Contracts and Interfaces
 ├── index.html                   # HTML Entry Point
@@ -339,7 +390,7 @@ npm run dev
 Navigate to `http://localhost:5173/` in your browser.
 
 ### Executing the Automated Test Suite
-Run the Vitest test suite covering data provider methods, mission filtering, planetary 3D rendering fallbacks, temporal synchronization, mission replay speed controls, time capsules, storytelling engine, 404 routing, and Mars rover surface operations (54 tests across 6 test suites):
+Run the Vitest test suite covering data provider methods, mission filtering, planetary 3D rendering fallbacks, temporal synchronization, mission replay speed controls, time capsules, storytelling engine, 404 routing, Mars rover surface operations, and planetary defense physics calculations (80 tests across 7 test suites):
 ```bash
 npm run test
 ```
@@ -347,7 +398,7 @@ npm run test
 ### Type Checking & Linting
 Validate strict TypeScript compilation:
 ```bash
-npm run lint
+npx tsc --noEmit
 ```
 
 ### Production Build
@@ -367,10 +418,63 @@ The compiled bundle will be output to the `dist/` directory, fully configured wi
 | **Phase 2** | **Planet Explorer & 3D Planetarium** | Interactive Three.js 3D viewport, procedural surface textures, accessible 2D fallback, dual-mode navigator, weight calculator, side-by-side comparison lab, insights engine, scale explorer, and historical epoch filtering. | **COMPLETED** |
 | **Phase 3** | **Cosmic Time Machine & Mission Control** | Continuous chronological timeline scrubber (1957–Present), decade jump navigation, epoch overview panel, curated time capsules carousel, 20-mission Mission Control archive with multi-filters and sorting, Recharts historical analytics, deterministic HistoricalInsightsEngine, mission detail dossiers with spacecraft hardware specs, 5-chapter Mission Storytelling Engine, and interactive HTML5 Canvas Mission Replay Engine with tactical scene shaders and variable speed playback. | **COMPLETED** |
 | **Phase 4** | **Mars Rover Explorer & Photo Discovery Lab** | Mars Operations Dashboard Hero with atmospheric dust canvas physics, interactive rover selector across 5 explorers (Perseverance, Curiosity, Opportunity, Spirit, Sojourner), hardware specs & science instrument accordion, Martian sol timeline scrubber, multi-facet camera gallery, interactive Image Inspection Lab modal with zoom/pan and CSS image adjustments (brightness, contrast, saturation), normalized educational surface annotations, Mars surface journey topographic traverse canvas, and rover comparison lab with personal field discovery notes persisted to localStorage. | **COMPLETED** |
-| **Phase 5** | **Asteroid Watch & Defense Lab** | Near-Earth Object 3D radar plot, Torino hazard calculations, and DART kinetic deflection sandbox. | *Planned* |
+| **Phase 5** | **Asteroid Watch & Planetary Defense Lab** | 50 Near-Earth Object database (8 curated benchmarks + 42 synthetic encounters), 2D Keplerian orbital encounter canvas with perigee vectors and distance HUD, chronological close-approach scrubber (2026–2035), multi-facet search/filter catalog matrix, asteroid inspection dossier modal, flagship Planetary Defense What-If Lab with deterministic physics engine ($r, V, m, v, E_k$, TNT kt/Mt), interactive Recharts curves ($E \propto d^3$, $E \propto v^2$), parameter sensitivity matrix (8x, 4x, 2x), 4 educational scenario presets, explainable physics insights, and academic planetary defense foundations. | **COMPLETED** |
 | **Phase 6** | **Space Intelligence & Learning Hub** | Force-directed discovery knowledge graph, astrophysics lessons, and interactive quizzes. | *Planned* |
 | **Phase 7** | **Trajectory & Orbital Mechanics Lab** | Dedicated gravity-assist vector calculator, Hohmann transfer orbit simulator, stage separation sequence animations, and interplanetary trajectory modeling. | *Planned* |
 | **Phase 8** | **Personal Vault & Deployment** | Explorer Passport, bookmarks, personal research notes markdown editor, and GitHub Pages release. | *Planned* |
+
+---
+
+## 12. Faculty Demonstration Runbook (Step-by-Step)
+
+For faculty evaluation and live micro-project demonstrations:
+
+1. **Launch the Application:**
+   ```bash
+   npm run dev
+   ```
+   Open `http://localhost:5173/` in your browser.
+
+2. **Navigate to Asteroid Watch (`#/asteroids`):**
+   - Click **Asteroid Watch & Lab** in the sidebar navigation or click the **Asteroid Watch & Defense Lab** card in the Observatory Dashboard.
+   - Observe the **Asteroid Watch Operations Hero** with the animated 2D Earth canvas, dynamic counter statistics computed from the 50 records, and transparent provenance badges (`Offline Simulation`, `Deterministic Dataset`, `Ref Date: 2026-10-01`).
+
+3. **Experience B — 2D Orbital Encounter Explorer:**
+   - Use the **Active Encounter Target** dropdown to switch between targets (e.g. `2004 MN4 — 99942 Apophis`, `SIM-2026-001`, `SIM-2026-002`).
+   - Watch the animated hyperbolic trajectory sweep past Earth and Moon ($1\text{ LD} = 384,400\text{ km}$).
+   - Test the playback controls: **Pause**, **Resume**, **0.5× / 1× / 2× speed**, **Reset Animation**, and **Zoom In / Out**.
+   - Notice the **Closest Approach Perigee Vector** with distance HUD updating continuously.
+
+4. **Experience B — Close-Approach Chronology:**
+   - Scroll to the chronological encounter scrubber (2026–2035).
+   - Click the **Next Encounter** and **Previous Encounter** stepper buttons. Notice the active encounter highlight card updating synchronously.
+   - Click **Test in What-If Lab** to pre-populate simulation inputs with the selected asteroid's parameters.
+
+5. **Experience A — Asteroid Catalog & Filter Matrix:**
+   - Type `"Apophis"` in the search bar. Observe instant real-time filtering to the curated Apophis record.
+   - Test multi-facet filters: Filter by **Orbit Class** (`Apollo`, `Aten`, `Amor`, `Atira`), **Category**, **Diameter Range**, or **Velocity Range**.
+   - Test sorting options: Sort by **Largest Diameter** or **Highest Velocity**.
+   - Click **Inspect Details** on any card to mount the **AsteroidDetailModal** displaying diameter uncertainty bounds, bulk density, simulated risk index, and close-approach telemetry.
+
+6. **Experience C — Flagship Planetary Defense What-If Lab:**
+   - Scroll down to the What-If Lab (`#whatif`).
+   - Adjust the **Diameter Slider** ($10\text{--}1000\text{ m}$) and watch the **Estimated Mass**, **Volume**, and **Kinetic Energy (Megatons)** update in real time.
+   - Observe the **Cubic Scaling**: Notice that doubling diameter ($100\text{m} \rightarrow 200\text{m}$) multiplies energy by $8\times$.
+   - Adjust the **Encounter Velocity Slider** ($5\text{--}40\text{ km/s}$) and observe the **Quadratic Scaling**: Doubling velocity ($10\text{ km/s} \rightarrow 20\text{ km/s}$) multiplies energy by $4\times$.
+   - Adjust the **Illustrative Miss Distance Slider**: Notice that miss distance changes visual display only, strictly **never** altering kinetic energy or fabricating impact probabilities.
+   - Test **Scenario Presets**: Click **Small Asteroid (Chelyabinsk-Scale)**, **Medium Asteroid (Tunguska-Scale)**, or **Large Asteroid (DART / Dimorphos Scale)**.
+   - Review the **Recharts Kinetic Energy Curves** with active reference dots, the **Analytical Parameter Sensitivity Table**, and the **Explainable Physics Engine** cards detailing limitations.
+
+7. **Review Academic Foundations & Disclosures:**
+   - Review the **Planetary Defense Foundations** section detailing optical survey networks (ATLAS, Pan-STARRS, LSST), orbital uncertainty ellipses, Keplerian orbit taxonomy, and 4 deflection architectures (Kinetic Impactor, Gravity Tractor, Ion Beam, Nuclear Standoff).
+
+8. **Execute Automated Quality Verification:**
+   ```bash
+   npx tsc --noEmit
+   npm test -- --run
+   npm run build
+   ```
+   Verify 0 TypeScript errors, 80 passing tests across 7 test suites, and clean static build in `dist/`.
 
 ---
 

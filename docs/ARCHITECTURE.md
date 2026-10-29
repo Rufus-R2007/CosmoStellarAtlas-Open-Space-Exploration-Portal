@@ -360,5 +360,104 @@ Phase 4 introduces an aerospace-grade Mars Surface Operations Console and Intera
 - Side-by-side engineering telemetry matrix benchmarking any two Mars rovers across mass ($11.5\text{ kg} \rightarrow 1,025\text{ kg}$), power ($100\text{ W} \text{ MMRTG}$ vs solar arrays), mobility suspension, speed ($1\text{ cm/s} \rightarrow 4.2\text{ cm/s}$), and science instrument payload counts.
 - Dynamic engineering evolution synthesis highlights key historical advancements across 24 years of Mars exploration (1997 Sojourner proof-of-concept $\rightarrow$ 2004 MER twin geologists $\rightarrow$ 2012 MSL habitability laboratory $\rightarrow$ 2020 Perseverance astrobiology and sample cache station).
 
+---
+
+## 7. Asteroid Watch & Planetary Defense Simulation Architecture (Phase 5)
+
+Phase 5 introduces a mission-control planetary defense operations center organized into three major experiences:
+- **Experience A:** Asteroid Watch Overview & Near-Earth Encounter Catalog (`AsteroidWatchHero.tsx`, `AsteroidExplorerSection.tsx`, `AsteroidDetailModal.tsx`).
+- **Experience B:** 2D Orbital Encounter Explorer & Chronological Scrubber (`OrbitalEncounterCanvas.tsx`, `CloseApproachTimeline.tsx`).
+- **Experience C:** Flagship Planetary Defense What-If Simulation Lab & Academic Foundations (`PlanetaryDefenseWhatIfLab.tsx`, `PlanetaryDefenseEducationPanel.tsx`, `planetaryDefenseMath.ts`).
+
+```
++--------------------------------------------------------------------------------------------------+
+|                                         AsteroidsPage                                            |
+|                                       (Route: /asteroids)                                        |
+|  - URL Parameter Synchronization: ?id=<asteroidId>                                               |
+|  - Anchor Quick-Link Sub-Navigation (#overview, #radar, #timeline, #catalog, #whatif, #education)|
+|  - Centralized State Binding to useAppStore (selectedAsteroidId, whatIfParameters)              |
++--------------------------------------------------------------------------------------------------+
+         |
+         +----------------------------------+----------------------------------+
+         |                                  |                                  |
+         v                                  v                                  v
++------------------------+      +------------------------+      +----------------------------------+
+|   AsteroidWatchHero    |      | OrbitalEncounterCanvas |      |      CloseApproachTimeline       |
+| - Canvas Earth Orbit   |      | - 2D Keplerian Canvas  |      | - 2026–2035 Chronological Scrubber|
+| - Aggregate Statistics |      | - Earth, Moon (1 LD)   |      | - Previous/Next Stepper Buttons  |
+| - Total, PhA, Closest  |      | - Hyperbolic Flyby Traj|      | - Active Encounter Summary Card  |
+| - Provenance Badges    |      | - Zoom, Speed, Perigee |      | - One-Click What-If Shortcut     |
++------------------------+      +------------------------+      +----------------------------------+
+         |                                  |                                  |
+         +----------------------------------+----------------------------------+
+         |
+         v
++--------------------------------------------------------------------------------------------------+
+|                                     AsteroidExplorerSection                                      |
+|  - Free-Text Search Engine: Designation, Name, Composition                                       |
+|  - Multi-Facet Matrix: Orbit Class (Apollo, Aten, Amor, Atira), Category, Diameter, Dist, Vel   |
+|  - 5-Way Sorting: Miss Distance, Diameter, Velocity, Earliest Date, Latest Date                   |
+|  - Responsive Card Deck with Telemetry Badges, Perigee Markers, and Action CTAs                  |
++--------------------------------------------------------------------------------------------------+
+         |
+         +----------------------------------+
+         |                                  |
+         v                                  v
++---------------------------------+    +-----------------------------------------------------------+
+|       AsteroidDetailModal       |    |                PlanetaryDefenseWhatIfLab                  |
+| - Deep Physical Dossier Specs   |    | - Deterministic Kinetic Physics Engine                    |
+| - Diameter Min/Max/Mean Ranges  |    | - Input Sliders: Diameter (10-1000m), Velocity (5-40 km/s)|
+| - Composition & Density (kg/m³) |    |   Density (1000-3500 kg/m³), Illustrative Distance        |
+| - Miss Distance (km & Lunar LD) |    | - KPI Cards: Volume, Mass, Joules, Kilotons, Megatons TNT |
+| - Transfer to What-If Lab CTA   |    | - Recharts Curves: Energy vs Diameter, Energy vs Velocity |
++---------------------------------+    | - Analytical Sensitivity Table: 8x / 4x / 2x Multipliers   |
+                                       | - 4 Scenario Presets (Chelyabinsk, Tunguska, DART, Comet) |
+                                       | - Explainable Physics Cards & Model Limitations           |
+                                       +-----------------------------------------------------------+
+                                                    |
+                                                    v
+                                       +-----------------------------------------------------------+
+                                       |              PlanetaryDefenseEducationPanel               |
+                                       | - Global NEO Survey Telescopes (ATLAS, Pan-STARRS, LSST)  |
+                                       | - Orbital Uncertainty & Error Ellipse Astrometry          |
+                                       | - Dynamic Orbit Taxonomy (Apollo, Aten, Amor, Atira)      |
+                                       | - 4 Deflection Methods: Kinetic Impactor, Gravity Tractor,|
+                                       |   Ion Beam Shepherd / Laser, Nuclear Standoff Blast       |
+                                       | - Educational Provenance & Vacuum Mechanics Disclaimer    |
+                                       +-----------------------------------------------------------+
+```
+
+### Architectural Subsystems & Engineering Highlights:
+
+#### 1. Deterministic Scientific Physics Engine (`planetaryDefenseMath.ts`)
+- Pure functional, immutable mathematical library executing standard classical mechanics:
+  $$r = \frac{d}{2}, \quad V = \frac{4}{3}\pi r^3, \quad m = \rho V, \quad v_{\text{m/s}} = v_{\text{km/s}} \times 1000, \quad E_k = \frac{1}{2}mv^2$$
+- High-precision TNT conversions based on international standards ($1\text{ kt} = 4.184\times 10^{12}\text{ J}$, $1\text{ Mt} = 4.184\times 10^{15}\text{ J}$).
+- Complete edge-case safety: all inputs validate for non-finite values ($\text{NaN}, \pm\infty$) and clamp safely to zero, eliminating potential application panics or rendering glitches.
+- Decoupling guarantee: miss distance is strictly isolated to visualization and is provably excluded from kinetic impact calculations.
+
+#### 2. 2D Keplerian Hyperbolic Flyby Radar Engine (`OrbitalEncounterCanvas.tsx`)
+- HTML5 Canvas schematic rendering Earth (center), Lunar geocentric orbit ($1\text{ LD} = 384,400\text{ km}$), and the incoming Near-Earth Object trajectory.
+- Calculates hyperbolic encounter coordinates:
+  $$x(t) = x_{\text{perigee}} + c_1 \sinh(t), \quad y(t) = y_{\text{perigee}} + c_2 \cosh(t)$$
+- Dynamic distance HUD computes real-time distance from Earth in both Lunar Distances and kilometers continuously as the asteroid sweeps along its orbital arc.
+- Features directional vector arrows, closest approach perigee dotted vectors, speed multipliers ($0.5\times, 1\times, 2\times$), interactive zoom scaling ($0.6\times \text{ to } 2.0\times$), and layer visibility toggles.
+
+#### 3. Analytical Parameter Sensitivity Subsystem (`generateSensitivityBreakdown`)
+- Implements comparative sensitivity analysis computing individual parameter multipliers:
+  - Asteroid Diameter ($d$): Cubed scaling ($E \propto d^3 \implies 2^3 = 8\times$ energy).
+  - Impact Velocity ($v$): Quadratic scaling ($E \propto v^2 \implies 2^2 = 4\times$ energy).
+  - Bulk Density ($\rho$): Linear scaling ($E \propto \rho \implies 2^1 = 2\times$ energy).
+- Teaches students the disproportionate danger of large asteroid diameters compared to linear density variations.
+
+#### 4. Explainable Physics & Educational Scenario Engine (`generateExplainableInsights`)
+- Dynamically generates five structured narrative dossiers explaining the physics behind current slider parameters:
+  1. *Spherical Geometry & Mass Estimation:* Explains radius cubed mass scaling.
+  2. *Quadratic Kinetic Energy Delivery:* Contrasts mechanical hypervelocity energy with conventional high explosives.
+  3. *Density & Compositional Variance:* Compares porous cometary rubble piles to nickel-iron monoliths.
+  4. *Close-Approach Geometry vs. Collision Reality:* Clarifies that close approaches rarely result in impacts.
+  5. *Crucial Educational Model Limitations:* Explicitly outlines the boundaries between simplified vacuum energy models and supercomputer-scale hydrocodes.
+
+
 
 

@@ -573,3 +573,4 @@ export function generateRoverSvg(imageId: string): string {
   // Convert to clean URI
   return 'data:image/svg+xml;utf8,' + encodeURIComponent(svgString);
 }
+

@@ -74,10 +74,10 @@ const modules: ModuleCardInfo[] = [
   {
     name: 'Asteroid Watch & Defense Lab',
     path: '/asteroids',
-    description: 'Near-Earth Object radar database, trajectory impact risk calculations, and deflection simulation.',
+    description: 'Near-Earth Object radar tracking, orbital encounter simulation, and kinetic impact defense laboratory.',
     icon: <ShieldAlert className="w-6 h-6 text-[#FFB45B]" />,
-    phase: 'Phase 6',
-    status: 'upcoming',
+    phase: 'Phase 5',
+    status: 'active',
     accentGlow: 'gold',
   },
   {

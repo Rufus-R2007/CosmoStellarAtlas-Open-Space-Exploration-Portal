@@ -354,3 +354,4 @@ export const roverWaypointsData: JourneyWaypoint[] = [
     sourceType: 'curated',
   },
 ];
+

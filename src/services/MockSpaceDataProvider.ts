@@ -200,6 +200,51 @@ export class MockSpaceDataProvider implements SpaceDataProvider {
           (a) => a.orbitClass.toLowerCase() === filter.orbitClass!.toLowerCase()
         );
       }
+      if (filter.syntheticCategory) {
+        result = result.filter(
+          (a) =>
+            a.syntheticCategory?.toLowerCase() === filter.syntheticCategory!.toLowerCase() ||
+            a.observationCategory?.toLowerCase() === filter.syntheticCategory!.toLowerCase()
+        );
+      }
+      if (filter.minDiameterM !== undefined) {
+        result = result.filter(
+          (a) => (a.estimatedDiameterMeanM ?? a.estimatedDiameterMeters) >= filter.minDiameterM!
+        );
+      }
+      if (filter.maxDiameterM !== undefined) {
+        result = result.filter(
+          (a) => (a.estimatedDiameterMeanM ?? a.estimatedDiameterMeters) <= filter.maxDiameterM!
+        );
+      }
+      if (filter.minVelocityKmS !== undefined) {
+        result = result.filter((a) => a.relativeVelocityKmS >= filter.minVelocityKmS!);
+      }
+      if (filter.maxVelocityKmS !== undefined) {
+        result = result.filter((a) => a.relativeVelocityKmS <= filter.maxVelocityKmS!);
+      }
+      if (filter.maxMissDistanceKm !== undefined) {
+        result = result.filter((a) => a.missDistanceKm <= filter.maxMissDistanceKm!);
+      }
+      if (filter.startDate) {
+        result = result.filter((a) => a.closeApproachDate >= filter.startDate!);
+      }
+      if (filter.endDate) {
+        result = result.filter((a) => a.closeApproachDate <= filter.endDate!);
+      }
+      if (filter.source) {
+        result = result.filter((a) => a.source === filter.source);
+      }
+      if (filter.query) {
+        const q = filter.query.trim().toLowerCase();
+        result = result.filter(
+          (a) =>
+            a.name.toLowerCase().includes(q) ||
+            a.designation.toLowerCase().includes(q) ||
+            a.composition.toLowerCase().includes(q) ||
+            (a.scenarioDescription && a.scenarioDescription.toLowerCase().includes(q))
+        );
+      }
     }
 
     return result.sort((a, b) => b.simulatedRiskIndex - a.simulatedRiskIndex);

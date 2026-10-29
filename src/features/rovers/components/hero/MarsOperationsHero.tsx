@@ -238,3 +238,4 @@ export const MarsOperationsHero: React.FC<MarsOperationsHeroProps> = ({
     </div>
   );
 };
+

@@ -21,6 +21,16 @@ export interface MissionFilterOptions {
 export interface AsteroidFilterOptions {
   hazardousOnly?: boolean;
   orbitClass?: string;
+  syntheticCategory?: string;
+  minDiameterM?: number;
+  maxDiameterM?: number;
+  minVelocityKmS?: number;
+  maxVelocityKmS?: number;
+  maxMissDistanceKm?: number;
+  startDate?: string;
+  endDate?: string;
+  query?: string;
+  source?: 'curated' | 'synthetic';
 }
 
 export interface SearchResults {
