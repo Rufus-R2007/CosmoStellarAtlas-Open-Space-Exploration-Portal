@@ -14,6 +14,18 @@ interface AppState {
   timelineDecadeFilter: string | null;
   setTimelineDecadeFilter: (decade: string | null) => void;
 
+  // Mars Rover Operations State
+  selectedRoverId: string;
+  setSelectedRoverId: (id: string) => void;
+  selectedSol: number | null;
+  setSelectedSol: (sol: number | null) => void;
+  selectedCameraId: string | null;
+  setSelectedCameraId: (cameraId: string | null) => void;
+  inspectingImageId: string | null;
+  setInspectingImageId: (imageId: string | null) => void;
+  userRoverNotes: Record<string, string>;
+  saveUserRoverNote: (imageId: string, note: string) => void;
+
   // Visual Effects & System Accessibility
   visualEffects: VisualEffectsLevel;
   setVisualEffects: (level: VisualEffectsLevel) => void;
@@ -49,6 +61,25 @@ export const useAppStore = create<AppState>()(
       timelineDecadeFilter: null,
       setTimelineDecadeFilter: (decade: string | null) => set({ timelineDecadeFilter: decade }),
 
+      // Mars Rover State Defaults
+      selectedRoverId: 'perseverance',
+      setSelectedRoverId: (id: string) =>
+        set({ selectedRoverId: id, selectedSol: null, selectedCameraId: null }),
+      selectedSol: null,
+      setSelectedSol: (sol: number | null) => set({ selectedSol: sol }),
+      selectedCameraId: null,
+      setSelectedCameraId: (cameraId: string | null) => set({ selectedCameraId: cameraId }),
+      inspectingImageId: null,
+      setInspectingImageId: (imageId: string | null) => set({ inspectingImageId: imageId }),
+      userRoverNotes: {},
+      saveUserRoverNote: (imageId: string, note: string) =>
+        set((state) => ({
+          userRoverNotes: {
+            ...state.userRoverNotes,
+            [imageId]: note,
+          },
+        })),
+
       visualEffects: 'high',
       setVisualEffects: (level: VisualEffectsLevel) => set({ visualEffects: level }),
 
@@ -80,6 +111,8 @@ export const useAppStore = create<AppState>()(
         demoMode: state.demoMode,
         soundEnabled: state.soundEnabled,
         telemetryUnits: state.telemetryUnits,
+        selectedRoverId: state.selectedRoverId,
+        userRoverNotes: state.userRoverNotes,
       }),
     }
   )

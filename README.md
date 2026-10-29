@@ -5,10 +5,10 @@
 [![Three.js](https://img.shields.io/badge/Three.js-r182-black.svg)](https://threejs.org/)
 [![Vite](https://img.shields.io/badge/Vite-6.0-purple.svg)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC.svg)](https://tailwindcss.com/)
-[![Vitest](https://img.shields.io/badge/Vitest-Passed%20(21%2F21)-brightgreen.svg)](https://vitest.dev/)
+[![Vitest](https://img.shields.io/badge/Vitest-Passed%20(54%2F54)-brightgreen.svg)](https://vitest.dev/)
 [![License](https://img.shields.io/badge/License-MIT-amber.svg)](LICENSE)
 
-> **Software Engineering Micro Project — Phase 3 Cosmic Time Machine & Mission Control**  
+> **Software Engineering Micro Project — Phase 4 Mars Rover Explorer & Photo Discovery Lab**  
 > **Developer:** Rufus Samuel R  
 > **Institution:** Karunya Institute of Technology and Sciences  
 > **GitHub Repository:** [CosmoStellarAtlas-Open-Space-Exploration-Portal](https://github.com/Rufus-R2007/CosmoStellarAtlas-Open-Space-Exploration-Portal)
@@ -189,15 +189,71 @@ Phase 3 introduces an interconnected historical exploration suite uniting the **
 
 ---
 
-## 7. System Architecture & Folder Structure
+## 7. Mars Rover Explorer, Surface Operations Console & Photo Discovery Lab (Phase 4 Flagship)
+
+Phase 4 introduces an aerospace-grade Mars Surface Operations Console and high-precision Photo Discovery Lab engineered for deterministic offline analysis:
+
+### 1. Mars Operations Dashboard Hero (`MarsOperationsHero`)
+- **Atmospheric Dust Physics Engine:** Custom HTML5 Canvas rendering ambient Martian dust particle drifts, sedimentation physics, and intermittent atmospheric dust devil gusts. Automatically obeys user visual effects preferences and system reduced-motion settings.
+- **Dynamic Fleet Telemetry:** Header metrics displaying active vs total rovers (2/5), cumulative operational surface sols (11,000+ sols), cataloged camera instruments (20), and curated high-resolution Martian images (24).
+- **Quick-Switch Selector Tabs:** Dedicated quick-navigation tabs allowing immediate switching between Perseverance, Curiosity, Opportunity, Spirit, and Sojourner.
+- **Mars Design Tokens:** Cohesive aesthetic accents using Mars Orange (`#D76B35`), Rust (`#9C4229`), and Sand Gold (`#E3A66B`).
+
+### 2. Interactive Rover Fleet Selection (`RoverSelector`)
+- High-density card deck for all 5 NASA Mars rovers with active/concluded mission status badges, landing site names, total sols explored, and cumulative traverse odometry.
+- Bi-directional URL synchronization (`#/rovers?rover=perseverance&sol=...&img=...`).
+
+### 3. Rover Engineering Specifications & Systems Profile (`RoverProfileSection`)
+- **Hardware Telemetry HUD:** Mass (kg), physical dimensions, primary electrical power system (MMRTG nuclear generator / triple-junction solar panels), mobility suspension (rocker-bogie system), top surface speed, wheel count, and wheel diameter.
+- **Science Instrument Payload Accordion:** Comprehensive technical breakdown of all onboard science tools (e.g., SuperCam, Mastcam-Z, PIXL, SHERLOC, RIMFAX, MOXIE, MEDA on Perseverance; ChemCam, SAM, APXS on Curiosity).
+- **Educational Engineering Concepts Drawer:** Deep-dive scientific explanations of specialized wheels, interplanetary communication latency, camera diversity, and rock laser spectroscopy.
+
+### 4. Martian Sol Explorer & Timeline Scrubber (`SolExplorerSection`)
+- Interactive continuous sol slider spanning available mission sols with landmark ticks.
+- Previous / next sol stepping buttons and instant reset action to return to all sols.
+- Curated operational sol activity notes documenting key mission events on specific solar days.
+
+### 5. Multi-Facet Rover Camera Gallery (`RoverGallerySection`)
+- **Multi-Attribute Search & Filter Matrix:** Free-text search, camera subsystem pills (Mastcam-Z, SuperCam, Navcam, Hazcam, WATSON, ChemCam, Pancam, etc.), mission sol filter, and topic tag pills (Bedrock, Dune, Hardware, Regolith, Science).
+- **Sorting Controls:** Sort by newest sol, oldest sol, or alphabetical title.
+- **Data Provenance Badges:** Clear visual delineation between Curated Historical captures (`<Badge variant="curated">`) and Illustrative Demonstration visuals (`<Badge variant="synthetic">`).
+- **Resilient Empty State:** Graceful fallback with a single-click reset filter action.
+
+### 6. Interactive Image Inspection Lab Modal (`ImageInspectionLabModal` — Standout Feature)
+- **High-Precision Pan & Drag Viewport:** Click-and-drag panning with clamped viewport bounds and tactile 1:1 tracking scaled to the active zoom level.
+- **Multi-Level Zoom Controls:** Interactive zoom in, zoom out, fit to screen, and reset view (1.0x through 4.0x magnification), plus a fullscreen expansion toggle.
+- **Real-Time Image Processing Adjustments:** Hardware-accelerated CSS filter sliders for Brightness (50%–150%), Contrast (50%–150%), and Saturation (0%–200%) with an instant reset button, allowing users to uncover shadowed rock strata or balance bright dunes.
+- **Educational Surface Annotations:** Responsive normalized percentage bounding overlays (`normalizedX`, `normalizedY`, `normalizedWidth`, `normalizedHeight`) highlighting geological and hardware features with category chips and educational descriptions. Includes an overlays visibility toggle.
+- **Personal Field Discovery Notes:** In-modal user field note editor allowing users to attach observations to any inspected image, automatically persisted to browser `localStorage` (`userRoverNotes`).
+- **Adjacent Photo Pagination:** Previous / next image navigation buttons and keyboard arrow key shortcuts.
+
+### 7. Mars Surface Journey Traverse (`SurfaceJourneySection`)
+- Interactive 2D topographic schematic canvas depicting 23 sequential landing site traverse waypoints across Jezero Delta, Mount Sharp/Gale Crater, Meridiani Planum, and Columbia Hills.
+- Clickable waypoint pins with elevation profiles, cumulative traverse odometry ($0 \rightarrow 30.5\text{ km}$), target bedrock descriptions, and scientific discoveries.
+- Direct one-click shortcuts to launch high-resolution rover photos associated with specific waypoints directly into the Inspection Lab.
+- Transparent schematic disclaimer: "Illustrative traverse schematic — not an official rover traverse map."
+
+### 8. Rover Engineering Comparison Lab (`RoverComparisonLab`)
+- Side-by-side engineering telemetry matrix benchmarking any two Mars rovers across mass, dimensions, power, mobility, top speed, and science payload counts.
+- Instant target swap button and duplicate selection alert.
+- Engineering evolution insights summarizing 24 years of technological advancements from Sojourner to Perseverance.
+
+### 9. Cross-Module Integration
+- Direct link to inspect Mars in 3D in the Planet Explorer (`#/planets?id=mars`).
+- Direct links to dedicated Mission Control dossiers (`#/missions/:missionId`).
+- Synchronized navigation status across the Sidebar and Observatory Dashboard.
+
+---
+
+## 8. System Architecture & Folder Structure
 
 ```
 CosmoStellarAtlas-Open-Space-Exploration-Portal/
 ├── docs/                        # Formal Software Engineering Documentation
-│   ├── SRS.md                   # Software Requirements Specification (v1.1.0)
-│   ├── ARCHITECTURE.md          # System Architecture & 3D WebGL Pipeline
-│   ├── DIAGRAMS.md              # UML, Use Case, Sequence & Activity Diagrams
-│   ├── TRACEABILITY.md          # Requirements Traceability Matrix
+│   ├── SRS.md                   # Software Requirements Specification (v1.3.0)
+│   ├── ARCHITECTURE.md          # System Architecture & Multi-Module Pipelines
+│   ├── DIAGRAMS.md              # 20 UML, Use Case, Sequence & Activity Diagrams
+│   ├── TRACEABILITY.md          # Requirements Traceability Matrix (FR-01 to FR-42)
 │   ├── DATASETS.md              # Dataset Provenance Specification
 │   └── ROADMAP.md               # 8-Phase Master Development Plan
 ├── src/
@@ -208,53 +264,40 @@ CosmoStellarAtlas-Open-Space-Exploration-Portal/
 │   │   └── layout/              # Navbar, Sidebar, Footer, and AppLayout Shell
 │   ├── data/                    # Deterministic Local Datasets
 │   │   ├── planets.ts           # 8 Major Planets with scientific & visual configurations
-│   │   ├── missions.ts          # 18 Curated Historical Missions & Milestones
-│   │   ├── rovers.ts            # 4 Mars Rovers (Sojourner, Opportunity, Curiosity, etc.)
+│   │   ├── missions.ts          # 20 Curated Historical Missions & Milestones
+│   │   ├── rovers.ts            # 5 NASA Mars Rovers (Perseverance, Curiosity, Opportunity, etc.)
+│   │   ├── roverCameras.ts      # 20 Authentic Rover Camera Subsystems
+│   │   ├── roverImages.ts       # 24 Surface Captures with Normalized Annotations
+│   │   ├── roverWaypoints.ts    # 23 Traverse Waypoints across Landing Sites
+│   │   ├── roverVisualAssets.ts # High-Fidelity Scalable Vector Graphics Generator
 │   │   ├── asteroids.ts         # 32 Curated & Synthetic Near-Earth Objects
 │   │   ├── launches.ts          # 16 Illustrative Spaceflight Launches
 │   │   └── briefings.ts         # 5 Research Briefings
 │   ├── features/
 │   │   ├── observatory/         # Full Observatory Dashboard Implementation (Phase 1)
-│   │   │   ├── components/      # Sections A through H
-│   │   │   └── ObservatoryPage.tsx
 │   │   ├── planets/             # Full Planet Explorer Implementation (Phase 2)
-│   │   │   ├── components/
-│   │   │   │   ├── comparison/  # Planetary Comparison Lab & visual scale
-│   │   │   │   ├── filters/     # Search input, classification pills & sort
-│   │   │   │   ├── info/        # Physical stats, relative weight & atmosphere
-│   │   │   │   ├── missions/    # Related missions & Cosmic Time Machine filter
-│   │   │   │   ├── navigator/   # Dual-mode Solar System Navigator
-│   │   │   │   ├── passport/    # Planet discovery passport highlight card
-│   │   │   │   ├── scale/       # Solar system scale Recharts visualizer
-│   │   │   │   └── viewer/      # Three.js 3D viewport, fallback & procedural textures
-│   │   │   ├── services/        # Deterministic PlanetaryInsightsEngine
-│   │   │   └── PlanetsPage.tsx  # Flagship Planet Explorer container
 │   │   ├── timeline/            # Cosmic Time Machine Implementation (Phase 3)
-│   │   │   ├── components/
-│   │   │   │   ├── capsules/    # Curated Cosmic Time Capsules carousel & cards
-│   │   │   │   ├── epoch/       # Real-time Epoch Overview Telemetry Panel
-│   │   │   │   └── scrubber/    # Continuous Chronological Scrubber & Playback
-│   │   │   └── TimelinePage.tsx # Cosmic Time Machine hub
 │   │   ├── missions/            # Mission Control & Replay Implementation (Phase 3)
+│   │   ├── rovers/              # Mars Rover Explorer Console Implementation (Phase 4)
 │   │   │   ├── components/
-│   │   │   │   ├── analytics/   # Recharts decade & destination distribution charts
-│   │   │   │   ├── cards/       # Dense Mission Dossier cards & launch action
-│   │   │   │   ├── filters/     # Search, agency pills, destination & sorting
-│   │   │   │   ├── replay/      # Canvas-based MissionReplayEngine with 7 scenes
-│   │   │   │   └── storytelling/# 5-Chapter MissionStoryteller narrative reader
-│   │   │   ├── services/        # Deterministic HistoricalInsightsEngine
-│   │   │   ├── MissionsPage.tsx # Mission Control directory hub
-│   │   │   └── MissionDetailPage.tsx # Comprehensive Mission Dossier route
-│   │   ├── rovers/              # Mars Rover Explorer (Phase 5 Roadmap)
-│   │   ├── asteroids/           # Asteroid Watch & Defense Lab (Phase 6 Roadmap)
-│   │   ├── intelligence/        # Space Intelligence (Phase 7 Roadmap)
+│   │   │   │   ├── comparison/  # Rover Comparison Lab & Engineering Evolution
+│   │   │   │   ├── gallery/     # Multi-Facet Camera Gallery & Search Matrix
+│   │   │   │   ├── hero/        # Mars Operations Hero with Atmospheric Dust Canvas
+│   │   │   │   ├── inspection/  # Flagship Image Inspection Lab Modal
+│   │   │   │   ├── journey/     # Topographic Surface Traverse Canvas
+│   │   │   │   ├── profile/     # Hardware Telemetry, Instruments & Concepts
+│   │   │   │   ├── selector/    # 5-Rover Interactive Fleet Selection Deck
+│   │   │   │   └── sol/         # Martian Sol Timeline Scrubber & Stepper
+│   │   │   └── RoversPage.tsx   # Mars Operations Console Container
+│   │   ├── asteroids/           # Asteroid Watch & Defense Lab (Phase 5 Roadmap)
+│   │   ├── intelligence/        # Space Intelligence (Phase 6 Roadmap)
 │   │   ├── learning/            # Learning Hub (Phase 7 Roadmap)
 │   │   ├── vault/               # Personal Space Vault (Phase 8 Roadmap)
 │   │   └── notfound/            # 404 Route Recovery View
 │   ├── services/                # SpaceDataProvider Interface & Mock Implementation
 │   ├── store/                   # Zustand Global Store (useAppStore)
 │   ├── styles/                  # Tailwind CSS & Global Styles
-│   ├── tests/                   # Vitest Unit and Component Test Suite (21 tests)
+│   ├── tests/                   # Vitest Test Suite (54 tests across 6 suites)
 │   ├── utils/                   # Mathematical utilities (planetaryMath.ts)
 │   └── types/                   # TypeScript Data Contracts and Interfaces
 ├── index.html                   # HTML Entry Point
@@ -266,7 +309,7 @@ CosmoStellarAtlas-Open-Space-Exploration-Portal/
 
 ---
 
-## 8. Offline Data Transparency & Provenance
+## 9. Offline Data Transparency & Provenance
 CosmoStellarAtlas strictly adheres to academic honesty:
 - **Curated Reference Data:** Astronomical measurements, physical constants, and historical spaceflight milestones are sourced from declassified NASA, ESA, and peer-reviewed records.
 - **Synthetic Demonstration Telemetry:** Approaching asteroid vectors and future launch logistics are deterministically modeled for educational simulation.
@@ -274,7 +317,7 @@ CosmoStellarAtlas strictly adheres to academic honesty:
 
 ---
 
-## 9. Installation, Execution & Build Instructions
+## 10. Installation, Execution & Build Instructions
 
 ### Prerequisites
 - Node.js: `v18.0.0` or higher (verified on Node `v24.21.0`)
@@ -296,7 +339,7 @@ npm run dev
 Navigate to `http://localhost:5173/` in your browser.
 
 ### Executing the Automated Test Suite
-Run the Vitest test suite covering data provider methods, mission filtering, planetary 3D rendering fallbacks, temporal synchronization, mission replay speed controls, time capsules, storytelling engine, 404 routing, and error boundaries (37 tests across 5 suites):
+Run the Vitest test suite covering data provider methods, mission filtering, planetary 3D rendering fallbacks, temporal synchronization, mission replay speed controls, time capsules, storytelling engine, 404 routing, and Mars rover surface operations (54 tests across 6 test suites):
 ```bash
 npm run test
 ```
@@ -316,22 +359,22 @@ The compiled bundle will be output to the `dist/` directory, fully configured wi
 
 ---
 
-## 10. Multi-Phase Master Roadmap
+## 11. Multi-Phase Master Roadmap
 
 | Phase | Title | Focus Area | Status |
 | :---: | :--- | :--- | :---: |
 | **Phase 1** | **Foundation & Observatory Dashboard** | Core architecture, local provider, Observatory dashboard, 9-module shell, tests, and documentation. | **COMPLETED** |
 | **Phase 2** | **Planet Explorer & 3D Planetarium** | Interactive Three.js 3D viewport, procedural surface textures, accessible 2D fallback, dual-mode navigator, weight calculator, side-by-side comparison lab, insights engine, scale explorer, and historical epoch filtering. | **COMPLETED** |
 | **Phase 3** | **Cosmic Time Machine & Mission Control** | Continuous chronological timeline scrubber (1957–Present), decade jump navigation, epoch overview panel, curated time capsules carousel, 20-mission Mission Control archive with multi-filters and sorting, Recharts historical analytics, deterministic HistoricalInsightsEngine, mission detail dossiers with spacecraft hardware specs, 5-chapter Mission Storytelling Engine, and interactive HTML5 Canvas Mission Replay Engine with tactical scene shaders and variable speed playback. | **COMPLETED** |
-| **Phase 4** | **Mission Control Center** | Detailed technical dossiers for Apollo, Voyager, Cassini, JWST; trajectory maps. | *Planned* |
-| **Phase 5** | **Mars Rover Explorer** | Tele-robotics deck, sol-by-sol raw optics viewer, sample tube cache tracker, Ingenuity logs. | *Planned* |
-| **Phase 6** | **Asteroid Watch & Defense Lab** | Near-Earth Object 3D radar plot, Torino hazard calculations, and DART kinetic deflection sandbox. | *Planned* |
-| **Phase 7** | **Space Intelligence & Learning Hub** | Force-directed discovery knowledge graph, astrophysics lessons, and interactive quizzes. | *Planned* |
+| **Phase 4** | **Mars Rover Explorer & Photo Discovery Lab** | Mars Operations Dashboard Hero with atmospheric dust canvas physics, interactive rover selector across 5 explorers (Perseverance, Curiosity, Opportunity, Spirit, Sojourner), hardware specs & science instrument accordion, Martian sol timeline scrubber, multi-facet camera gallery, interactive Image Inspection Lab modal with zoom/pan and CSS image adjustments (brightness, contrast, saturation), normalized educational surface annotations, Mars surface journey topographic traverse canvas, and rover comparison lab with personal field discovery notes persisted to localStorage. | **COMPLETED** |
+| **Phase 5** | **Asteroid Watch & Defense Lab** | Near-Earth Object 3D radar plot, Torino hazard calculations, and DART kinetic deflection sandbox. | *Planned* |
+| **Phase 6** | **Space Intelligence & Learning Hub** | Force-directed discovery knowledge graph, astrophysics lessons, and interactive quizzes. | *Planned* |
+| **Phase 7** | **Trajectory & Orbital Mechanics Lab** | Dedicated gravity-assist vector calculator, Hohmann transfer orbit simulator, stage separation sequence animations, and interplanetary trajectory modeling. | *Planned* |
 | **Phase 8** | **Personal Vault & Deployment** | Explorer Passport, bookmarks, personal research notes markdown editor, and GitHub Pages release. | *Planned* |
 
 ---
 
-## 11. GitHub Pages Deployment Plan
+## 12. GitHub Pages Deployment Plan
 GitHub Pages deployment will be finalized in Phase 8. The application is pre-configured for static hosting:
 - `base: './'` in `vite.config.ts` ensures all asset paths are relative.
 - `HashRouter` in `App.tsx` guarantees that deep linking and direct page refreshes function seamlessly without server-side rewrite rules.
@@ -339,7 +382,7 @@ GitHub Pages deployment will be finalized in Phase 8. The application is pre-con
 
 ---
 
-## 12. Developer & Coursework Information
+## 13. Developer & Coursework Information
 - **Developer:** Rufus Samuel R
 - **Institution:** Karunya Institute of Technology and Sciences
 - **Project Type:** Software Engineering Micro Project

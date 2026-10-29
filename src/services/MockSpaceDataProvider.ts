@@ -2,6 +2,9 @@ import {
   Planet,
   Mission,
   Rover,
+  RoverImage,
+  RoverCamera,
+  JourneyWaypoint,
   Asteroid,
   LaunchEvent,
   Briefing,
@@ -17,6 +20,9 @@ import {
   planetsData,
   missionsData,
   roversData,
+  roverImagesData,
+  roverCamerasData,
+  roverWaypointsData,
   asteroidsData,
   launchesData,
   briefingsData,
@@ -116,6 +122,69 @@ export class MockSpaceDataProvider implements SpaceDataProvider {
     await this.simulateNetwork();
     const rover = roversData.find((r) => r.id.toLowerCase() === id.toLowerCase());
     return rover ? { ...rover } : null;
+  }
+
+  public async getRoverImages(filter?: {
+    roverId?: string;
+    sol?: number;
+    cameraId?: string;
+    tag?: string;
+    assetKind?: string;
+  }): Promise<RoverImage[]> {
+    await this.simulateNetwork();
+    let result = [...roverImagesData];
+
+    if (filter) {
+      if (filter.roverId) {
+        result = result.filter(
+          (img) => img.roverId?.toLowerCase() === filter.roverId!.toLowerCase()
+        );
+      }
+      if (filter.sol !== undefined && filter.sol !== null) {
+        result = result.filter((img) => img.sol === filter.sol);
+      }
+      if (filter.cameraId) {
+        result = result.filter(
+          (img) =>
+            img.cameraId?.toLowerCase() === filter.cameraId!.toLowerCase() ||
+            img.cameraAbbreviation?.toLowerCase() === filter.cameraId!.toLowerCase()
+        );
+      }
+      if (filter.tag) {
+        result = result.filter((img) =>
+          img.tags?.some((t) => t.toLowerCase() === filter.tag!.toLowerCase())
+        );
+      }
+      if (filter.assetKind) {
+        result = result.filter((img) => img.assetKind === filter.assetKind);
+      }
+    }
+
+    return result;
+  }
+
+  public async getRoverImageById(id: string): Promise<RoverImage | null> {
+    await this.simulateNetwork();
+    const image = roverImagesData.find((img) => img.id.toLowerCase() === id.toLowerCase());
+    return image ? { ...image } : null;
+  }
+
+  public async getRoverWaypoints(roverId?: string): Promise<JourneyWaypoint[]> {
+    await this.simulateNetwork();
+    let result = [...roverWaypointsData];
+    if (roverId) {
+      result = result.filter((wp) => wp.roverId.toLowerCase() === roverId.toLowerCase());
+    }
+    return result.sort((a, b) => a.orderIndex - b.orderIndex);
+  }
+
+  public async getRoverCameras(roverId?: string): Promise<RoverCamera[]> {
+    await this.simulateNetwork();
+    let result = [...roverCamerasData];
+    if (roverId) {
+      result = result.filter((cam) => cam.roverId.toLowerCase() === roverId.toLowerCase());
+    }
+    return result;
   }
 
   public async getAsteroids(filter?: AsteroidFilterOptions): Promise<Asteroid[]> {

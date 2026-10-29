@@ -67,8 +67,8 @@ const modules: ModuleCardInfo[] = [
     path: '/rovers',
     description: 'Interactive surface tele-robotics console, sol archives, and camera instruments from Jezero to Gale.',
     icon: <Radio className="w-6 h-6 text-[#FFB45B]" />,
-    phase: 'Phase 5',
-    status: 'upcoming',
+    phase: 'Phase 4',
+    status: 'active',
     accentGlow: 'gold',
   },
   {

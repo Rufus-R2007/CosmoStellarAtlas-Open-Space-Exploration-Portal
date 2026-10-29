@@ -40,6 +40,10 @@ export interface SpaceDataProvider {
   
   getRovers(): Promise<Rover[]>;
   getRoverById(id: string): Promise<Rover | null>;
+  getRoverImages(filter?: { roverId?: string; sol?: number; cameraId?: string; tag?: string; assetKind?: string }): Promise<import('../types').RoverImage[]>;
+  getRoverImageById(id: string): Promise<import('../types').RoverImage | null>;
+  getRoverWaypoints(roverId?: string): Promise<import('../types').JourneyWaypoint[]>;
+  getRoverCameras(roverId?: string): Promise<import('../types').RoverCamera[]>;
   
   getAsteroids(filter?: AsteroidFilterOptions): Promise<Asteroid[]>;
   getAsteroidById(id: string): Promise<Asteroid | null>;

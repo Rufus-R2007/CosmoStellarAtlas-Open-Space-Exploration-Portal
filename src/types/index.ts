@@ -167,31 +167,141 @@ export interface TimeCapsule {
   badgeText?: string;
 }
 
+export interface RoverSpecification {
+  massKg: number;
+  dimensions: string;
+  powerSource: string;
+  mobilitySystem: string;
+  topSpeedCmPerSec: number;
+  expectedLifetime: string;
+  wheelCount: number;
+  wheelDiameterCm: number;
+}
+
+export interface RoverInstrument {
+  id: string;
+  name: string;
+  abbreviation: string;
+  purpose: string;
+  description: string;
+}
+
+export interface RoverEducationalConcept {
+  id: string;
+  title: string;
+  category: 'mobility' | 'communications' | 'optics' | 'science' | 'geology';
+  explanation: string;
+}
+
+export type AnnotationType =
+  | 'rock_formation'
+  | 'surface_texture'
+  | 'rover_hardware'
+  | 'geological_context'
+  | 'terrain_feature';
+
+export interface ImageAnnotation {
+  id: string;
+  imageId: string;
+  label: string;
+  description: string;
+  normalizedX: number; // 0..100 percentage from left
+  normalizedY: number; // 0..100 percentage from top
+  normalizedWidth: number; // 0..100 percentage width
+  normalizedHeight: number; // 0..100 percentage height
+  annotationType: AnnotationType;
+  provenance: 'Curated Educational Annotations' | 'Illustrative Annotations';
+}
+
+export type RoverAssetKind = 'historical_photo' | 'illustrative_render';
+
 export interface RoverImage {
   id: string;
+  roverId?: string;
   sol: number;
+  cameraId?: string;
   cameraName: string;
   cameraFullName: string;
+  cameraAbbreviation?: string;
   earthDate: string;
+  captureDate?: string;
+  title?: string;
   caption: string;
+  description?: string;
+  assetPath?: string;
+  thumbnailPath?: string;
+  tags?: string[];
+  annotationIds?: string[];
+  annotations?: ImageAnnotation[];
+  assetKind?: RoverAssetKind;
+  sourceReference?: string;
+  licenseOrAttribution?: string;
   aspectRatio: string;
+  educationalNotes?: string;
+}
+
+export interface RoverCamera {
+  id: string;
+  roverId: string;
+  name: string;
+  abbreviation: string;
+  purpose: string;
+  description: string;
+  cameraType: 'Science' | 'Engineering' | 'Descent & Navigation' | 'Microscopic';
+}
+
+export interface JourneyWaypoint {
+  id: string;
+  roverId: string;
+  title: string;
+  description: string;
+  sol: number;
+  orderIndex: number;
+  positionX: number; // 0..100 percentage on schematic terrain canvas
+  positionY: number; // 0..100 percentage on schematic terrain canvas
+  imageIds?: string[];
+  missionSignificance: string;
+  elevationMeters: number;
+  distanceFromLandingKm: number;
+  sourceType: DataSourceType;
+}
+
+export interface SolRecord {
+  sol: number;
+  roverId: string;
+  earthDate: string;
+  summary: string;
+  highlights: string[];
+  distanceTraveledMeters: number;
+  imageCount: number;
 }
 
 export interface Rover {
   id: string;
   name: string;
+  missionId?: string;
   agency: string;
   launchDate: string;
   landingDate: string;
   landingSite: string;
+  landingRegion?: string;
   status: 'Active' | 'Completed' | 'Mission Concluded';
+  historicalStatus?: 'Active' | 'Completed' | 'Mission Concluded';
   totalSols: number;
   distanceTraveledKm: number;
   sampleCount: number;
   primaryMission: string;
+  description?: string;
+  objectives?: string[];
+  specifications?: RoverSpecification;
+  instruments?: RoverInstrument[];
+  achievements?: string[];
+  educationalConcepts?: RoverEducationalConcept[];
+  imageIds?: string[];
   keyInstruments: string[];
   sampleImages: RoverImage[];
   source: DataSourceType;
+  sourceReferences?: string;
 }
 
 export interface Asteroid {

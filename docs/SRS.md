@@ -3,7 +3,7 @@
 **Project Type:** Software Engineering Micro Project  
 **Author:** Rufus Samuel R  
 **Institution:** Karunya Institute of Technology and Sciences  
-**Version:** 1.2.0 (Phase 3 Cosmic Time Machine & Mission Control)  
+**Version:** 1.3.0 (Phase 4 Mars Rover Explorer & Photo Discovery Lab)  
 **Date:** October 2026  
 
 ---
@@ -76,10 +76,60 @@ Public interfaces for astronomical data and mission archives are often fragmente
   - **Interactive Scrubber:** Progress bar with clickable milestone markers and active milestone indicator.
   - **Accessibility & Transparency:** Fullscreen expansion toggle, canvas fallback for reduced motion, and educational simulation disclaimers clarifying that trajectories represent illustrative visualizations rather than live telemetry.
 
-### Out of Scope for Phase 1, 2 & 3 (Scheduled for Phases 4–8):
-- Dedicated mission trajectory gravity-assist vector calculator (Phase 4).
-- Sol-by-sol Martian camera viewer (Phase 5).
-- Kinetic impactor planetary defense simulation sandbox (Phase 6).
+### Implemented in Phase 4 (Mars Rover Explorer, Operations Console & Photo Discovery Lab):
+- **Mars Operations Dashboard Hero (`MarsOperationsHero`):**
+  - Atmospheric dust physics canvas with ambient particle drifts and wind gusts.
+  - Dynamic telemetry metrics (active/total rovers, operational surface sols, cataloged cameras, curated imagery).
+  - Quick-switch selector tabs allowing immediate rover context switching.
+  - Distinct Mars color palette integration (`#D76B35`, `#9C4229`, `#E3A66B`).
+- **Interactive Rover Fleet Selection (`RoverSelector`):**
+  - Interactive selection cards for all 5 NASA Mars rovers: Perseverance, Curiosity, Opportunity, Spirit, and Sojourner.
+  - Status indicators (Active vs Concluded) with mission duration and landing sites.
+  - Bi-directional URL synchronization (`/rovers?rover=perseverance&sol=...&img=...`).
+- **Rover Engineering Specifications & Hardware Systems (`RoverProfileSection`):**
+  - Engineering telemetry cards: mass, physical dimensions, power system (MMRTG nuclear / solar), mobility system (rocker-bogie suspension), top speed, and wheel diameter.
+  - Interactive science instrument accordion detailing full scientific payloads (SuperCam, Mastcam-Z, PIXL, SHERLOC, RIMFAX, MOXIE, MEDA, etc.).
+  - Educational engineering concepts drawer explaining specialized wheels, communication latency, camera diversity, and rock laser spectroscopy.
+- **Martian Sol Explorer & Timeline Scrubber (`SolExplorerSection`):**
+  - Continuous solar day slider across available mission sols with landmark indicator ticks.
+  - Step forward / step backward sol controls and instant reset filter.
+  - Curated sol activity highlights and cross-filtering with the camera gallery.
+- **Multi-Facet Rover Camera Gallery (`RoverGallerySection`):**
+  - Multi-attribute filtering by free-text search query, camera subsystem pills, mission sol, and topic tags.
+  - Sorting options (Newest Sols First, Oldest Sols First, Title A-Z).
+  - Explicit data provenance badges distinguishing genuine curated historical captures from illustrative demonstration visuals.
+  - Empty state with search reset action.
+- **Interactive Image Inspection Lab Modal (`ImageInspectionLabModal`):**
+  - High-precision pan-and-drag viewport with smooth mouse drag and normalized boundaries.
+  - Interactive zoom controls (zoom in, zoom out, fit to screen, reset view) and fullscreen toggle.
+  - Real-time CSS image processing sliders: Brightness (50%–150%), Contrast (50%–150%), and Saturation (0%–200%) with instant reset.
+  - Adjacent photo pagination (previous / next photo buttons and keyboard navigation).
+  - Metadata drawer with technical camera specifications, target rover, earth date, and source references.
+- **Educational Surface Annotations & Data Provenance:**
+  - Interactive normalized percentage bounding box overlays (`normalizedX`, `normalizedY`, `normalizedWidth`, `normalizedHeight`).
+  - Annotation highlight cards with category tags (Rock Formation, Hardware, Texture, Geological Context).
+  - Annotation visibility toggle (show / hide overlays).
+  - Provenance badges clearly indicating curated historical annotations vs illustrative demonstration visuals.
+- **Mars Surface Journey Traverse (`SurfaceJourneySection`):**
+  - Interactive topographic schematic canvas depicting traverse route waypoints across landing sites (Jezero Delta, Mount Sharp, Meridiani Planum, Columbia Hills).
+  - Clickable waypoint pins with elevation, cumulative distance, terrain features, and key scientific milestones.
+  - Linked rover photo shortcuts opening directly in the Image Inspection Lab.
+  - Clear schematic disclaimer: "Illustrative traverse schematic — not an official rover traverse map."
+- **Rover Engineering Comparison Lab (`RoverComparisonLab`):**
+  - Side-by-side comparative metric matrix across all 5 rovers (mass, dimensions, power, wheel diameter, top speed, instruments).
+  - Instant rover swap capability and duplicate selection alert.
+  - Engineering evolution insights summarizing generational technological leaps from Sojourner to Perseverance.
+- **Personal Discovery Notes:**
+  - In-modal user field note editor allowing users to attach observations to any inspected image.
+  - Automatic persistence to browser `localStorage` under `userRoverNotes`.
+- **Cross-Module Integration:**
+  - Direct deep links to Mars 3D view in Planet Explorer (`/planets?id=mars`).
+  - Direct links to dedicated Mission Control dossiers (`/missions/:missionId`).
+  - Active module badge updated to `ACTIVE` across navigation shells and observatory dashboard.
+
+### Out of Scope for Phases 1–4 (Scheduled for Phases 5–8):
+- Kinetic impactor planetary defense simulation sandbox (Phase 5).
+- Asteroid radar observation matrix and orbital rendezvous calculator (Phase 6).
 - Force-directed knowledge graph and curriculum quizzes (Phase 7).
 - Persistent personal notes vault and exportable passport (Phase 8).
 
@@ -124,6 +174,16 @@ Public interfaces for astronomical data and mission archives are often fragmente
 | **FR-30** | Comprehensive Mission Detail Dossier | The system shall display a dedicated mission dossier route (`/missions/:missionId`) with objectives, agency badges, target worlds, spacecraft engineering hardware specifications, and milestone chronology. | High |
 | **FR-31** | Mission Storytelling Engine | The system shall render an interactive narrative chapter reader organizing mission history into The Challenge, The Mission, The Journey, The Discovery, and The Legacy. | High |
 | **FR-32** | Interactive Mission Replay Engine | The system shall provide a data-driven HTML5 Canvas replay engine featuring specialized tactical space scenes, variable speed controls (0.5×, 1×, 2×), milestone scrub bar, fullscreen mode, and simulation disclaimers. | High |
+| **FR-33** | Mars Operations Dashboard Hero | The system shall render a specialized operations console hero with animated Martian atmospheric dust physics canvas, dynamic fleet metrics, and quick rover selector tabs. | High |
+| **FR-34** | Interactive Rover Fleet Selection | The system shall allow users to select from all 5 NASA Mars rovers (Perseverance, Curiosity, Opportunity, Spirit, Sojourner) with active/concluded status indicators and landing telemetry. | High |
+| **FR-35** | Rover Hardware & Engineering Specifications | The system shall display detailed engineering specifications including mass, physical dimensions, MMRTG/solar power, mobility rocker-bogie systems, and wheel diameters. | High |
+| **FR-36** | Rover Science Instruments & Concepts | The system shall render an interactive science instrument payload accordion and educational engineering concept cards (mobility, communication latency, optics, laser rock spectroscopy). | High |
+| **FR-37** | Martian Sol Explorer & Timeline Scrubber | The system shall provide an interactive continuous sol timeline slider with milestone ticks, step navigation, reset action, and curated sol activity notes. | High |
+| **FR-38** | Multi-Facet Rover Camera Gallery | The system shall enable gallery filtering across free-text search queries, camera subsystem pills, mission sol, and topic tags, with sorting and empty-state recovery. | High |
+| **FR-39** | Interactive Image Inspection Lab | The system shall provide a pan-and-drag viewport, zoom controls, fit-to-screen, fullscreen expansion, and CSS image processing adjustments (brightness, contrast, saturation) with instant reset. | High |
+| **FR-40** | Educational Surface Annotations & Provenance | The system shall render normalized percentage bounding box overlays with category tags, and transparently distinguish curated historical captures from illustrative demonstration visuals. | High |
+| **FR-41** | Mars Surface Journey Traverse | The system shall display an interactive topographic schematic canvas featuring landing site waypoints, elevation profiles, cumulative distances, and linked photo shortcuts with an illustrative disclaimer. | High |
+| **FR-42** | Rover Comparison Lab & Discovery Notes | The system shall provide side-by-side engineering comparisons between any two rovers with metric swapping, engineering evolution insights, and personal discovery notes persisted to localStorage. | High |
 
 ## 7. Non-Functional Requirements (NFR)
 
@@ -134,9 +194,9 @@ Public interfaces for astronomical data and mission archives are often fragmente
 | **NFR-03** | Portability & Deployment | Static build deployable to GitHub Pages with relative asset addressing and hash-based client routing. |
 | **NFR-04** | Accessibility & Motion | Supports semantic HTML, ARIA attributes, keyboard navigation, and reduced-motion user preferences. |
 | **NFR-05** | Maintainability & Types | 100% TypeScript compilation with zero type errors and strict type safety. |
-| **NFR-06** | Test Coverage | Minimum automated test coverage verifying provider methods, mission filtering, store updates, and error handling. |
+| **NFR-06** | Test Coverage | Automated test coverage spanning 54 unit and component test cases across 6 suites verifying all core features. |
 | **NFR-07** | Browser Compatibility | Fully operational across Chrome, Edge, Firefox, Safari, and mobile WebKit viewports. |
-| **NFR-08** | Visual Cohesion | Adherence to the AstroNav design specification (Hex tokens: #060B19, #20D9F2, #8565FA, #FFB45B). |
+| **NFR-08** | Visual Cohesion | Adherence to the AstroNav design specification (Hex tokens: #060B19, #20D9F2, #8565FA, #FFB45B, #D76B35, #9C4229, #E3A66B). |
 
 ## 8. Assumptions & Constraints
 - The platform executes entirely on the client side in modern evergreen web browsers.

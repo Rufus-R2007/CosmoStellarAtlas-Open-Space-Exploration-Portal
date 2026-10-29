@@ -609,3 +609,320 @@ erDiagram
         string sourceReference
     }
 ```
+
+
+---
+
+## 15. Use Case Model: Phase 4 Mars Rover Explorer & Operations Console
+```mermaid
+flowchart LR
+    User["Explorer / Planetary Geologist"]
+
+    subgraph SurfaceConsole["Mars Operations Console (/rovers)"]
+        UC_Fleet["Select Active / Concluded Rover (5 Explorers)"]
+        UC_Specs["Examine Rocker-Bogie & Power Telemetry"]
+        UC_Instruments["Inspect Science Payload Instruments"]
+        UC_Concepts["Study Educational Engineering Concepts"]
+        UC_SolScrub["Scrub Mission Timeline by Martian Sol"]
+        UC_Gallery["Filter Multi-Facet Rover Camera Gallery"]
+        UC_Traverse["Trace Surface Journey Waypoint Route"]
+        UC_Compare["Compare Two Rovers in Engineering Lab"]
+    end
+
+    subgraph InspectionLab["Image Inspection Lab (Modal Viewport)"]
+        UC_PanZoom["Pan & Zoom Martian Regolith (1x to 4x)"]
+        UC_Adjust["Adjust Brightness, Contrast & Saturation"]
+        UC_Annotations["Inspect Normalized Educational Annotations"]
+        UC_Notes["Save Field Discovery Notes (localStorage)"]
+        UC_Paginate["Navigate Adjacent Photos via Keyboard/HUD"]
+        UC_Provenance["Verify Curated vs Illustrative Provenance"]
+    end
+
+    User --> UC_Fleet
+    User --> UC_Specs
+    User --> UC_Instruments
+    User --> UC_Concepts
+    User --> UC_SolScrub
+    User --> UC_Gallery
+    User --> UC_Traverse
+    User --> UC_Compare
+
+    User --> UC_PanZoom
+    User --> UC_Adjust
+    User --> UC_Annotations
+    User --> UC_Notes
+    User --> UC_Paginate
+    User --> UC_Provenance
+```
+
+---
+
+## 16. Activity Diagram: Rover Selection, Sol Scrubbing & Image Filtering Workflow
+```mermaid
+flowchart TD
+    Start(["User Opens Mars Rover Explorer"]) --> LoadParams["Read URL Params (?rover, ?sol, ?img)"]
+    LoadParams --> FetchFleet["SpaceDataProvider.getRovers()"]
+    FetchFleet --> RenderHero["Render MarsOperationsHero with Dust Canvas Physics"]
+    RenderHero --> RenderSelector["Render RoverSelector with 5 Rover Fleet Cards"]
+    
+    RenderSelector --> UserSelect{"User Selection Action"}
+    UserSelect -- "Select Different Rover" --> UpdateRover["Update selectedRoverId in Zustand & URL"]
+    UserSelect -- "Scrub Sol Slider" --> UpdateSol["Set selectedSol Filter & Scrubber Position"]
+    UserSelect -- "Type in Gallery Search" --> FilterSearch["Filter Images by Query String"]
+    UserSelect -- "Click Camera Pill" --> FilterCamera["Filter by Specific Camera Subsystem"]
+    UserSelect -- "Click Waypoint Pin" --> InspectWaypoint["Highlight Waypoint & Showcase Linked Photos"]
+
+    UpdateRover --> FetchDetails["Fetch Rover Cameras, Sols, and Waypoints"]
+    FetchDetails --> ResetSubFilters["Reset Camera Filter & Retain Matching Sols"]
+    
+    UpdateSol --> ApplyMatrix["Recalculate Visible Gallery Matrix"]
+    FilterSearch --> ApplyMatrix
+    FilterCamera --> ApplyMatrix
+    ResetSubFilters --> ApplyMatrix
+
+    ApplyMatrix --> RenderCards["Render Filtered Rover Images with Provenance Badges"]
+    RenderCards --> ClickPhoto{"User Clicks Image Card"}
+    ClickPhoto -- Yes --> OpenLab["Launch ImageInspectionLabModal(?img=imageId)"]
+    InspectWaypoint --> ClickPhoto
+```
+
+---
+
+## 17. State Machine Diagram: Image Inspection Lab Viewport & Processing
+```mermaid
+stateDiagram-v2
+    [*] --> Closed
+    
+    Closed --> ViewingImage : Open Image (Click Card or Waypoint Link)
+    
+    state ViewingImage {
+        [*] --> DefaultTransform : Reset Transform (zoom = 1, pan = 0, 0)
+        
+        DefaultTransform --> Zoomed : Zoom In (+ / Wheel Up)
+        Zoomed --> Zoomed : Pan / Drag Viewport (drag clamped to boundaries)
+        Zoomed --> DefaultTransform : Reset View / Fit to Screen
+        
+        state FilterPipeline {
+            [*] --> StandardLevels : Brightness=100%, Contrast=100%, Sat=100%
+            StandardLevels --> AdjustedLevels : Adjust Sliders (CSS filter applied)
+            AdjustedLevels --> StandardLevels : Reset Adjustments Button
+        }
+        
+        state AnnotationDisplay {
+            [*] --> OverlaysVisible : Annotations Active
+            OverlaysVisible --> OverlaysHidden : Toggle Overlays Off
+            OverlaysHidden --> OverlaysVisible : Toggle Overlays On
+        }
+        
+        state FieldNotesState {
+            [*] --> ReadNotes : Load Note from localStorage
+            ReadNotes --> EditingNotes : User Edits Textarea
+            EditingNotes --> SavedNotes : Click Save / Auto-sync
+            SavedNotes --> ReadNotes
+        }
+    }
+    
+    ViewingImage --> ViewingImage : Next / Prev Image Navigation
+    ViewingImage --> Closed : Close Modal (X / Escape Key)
+```
+
+---
+
+## 18. Sequence Diagram: Image Inspection & Educational Annotation Retrieval
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as Explorer
+    participant UI as RoverGallerySection
+    participant Modal as ImageInspectionLabModal
+    participant Store as useAppStore
+    participant Provider as SpaceDataProvider
+    participant Storage as Browser LocalStorage
+
+    User->>UI: Click on Rover Photo Card (e.g. img-per-01)
+    UI->>Store: setInspectingImageId("img-per-01")
+    Store-->>Modal: Open Modal with imageId
+    Modal->>Provider: getRoverImageById("img-per-01")
+    Provider-->>Modal: Return RoverImage with normalized annotations
+    Modal->>Storage: Read userRoverNotes["img-per-01"]
+    Storage-->>Modal: Return existing field note (if any)
+    Modal->>Modal: Initialize Viewport (zoom: 1x, pan: 0, 0)
+    Modal->>Modal: Render Scalable Vector Graphic with CSS Filters
+    Modal->>Modal: Render Normalized Annotation Overlays (X, Y, W, H)
+    Modal-->>User: Display Inspection Lab with Metadata Drawer
+    
+    User->>Modal: Drag Sliders (Brightness 120%, Contrast 115%)
+    Modal->>Modal: Apply real-time hardware-accelerated CSS filter
+    
+    User->>Modal: Type Field Note and Click "Save Note"
+    Modal->>Store: saveUserRoverNote("img-per-01", noteText)
+    Store->>Storage: Persist to localStorage
+    Modal-->>User: Show "Note Saved" confirmation badge
+```
+
+---
+
+## 19. Component Diagram: Mars Rover Explorer Architecture
+```mermaid
+graph TD
+    subgraph Rovers_Module["Mars Rover Operations Module (src/features/rovers)"]
+        RoversPage["RoversPage (HUD Orchestrator)"]
+        
+        subgraph Sections["Console Subsystems"]
+            Hero["MarsOperationsHero (Atmospheric Dust Canvas)"]
+            Selector["RoverSelector (5 Fleet Cards)"]
+            Profile["RoverProfileSection (Specs, Instruments, Concepts)"]
+            SolExplorer["SolExplorerSection (Martian Solar Day Scrubber)"]
+            Gallery["RoverGallerySection (Multi-Facet Photo Grid)"]
+            Journey["SurfaceJourneySection (Topographic Traverse Canvas)"]
+            Comparison["RoverComparisonLab (Side-by-Side Dual Analysis)"]
+        end
+        
+        subgraph Inspection_Modal["Flagship Feature"]
+            Modal["ImageInspectionLabModal (Pan, Zoom, Filters, Annotations, Notes)"]
+        end
+    end
+
+    subgraph Service_And_Data["Data Layer"]
+        Provider["SpaceDataProvider / MockSpaceDataProvider"]
+        Datasets[("rovers.ts / roverImages.ts / roverCameras.ts / roverWaypoints.ts")]
+        VectorAssets["roverVisualAssets.ts (Scalable Martian Vector Graphics)"]
+    end
+
+    subgraph Store_Layer["Global Application State"]
+        Store["useAppStore (Zustand)"]
+        LocalStorage[("Browser LocalStorage (userRoverNotes)")]
+    end
+
+    RoversPage --> Hero
+    RoversPage --> Selector
+    RoversPage --> Profile
+    RoversPage --> SolExplorer
+    RoversPage --> Gallery
+    RoversPage --> Journey
+    RoversPage --> Comparison
+    RoversPage --> Modal
+
+    Gallery --> VectorAssets
+    Modal --> VectorAssets
+
+    RoversPage --> Provider
+    Provider --> Datasets
+
+    RoversPage --> Store
+    Modal --> Store
+    Store --> LocalStorage
+```
+
+---
+
+## 20. Updated Entity Relationship Diagram (ERD)
+```mermaid
+erDiagram
+    PLANET ||--o{ MISSION : "celestial destination"
+    PLANET ||--o{ ROVER : "surface operational world"
+    ROVER ||--o| ROVER_SPECIFICATION : "engineering hardware"
+    ROVER ||--|{ ROVER_INSTRUMENT : "scientific payload"
+    ROVER ||--|{ ROVER_CONCEPT : "educational physics concepts"
+    ROVER ||--|{ ROVER_CAMERA : "onboard imaging systems"
+    ROVER ||--o{ ROVER_IMAGE : "surface image captures"
+    ROVER ||--o{ JOURNEY_WAYPOINT : "traverse route waypoints"
+    ROVER_IMAGE ||--o{ IMAGE_ANNOTATION : "educational surface labels"
+    JOURNEY_WAYPOINT }o--o{ ROVER_IMAGE : "linked illustrative captures"
+    MISSION ||--o| ROVER : "mission identity linkage"
+
+    ROVER {
+        string id PK
+        string name
+        string agency
+        string status
+        string landingDate
+        string landingSite
+        string destinationPlanetId FK
+        string missionId FK
+        int totalSols
+        float totalDistanceKm
+        string description
+        string primaryMission
+    }
+
+    ROVER_SPECIFICATION {
+        float massKg
+        string dimensions
+        string powerSource
+        string mobilitySystem
+        float topSpeedCmPerSec
+        string expectedLifetime
+        int wheelCount
+        float wheelDiameterCm
+    }
+
+    ROVER_INSTRUMENT {
+        string id PK
+        string roverId FK
+        string name
+        string abbreviation
+        string purpose
+        string description
+    }
+
+    ROVER_CONCEPT {
+        string id PK
+        string roverId FK
+        string title
+        string category
+        string explanation
+    }
+
+    ROVER_CAMERA {
+        string id PK
+        string roverId FK
+        string name
+        string abbreviation
+        string purpose
+        string description
+        string cameraType
+    }
+
+    ROVER_IMAGE {
+        string id PK
+        string roverId FK
+        int sol
+        string cameraId FK
+        string cameraName
+        string earthDate
+        string caption
+        string assetPath
+        string assetKind
+        string provenance
+        string sourceReference
+        string aspectRatio
+    }
+
+    IMAGE_ANNOTATION {
+        string id PK
+        string imageId FK
+        string label
+        string description
+        float normalizedX
+        float normalizedY
+        float normalizedWidth
+        float normalizedHeight
+        string annotationType
+        string provenance
+    }
+
+    JOURNEY_WAYPOINT {
+        string id PK
+        string roverId FK
+        int sol
+        float distanceKm
+        float elevationMeters
+        string siteName
+        string landmarkName
+        string description
+        string scientificSignificance
+        string primaryTerrain
+        string relatedImageIds
+    }
+```

@@ -60,7 +60,8 @@ const navItems: NavItem[] = [
     name: 'Mars Rover Explorer',
     path: '/rovers',
     icon: <Radio className="w-4 h-4" />,
-    badge: 'PHASE 5',
+    badge: 'ACTIVE',
+    isPhase1Active: true,
   },
   {
     name: 'Asteroid Watch & Lab',
