@@ -1,13 +1,17 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { spaceService } from '../services';
-import { SimulationParameters } from '../types';
+import { SimulationParameters, BriefingCategory } from '../types';
 import { DEFAULT_SIMULATION_PARAMETERS } from '../features/asteroids/utils/planetaryDefenseMath';
 
 export type VisualEffectsLevel = 'high' | 'minimal' | 'off';
 export type TelemetryUnits = 'metric' | 'imperial';
 
 interface AppState {
+  // Planetary Context
+  selectedPlanetId: string;
+  setSelectedPlanetId: (id: string) => void;
+
   // Flagship Temporal & Mission State
   selectedYear: number;
   setSelectedYear: (year: number) => void;
@@ -37,6 +41,15 @@ interface AppState {
   setWhatIfParameters: (params: Partial<SimulationParameters>) => void;
   resetWhatIfParameters: () => void;
 
+  // Space Intelligence State
+  selectedBriefingCategory: BriefingCategory;
+  setSelectedBriefingCategory: (cat: BriefingCategory) => void;
+  selectedGraphNodeId: string | null;
+  setSelectedGraphNodeId: (id: string | null) => void;
+  recentSearches: string[];
+  addRecentSearch: (query: string) => void;
+  clearRecentSearches: () => void;
+
   // Visual Effects & System Accessibility
   visualEffects: VisualEffectsLevel;
   setVisualEffects: (level: VisualEffectsLevel) => void;
@@ -65,6 +78,10 @@ interface AppState {
 export const useAppStore = create<AppState>()(
   persist(
     (set) => ({
+      // Planetary Context Defaults
+      selectedPlanetId: 'earth',
+      setSelectedPlanetId: (id: string) => set({ selectedPlanetId: id }),
+
       selectedYear: 1969,
       setSelectedYear: (year: number) => set({ selectedYear: year }),
       selectedMissionId: null,
@@ -104,6 +121,26 @@ export const useAppStore = create<AppState>()(
       resetWhatIfParameters: () =>
         set({ whatIfParameters: { ...DEFAULT_SIMULATION_PARAMETERS } }),
 
+      // Space Intelligence State Defaults
+      selectedBriefingCategory: 'mission_highlights',
+      setSelectedBriefingCategory: (cat: BriefingCategory) =>
+        set({ selectedBriefingCategory: cat }),
+      selectedGraphNodeId: null,
+      setSelectedGraphNodeId: (id: string | null) => set({ selectedGraphNodeId: id }),
+      recentSearches: ['Mars', 'Apollo 11', 'Perseverance', 'Apophis'],
+      addRecentSearch: (query: string) =>
+        set((state) => {
+          const trimmed = query.trim();
+          if (!trimmed) return state;
+          const filtered = state.recentSearches.filter(
+            (s) => s.toLowerCase() !== trimmed.toLowerCase()
+          );
+          return {
+            recentSearches: [trimmed, ...filtered].slice(0, 8),
+          };
+        }),
+      clearRecentSearches: () => set({ recentSearches: [] }),
+
       visualEffects: 'high',
       setVisualEffects: (level: VisualEffectsLevel) => set({ visualEffects: level }),
 
@@ -135,9 +172,12 @@ export const useAppStore = create<AppState>()(
         demoMode: state.demoMode,
         soundEnabled: state.soundEnabled,
         telemetryUnits: state.telemetryUnits,
+        selectedPlanetId: state.selectedPlanetId,
         selectedRoverId: state.selectedRoverId,
         userRoverNotes: state.userRoverNotes,
         selectedAsteroidId: state.selectedAsteroidId,
+        recentSearches: state.recentSearches,
+        selectedBriefingCategory: state.selectedBriefingCategory,
       }),
     }
   )

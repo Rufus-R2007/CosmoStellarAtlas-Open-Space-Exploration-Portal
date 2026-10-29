@@ -427,3 +427,186 @@ export interface ObservatoryStats {
   totalSurfaceSols: number;
   potentiallyHazardousCount: number;
 }
+
+// ==========================================
+// PHASE 6: SPACE INTELLIGENCE & SMART DISCOVERY
+// ==========================================
+
+export type EntityType =
+  | 'planet'
+  | 'mission'
+  | 'milestone'
+  | 'rover'
+  | 'rover-image'
+  | 'asteroid'
+  | 'briefing'
+  | 'timeline';
+
+export interface SearchResult {
+  id: string;
+  entityId: string;
+  entityType: EntityType;
+  title: string;
+  subtitle?: string;
+  description: string;
+  matchedFields: string[];
+  route: string;
+  relevanceScore: number;
+}
+
+export type QueryIntentType =
+  | 'planet_info'
+  | 'planet_comparison'
+  | 'planet_extreme'
+  | 'mission_info'
+  | 'mission_destination'
+  | 'mission_epoch'
+  | 'rover_info'
+  | 'rover_list'
+  | 'rover_images'
+  | 'asteroid_filter'
+  | 'asteroid_closest'
+  | 'asteroid_explain_distance'
+  | 'general_overview'
+  | 'entity_suggestion'
+  | 'unknown';
+
+export interface QueryIntent {
+  type: QueryIntentType;
+  confidenceOrMatchStrength: number; // 0..1 match strength
+  confidence?: number;
+  extractedEntities: {
+    planetId?: string;
+    secondPlanetId?: string;
+    missionId?: string;
+    roverId?: string;
+    asteroidId?: string;
+    year?: number;
+    decade?: string;
+    destination?: string;
+    filterParam?: string;
+    extremeCriterion?: 'largest' | 'smallest' | 'closest' | 'farthest' | 'hottest' | 'coldest' | 'most_moons' | 'shortest_orbit';
+    matches?: Array<{
+      entityType: EntityType;
+      entityId: string;
+      matchedText: string;
+    }>;
+    [key: string]: any;
+  };
+  extractedFilters: Record<string, any>;
+  parameters?: Record<string, any>;
+  matchedKeywords?: string[];
+  rawQuery: string;
+}
+
+export interface SourceReference {
+  id: string;
+  title: string;
+  entityType: EntityType;
+  route: string;
+  label: string;
+  provenance: 'Curated Reference Record' | 'Deterministic Simulation';
+}
+
+export interface QueryResponse {
+  id: string;
+  question: string;
+  answer: string;
+  intent: QueryIntent;
+  sourceRecordIds: string[];
+  sourceReferences: SourceReference[];
+  relatedEntityIds: string[];
+  suggestedQuestions: string[];
+  supported: boolean;
+  evidenceExplanation?: string;
+  timestamp: string;
+}
+
+export type BriefingCategory =
+  | 'mission_highlights'
+  | 'planetary_discoveries'
+  | 'mars_exploration'
+  | 'asteroid_watch'
+  | 'historical_exploration';
+
+export interface GeneratedBriefing {
+  id: string;
+  title: string;
+  category: BriefingCategory;
+  categoryLabel: string;
+  referenceDate: string;
+  selectedYear?: number;
+  periodLabel: string;
+  summary: string;
+  highlights: string[];
+  sourceRecordIds: string[];
+  sourceReferences: SourceReference[];
+  relatedEntityIds: string[];
+  suggestedNextExploration: {
+    label: string;
+    route: string;
+    description: string;
+  };
+  generationMethod: string;
+  evidenceExplanation: string;
+}
+
+export interface DiscoveryNode {
+  id: string;
+  entityId: string;
+  entityType: 'planet' | 'mission' | 'rover' | 'milestone' | 'asteroid';
+  label: string;
+  subtitle: string;
+  route: string;
+  group: string;
+  badge: string;
+  connectionCount?: number;
+  // Positioning attributes for SVG rendering
+  x?: number;
+  y?: number;
+}
+
+export interface DiscoveryEdge {
+  id: string;
+  sourceNodeId: string;
+  targetNodeId: string;
+  relationshipType:
+    | 'targets_destination'
+    | 'associated_rover'
+    | 'historical_milestone'
+    | 'explored_surface_of'
+    | 'orbital_flyby'
+    | 'same_destination';
+  label: string;
+  description: string;
+}
+
+export interface DiscoveryGraphData {
+  nodes: DiscoveryNode[];
+  edges: DiscoveryEdge[];
+}
+
+export interface Recommendation {
+  id: string;
+  entityId: string;
+  entityType: EntityType;
+  title: string;
+  subtitle: string;
+  description: string;
+  route: string;
+  relevanceScore: number;
+  explanation: string;
+  sourceEntityIds: string[];
+  badgeText: string;
+  category: 'direct_relation' | 'temporal_context' | 'scientific_parallel' | 'exploratory_curiosity';
+}
+
+export interface InsightEvidence {
+  feature: 'briefing' | 'query' | 'recommendation';
+  title: string;
+  inputCriteria: string;
+  rulesApplied: string[];
+  recordsConsultedCount: number;
+  sourceReferences: SourceReference[];
+  algorithmicExplanation: string;
+}

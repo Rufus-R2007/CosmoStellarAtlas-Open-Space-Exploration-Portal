@@ -83,10 +83,10 @@ const modules: ModuleCardInfo[] = [
   {
     name: 'Space Intelligence & Briefings',
     path: '/intelligence',
-    description: 'Curated and simulated scientific dispatches, discovery graph, and deep-space knowledge index.',
+    description: 'Deterministic query engine, autonomous cosmic briefing synthesizer, and relational discovery graph.',
     icon: <Network className="w-6 h-6 text-[#20D9F2]" />,
-    phase: 'Phase 7',
-    status: 'upcoming',
+    phase: 'Phase 6',
+    status: 'active',
     accentGlow: 'cyan',
   },
   {

@@ -1157,4 +1157,324 @@ erDiagram
         string assumptions
         string educationalSignificance
     }
+
+---
+
+## 31. Phase 6 — Use Case Diagram: Cosmo Intelligence & Smart Discovery
+```mermaid
+flowchart TD
+    User([Astronomy Student / Researcher / Faculty])
+
+    subgraph Platform_Intelligence["Space Intelligence & Smart Discovery Subsystems"]
+        UC1(["Explore Subsystems via Anchor Bar"])
+        UC2(["Read Autonomous Cosmic Briefings"])
+        UC3(["Synchronize Historical Briefing with Year Slider"])
+        UC4(["Ask the Atlas Deterministic Query Assistant"])
+        UC5(["Execute Universal Smart Token Search"])
+        UC6(["Filter Search by Entity Type"])
+        UC7(["Launch Global Command Palette (Ctrl+K)"])
+        UC8(["Inspect 2D Cosmic Discovery Graph"])
+        UC9(["Focus 1-Hop Neighborhood Subgraph"])
+        UC10(["Toggle Accessible Relational List View"])
+        UC11(["Review Explainable Recommendations & Rationales"])
+        UC12(["Audit Algorithm Rules & Ephemeris Evidence"])
+    end
+
+    User --> UC1
+    User --> UC2
+    User --> UC3
+    User --> UC4
+    User --> UC5
+    User --> UC6
+    User --> UC7
+    User --> UC8
+    User --> UC9
+    User --> UC10
+    User --> UC11
+    User --> UC12
+```
+
+---
+
+## 32. Phase 6 — Universal Search Activity Diagram
+```mermaid
+flowchart TD
+    Start([User Types in Search Bar or Command Palette]) --> Tokenize["Normalize Query & Split Tokens"]
+    Tokenize --> ReadCatalog["Load In-Memory Inverted Search Catalog"]
+    ReadCatalog --> FilterType{"Is Entity Filter Active?"}
+    FilterType -- Yes --> FilterItems["Discard items not matching type"]
+    FilterType -- No --> IterItems["Evaluate each catalog item"]
+    FilterItems --> IterItems
+
+    IterItems --> ExactMatch{"Exact Title Match?"}
+    ExactMatch -- Yes --> Add50["Score += 50 pts (exact_title)"]
+    ExactMatch -- No --> PrefixMatch{"Title Starts With Query?"}
+    PrefixMatch -- Yes --> Add30["Score += 30 pts (title_prefix)"]
+    PrefixMatch -- No --> TokenLoop["Evaluate individual tokens"]
+
+    Add50 --> TokenLoop
+    Add30 --> TokenLoop
+
+    TokenLoop --> FieldScan["Title (+20), Subtitle (+10), Description (+5)"]
+    FieldScan --> ConjCheck{"Do all query tokens match?"}
+    ConjCheck -- Yes (k > 1) --> Add15["Score += 15 pts (conjunction bonus)"]
+    ConjCheck -- No --> Accumulate["Sum total score"]
+    Add15 --> Accumulate
+
+    Accumulate --> FilterZero{"Score > 0?"}
+    FilterZero -- Yes --> Collect["Push to scoredResults array"]
+    FilterZero -- No --> Skip["Omit item"]
+
+    Collect --> HasMore{"More items?"}
+    Skip --> HasMore
+    HasMore -- Yes --> IterItems
+    HasMore -- No --> Sort["Sort scoredResults DESC by relevanceScore"]
+    Sort --> Slice["Slice top N results (e.g. 12 hits)"]
+    Slice --> Render["Render Result Cards with Working Routes"]
+    Render --> End([Display in UI / Command Palette])
+```
+
+---
+
+## 33. Phase 6 — Query Intent Processing Activity Diagram
+```mermaid
+flowchart TD
+    Input([User Enters Natural Query]) --> Norm["Normalize: lowercase, strip punctuation, trim"]
+    Norm --> ExtractEntities["Extract Entities: Planets, Rovers, Asteroids, Missions, Year"]
+    ExtractEntities --> IntentCheck{"Evaluate Syntactic Patterns"}
+
+    IntentCheck -- "Overview keyword" --> I_Overview["Intent: general_overview"]
+    IntentCheck -- "Distance units (LD/AU)" --> I_Dist["Intent: asteroid_explain_distance"]
+    IntentCheck -- "Closest approach" --> I_Closest["Intent: asteroid_closest"]
+    IntentCheck -- "Hazardous / PHA" --> I_Hazard["Intent: asteroid_filter"]
+    IntentCheck -- "Photos / Camera" --> I_Photos["Intent: rover_images"]
+    IntentCheck -- "List rovers" --> I_RList["Intent: rover_list"]
+    IntentCheck -- "Two planets / Compare" --> I_Compare["Intent: planet_comparison"]
+    IntentCheck -- "Superlatives (hottest, largest)" --> I_Extreme["Intent: planet_extreme"]
+    IntentCheck -- "Four-digit year + mission" --> I_Epoch["Intent: mission_epoch"]
+    IntentCheck -- "Destination + mission" --> I_Dest["Intent: mission_destination"]
+    IntentCheck -- "Specific rover" --> I_Rover["Intent: rover_info"]
+    IntentCheck -- "Specific mission" --> I_Mission["Intent: mission_info"]
+    IntentCheck -- "Specific planet" --> I_Planet["Intent: planet_info"]
+    IntentCheck -- "Entity without question" --> I_Suggest["Intent: entity_suggestion"]
+    IntentCheck -- "No match" --> I_Unknown["Intent: unknown"]
+
+    I_Overview --> Exec["queryExecutionService: Generate Factual Response"]
+    I_Dist --> Exec
+    I_Closest --> Exec
+    I_Hazard --> Exec
+    I_Photos --> Exec
+    I_RList --> Exec
+    I_Compare --> Exec
+    I_Extreme --> Exec
+    I_Epoch --> Exec
+    I_Dest --> Exec
+    I_Rover --> Exec
+    I_Mission --> Exec
+    I_Planet --> Exec
+    I_Suggest --> Exec
+    I_Unknown --> Exec
+
+    Exec --> Format["Synthesize Markdown, Sources, Follow-ups, Audit Evidence"]
+    Format --> Output([Render in Ask-the-Atlas Assistant])
+```
+
+---
+
+## 34. Phase 6 — Natural Language Query Assistant Sequence Diagram
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as Astronomy Student
+    participant AskSection as AskTheAtlasSection
+    participant ExecService as queryExecutionService
+    participant Parser as queryIntentParser
+    participant Datasets as Local Data (Planets/Missions/Rovers/Asteroids)
+    participant EvidencePanel as InsightEvidencePanel
+
+    User->>AskSection: Enter query "What is Mars?" or click suggestion pill
+    AskSection->>ExecService: executeQuery("What is Mars?")
+    ExecService->>Parser: parse("What is Mars?")
+    Parser->>Parser: extractEntities("what is mars") -> [Planet: mars]
+    Parser-->>ExecService: QueryIntent(type: planet_info, confidence: 0.90)
+    ExecService->>Datasets: Retrieve ephemeris record for "mars"
+    Datasets-->>ExecService: Physical specs, atmosphere, features
+    ExecService->>ExecService: Format markdown table, source references, follow-ups
+    ExecService-->>AskSection: QueryResponse(answer, sources, follow-ups, evidenceExplanation)
+    AskSection->>User: Display structured factsheet and verified sources
+
+    opt Inspect Algorithmic Proof
+        User->>AskSection: Click "Audit Rule Logic"
+        AskSection->>EvidencePanel: onInspectEvidence(response)
+        EvidencePanel->>User: Scroll to Evidence Panel & display rules applied
+    end
+```
+
+---
+
+## 35. Phase 6 — Cosmic Briefing Generation Sequence Diagram
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as Researcher
+    participant BriefingSection as CosmicBriefingSection
+    participant AppStore as useAppStore
+    participant BriefingService as briefingGeneratorService
+    participant MissionsData as missionsData
+
+    User->>BriefingSection: Select "Historical Exploration" tab
+    BriefingSection->>AppStore: Read selectedYear (e.g. 1969)
+    BriefingSection->>BriefingService: generateBriefing('historical_exploration', 1969)
+    BriefingService->>MissionsData: Filter missions launched in 1969
+    MissionsData-->>BriefingService: [Apollo 11, Mariner 6, Mariner 7]
+    BriefingService->>BriefingService: Synthesize year-specific dossier & takeaways
+    BriefingService-->>BriefingSection: GeneratedBriefing(title, summary, highlights, CTA)
+    BriefingSection->>User: Display Year 1969 Briefing
+
+    opt Scrub Historical Epoch Slider
+        User->>BriefingSection: Drag slider to year 1977
+        BriefingSection->>AppStore: setSelectedYear(1977)
+        BriefingSection->>BriefingService: generateBriefing('historical_exploration', 1977)
+        BriefingService->>MissionsData: Filter missions launched in 1977
+        MissionsData-->>BriefingService: [Voyager 1, Voyager 2]
+        BriefingService-->>BriefingSection: GeneratedBriefing for Voyager epoch
+        BriefingSection->>User: Dynamically refresh briefing card to 1977
+    end
+```
+
+---
+
+## 36. Phase 6 — Space Intelligence Subsystem Component Diagram
+```mermaid
+graph TD
+    subgraph Route_Page["Container Route (/intelligence)"]
+        IntelligencePage["IntelligencePage"]
+        Hero["CosmoIntelligenceHero (Metrics & Subsystem Jump Bar)"]
+    end
+
+    subgraph Subsystem_Sections["Intelligence Feature Sections"]
+        BriefingSec["CosmicBriefingSection (5 Categories & Year Scrubber)"]
+        AskAtlasSec["AskTheAtlasSection (Deterministic Assistant)"]
+        SearchSec["UniversalSearchSection (Token Inverted Index)"]
+        GraphSec["CosmicDiscoveryGraphSection (2D SVG & Accessible List)"]
+        RecsSec["ExplainableRecommendationsSection (Contextual Matrix)"]
+        EvidenceSec["InsightEvidencePanel (Algorithmic Proof Audit)"]
+    end
+
+    subgraph Service_Layer["Pure Deterministic Services"]
+        BriefingServ["briefingGeneratorService.ts"]
+        IntentParser["queryIntentParser.ts"]
+        QueryExec["queryExecutionService.ts"]
+        SearchIndex["searchIndexService.ts"]
+        GraphServ["discoveryGraphService.ts"]
+        RecsEngine["recommendationEngineService.ts"]
+        EvidenceServ["evidenceExplanationService.ts"]
+    end
+
+    subgraph Global_State["Shared State & Data Store"]
+        Zustand["useAppStore (selectedYear, selectedPlanetId, etc.)"]
+        CommandPaletteComp["CommandPalette.tsx (Global Ctrl+K)"]
+        CuratedData[("Curated Scientific Datasets (Planets, Missions, Rovers, Asteroids)")]
+    end
+
+    IntelligencePage --> Hero
+    IntelligencePage --> BriefingSec
+    IntelligencePage --> AskAtlasSec
+    IntelligencePage --> SearchSec
+    IntelligencePage --> GraphSec
+    IntelligencePage --> RecsSec
+    IntelligencePage --> EvidenceSec
+
+    BriefingSec --> BriefingServ
+    AskAtlasSec --> QueryExec
+    QueryExec --> IntentParser
+    SearchSec --> SearchIndex
+    CommandPaletteComp --> SearchIndex
+    GraphSec --> GraphServ
+    RecsSec --> RecsEngine
+    EvidenceSec --> EvidenceServ
+
+    BriefingServ --> CuratedData
+    QueryExec --> CuratedData
+    SearchIndex --> CuratedData
+    GraphServ --> CuratedData
+    RecsEngine --> CuratedData
+    RecsEngine --> Zustand
+    BriefingSec --> Zustand
+```
+
+---
+
+## 37. Phase 6 — Relational Discovery Graph Entity-Relationship Diagram (ERD)
+```mermaid
+erDiagram
+    PLANET ||--o{ MISSION : "targets_destination"
+    PLANET ||--o{ ROVER : "explored_surface_of"
+    MISSION ||--o{ ROVER : "associated_rover"
+    MISSION ||--o{ MILESTONE : "historical_milestone"
+    ASTEROID ||--o{ PLANET : "orbital_flyby"
+    PLANET ||--o{ PLANET : "same_destination"
+
+    PLANET {
+        string id PK
+        string name
+        string type
+        int orderFromSun
+        float diameterKm
+        float distanceFromSunAU
+        float surfaceTempMeanC
+        float gravityMs2
+        int moonsCount
+        string summary
+        string route
+    }
+
+    MISSION {
+        string id PK
+        string name
+        string agency
+        int launchYear
+        string launchDate
+        string status
+        string destinationPlanetId FK
+        string destinationName
+        string missionType
+        string route
+    }
+
+    ROVER {
+        string id PK
+        string name
+        string agency
+        string status
+        string landingSite
+        int totalSols
+        float distanceTraveledKm
+        int sampleCount
+        string route
+    }
+
+    ASTEROID {
+        string id PK
+        string name
+        string designation
+        int estimatedDiameterMeters
+        boolean isPotentiallyHazardous
+        string closeApproachDate
+        float missDistanceLunar
+        float relativeVelocityKmS
+        string orbitClass
+        string route
+    }
+
+    MILESTONE {
+        string id PK
+        string missionId FK
+        int year
+        string date
+        string title
+        string description
+    }
+```
+
 ```

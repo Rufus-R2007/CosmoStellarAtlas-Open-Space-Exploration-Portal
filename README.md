@@ -5,10 +5,10 @@
 [![Three.js](https://img.shields.io/badge/Three.js-r182-black.svg)](https://threejs.org/)
 [![Vite](https://img.shields.io/badge/Vite-6.0-purple.svg)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC.svg)](https://tailwindcss.com/)
-[![Vitest](https://img.shields.io/badge/Vitest-Passed%20(80%2F80)-brightgreen.svg)](https://vitest.dev/)
+[![Vitest](https://img.shields.io/badge/Vitest-Passed%20(103%2F103)-brightgreen.svg)](https://vitest.dev/)
 [![License](https://img.shields.io/badge/License-MIT-amber.svg)](LICENSE)
 
-> **Software Engineering Micro Project — Phase 5 Asteroid Watch, Encounter Explorer & Planetary Defense Simulation Lab**  
+> **Software Engineering Micro Project — Phase 6 Space Intelligence, Explainable Briefing Engine & Universal Smart Discovery**  
 > **Developer:** Rufus Samuel R  
 > **Institution:** Karunya Institute of Technology and Sciences  
 > **GitHub Repository:** [CosmoStellarAtlas-Open-Space-Exploration-Portal](https://github.com/Rufus-R2007/CosmoStellarAtlas-Open-Space-Exploration-Portal)
@@ -341,14 +341,17 @@ CosmoStellarAtlas-Open-Space-Exploration-Portal/
 │   │   │   ├── utils/
 │   │   │   │   └── planetaryDefenseMath.ts # Pure Deterministic Scientific Physics Engine
 │   │   │   └── AsteroidsPage.tsx # Planetary Defense Portal Container & URL Synchronization
-│   │   ├── intelligence/        # Space Intelligence (Phase 6 Roadmap)
+│   │   ├── intelligence/        # Space Intelligence & Discovery (Phase 6 Completed)
+│   │   │   ├── components/      # Hero, Briefings, AskAtlas, Search, Graph, Recs, Evidence
+│   │   │   ├── services/        # SearchIndex, QueryParser, QueryExec, Briefings, Graph, Recs
+│   │   │   └── IntelligencePage.tsx # Intelligence Portal Container
 │   │   ├── learning/            # Learning Hub (Phase 7 Roadmap)
 │   │   ├── vault/               # Personal Space Vault (Phase 8 Roadmap)
 │   │   └── notfound/            # 404 Route Recovery View
 │   ├── services/                # SpaceDataProvider Interface & Mock Implementation
 │   ├── store/                   # Zustand Global Store (useAppStore)
 │   ├── styles/                  # Tailwind CSS & Global Styles
-│   ├── tests/                   # Vitest Test Suite (80 tests across 7 suites)
+│   ├── tests/                   # Vitest Test Suite (103 tests across 8 suites)
 │   ├── utils/                   # Mathematical utilities (planetaryMath.ts)
 │   └── types/                   # TypeScript Data Contracts and Interfaces
 ├── index.html                   # HTML Entry Point
@@ -390,7 +393,7 @@ npm run dev
 Navigate to `http://localhost:5173/` in your browser.
 
 ### Executing the Automated Test Suite
-Run the Vitest test suite covering data provider methods, mission filtering, planetary 3D rendering fallbacks, temporal synchronization, mission replay speed controls, time capsules, storytelling engine, 404 routing, Mars rover surface operations, and planetary defense physics calculations (80 tests across 7 test suites):
+Run the Vitest test suite covering data provider methods, mission filtering, planetary 3D rendering fallbacks, temporal synchronization, mission replay speed controls, time capsules, storytelling engine, 404 routing, Mars rover surface operations, planetary defense physics calculations, universal search indexing, natural language query intent parsing, autonomous cosmic briefings, relational discovery graph, and explainable recommendations (103 tests across 8 test suites):
 ```bash
 npm run test
 ```
@@ -419,7 +422,7 @@ The compiled bundle will be output to the `dist/` directory, fully configured wi
 | **Phase 3** | **Cosmic Time Machine & Mission Control** | Continuous chronological timeline scrubber (1957–Present), decade jump navigation, epoch overview panel, curated time capsules carousel, 20-mission Mission Control archive with multi-filters and sorting, Recharts historical analytics, deterministic HistoricalInsightsEngine, mission detail dossiers with spacecraft hardware specs, 5-chapter Mission Storytelling Engine, and interactive HTML5 Canvas Mission Replay Engine with tactical scene shaders and variable speed playback. | **COMPLETED** |
 | **Phase 4** | **Mars Rover Explorer & Photo Discovery Lab** | Mars Operations Dashboard Hero with atmospheric dust canvas physics, interactive rover selector across 5 explorers (Perseverance, Curiosity, Opportunity, Spirit, Sojourner), hardware specs & science instrument accordion, Martian sol timeline scrubber, multi-facet camera gallery, interactive Image Inspection Lab modal with zoom/pan and CSS image adjustments (brightness, contrast, saturation), normalized educational surface annotations, Mars surface journey topographic traverse canvas, and rover comparison lab with personal field discovery notes persisted to localStorage. | **COMPLETED** |
 | **Phase 5** | **Asteroid Watch & Planetary Defense Lab** | 50 Near-Earth Object database (8 curated benchmarks + 42 synthetic encounters), 2D Keplerian orbital encounter canvas with perigee vectors and distance HUD, chronological close-approach scrubber (2026–2035), multi-facet search/filter catalog matrix, asteroid inspection dossier modal, flagship Planetary Defense What-If Lab with deterministic physics engine ($r, V, m, v, E_k$, TNT kt/Mt), interactive Recharts curves ($E \propto d^3$, $E \propto v^2$), parameter sensitivity matrix (8x, 4x, 2x), 4 educational scenario presets, explainable physics insights, and academic planetary defense foundations. | **COMPLETED** |
-| **Phase 6** | **Space Intelligence & Learning Hub** | Force-directed discovery knowledge graph, astrophysics lessons, and interactive quizzes. | *Planned* |
+| **Phase 6** | **Space Intelligence & Smart Discovery** | Inverted token search catalog, deterministic rule-based natural language query assistant (14 discrete intents), 5-category autonomous cosmic briefing engine with historical year synchronization, 2D interactive relational discovery knowledge graph (SVG) with 1-hop neighborhood subgraph filtering and accessible list view, explainable contextual recommendation engine with human-readable rationales, and transparent algorithmic evidence audit panel. | **COMPLETED** |
 | **Phase 7** | **Trajectory & Orbital Mechanics Lab** | Dedicated gravity-assist vector calculator, Hohmann transfer orbit simulator, stage separation sequence animations, and interplanetary trajectory modeling. | *Planned* |
 | **Phase 8** | **Personal Vault & Deployment** | Explorer Passport, bookmarks, personal research notes markdown editor, and GitHub Pages release. | *Planned* |
 
@@ -468,13 +471,23 @@ For faculty evaluation and live micro-project demonstrations:
 7. **Review Academic Foundations & Disclosures:**
    - Review the **Planetary Defense Foundations** section detailing optical survey networks (ATLAS, Pan-STARRS, LSST), orbital uncertainty ellipses, Keplerian orbit taxonomy, and 4 deflection architectures (Kinetic Impactor, Gravity Tractor, Ion Beam, Nuclear Standoff).
 
-8. **Execute Automated Quality Verification:**
+8. **Experience D — Space Intelligence & Explainable Smart Discovery (`#/intelligence`):**
+   - Click **Space Intelligence** in the sidebar navigation or use the quick palette (`Ctrl+K`).
+   - **Cosmo Intelligence Hero:** Observe live subsystem telemetry: 14 rule intents, <3ms latency, and 100% offline explainability proof badge.
+   - **Cosmic Briefing Engine:** Test the 5 categories (Mission Highlights, Planetary Discoveries, Mars Exploration, Asteroid Watch, Historical Exploration). In the Historical tab, drag the year slider to landmark years (e.g. 1969, 1977, 2020) and observe dynamic, year-specific dossier generation.
+   - **Ask the Atlas Assistant:** Type natural questions like *"What is Mars?"*, *"Compare Earth and Jupiter"*, *"Which planet has the most moons?"*, or *"Tell me about Apollo 11"*. Verify instant markdown answers, formatted tables, verified source citations, and follow-up prompt suggestions with zero cloud AI API dependencies.
+   - **Universal Smart Search:** Search for `"Jezero"`, `"Apophis"`, or `"Titan"` and observe weighted relevance ranking and active entity filter pills.
+   - **Cosmic Discovery Graph:** Explore the interactive 2D SVG relational network. Click any node (e.g., Mars, Apollo 11, Apophis) to highlight connections, toggle the **1-Hop Neighborhood Focus**, or switch to the **Accessible List View**.
+   - **Explainable Recommendations:** Review prioritized candidates with transparent, human-readable rationales derived from your active application state.
+   - **Insight Evidence Audit Panel:** Click **Audit Rule Logic** to review the exact rule, records examined, and mathematical derivation proofs.
+
+9. **Execute Automated Quality Verification:**
    ```bash
    npx tsc --noEmit
    npm test -- --run
    npm run build
    ```
-   Verify 0 TypeScript errors, 80 passing tests across 7 test suites, and clean static build in `dist/`.
+   Verify 0 TypeScript errors, 103 passing tests across 8 test suites, and clean static production build in `dist/`.
 
 ---
 

@@ -1,15 +1,25 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, X, Globe, Rocket, Shield, Radio, ArrowRight } from 'lucide-react';
+import {
+  Search,
+  X,
+  Globe,
+  Rocket,
+  Compass,
+  CircleDot,
+  FileText,
+  ArrowRight,
+  Sparkles,
+} from 'lucide-react';
 import { useAppStore } from '../../store';
-import { spaceService, SearchResults } from '../../services';
-import { Badge } from './Badge';
+import { searchIndexService } from '../../features/intelligence/services';
+import { SearchResult, EntityType } from '../../types';
 
 export const CommandPalette: React.FC = () => {
   const { isCommandPaletteOpen, setCommandPaletteOpen } = useAppStore();
   const [searchTerm, setSearchTerm] = useState('');
-  const [results, setResults] = useState<SearchResults | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [results, setResults] = useState<SearchResult[]>([]);
+  const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const inputRef = useRef<HTMLInputElement | null>(null);
   const navigate = useNavigate();
 
@@ -31,46 +41,80 @@ export const CommandPalette: React.FC = () => {
   useEffect(() => {
     if (isCommandPaletteOpen) {
       setTimeout(() => inputRef.current?.focus(), 50);
+      setSelectedIndex(0);
     } else {
       setSearchTerm('');
-      setResults(null);
+      setResults([]);
     }
   }, [isCommandPaletteOpen]);
 
   useEffect(() => {
     if (!searchTerm.trim()) {
-      setResults(null);
+      setResults([]);
+      setSelectedIndex(0);
       return;
     }
 
-    const timer = setTimeout(async () => {
-      setLoading(true);
-      try {
-        const res = await spaceService.search(searchTerm);
-        setResults(res);
-      } catch (err) {
-        console.error('Search failure:', err);
-      } finally {
-        setLoading(false);
-      }
-    }, 150);
-
-    return () => clearTimeout(timer);
+    const hits = searchIndexService.query(searchTerm, { limit: 12 });
+    setResults(hits);
+    setSelectedIndex(0);
   }, [searchTerm]);
-
-  if (!isCommandPaletteOpen) return null;
 
   const handleSelect = (path: string) => {
     setCommandPaletteOpen(false);
     navigate(path);
   };
 
-  const totalResults = results
-    ? results.planets.length +
-      results.missions.length +
-      results.rovers.length +
-      results.asteroids.length
-    : 0;
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (results.length === 0) return;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setSelectedIndex((prev) => (prev + 1) % results.length);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setSelectedIndex((prev) => (prev - 1 + results.length) % results.length);
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (results[selectedIndex]) {
+        handleSelect(results[selectedIndex].route);
+      }
+    }
+  };
+
+  if (!isCommandPaletteOpen) return null;
+
+  const getEntityIcon = (type: EntityType) => {
+    switch (type) {
+      case 'planet':
+        return <Globe className="w-4 h-4 text-[#20D9F2]" />;
+      case 'mission':
+        return <Rocket className="w-4 h-4 text-[#FFB45B]" />;
+      case 'rover':
+        return <Compass className="w-4 h-4 text-[#10B981]" />;
+      case 'asteroid':
+        return <CircleDot className="w-4 h-4 text-[#8565FA]" />;
+      case 'briefing':
+        return <FileText className="w-4 h-4 text-[#F43F5E]" />;
+      default:
+        return <Sparkles className="w-4 h-4 text-[#98A7BF]" />;
+    }
+  };
+
+  const getEntityBadgeStyle = (type: EntityType) => {
+    switch (type) {
+      case 'planet':
+        return 'border-[#20D9F2]/30 bg-[#20D9F2]/10 text-[#20D9F2]';
+      case 'mission':
+        return 'border-[#FFB45B]/30 bg-[#FFB45B]/10 text-[#FFB45B]';
+      case 'rover':
+        return 'border-[#10B981]/30 bg-[#10B981]/10 text-[#10B981]';
+      case 'asteroid':
+        return 'border-[#8565FA]/30 bg-[#8565FA]/10 text-[#CBBEFF]';
+      default:
+        return 'border-slate-700 bg-slate-800 text-slate-300';
+    }
+  };
 
   return (
     <div
@@ -82,6 +126,7 @@ export const CommandPalette: React.FC = () => {
       <div
         className="w-full max-w-2xl bg-[#0A1021] border border-[#25334B] rounded-2xl shadow-2xl overflow-hidden text-[#F5F7FF] flex flex-col max-h-[80vh]"
         onClick={(e) => e.stopPropagation()}
+        onKeyDown={handleKeyDown}
       >
         {/* Search Input Bar */}
         <div className="flex items-center px-4 py-3.5 border-b border-[#141D30] gap-3 bg-[#060B19]/70">
@@ -108,173 +153,85 @@ export const CommandPalette: React.FC = () => {
         </div>
 
         {/* Results Container */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4">
-          {loading && (
-            <div className="py-8 text-center text-xs font-telemetry text-[#20D9F2] uppercase tracking-wider">
-              Scanning local celestial repository...
-            </div>
-          )}
-
-          {!loading && !searchTerm && (
+        <div className="flex-1 overflow-y-auto p-4 space-y-2">
+          {!searchTerm && (
             <div className="py-8 text-center text-xs text-[#98A7BF] space-y-1">
               <p className="font-headline font-semibold text-[#F5F7FF] uppercase">
-                Global Command Palette & Atlas Index
+                Universal Smart Command Palette
               </p>
-              <p>Type keywords like "Mars", "Apollo", "Curiosity", or "Apophis" to instantly inspect records.</p>
+              <p>Type keywords like "Mars", "Apollo 11", "Perseverance", "Apophis", or "1969" to inspect records.</p>
             </div>
           )}
 
-          {!loading && searchTerm && totalResults === 0 && (
+          {searchTerm && results.length === 0 && (
             <div className="py-8 text-center text-xs text-[#98A7BF]">
               No celestial records found matching "{searchTerm}".
             </div>
           )}
 
-          {!loading && results && (
-            <div className="space-y-4">
-              {/* Planets */}
-              {results.planets.length > 0 && (
-                <div>
-                  <div className="text-[11px] font-telemetry uppercase tracking-wider text-[#98A7BF] mb-2 flex items-center gap-1.5">
-                    <Globe className="w-3.5 h-3.5 text-[#20D9F2]" />
-                    Planets ({results.planets.length})
-                  </div>
-                  <div className="space-y-1.5">
-                    {results.planets.map((planet) => (
-                      <div
-                        key={planet.id}
-                        onClick={() => handleSelect(`/planets?id=${planet.id}`)}
-                        className="flex items-center justify-between p-2.5 rounded-lg bg-[#060B19]/60 hover:bg-[#10182B] border border-[#141D30] hover:border-[#20D9F2]/40 transition-colors cursor-pointer group"
-                      >
-                        <div className="flex items-center gap-3">
-                          <span
-                            className="w-3 h-3 rounded-full"
-                            style={{ backgroundColor: planet.colorHex }}
-                          />
-                          <div>
-                            <span className="font-headline text-sm font-semibold uppercase group-hover:text-[#20D9F2] transition-colors">
-                              {planet.name}
-                            </span>
-                            <span className="ml-2 font-mono text-xs text-[#98A7BF]">
-                              {planet.codeName}
-                            </span>
-                          </div>
-                        </div>
+          {results.length > 0 && (
+            <div className="space-y-1.5">
+              {results.map((item, idx) => {
+                const isSelected = idx === selectedIndex;
+                return (
+                  <div
+                    key={item.id}
+                    onClick={() => handleSelect(item.route)}
+                    onMouseEnter={() => setSelectedIndex(idx)}
+                    className={`flex items-center justify-between p-3 rounded-xl border transition-all cursor-pointer ${
+                      isSelected
+                        ? 'border-[#20D9F2] bg-[#10182B] shadow-md shadow-[#20D9F2]/10'
+                        : 'border-[#141D30] bg-[#060B19]/60 hover:bg-[#10182B]/60'
+                    }`}
+                  >
+                    <div className="flex items-center gap-3 min-w-0 pr-3">
+                      <div className="shrink-0 rounded-lg p-2 bg-[#141D30]">
+                        {getEntityIcon(item.entityType)}
+                      </div>
+                      <div className="min-w-0">
                         <div className="flex items-center gap-2">
-                          <Badge variant="cyan" size="sm">
-                            {planet.type}
-                          </Badge>
-                          <ArrowRight className="w-4 h-4 text-[#98A7BF] group-hover:text-[#20D9F2] transition-colors" />
+                          <span className="font-headline text-sm font-semibold text-white truncate">
+                            {item.title}
+                          </span>
+                          <span
+                            className={`rounded-full border px-2 py-0.2 text-[9px] font-semibold uppercase tracking-wider ${getEntityBadgeStyle(
+                              item.entityType
+                            )}`}
+                          >
+                            {item.entityType}
+                          </span>
+                        </div>
+                        <div className="font-mono text-xs text-[#98A7BF] truncate">
+                          {item.subtitle}
                         </div>
                       </div>
-                    ))}
-                  </div>
-                </div>
-              )}
+                    </div>
 
-              {/* Missions */}
-              {results.missions.length > 0 && (
-                <div>
-                  <div className="text-[11px] font-telemetry uppercase tracking-wider text-[#98A7BF] mb-2 flex items-center gap-1.5">
-                    <Rocket className="w-3.5 h-3.5 text-[#CBBEFF]" />
-                    Historical Missions ({results.missions.length})
+                    <div className="flex items-center gap-2 shrink-0">
+                      {item.relevanceScore > 0 && (
+                        <span className="hidden sm:inline-block font-mono text-[10px] text-cyan-400/80">
+                          {item.relevanceScore} pts
+                        </span>
+                      )}
+                      <ArrowRight
+                        className={`w-4 h-4 transition-transform ${
+                          isSelected ? 'text-[#20D9F2] translate-x-0.5' : 'text-[#98A7BF]'
+                        }`}
+                      />
+                    </div>
                   </div>
-                  <div className="space-y-1.5">
-                    {results.missions.map((mission) => (
-                      <div
-                        key={mission.id}
-                        onClick={() => handleSelect(`/missions?id=${mission.id}`)}
-                        className="flex items-center justify-between p-2.5 rounded-lg bg-[#060B19]/60 hover:bg-[#10182B] border border-[#141D30] hover:border-[#8565FA]/40 transition-colors cursor-pointer group"
-                      >
-                        <div>
-                          <div className="font-headline text-sm font-semibold uppercase group-hover:text-[#CBBEFF] transition-colors">
-                            {mission.name}
-                          </div>
-                          <div className="font-mono text-xs text-[#98A7BF]">
-                            {mission.agency} • Launch: {mission.launchYear} • Dest: {mission.destinationName}
-                          </div>
-                        </div>
-                        <Badge variant="violet" size="sm">
-                          {mission.status}
-                        </Badge>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Asteroids */}
-              {results.asteroids.length > 0 && (
-                <div>
-                  <div className="text-[11px] font-telemetry uppercase tracking-wider text-[#98A7BF] mb-2 flex items-center gap-1.5">
-                    <Shield className="w-3.5 h-3.5 text-[#FFB45B]" />
-                    Asteroids & NEOs ({results.asteroids.length})
-                  </div>
-                  <div className="space-y-1.5">
-                    {results.asteroids.map((asteroid) => (
-                      <div
-                        key={asteroid.id}
-                        onClick={() => handleSelect(`/asteroids?id=${asteroid.id}`)}
-                        className="flex items-center justify-between p-2.5 rounded-lg bg-[#060B19]/60 hover:bg-[#10182B] border border-[#141D30] hover:border-[#FFB45B]/40 transition-colors cursor-pointer group"
-                      >
-                        <div>
-                          <div className="font-headline text-sm font-semibold uppercase group-hover:text-[#FFB45B] transition-colors">
-                            {asteroid.name}
-                          </div>
-                          <div className="font-mono text-xs text-[#98A7BF]">
-                            Class: {asteroid.orbitClass} • Dia: {asteroid.estimatedDiameterMeters}m
-                          </div>
-                        </div>
-                        <Badge variant={asteroid.isPotentiallyHazardous ? 'gold' : 'outline'} size="sm">
-                          {asteroid.isPotentiallyHazardous ? 'Hazardous' : 'Nominal'}
-                        </Badge>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Rovers */}
-              {results.rovers.length > 0 && (
-                <div>
-                  <div className="text-[11px] font-telemetry uppercase tracking-wider text-[#98A7BF] mb-2 flex items-center gap-1.5">
-                    <Radio className="w-3.5 h-3.5 text-[#20D9F2]" />
-                    Mars Rovers ({results.rovers.length})
-                  </div>
-                  <div className="space-y-1.5">
-                    {results.rovers.map((rover) => (
-                      <div
-                        key={rover.id}
-                        onClick={() => handleSelect(`/rovers?id=${rover.id}`)}
-                        className="flex items-center justify-between p-2.5 rounded-lg bg-[#060B19]/60 hover:bg-[#10182B] border border-[#141D30] hover:border-[#20D9F2]/40 transition-colors cursor-pointer group"
-                      >
-                        <div>
-                          <div className="font-headline text-sm font-semibold uppercase group-hover:text-[#20D9F2] transition-colors">
-                            {rover.name}
-                          </div>
-                          <div className="font-mono text-xs text-[#98A7BF]">
-                            Site: {rover.landingSite} • Sols: {rover.totalSols}
-                          </div>
-                        </div>
-                        <Badge variant="cyan" size="sm">
-                          {rover.status}
-                        </Badge>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
+                );
+              })}
             </div>
           )}
         </div>
 
         {/* Footer info bar */}
         <div className="px-4 py-2.5 bg-[#060B19] border-t border-[#141D30] flex items-center justify-between text-[11px] font-mono text-[#98A7BF]">
-          <span>Navigate with mouse or keyboard</span>
-          <span>CosmoStellarAtlas Local Index</span>
+          <span>Use ↑ ↓ arrows to navigate • ↵ Enter to select</span>
+          <span>CosmoStellarAtlas Inverted Index</span>
         </div>
       </div>
     </div>
   );
 };
-

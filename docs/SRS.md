@@ -226,17 +226,28 @@ Public interfaces for astronomical data and mission archives are often fragmente
 | **FR-50** | Parameter Sensitivity Variation Matrix | The system shall calculate an analytical sensitivity comparison proving $8\times$ energy change on doubled diameter, $4\times$ on doubled velocity, and $2\times$ on doubled density. | Medium |
 | **FR-51** | Explainable Physics & Educational Presets | The system shall provide 4 historical scenario presets (Chelyabinsk, Tunguska, Dimorphos, Comet) and 5 explainable narrative cards detailing mechanics and model limitations. | High |
 | **FR-52** | Academic Planetary Defense Foundations | The system shall provide comprehensive educational reference covering optical/radar NEO survey networks, orbital uncertainty ellipses, Keplerian orbit taxonomy, and 4 mitigation architectures. | Medium |
+| **FR-53** | Space Intelligence Hero & Subsystem Anchor Navigation | The system shall render an intelligence operations hero with real-time entity telemetry metrics, 100% offline explainability badges, and quick jump navigation to all 6 intelligence subsystems. | High |
+| **FR-54** | Autonomous Cosmic Briefing Engine | The system shall generate structured executive intelligence reports across 5 categories (Mission Highlights, Planetary Discoveries, Mars Exploration, Asteroid Watch, Historical Exploration) with dataset reference dates and key takeaways. | High |
+| **FR-55** | Historical Exploration Temporal Synchronization | The system shall synchronize the historical briefing category dynamically with the global `selectedYear` state, generating year-specific dossiers for landmark epochs (e.g. 1969, 1977, 2020) and era-contextual fallbacks for empty years. | High |
+| **FR-56** | Ask the Atlas Natural Language Query Engine | The system shall implement a deterministic natural language query assistant supporting 14 discrete scientific intents, entity extraction, markdown tables, source citations, and follow-up prompt suggestions without cloud APIs. | High |
+| **FR-57** | Inverted Search Index & Multi-Attribute Scoring | The system shall maintain an in-memory inverted search index across Planets, Missions, Milestones, Rovers, Rover Images, Asteroids, and Briefings with weighted field relevance scoring (+50 exact, +20 title token, +10 subtitle). | High |
+| **FR-58** | Universal Smart Search Section | The system shall provide a dedicated search interface with live token search, entity type filter pills, match field badges, and working routes to all internal application modules. | High |
+| **FR-59** | Global Command Palette Integration | The system shall integrate universal smart search into the global `Ctrl+K` Command Palette with arrow key navigation, enter-to-select, and direct routing. | High |
+| **FR-60** | Relational Cosmic Discovery Graph | The system shall render an interactive 2D typed relational knowledge graph (SVG/Canvas) connecting celestial bodies, flight missions, rovers, and asteroids with deterministic coordinates and edge semantics. | High |
+| **FR-61** | Graph Neighborhood Focus & Accessible List View | The system shall support 1-hop neighborhood subgraph filtering around selected nodes, detailed neighbor inspection drawers, and an accessible semantic list alternative for screen readers. | High |
+| **FR-62** | Explainable Contextual Recommendation Engine | The system shall derive prioritized contextual recommendations from active user states (`selectedYear`, `selectedPlanetId`, `selectedMissionId`, `selectedRoverId`, `selectedAsteroidId`) with transparent human-readable rationales. | High |
+| **FR-63** | Algorithmic Insight Evidence & Audit Panel | The system shall render a transparent algorithm provenance panel displaying rules applied, records consulted, execution time, and mathematical derivation proofs for any active insight. | High |
 
 ## 7. Non-Functional Requirements (NFR)
 
 | ID | Title | Target Metric |
 | :--- | :--- | :--- |
 | **NFR-01** | Performance & Startup | First Contentful Paint (FCP) under 1.2s on standard broadband. Bundle size gzipped under 350 kB. |
-| **NFR-02** | Zero Network Latency | Normal application operations require zero HTTP requests to external servers. |
+| **NFR-02** | Zero Network Latency | Normal application operations require zero HTTP requests to external servers. Sub-millisecond query execution (< 3 ms). |
 | **NFR-03** | Portability & Deployment | Static build deployable to GitHub Pages with relative asset addressing and hash-based client routing. |
 | **NFR-04** | Accessibility & Motion | Supports semantic HTML, ARIA attributes, keyboard navigation, and reduced-motion user preferences. |
 | **NFR-05** | Maintainability & Types | 100% TypeScript compilation with zero type errors and strict type safety. |
-| **NFR-06** | Test Coverage | Automated test coverage spanning 80 unit and component test cases across 7 suites verifying all core features. |
+| **NFR-06** | Test Coverage | Automated test coverage spanning 103 unit and component test cases across 8 suites verifying all core features. |
 | **NFR-07** | Browser Compatibility | Fully operational across Chrome, Edge, Firefox, Safari, and mobile WebKit viewports. |
 | **NFR-08** | Visual Cohesion | Adherence to the AstroNav design specification (Hex tokens: #060B19, #20D9F2, #8565FA, #FFB45B, #D76B35, #9C4229, #E3A66B). |
 

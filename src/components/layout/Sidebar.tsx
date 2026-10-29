@@ -74,7 +74,8 @@ const navItems: NavItem[] = [
     name: 'Space Intelligence',
     path: '/intelligence',
     icon: <Network className="w-4 h-4" />,
-    badge: 'PHASE 7',
+    badge: 'ACTIVE',
+    isPhase1Active: true,
   },
   {
     name: 'Learning Hub',
