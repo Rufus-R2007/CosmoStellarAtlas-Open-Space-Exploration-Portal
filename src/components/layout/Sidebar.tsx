@@ -81,13 +81,15 @@ const navItems: NavItem[] = [
     name: 'Learning Hub',
     path: '/learn',
     icon: <BookOpen className="w-4 h-4" />,
-    badge: 'PHASE 7',
+    badge: 'ACTIVE',
+    isPhase1Active: true,
   },
   {
     name: 'Personal Vault',
     path: '/vault',
     icon: <Vault className="w-4 h-4" />,
-    badge: 'PHASE 8',
+    badge: 'ACTIVE',
+    isPhase1Active: true,
   },
 ];
 

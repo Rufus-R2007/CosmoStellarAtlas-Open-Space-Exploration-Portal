@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect } from 'react';
 import {
   Sliders,
   RotateCcw,
@@ -23,6 +23,7 @@ import {
   SimulationResult,
   EducationalScenario,
 } from '../../../../types';
+import { useVaultStore } from '../../../../store/useVaultStore';
 import {
   calculateSimulationResult,
   generateEnergyVsDiameterCurve,
@@ -48,6 +49,16 @@ export const PlanetaryDefenseWhatIfLab: React.FC<PlanetaryDefenseWhatIfLabProps>
   const results: SimulationResult = useMemo(() => {
     return calculateSimulationResult(parameters);
   }, [parameters]);
+
+  const logExplorationEvent = useVaultStore((s) => s.logExplorationEvent);
+
+  useEffect(() => {
+    logExplorationEvent('asteroid_simulation_completed', undefined, {
+      diameter: parameters.diameterM,
+      velocity: parameters.velocityKmS,
+      megatons: results.kineticEnergyMegatons,
+    });
+  }, [results.kineticEnergyMegatons, logExplorationEvent, parameters.diameterM, parameters.velocityKmS]);
 
   // Curves for dynamic Recharts visualization
   const energyVsDiameterData = useMemo(() => {

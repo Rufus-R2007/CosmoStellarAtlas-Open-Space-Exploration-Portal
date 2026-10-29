@@ -9,4 +9,5 @@ export * from './roverCameras';
 export * from './roverImages';
 export * from './roverWaypoints';
 export * from './roverVisualAssets';
+export * from './learningTrails';
 

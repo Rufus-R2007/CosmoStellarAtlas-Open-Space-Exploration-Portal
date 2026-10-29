@@ -5,9 +5,11 @@ import {
   Sliders,
   Scale,
   BookOpen,
+  Star,
 } from 'lucide-react';
 import { Badge } from '../../../../components/common/Badge';
 import { Asteroid } from '../../../../types';
+import { useVaultStore } from '../../../../store/useVaultStore';
 
 interface AsteroidDetailModalProps {
   asteroid: Asteroid | null;
@@ -29,6 +31,9 @@ export const AsteroidDetailModal: React.FC<AsteroidDetailModalProps> = ({
   }, [onClose]);
 
   if (!asteroid) return null;
+
+  const isFav = useVaultStore.getState().isFavorite('asteroid', asteroid.id);
+  const toggleFavorite = useVaultStore.getState().toggleFavorite;
 
   const meanDiameter =
     asteroid.estimatedDiameterMeanM ?? asteroid.estimatedDiameterMeters;
@@ -69,12 +74,35 @@ export const AsteroidDetailModal: React.FC<AsteroidDetailModalProps> = ({
         </div>
 
         {/* Title */}
-        <h2
-          id="asteroid-modal-title"
-          className="text-2xl sm:text-3xl font-extrabold uppercase tracking-wide text-white mb-2"
-        >
-          {asteroid.name}
-        </h2>
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
+          <h2
+            id="asteroid-modal-title"
+            className="text-2xl sm:text-3xl font-extrabold uppercase tracking-wide text-white"
+          >
+            {asteroid.name}
+          </h2>
+          <button
+            onClick={() =>
+              toggleFavorite({
+                entityType: 'asteroid',
+                entityId: asteroid.id,
+                title: asteroid.name,
+                subtitle: `${asteroid.orbitClass.toUpperCase()} Class • ${asteroid.isPotentiallyHazardous ? 'PHA' : 'Non-Hazardous'}`,
+                route: `/asteroids`,
+                categoryBadge: 'Asteroid',
+                isSynthetic: asteroid.source === 'synthetic',
+              })
+            }
+            className={`px-3 py-1.5 rounded-lg border text-xs font-mono transition-all cursor-pointer flex items-center gap-1.5 ${
+              isFav
+                ? 'bg-[#FFB45B]/20 border-[#FFB45B] text-[#FFB45B]'
+                : 'bg-white/5 border-white/10 text-gray-400 hover:text-white'
+            }`}
+          >
+            <Star className={`w-3.5 h-3.5 ${isFav ? 'fill-[#FFB45B]' : ''}`} />
+            <span>{isFav ? 'Saved in Vault' : 'Save Asteroid'}</span>
+          </button>
+        </div>
         <div className="text-xs font-mono text-[#20D9F2] mb-4">
           DESIGNATION: {asteroid.designation} • ID: {asteroid.id}
         </div>

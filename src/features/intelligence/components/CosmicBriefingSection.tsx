@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   FileText,
@@ -13,6 +13,7 @@ import {
 import { BriefingCategory, GeneratedBriefing } from '../../../types';
 import { briefingGeneratorService } from '../services';
 import { useAppStore } from '../../../store/useAppStore';
+import { useVaultStore } from '../../../store/useVaultStore';
 
 interface Props {
   onInspectEvidence?: (briefing: GeneratedBriefing) => void;
@@ -28,6 +29,15 @@ export const CosmicBriefingSection: React.FC<Props> = ({ onInspectEvidence }) =>
 
   // Generate active briefing dynamically
   const briefing = briefingGeneratorService.generateBriefing(activeCategory, localYear);
+
+  const logExplorationEvent = useVaultStore((s) => s.logExplorationEvent);
+
+  useEffect(() => {
+    logExplorationEvent('briefing_generated', briefing.id, {
+      category: briefing.category,
+      title: briefing.title,
+    });
+  }, [briefing.id, logExplorationEvent, briefing.category, briefing.title]);
 
   const categories: Array<{ id: BriefingCategory; label: string; badge: string }> = [
     { id: 'mission_highlights', label: 'Mission Highlights', badge: 'Active Fleet' },

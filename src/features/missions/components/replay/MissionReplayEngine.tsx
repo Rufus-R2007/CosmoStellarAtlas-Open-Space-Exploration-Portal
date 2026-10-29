@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { Mission, MissionMilestone, ReplaySceneType } from '../../../../types';
 import { useAppStore } from '../../../../store';
+import { useVaultStore } from '../../../../store/useVaultStore';
 
 interface MissionReplayEngineProps {
   mission: Mission;
@@ -32,6 +33,7 @@ export const MissionReplayEngine: React.FC<MissionReplayEngineProps> = ({
   initialMilestoneIndex = 0,
 }) => {
   const { visualEffects } = useAppStore();
+  const logExplorationEvent = useVaultStore((s) => s.logExplorationEvent);
   const milestones = mission.milestones || [];
 
   const [currentIndex, setCurrentIndex] = useState<number>(initialMilestoneIndex);
@@ -67,8 +69,11 @@ export const MissionReplayEngine: React.FC<MissionReplayEngineProps> = ({
     } else {
       setIsPlaying(false);
       setProgressPercent(100);
+      logExplorationEvent('mission_replay_completed', mission.id, {
+        missionName: mission.name,
+      });
     }
-  }, [currentIndex, milestones.length]);
+  }, [currentIndex, milestones.length, logExplorationEvent, mission.id, mission.name]);
 
   // Handle stepping to previous milestone
   const handlePrev = useCallback(() => {

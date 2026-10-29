@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import {
   Scale,
   Sparkles,
@@ -12,6 +12,7 @@ import { Badge } from '../../../../components/common/Badge';
 import { SectionHeader } from '../../../../components/common/SectionHeader';
 import { computePlanetComparison } from '../../../../utils/planetaryMath';
 import { PlanetaryInsightsEngine } from '../../services/PlanetaryInsightsEngine';
+import { useVaultStore } from '../../../../store/useVaultStore';
 
 interface PlanetaryComparisonLabProps {
   planets: Planet[];
@@ -47,6 +48,17 @@ export const PlanetaryComparisonLab: React.FC<PlanetaryComparisonLabProps> = ({
     () => PlanetaryInsightsEngine.generateComparisonInsights(planetA, planetB),
     [planetA, planetB]
   );
+
+  const logExplorationEvent = useVaultStore((s) => s.logExplorationEvent);
+
+  useEffect(() => {
+    if (planetA.id !== planetB.id) {
+      logExplorationEvent('planet_comparison_completed', `${planetA.id}_vs_${planetB.id}`, {
+        planetA: planetA.name,
+        planetB: planetB.name,
+      });
+    }
+  }, [planetA.id, planetB.id, logExplorationEvent, planetA.name, planetB.name]);
 
   const handleSwap = () => {
     setPlanetAId(planetBId);

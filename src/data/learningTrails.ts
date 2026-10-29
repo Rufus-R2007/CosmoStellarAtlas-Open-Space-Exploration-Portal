@@ -1,0 +1,811 @@
+import { LearningTrail } from '../types';
+
+export const learningTrails: LearningTrail[] = [
+  {
+    id: 'trail-solar-system',
+    title: 'Journey Through the Solar System',
+    codeName: 'SOL-CURR-01',
+    tagline: 'Planetary Taxonomy, Atmospheric Dynamics & Comparative Gravimetry',
+    description:
+      'Master the astrophysical principles governing the eight primary planets of our solar system, contrasting terrestrial rocky cores with gas giant convective magnetospheres.',
+    category: 'Solar System',
+    estimatedMinutes: 45,
+    colorHex: '#20D9F2',
+    iconName: 'Globe',
+    passingScorePercent: 70,
+    lessons: [
+      {
+        id: 'lesson-sol-01',
+        trailId: 'trail-solar-system',
+        order: 1,
+        title: 'Inner Terrestrial Worlds: Formation, Density & Basaltic Crusts',
+        subtitle: 'Comparative study of Mercury, Venus, Earth, and Mars',
+        estimatedMinutes: 15,
+        summary:
+          'Investigate how solar accretion dynamics condensed refractory elements closer to Sol, giving birth to dense silicate-mantle worlds with metallic iron cores.',
+        learningObjectives: [
+          'Differentiate terrestrial planet interior structures from gas giant envelopes',
+          'Understand runaway greenhouse feedback loops on Venus versus balanced carbon cycles on Earth',
+          'Explain why Mercury retains the highest iron-to-silicate ratio of any solar system planet',
+        ],
+        contentSections: [
+          {
+            title: 'Refractory Condensation within the Protoplanetary Frost Line',
+            paragraphs: [
+              'Within approximately 2.7 to 3.0 Astronomical Units (AU) from the protosun, radiation temperatures were too intense for volatile compounds such as water, methane, and ammonia to condense into ices. Consequently, the inner protoplanets grew primarily through collisions of refractory nickel-iron alloys and silicate minerals.',
+              'Mercury, forming nearest to the primordial sun, crystallized with an oversized iron-rich metallic core occupying roughly 85% of its planetary radius. In contrast, Earth and Venus developed balanced layered interiors: brittle crusts, convective peridotite mantles, and molten liquid outer cores powering planetary dynamos.',
+            ],
+            callout: {
+              type: 'fact',
+              text: 'The frost line (or snow line) at ~2.7 AU established the fundamental boundary between dense rocky worlds and giant volatile-rich planets.',
+            },
+          },
+          {
+            title: 'Atmospheric Evolution: The Divergence of Earth and Venus',
+            paragraphs: [
+              'Early Venus and Earth likely started with comparable volatile inventories. However, Venus received roughly double the solar irradiance of Earth. Without liquid oceans to sequester carbon dioxide into carbonate rocks, water vapor photodissociated in the upper atmosphere while hydrogen escaped into interplanetary space.',
+              'This runaway greenhouse dynamic left Venus with a crushing 92-bar atmosphere comprised of 96.5% carbon dioxide, driving surface temperatures to a scorching 464°C—hotter even than Mercury despite being nearly twice as far from the Sun.',
+            ],
+          },
+        ],
+        keyTakeaways: [
+          'Inner planets condensed inside the frost line where only silicates and metals could solidify.',
+          'Mercury features the highest core-to-crust ratio due to early vaporization or catastrophic impact stripping.',
+          'Venus exemplifies runaway greenhouse heating driven by carbon dioxide saturation without oceanic sinks.',
+        ],
+        moduleRoute: '/planets?selected=venus',
+        moduleRouteLabel: 'Inspect Venus in Planet Explorer',
+        sourceReference: 'NASA Planetary Science Division / JPL Horizons System',
+      },
+      {
+        id: 'lesson-sol-02',
+        trailId: 'trail-solar-system',
+        order: 2,
+        title: 'Gas Giants & Magnetospheres: Jupiter & Saturn Systems',
+        subtitle: 'Metallic hydrogen dynamos, ring dynamics, and atmospheric zones',
+        estimatedMinutes: 15,
+        summary:
+          'Explore how Jupiter and Saturn sequestered the majority of primordial nebular hydrogen and helium, generating immense magnetic environments and complex moon systems.',
+        learningObjectives: [
+          'Describe the transition of hydrogen into an electrical metallic conductor under extreme megabar pressures',
+          'Analyze zonal atmospheric jet streams, the Great Red Spot anticyclone, and Saturnian hex patterns',
+          'Comprehend the orbital resonance mechanisms that sustain Saturn’s water-ice ring rings',
+        ],
+        contentSections: [
+          {
+            title: 'Liquid Metallic Hydrogen and Mega-Dynamos',
+            paragraphs: [
+              'Jupiter and Saturn possess internal pressures exceeding 2 to 4 million bars (megabars) at depths below 15,000 km. Under these conditions, diatomic hydrogen molecules are crushed so tightly that valence electrons dissociate, forming an electrically conductive liquid metallic hydrogen ocean.',
+              'Rapid planetary rotation (Jupiter spins once every 9.93 hours) drives intense Coriolis forces through this metallic fluid, generating a magnetosphere so vast that if visible from Earth, it would appear several times larger than the full moon.',
+            ],
+            callout: {
+              type: 'tip',
+              text: 'Liquid metallic hydrogen behaves like liquid mercury metal: it conducts heat and electrical currents, generating planetary magnetic fields.',
+            },
+          },
+          {
+            title: 'Saturn’s Ring Architecture and Orbital Resonance',
+            paragraphs: [
+              'Saturn’s rings span over 282,000 kilometers in diameter yet average only 10 to 30 meters in vertical thickness. Composed of 99% pure water ice particles ranging from pebble-sized grains to boulder fragments, they are sculpted by orbital resonances with shepherd moons like Prometheus and Pandora.',
+              'The Cassini Division, a 4,800 km gap between the A and B rings, is maintained by a 2:1 orbital resonance with the moon Mimas, which systematically ejects orbital particles.',
+            ],
+          },
+        ],
+        keyTakeaways: [
+          'Deep within Jupiter and Saturn, hydrogen transitions into an electrically conductive liquid metal.',
+          'Jupiter’s Great Red Spot is an anticyclonic storm that has persisted for over 350 years.',
+          'Saturn’s expansive ring plane is extraordinarily thin (~10–30 meters) and carved by gravitational resonances.',
+        ],
+        moduleRoute: '/planets?selected=jupiter',
+        moduleRouteLabel: 'Examine Jupiter & Saturn in Planetarium',
+        sourceReference: 'NASA Cassini-Huygens & Juno Science Archives',
+      },
+      {
+        id: 'lesson-sol-03',
+        trailId: 'trail-solar-system',
+        order: 3,
+        title: 'Ice Giants & Deep Solar System Outer Reaches',
+        subtitle: 'Uranus axial tilt, Neptune supersonic winds, and Kuiper belt frontiers',
+        estimatedMinutes: 15,
+        summary:
+          'Investigate Uranus and Neptune, the solar system’s ice giants, characterized by supercritical water-ammonia-methane mantles and high-altitude hydrocarbon hazes.',
+        learningObjectives: [
+          'Differentiate ice giant mantle compositions from hydrogen-dominated gas giant interiors',
+          'Evaluate the impact hypothesis explaining Uranus’s extreme 97.8° axial inclination',
+          'Analyze the supersonic storm dynamics of Neptune driven by deep internal heat reservoirs',
+        ],
+        contentSections: [
+          {
+            title: 'Supercritical Water-Methane-Ammonia Mantles',
+            paragraphs: [
+              'Unlike Jupiter and Saturn, Uranus and Neptune consist of only 15–20% hydrogen and helium by mass. Their interior bulks are dominated by a hot, dense fluid of "ices"—compounds of water (H2O), ammonia (NH3), and methane (CH4) under thousands of atmospheres of pressure.',
+              'Methane gas in their upper atmospheres absorbs red light and reflects cyan and azure wavelengths, giving Uranus its aquamarine hue and Neptune its vivid cobalt coloration.',
+            ],
+            callout: {
+              type: 'fact',
+              text: 'Neptune radiates 2.61 times more thermal energy than it receives from the dim sunlight at 30 AU, driving atmospheric winds exceeding 2,100 km/h.',
+            },
+          },
+          {
+            title: 'The Tilted Dynamo of Uranus',
+            paragraphs: [
+              'Uranus orbits Sol with an axial tilt of 97.77°, effectively rolling on its side along its 84-year orbital path. This orientation causes extreme 42-year polar daylight followed by 42-year polar night.',
+              'Planetary scientists attribute this anomalous tilt to one or more giant protoplanetary collisions during the Late Heavy Bombardment epoch. Moreover, Uranus’s magnetic field is offset from its physical center by one-third of its radius and tilted 59° from its rotational axis.',
+            ],
+          },
+        ],
+        keyTakeaways: [
+          'Ice giants are dominated by high-pressure ionic water, ammonia, and methane rather than metallic hydrogen.',
+          'Uranus’s 98° tilt produces the most extreme seasonal variations in the solar system.',
+          'Neptune harbors the fastest recorded wind speeds in the solar system, topping 2,100 km/h.',
+        ],
+        moduleRoute: '/planets?selected=uranus',
+        moduleRouteLabel: 'Explore Uranus & Neptune in Comparison Lab',
+        sourceReference: 'NASA Voyager 2 Science Dataset / Hubble Outer Planet Survey',
+      },
+    ],
+    quiz: [
+      {
+        id: 'quiz-sol-01',
+        trailId: 'trail-solar-system',
+        question: 'Which of the following inner planets has the highest bulk iron-to-silicate ratio?',
+        type: 'multiple-choice',
+        options: ['Mars', 'Venus', 'Mercury', 'Earth'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Mercury possesses an extraordinarily large metallic iron core that makes up roughly 85% of its planetary radius and approximately 70% of its total mass.',
+        relatedLessonId: 'lesson-sol-01',
+      },
+      {
+        id: 'quiz-sol-02',
+        trailId: 'trail-solar-system',
+        question: 'What is the primary gas driving the extreme runaway greenhouse effect on Venus?',
+        type: 'multiple-choice',
+        options: ['Sulfur Dioxide (SO2)', 'Carbon Dioxide (CO2)', 'Methane (CH4)', 'Nitrogen (N2)'],
+        correctAnswerIndex: 1,
+        explanation:
+          'Venus’s dense 92-bar atmosphere is 96.5% Carbon Dioxide, trapping thermal infrared radiation and driving mean surface temperatures to 464°C.',
+        relatedLessonId: 'lesson-sol-01',
+      },
+      {
+        id: 'quiz-sol-03',
+        trailId: 'trail-solar-system',
+        question: 'What state of matter in Jupiter’s deep interior generates its intense planetary magnetic field?',
+        type: 'multiple-choice',
+        options: ['Solid iron-nickel core', 'Liquid metallic hydrogen', 'Supercritical carbon dioxide', 'Plasma quartz mantle'],
+        correctAnswerIndex: 1,
+        explanation:
+          'Under pressures exceeding 2 megabars, hydrogen behaves as an electrical conductor known as liquid metallic hydrogen, driving a dynamo via rapid planetary rotation.',
+        relatedLessonId: 'lesson-sol-02',
+      },
+      {
+        id: 'quiz-sol-04',
+        trailId: 'trail-solar-system',
+        question: 'Saturn’s rings are primarily composed of rocky silicate boulders and iron meteorites rather than water ice.',
+        type: 'true-false',
+        options: ['True', 'False'],
+        correctAnswerIndex: 1,
+        explanation:
+          'False. Cassini data established that Saturn’s rings are over 99% pure water ice, with only minor traces of tholins and silicate dust.',
+        relatedLessonId: 'lesson-sol-02',
+      },
+      {
+        id: 'quiz-sol-05',
+        trailId: 'trail-solar-system',
+        question: 'What is the approximate axial tilt of Uranus relative to its orbital plane?',
+        type: 'multiple-choice',
+        options: ['23.4°', '3.1°', '53.5°', '97.8°'],
+        correctAnswerIndex: 3,
+        explanation:
+          'Uranus features an axial tilt of 97.77°, causing it to rotate almost completely on its side as it orbits the Sun.',
+        relatedLessonId: 'lesson-sol-03',
+      },
+      {
+        id: 'quiz-sol-06',
+        trailId: 'trail-solar-system',
+        question: 'Neptune possesses the fastest recorded planetary winds in the solar system, exceeding 2,000 km/h.',
+        type: 'true-false',
+        options: ['True', 'False'],
+        correctAnswerIndex: 0,
+        explanation:
+          'True. Voyager 2 tracked equatorial retrograde cloud features on Neptune moving at velocities of up to 2,100 km/h (580 m/s).',
+        relatedLessonId: 'lesson-sol-03',
+      },
+    ],
+  },
+  {
+    id: 'trail-mars-exploration',
+    title: 'Mission to Mars: Surface Science & Robotic Expeditions',
+    codeName: 'MARS-CURR-02',
+    tagline: 'Geological Eras, Jezero Paleolake & In-Situ Instrument Laboratories',
+    description:
+      'Trace humanity’s robotic assault on Mars, from the wheel tracks of Sojourner to Perseverance’s delta core sampling and autonomous rotorcraft flight in thin air.',
+    category: 'Mars Exploration',
+    estimatedMinutes: 40,
+    colorHex: '#FFB45B',
+    iconName: 'Radio',
+    passingScorePercent: 70,
+    lessons: [
+      {
+        id: 'lesson-mars-01',
+        trailId: 'trail-mars-exploration',
+        order: 1,
+        title: 'The Red Planet’s Evolution: Noachian to Amazonian Eras',
+        subtitle: 'From a warm, wet hydrologic cycle to a hyper-arid desiccated desert',
+        estimatedMinutes: 12,
+        summary:
+          'Decipher the three geological epochs of Mars to understand how magnetic field cessation allowed solar wind sputtering to strip away a thick primordial atmosphere.',
+        learningObjectives: [
+          'Define the Noachian, Hesperian, and Amazonian geological eras of Mars',
+          'Understand how the loss of the planetary dynamo caused atmospheric stripping',
+          'Identify geological geomorphologies indicating ancient standing liquid water',
+        ],
+        contentSections: [
+          {
+            title: 'Chronology of a Dying Hydrosphere',
+            paragraphs: [
+              'Geologists partition Mars’s 4.5-billion-year history into three distinct eras. During the Noachian era (4.1 to 3.7 billion years ago), an active core dynamo supported a magnetosphere, a dense CO2 atmosphere, and rainfall that carved extensive river drainage valleys.',
+              'During the Hesperian era (3.7 to 3.0 Gya), widespread volcanic basaltic floods released sulfur dioxide, converting lakes into acidic, ephemeral brine ponds. Finally, the Amazonian era (3.0 Gya to present) ushered in global desiccation, thin cold air, and iron oxidation that rusted the planetary regolith into hematite red dust.',
+            ],
+            callout: {
+              type: 'fact',
+              text: 'When the Martian core dynamo cooled and stopped ~3.9 billion years ago, solar wind stripped away >90% of the Martian atmosphere.',
+            },
+          },
+        ],
+        keyTakeaways: [
+          'Noachian epoch featured valley networks, phyllosilicate clays, and active hydrological cycles.',
+          'Atmospheric loss was caused by solar wind sputtering after the internal magnetic dynamo died.',
+          'The modern Martian atmosphere exerts an average surface pressure of only 6.1 millibars (<1% of Earth).',
+        ],
+        moduleRoute: '/rovers',
+        moduleRouteLabel: 'View Mars Surface Operations Console',
+        sourceReference: 'NASA Mars Exploration Program / MAVEN Atmospheric Science Team',
+      },
+      {
+        id: 'lesson-mars-02',
+        trailId: 'trail-mars-exploration',
+        order: 2,
+        title: 'Robotic Surface Operations: Mastcam, SuperCam & Sample Caching',
+        subtitle: 'The engineering marvels driving Curiosity and Perseverance',
+        estimatedMinutes: 14,
+        summary:
+          'Deep dive into the robotics, spectrometers, and autonomous navigation architectures enabling remote field geology 200 million kilometers from Earth.',
+        learningObjectives: [
+          'Examine the multi-spectral stereoscopic optics of Mastcam-Z and ChemCam/SuperCam',
+          'Explain the physics of Multi-Mission Radioisotope Thermoelectric Generators (MMRTG)',
+          'Understand the Mars Sample Return caching protocol implemented in Jezero Crater',
+        ],
+        contentSections: [
+          {
+            title: 'Optical and Spectroscopic Instrument Suites',
+            paragraphs: [
+              'Both Curiosity and Perseverance carry mast-mounted optical sensors. Mastcam-Z provides 2-megapixel stereo color imaging with 3:1 optical zoom and 11 narrowband geology filters, allowing mineral identification via iron oxide absorption features.',
+              'SuperCam combines Laser-Induced Breakdown Spectroscopy (LIBS) with Raman spectroscopy. By firing infrared laser pulses at rock targets up to 7 meters away, it vaporizes a pinpoint spot into luminous plasma and analyzes its emission spectra to determine elemental composition.',
+            ],
+            callout: {
+              type: 'tip',
+              text: 'Laser spectroscopy permits non-contact geomechanical analysis, saving rover drive time and arm deployment cycles.',
+            },
+          },
+          {
+            title: 'Nuclear Power and Sample Hermetic Caching',
+            paragraphs: [
+              'Unlike early solar-powered rovers like Spirit and Opportunity, which succumbed to Martian dust deposition on solar panels, modern flagship rovers are powered by 4.8 kg of Plutonium-238 dioxide in an MMRTG, providing ~110 Watts of continuous electrical power and waste heat.',
+              'Perseverance’s Sample Caching System drills 13 mm cylindrical rock cores, hermetically seals them inside ultraclean titanium tubes, and depots them on the surface for collection by future sample return landers.',
+            ],
+          },
+        ],
+        keyTakeaways: [
+          'SuperCam uses laser-induced breakdown spectroscopy to vaporize rocks at distance for chemical assays.',
+          'Plutonium-238 MMRTGs provide thermal warmth and electrical power unaffected by Martian dust storms.',
+          'Perseverance has successfully sealed dozens of geological core samples for Mars Sample Return.',
+        ],
+        moduleRoute: '/rovers',
+        moduleRouteLabel: 'Inspect Rover Instruments in Photo Lab',
+        sourceReference: 'NASA JPL Curiosity & Perseverance Operations Manuals',
+      },
+      {
+        id: 'lesson-mars-03',
+        trailId: 'trail-mars-exploration',
+        order: 3,
+        title: 'The Search for Biosignatures in Ancient Martian Fluvial Sediments',
+        subtitle: 'Astrobiology in Jezero Crater and Gale Crater',
+        estimatedMinutes: 14,
+        summary:
+          'Analyze how scientists identify potential ancient biosignatures within deltaic mudstones, silica beds, and carbonate rims on Mars.',
+        learningObjectives: [
+          'Define the term biosignature in the context of astrobiological sample analysis',
+          'Evaluate Jezero Crater’s paleolake delta as a prime preservation environment',
+          'Understand the role of SHERLOC deep-UV fluorescence in detecting organic rings',
+        ],
+        contentSections: [
+          {
+            title: 'Deltaic Sedimentary Environments as Preservation Windows',
+            paragraphs: [
+              'Jezero Crater was chosen for the Perseverance expedition because orbital CRISM spectroscopy detected fine-grained clays and carbonates within a preserved river delta. On Earth, mudstones deposited in quiet lacustrine environments preserve microfossils and organic macromolecules for billions of years.',
+              'SHERLOC (Scanning Habitable Environments with Raman & Luminescence for Organics & Chemicals), mounted on Perseverance’s robotic arm turret, shines 248.6 nm deep-ultraviolet light to excite fluorescence in aromatic organic rings without destroying delicate mineral matrices.',
+            ],
+            callout: {
+              type: 'warning',
+              text: 'Detecting organic carbon compounds is not definitive proof of life, as abiotic processes (like Fischer-Tropsch synthesis) can also synthesize organic compounds.',
+            },
+          },
+        ],
+        keyTakeaways: [
+          'River deltas concentrate fine mudstones capable of preserving organic molecules across eons.',
+          'SHERLOC uses deep-UV Raman to map aromatic hydrocarbons at micro-spatial resolutions.',
+          'Verification of ancient Martian life requires returning hermetically sealed core samples to terrestrial laboratories.',
+        ],
+        moduleRoute: '/missions/perseverance',
+        moduleRouteLabel: 'Examine Perseverance Mission in Mission Control',
+        sourceReference: 'NASA Mars 2020 Science Team / Astrobiology Journal',
+      },
+    ],
+    quiz: [
+      {
+        id: 'quiz-mars-01',
+        trailId: 'trail-mars-exploration',
+        question: 'Which Martian geological epoch was characterized by abundant liquid surface water and valley networks?',
+        type: 'multiple-choice',
+        options: ['Amazonian', 'Noachian', 'Hesperian', 'Copernican'],
+        correctAnswerIndex: 1,
+        explanation:
+          'The Noachian era (~4.1 to 3.7 Gya) was Mars’s earliest period, characterized by high cratering rates, active magnetic dynamos, and river valley networks.',
+        relatedLessonId: 'lesson-mars-01',
+      },
+      {
+        id: 'quiz-mars-02',
+        trailId: 'trail-mars-exploration',
+        question: 'What prominent geological feature made Jezero Crater the chosen landing target for Perseverance?',
+        type: 'multiple-choice',
+        options: ['A massive active volcano', 'An ancient river delta and paleolake', 'A giant subsurface lava tube', 'A field of active sand dunes'],
+        correctAnswerIndex: 1,
+        explanation:
+          'Jezero Crater hosted an open-basin lake fed by an inflow river channel that laid down a well-preserved sedimentary delta rich in clays and carbonates.',
+        relatedLessonId: 'lesson-mars-03',
+      },
+      {
+        id: 'quiz-mars-03',
+        trailId: 'trail-mars-exploration',
+        question: 'SuperCam on Perseverance fires laser pulses to vaporize rock samples into luminous plasma for chemical analysis.',
+        type: 'true-false',
+        options: ['True', 'False'],
+        correctAnswerIndex: 0,
+        explanation:
+          'True. SuperCam uses Laser-Induced Breakdown Spectroscopy (LIBS) to analyze target elemental compositions up to 7 meters away.',
+        relatedLessonId: 'lesson-mars-02',
+      },
+      {
+        id: 'quiz-mars-04',
+        trailId: 'trail-mars-exploration',
+        question: 'What radioisotope fuel powers the Multi-Mission Radioisotope Thermoelectric Generator (MMRTG) on Curiosity and Perseverance?',
+        type: 'multiple-choice',
+        options: ['Uranium-235', 'Cobalt-60', 'Plutonium-238', 'Thorium-232'],
+        correctAnswerIndex: 2,
+        explanation:
+          'MMRTGs utilize Plutonium-238 dioxide, which emits decay heat that thermoelectric thermocouples convert into continuous electrical current.',
+        relatedLessonId: 'lesson-mars-02',
+      },
+      {
+        id: 'quiz-mars-05',
+        trailId: 'trail-mars-exploration',
+        question: 'Why does Mars currently have such a thin atmosphere compared to Earth?',
+        type: 'multiple-choice',
+        options: [
+          'Solar wind stripped the atmosphere after its core magnetic dynamo ceased',
+          'Mars was never massive enough to hold any gases',
+          'Subsurface oceans absorbed all the atmospheric nitrogen',
+          'A giant asteroid collision blew off the atmosphere in the last 10,000 years',
+        ],
+        correctAnswerIndex: 0,
+        explanation:
+          'MAVEN telemetry proved that when Mars’s core dynamo cooled and its magnetic shield vanished, unshielded solar wind stripped away the upper atmosphere.',
+        relatedLessonId: 'lesson-mars-01',
+      },
+      {
+        id: 'quiz-mars-06',
+        trailId: 'trail-mars-exploration',
+        question: 'The presence of organic carbon compounds on Mars provides indisputable evidence that microbial life once existed there.',
+        type: 'true-false',
+        options: ['True', 'False'],
+        correctAnswerIndex: 1,
+        explanation:
+          'False. Abiotic geochemical pathways like Fischer-Tropsch synthesis and carbonaceous chondrite meteorite impacts also produce organic carbon molecules.',
+        relatedLessonId: 'lesson-mars-03',
+      },
+    ],
+  },
+  {
+    id: 'trail-guardians-earth',
+    title: 'Guardians of Earth: Asteroid Tracking & Planetary Defense',
+    codeName: 'NEO-CURR-03',
+    tagline: 'Orbital Resonances, Kinetic Impactor Physics & Hazard Mitigation',
+    description:
+      'Unravel the celestial mechanics of Near-Earth Objects (NEOs), impact risk assessment scales, and the physics of redirecting threatening asteroids.',
+    category: 'Planetary Defense',
+    estimatedMinutes: 45,
+    colorHex: '#FF5B5B',
+    iconName: 'ShieldAlert',
+    passingScorePercent: 70,
+    lessons: [
+      {
+        id: 'lesson-neo-01',
+        trailId: 'trail-guardians-earth',
+        order: 1,
+        title: 'Near-Earth Object Taxonomy: Atens, Apollos, Amors & Atiras',
+        subtitle: 'Classifying asteroids by perihelion, aphelion, and orbital intersection',
+        estimatedMinutes: 15,
+        summary:
+          'Understand how astronomers categorize NEOs into dynamical families based on their semimajor axes and Earth-crossing orbital intersections.',
+        learningObjectives: [
+          'Distinguish between Apollo, Aten, Amor, and Atira asteroid orbital geometries',
+          'Calculate Minimum Orbital Intersection Distance (MOID) criteria for PHAs',
+          'Explain how Jupiter orbital resonances perturb Main Belt asteroids into Earth-crossing orbits',
+        ],
+        contentSections: [
+          {
+            title: 'Dynamical Families of Near-Earth Asteroids',
+            paragraphs: [
+              'Near-Earth Asteroids (NEAs) are divided into four orbital classes based on their relation to Earth’s orbit (1.0 AU). Apollos have semi-major axes greater than 1.0 AU but perihelions less than Earth’s aphelion (1.017 AU), making them Earth-crossers.',
+              'Atens also cross Earth’s orbit, but have semi-major axes less than 1.0 AU. Amors approach Earth from the outside (perihelion between 1.017 and 1.3 AU) without crossing our path today, while Atiras (or Apoheles) orbit entirely interior to Earth’s orbit.',
+            ],
+            callout: {
+              type: 'fact',
+              text: 'A Potentially Hazardous Asteroid (PHA) must have an Earth MOID of ≤0.05 AU (7.48 million km) and an absolute magnitude H ≤22.0 (diameter ~140 meters).',
+            },
+          },
+        ],
+        keyTakeaways: [
+          'Apollo and Aten classes represent true Earth-crossing orbits.',
+          'Kirkwood gaps in the Main Belt act as dynamical escape hatches pumped by Jupiter resonances.',
+          'PHAs are strictly defined by MOID ≤0.05 AU and estimated diameter ≥140 meters.',
+        ],
+        moduleRoute: '/asteroids',
+        moduleRouteLabel: 'Examine NEO Tracking Radar in Asteroid Watch',
+        sourceReference: 'IAU Minor Planet Center / NASA CNEOS Data System',
+      },
+      {
+        id: 'lesson-neo-02',
+        trailId: 'trail-guardians-earth',
+        order: 2,
+        title: 'Astrometry, Orbit Determination & the Torino Impact Scale',
+        subtitle: 'From optical position observations to statistical impact probabilities',
+        estimatedMinutes: 15,
+        summary:
+          'Discover how optical telescopes, radar astrometry, and Monte Carlo orbital dispersion cones produce impact risk evaluations on the Torino and Palermo scales.',
+        learningObjectives: [
+          'Follow the workflow from initial astrometric detection to orbital ephemeris refinement',
+          'Interpret the 0-to-10 integer Torino Impact Hazard Scale',
+          'Analyze how radar ranging dramatically shrinks orbital uncertainty ellipses',
+        ],
+        contentSections: [
+          {
+            title: 'The Torino Scale: Communicating Public Risk',
+            paragraphs: [
+              'The Torino Scale is a 0 to 10 integer metric designed to communicate asteroid impact hazards to the public. It combines collision probability with the kinetic energy of the potential impactor (measured in megatons of TNT equivalents).',
+              'A rating of 0 signifies zero collision probability or an object too small to survive atmospheric entry intact. Level 1 indicates normal routine discoveries that warrant observation but zero concern. Levels 8–10 signify certain catastrophic collisions capable of localized, regional, or global destruction.',
+            ],
+            callout: {
+              type: 'tip',
+              text: 'Almost all newly detected objects that initially flash level 1 drop to level 0 as follow-up observations lengthen the orbital arc.',
+            },
+          },
+        ],
+        keyTakeaways: [
+          'Orbital uncertainty ellipses shrink exponentially as the observational arc spans weeks and months.',
+          'Torino scale combines impact probability and kinetic energy into an accessible integer from 0 to 10.',
+          'Radar Doppler measurements provide kilometer-precision ranging, often ruling out collisions decades in advance.',
+        ],
+        moduleRoute: '/asteroids',
+        moduleRouteLabel: 'Simulate Impacts in Planetary Defense Lab',
+        sourceReference: 'NASA Planetary Defense Coordination Office (PDCO)',
+      },
+      {
+        id: 'lesson-neo-03',
+        trailId: 'trail-guardians-earth',
+        order: 3,
+        title: 'Planetary Defense Strategies: Kinetic Impactors vs Gravity Tractors',
+        subtitle: 'The physics of DART and active mitigation technologies',
+        estimatedMinutes: 15,
+        summary:
+          'Explore real-world mitigation architectures, from kinetic momentum transfer demonstrated by NASA’s DART mission to gentle gravity tractor tugging.',
+        learningObjectives: [
+          'Analyze the DART mission results on asteroid Dimorphos and calculate momentum enhancement (beta)',
+          'Evaluate gravity tractors, ion beam deflection, and stand-off nuclear detonations',
+          'Explain why decades of warning lead time are the most crucial parameter in deflection success',
+        ],
+        contentSections: [
+          {
+            title: 'Kinetic Momentum Transfer: The DART Paradigm',
+            paragraphs: [
+              'On September 26, 2022, NASA’s Double Asteroid Redirection Test (DART) slammed into the 160-meter asteroid Dimorphos at 6.1 km/s (22,000 km/h). The impact changed Dimorphos’s orbital period around Didymos by 33 minutes—over 4 times greater than the minimum success threshold.',
+              'This efficiency was driven by the momentum enhancement factor (beta, β ~ 3.6). The high-velocity ejection of thousands of tons of rock and dust in the opposite direction acted like rocket thrust, transferring far more momentum than the spacecraft mass alone.',
+            ],
+            callout: {
+              type: 'fact',
+              text: 'DART proved that humanity possesses the baseline kinetic technology to deflect a hazardous asteroid given sufficient advance warning.',
+            },
+          },
+        ],
+        keyTakeaways: [
+          'Kinetic impact deflects asteroids by altering their orbital velocity by millimeters per second years before close approach.',
+          'Ejecta recoil adds a multiplier effect (momentum enhancement factor beta) to the deflection impulse.',
+          'Lead time is decisive: a 1 mm/s velocity change applied 20 years prior shifts an asteroid’s position by over 600,000 km.',
+        ],
+        moduleRoute: '/asteroids',
+        moduleRouteLabel: 'Run Kinetic Impactor Simulation in What-If Lab',
+        sourceReference: 'NASA DART Investigation Team / Johns Hopkins APL',
+      },
+    ],
+    quiz: [
+      {
+        id: 'quiz-neo-01',
+        trailId: 'trail-guardians-earth',
+        question: 'Which asteroid orbital class features semi-major axes greater than 1.0 AU and perihelions that cross Earth’s orbit?',
+        type: 'multiple-choice',
+        options: ['Atiras', 'Amors', 'Apollos', 'Main Belt Trojans'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Apollo asteroids have semi-major axes a > 1.0 AU and perihelion distances q < 1.017 AU, making them Earth-crossing asteroids.',
+        relatedLessonId: 'lesson-neo-01',
+      },
+      {
+        id: 'quiz-neo-02',
+        trailId: 'trail-guardians-earth',
+        question: 'What is the minimum MOID (Minimum Orbital Intersection Distance) threshold for an object to be classified as Potentially Hazardous (PHA)?',
+        type: 'multiple-choice',
+        options: ['0.5 AU', '0.05 AU (~7.5M km)', '0.001 AU', '1.0 AU'],
+        correctAnswerIndex: 1,
+        explanation:
+          'NASA and the IAU define a Potentially Hazardous Asteroid (PHA) as an object with an Earth MOID of 0.05 AU or less and an absolute magnitude H ≤ 22.0.',
+        relatedLessonId: 'lesson-neo-01',
+      },
+      {
+        id: 'quiz-neo-03',
+        trailId: 'trail-guardians-earth',
+        question: 'A Torino Scale rating of 0 indicates a certain global catastrophic disaster requiring immediate planetary evacuation.',
+        type: 'true-false',
+        options: ['True', 'False'],
+        correctAnswerIndex: 1,
+        explanation:
+          'False. A Torino Scale rating of 0 represents "No Hazard"—the likelihood of a collision is zero or effectively zero.',
+        relatedLessonId: 'lesson-neo-02',
+      },
+      {
+        id: 'quiz-neo-04',
+        trailId: 'trail-guardians-earth',
+        question: 'Which target asteroid was successfully impacted and deflected by NASA’s DART spacecraft in September 2022?',
+        type: 'multiple-choice',
+        options: ['Bennu', 'Apophis', 'Dimorphos', 'Ryugu'],
+        correctAnswerIndex: 2,
+        explanation:
+          'NASA’s DART spacecraft targeted Dimorphos, the 160-meter moonlet orbiting the larger asteroid Didymos, shortening its orbital period by 33 minutes.',
+        relatedLessonId: 'lesson-neo-03',
+      },
+      {
+        id: 'quiz-neo-05',
+        trailId: 'trail-guardians-earth',
+        question: 'What is the "momentum enhancement factor" (beta, β) in kinetic impact physics?',
+        type: 'multiple-choice',
+        options: [
+          'The reduction in spacecraft speed before collision',
+          'The additional momentum imparted to the asteroid by backward-streaming crater ejecta',
+          'The gravitational pull of Earth during impact',
+          'The solar radiation pressure assisting the spacecraft',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'When an impactor vaporizes and excavates rock, the ejecta shoots backward like rocket exhaust, providing an extra kick denoted by beta (β > 1).',
+        relatedLessonId: 'lesson-neo-03',
+      },
+      {
+        id: 'quiz-neo-06',
+        trailId: 'trail-guardians-earth',
+        question: 'Deflecting a hazardous asteroid requires altering its orbital velocity by hundreds of kilometers per second.',
+        type: 'true-false',
+        options: ['True', 'False'],
+        correctAnswerIndex: 1,
+        explanation:
+          'False. If detected 10 to 20 years in advance, changing an asteroid’s velocity by only a few millimeters per second compounds over time to make it miss Earth by thousands of kilometers.',
+        relatedLessonId: 'lesson-neo-03',
+      },
+    ],
+  },
+  {
+    id: 'trail-spaceflight-history',
+    title: 'Chronicles of Space Exploration: From Sputnik to Artemis',
+    codeName: 'HIST-CURR-04',
+    tagline: 'The Space Race, Interplanetary Voyagers & the Modern Lunar Return',
+    description:
+      'Walk through the pivotal engineering milestones of astronautics, celebrating the pioneers of orbital spaceflight, deep-space probes, and lunar exploration.',
+    category: 'Spaceflight History',
+    estimatedMinutes: 50,
+    colorHex: '#8565FA',
+    iconName: 'Rocket',
+    passingScorePercent: 70,
+    lessons: [
+      {
+        id: 'lesson-hist-01',
+        trailId: 'trail-spaceflight-history',
+        order: 1,
+        title: 'Dawn of the Space Age: Sputnik, Vostok & Project Apollo',
+        subtitle: 'The technological leaps of the mid-20th-century space race',
+        estimatedMinutes: 16,
+        summary:
+          'Examine how geopolitical rivalry catalyzed the development of multi-stage launch vehicles, orbital life support, and the Saturn V lunar architecture.',
+        learningObjectives: [
+          'Trace the evolution from early sounding rockets to orbital insertion capabilities',
+          'Understand the Saturn V three-stage propulsion engineering developed under Wernher von Braun',
+          'Analyze the Lunar Orbit Rendezvous (LOR) architecture that made Apollo 11 possible',
+        ],
+        contentSections: [
+          {
+            title: 'Sputnik and the Orbital Threshold',
+            paragraphs: [
+              'On October 4, 1957, the Soviet Union launched Sputnik 1 into low Earth orbit atop an R-7 Semyorka intercontinental ballistic missile. Weighing only 83.6 kg, the polished metal sphere transmitted radio beeps on 20.005 and 40.002 MHz, inaugurating the Space Age.',
+              'Within twelve years, the United States developed the mammoth 110-meter Saturn V launch vehicle. Generating 34.5 meganewtons of sea-level thrust through five Rocketdyne F-1 engines, it propelled Apollo 11 astronauts Neil Armstrong, Buzz Aldrin, and Michael Collins toward the Moon in July 1969.',
+            ],
+            callout: {
+              type: 'fact',
+              text: 'The Lunar Orbit Rendezvous (LOR) mode championed by NASA engineer John Houbolt saved thousands of kilograms of launch mass compared to direct ascent.',
+            },
+          },
+        ],
+        keyTakeaways: [
+          'Sputnik 1 demonstrated the viability of orbital spaceflight and satellite telemetry.',
+          'Saturn V burned RP-1 kerosene and liquid hydrogen across three stages to achieve lunar injection.',
+          'Apollo 11’s Lunar Module Eagle touched down in the Sea of Tranquility on July 20, 1969.',
+        ],
+        moduleRoute: '/timeline',
+        moduleRouteLabel: 'Explore 1960s Milestones in Cosmic Time Machine',
+        sourceReference: 'NASA History Division / Smithsonian National Air and Space Museum',
+      },
+      {
+        id: 'lesson-hist-02',
+        trailId: 'trail-spaceflight-history',
+        order: 2,
+        title: 'Grand Tour of the Outer Solar System: The Twin Voyager Missions',
+        subtitle: 'Gravity assists and interstellar trajectories of Voyager 1 and 2',
+        estimatedMinutes: 18,
+        summary:
+          'Analyze how a rare 175-year planetary alignment allowed twin probes launched in 1977 to explore Jupiter, Saturn, Uranus, Neptune, and cross the heliopause into interstellar space.',
+        learningObjectives: [
+          'Understand orbital gravity assist (slingshot) mechanics and momentum exchange',
+          'Survey the major discoveries of the Voyager mission including active vulcanism on Io and nitrogen geysers on Triton',
+          'Explain the heliopause boundary and in-situ interstellar plasma measurements',
+        ],
+        contentSections: [
+          {
+            title: 'The 175-Year Planetary Alignment Opportunity',
+            paragraphs: [
+              'In the late 1960s, JPL mathematician Gary Flandro calculated that the four outer gas giant planets would align such that a single spacecraft could visit all four using successive gravitational slingshots, borrowing orbital momentum from each planet to accelerate to the next without carrying massive onboard fuel reserves.',
+              'Voyager 2 became the only spacecraft to complete the Grand Tour of Jupiter, Saturn, Uranus, and Neptune. Meanwhile, Voyager 1 used Saturn’s gravity to slingshot above the ecliptic plane, eventually becoming the most distant human artifact in existence (~160+ AU from Earth) and crossing the heliopause into interstellar space in August 2012.',
+            ],
+            callout: {
+              type: 'tip',
+              text: 'Both Voyagers carry a gold-plated phonograph record containing sounds, images, and greetings representing human culture to potential extraterrestrial civilizations.',
+            },
+          },
+        ],
+        keyTakeaways: [
+          'Gravity assists exchange orbital energy with giant planets, altering spacecraft velocity and trajectory.',
+          'Voyager 2 remains the only spacecraft to have conducted close flybys of Uranus (1986) and Neptune (1989).',
+          'Voyager 1 officially entered interstellar space in August 2012, detecting increased cosmic ray counts and interstellar plasma densities.',
+        ],
+        moduleRoute: '/missions/voyager-1',
+        moduleRouteLabel: 'Inspect Voyager 1 Dossier in Mission Control',
+        sourceReference: 'NASA JPL Voyager Interstellar Mission Team',
+      },
+      {
+        id: 'lesson-hist-03',
+        trailId: 'trail-spaceflight-history',
+        order: 3,
+        title: 'The Artemis Era: Deep Space Gateway & Sustainable Lunar Base',
+        subtitle: 'Humanity’s 21st-century return to the Moon and deep space frontiers',
+        estimatedMinutes: 16,
+        summary:
+          'Examine the international architecture of the Artemis program, designed to establish sustainable surface presence at the lunar South Pole and prepare for crewed missions to Mars.',
+        learningObjectives: [
+          'Compare the Artemis lunar architecture with the 1960s Apollo program',
+          'Identify the scientific significance of permanently shadowed craters (PSRs) at the lunar South Pole',
+          'Analyze the role of the Lunar Gateway station in Near-Rectilinear Halo Orbit (NRHO)',
+        ],
+        contentSections: [
+          {
+            title: 'Sustainable Exploration at the Lunar South Pole',
+            paragraphs: [
+              'Unlike Apollo missions, which conducted short sorties near the lunar equator, Artemis targets the lunar South Pole. Shackleton and Faustini craters contain Permanently Shadowed Regions (PSRs) where temperatures remain at -250°C, preserving billions of tons of ancient water ice.',
+              'This water ice will be harvested for life support (drinking water and breathable oxygen) and split via electrolysis into liquid hydrogen and oxygen propellant, establishing an off-world refueling outpost.',
+            ],
+            callout: {
+              type: 'fact',
+              text: 'Artemis 1 launched successfully on November 16, 2022, verifying the Space Launch System (SLS) rocket and Orion capsule performance over a 25.5-day circumlunar flight.',
+            },
+          },
+        ],
+        keyTakeaways: [
+          'Artemis focuses on permanent, sustainable exploration rather than sprint flags-and-footprints visits.',
+          'Lunar South Pole water ice holds immense value as in-situ rocket propellant for Mars missions.',
+          'Gateway in NRHO provides continuous communications and staging for deep-space transport.',
+        ],
+        moduleRoute: '/missions/artemis-1',
+        moduleRouteLabel: 'Review Artemis 1 Replay in Mission Control',
+        sourceReference: 'NASA Artemis Program Plan / ESA Deep Space Exploration',
+      },
+    ],
+    quiz: [
+      {
+        id: 'quiz-hist-01',
+        trailId: 'trail-spaceflight-history',
+        question: 'In what year did Sputnik 1 launch into orbit, inaugurating the modern Space Age?',
+        type: 'multiple-choice',
+        options: ['1945', '1957', '1961', '1969'],
+        correctAnswerIndex: 1,
+        explanation:
+          'Sputnik 1 was launched on October 4, 1957, by the Soviet Union from the Baikonur Cosmodrome.',
+        relatedLessonId: 'lesson-hist-01',
+      },
+      {
+        id: 'quiz-hist-02',
+        trailId: 'trail-spaceflight-history',
+        question: 'What is the physical artifact carried aboard Voyager 1 and 2 designed for potential extraterrestrial discovery?',
+        type: 'multiple-choice',
+        options: ['Silicon Microchip', 'Titanium Bible', 'The Golden Record', 'Quartz Laser Disc'],
+        correctAnswerIndex: 2,
+        explanation:
+          'The Voyager Golden Record is a gold-plated copper phonograph record containing sounds, images, music, and spoken greetings from Earth.',
+        relatedLessonId: 'lesson-hist-02',
+      },
+      {
+        id: 'quiz-hist-03',
+        trailId: 'trail-spaceflight-history',
+        question: 'Voyager 1 is the first human-made object to cross the heliopause and enter interstellar space.',
+        type: 'true-false',
+        options: ['True', 'False'],
+        correctAnswerIndex: 0,
+        explanation:
+          'True. In August 2012, Voyager 1 crossed the heliopause at roughly 121 AU from the Sun, measuring a drop in solar wind particles and a jump in galactic cosmic rays.',
+        relatedLessonId: 'lesson-hist-02',
+      },
+      {
+        id: 'quiz-hist-04',
+        trailId: 'trail-spaceflight-history',
+        question: 'What was the primary objective of the uncrewed Artemis 1 mission in 2022?',
+        type: 'multiple-choice',
+        options: [
+          'Land a robotic rover on the lunar South Pole',
+          'Test the integrated Space Launch System (SLS) and Orion capsule on a circumlunar trajectory',
+          'Deploy the first module of the Lunar Gateway station',
+          'Sample ice from Shackleton Crater',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Artemis 1 was an uncrewed flight test to qualify the SLS rocket, Orion spacecraft, heat shield at lunar re-entry speeds, and recovery procedures.',
+        relatedLessonId: 'lesson-hist-03',
+      },
+      {
+        id: 'quiz-hist-05',
+        trailId: 'trail-spaceflight-history',
+        question: 'Which lunar flight architecture chosen for Project Apollo involved a separate landing craft rendezvousing in lunar orbit?',
+        type: 'multiple-choice',
+        options: ['Direct Ascent', 'Earth Orbit Rendezvous (EOR)', 'Lunar Orbit Rendezvous (LOR)', 'Lagrange Staging'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Lunar Orbit Rendezvous (LOR), advocated by John Houbolt, required a dedicated Lunar Module to descend while the Command/Service Module remained in lunar orbit.',
+        relatedLessonId: 'lesson-hist-01',
+      },
+      {
+        id: 'quiz-hist-06',
+        trailId: 'trail-spaceflight-history',
+        question: 'Permanently Shadowed Regions (PSRs) at the lunar South Pole preserve water ice deposits because temperatures remain at -250°C.',
+        type: 'true-false',
+        options: ['True', 'False'],
+        correctAnswerIndex: 0,
+        explanation:
+          'True. Craters at high lunar latitudes never receive direct sunlight due to the Moon’s small 1.54° axial tilt, preserving ancient volatile deposits.',
+        relatedLessonId: 'lesson-hist-03',
+      },
+    ],
+  },
+];

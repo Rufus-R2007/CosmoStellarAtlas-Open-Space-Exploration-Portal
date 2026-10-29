@@ -237,6 +237,18 @@ Public interfaces for astronomical data and mission archives are often fragmente
 | **FR-61** | Graph Neighborhood Focus & Accessible List View | The system shall support 1-hop neighborhood subgraph filtering around selected nodes, detailed neighbor inspection drawers, and an accessible semantic list alternative for screen readers. | High |
 | **FR-62** | Explainable Contextual Recommendation Engine | The system shall derive prioritized contextual recommendations from active user states (`selectedYear`, `selectedPlanetId`, `selectedMissionId`, `selectedRoverId`, `selectedAsteroidId`) with transparent human-readable rationales. | High |
 | **FR-63** | Algorithmic Insight Evidence & Audit Panel | The system shall render a transparent algorithm provenance panel displaying rules applied, records consulted, execution time, and mathematical derivation proofs for any active insight. | High |
+| **FR-64** | Client-Side Explorer Profile HUD | The system shall maintain an explorer profile (display name, callsign, clearance level, rank insignia, bio) stored in browser localStorage under `cosmostellaratlas:user:v1` with a prominent client-side data sovereignty disclosure. | High |
+| **FR-65** | Universal Bookmarks System | The system shall enable bookmarking celestial entities (planets, missions, rovers, images, asteroids) across the portal with category filtering, free-text search, and working navigation back to original modules. | High |
+| **FR-66** | Personal Research Collections | The system shall enable organizing bookmarked favorites into customizable shelves with custom names, descriptions, and accent colors, ensuring shelf deletion leaves underlying bookmarks safe. | High |
+| **FR-67** | Exploration Journal Logbook | The system shall provide an observatory notebook for recording research notes with title, multi-line content, entity linkage, tag categorization, date sorting, and local persistence. | High |
+| **FR-68** | Structured Curriculum Trails | The system shall provide 4 comprehensive learning trails (Solar System, Mars Exploration, Planetary Defense, Spaceflight History) spanning 12 in-depth lessons with verifiable completion tracking. | High |
+| **FR-69** | Interactive Lesson Reader & Lab Linking | The system shall display learning objectives, rich content sections with styled callouts (scientific reality, astro-observation, explorer insights), key takeaways, and one-click shortcuts to live simulation laboratories. | High |
+| **FR-70** | Reusable Certification Quiz Engine | The system shall evaluate knowledge across 24 validated questions (6 per trail) with interactive answer selection, a 70% passing threshold, detailed answer reviews, and scientific explanations. | High |
+| **FR-71** | Verifiable Exploration Telemetry | The system shall record genuine exploration events across planetary surveys, mission dossiers, replay completions, photo inspections, and impact simulations without synthetic counters. | High |
+| **FR-72** | Interactive Explorer Constellation | The system shall render an interactive SVG celestial constellation linking 12 achievement stars with glowing connections, progress indicator rings, detail popovers, and an accessible semantic list alternative. | High |
+| **FR-73** | Dynamic Explorer Rank & Clearance Level | The system shall calculate explorer rank ('Novice Observer' through 'Master of the Cosmos') and clearance levels 1–5 derived deterministically from ignited achievement stars. | High |
+| **FR-74** | Personal Exploration Analytics | The system shall display interactive Recharts charts illustrating activity distributions, curriculum progress, and milestone achievement velocities. | High |
+| **FR-75** | Versioned Local Backup & Recovery | The system shall support versioned JSON export and import (`cosmostellaratlas:user:v1`) with merge/replace options, schema validation, storage quota calculations, and double-confirmation reset. | High |
 
 ## 7. Non-Functional Requirements (NFR)
 
@@ -247,7 +259,7 @@ Public interfaces for astronomical data and mission archives are often fragmente
 | **NFR-03** | Portability & Deployment | Static build deployable to GitHub Pages with relative asset addressing and hash-based client routing. |
 | **NFR-04** | Accessibility & Motion | Supports semantic HTML, ARIA attributes, keyboard navigation, and reduced-motion user preferences. |
 | **NFR-05** | Maintainability & Types | 100% TypeScript compilation with zero type errors and strict type safety. |
-| **NFR-06** | Test Coverage | Automated test coverage spanning 103 unit and component test cases across 8 suites verifying all core features. |
+| **NFR-06** | Test Coverage | Automated test coverage spanning 128 unit and component test cases across 9 suites verifying all core features. |
 | **NFR-07** | Browser Compatibility | Fully operational across Chrome, Edge, Firefox, Safari, and mobile WebKit viewports. |
 | **NFR-08** | Visual Cohesion | Adherence to the AstroNav design specification (Hex tokens: #060B19, #20D9F2, #8565FA, #FFB45B, #D76B35, #9C4229, #E3A66B). |
 

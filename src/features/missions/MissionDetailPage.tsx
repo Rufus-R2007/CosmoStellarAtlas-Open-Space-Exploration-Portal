@@ -11,9 +11,11 @@ import {
   Shield,
   Layers,
   Sparkles,
+  Star,
 } from 'lucide-react';
 import { Mission } from '../../types';
 import { spaceService } from '../../services';
+import { useVaultStore } from '../../store/useVaultStore';
 import { LoadingState } from '../../components/common/LoadingState';
 import { ErrorState } from '../../components/common/ErrorState';
 import { MissionStoryteller } from './components/storytelling/MissionStoryteller';
@@ -29,6 +31,10 @@ export const MissionDetailPage: React.FC = () => {
   const [isReplayOpen, setIsReplayOpen] = useState<boolean>(false);
   const [selectedMilestoneReplayIndex, setSelectedMilestoneReplayIndex] = useState<number>(0);
 
+  const isFav = useVaultStore((s) => mission ? s.isFavorite('mission', mission.id) : false);
+  const toggleFavorite = useVaultStore((s) => s.toggleFavorite);
+  const logExplorationEvent = useVaultStore((s) => s.logExplorationEvent);
+
   useEffect(() => {
     const fetchMission = async () => {
       if (!missionId) return;
@@ -38,6 +44,7 @@ export const MissionDetailPage: React.FC = () => {
         const data = await spaceService.getMissionById(missionId);
         if (data) {
           setMission(data);
+          logExplorationEvent('mission_viewed', data.id, { name: data.name });
         } else {
           setError(`Mission record '${missionId}' not found in the curated archive.`);
         }
@@ -49,7 +56,7 @@ export const MissionDetailPage: React.FC = () => {
     };
 
     fetchMission();
-  }, [missionId]);
+  }, [missionId, logExplorationEvent]);
 
   if (loading) {
     return (
@@ -146,6 +153,27 @@ export const MissionDetailPage: React.FC = () => {
 
           {/* Quick Launch Mission Replay Hero Action */}
           <div className="flex flex-col sm:flex-row lg:flex-col items-stretch gap-3 shrink-0">
+            <button
+              onClick={() => {
+                toggleFavorite({
+                  entityType: 'mission',
+                  entityId: mission.id,
+                  title: mission.name,
+                  subtitle: `${mission.agency} • ${mission.destinationName} (${mission.launchYear})`,
+                  route: `/missions/${mission.id}`,
+                  categoryBadge: 'Mission',
+                });
+              }}
+              className={`flex items-center justify-center gap-2 px-5 py-3 rounded-xl border text-xs font-headline font-bold uppercase transition-all cursor-pointer ${
+                isFav
+                  ? 'bg-[#FFB45B]/20 border-[#FFB45B] text-[#FFB45B]'
+                  : 'bg-[#10182B] hover:bg-[#141D30] border-[#141D30] hover:border-white/20 text-[#F5F7FF]'
+              }`}
+            >
+              <Star className={`w-4 h-4 ${isFav ? 'fill-[#FFB45B]' : ''}`} />
+              <span>{isFav ? 'Bookmarked in Vault' : 'Bookmark Mission'}</span>
+            </button>
+
             <button
               onClick={() => {
                 setSelectedMilestoneReplayIndex(0);

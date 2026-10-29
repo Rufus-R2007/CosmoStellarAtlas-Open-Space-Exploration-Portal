@@ -530,6 +530,113 @@ Phase 6 transforms CosmoStellarAtlas into a connected, explainable exploration p
 #### 6. Transparent Algorithmic Evidence Panel (`InsightEvidencePanel.tsx`)
 - Provides users and academic evaluation juries with a transparent audit drawer detailing deterministic rules applied, total records examined, execution latency, and primary ephemeris citations.
 
+---
+
+## 12. Personal Space Vault, Learning Hub & Explorer Passport Architecture (Phase 7)
+
+Phase 7 elevates CosmoStellarAtlas into a personalized, self-directed educational platform. Explorers bookmark discoveries across all modules, maintain custom research shelves and field notes, complete structured academic curricula, take certification quizzes, and ignite achievements on an interactive celestial constellation map—100% locally with zero cloud auth or telemetry tracking.
+
+```
++----------------------------------------------------------------------------------------------------+
+|                                    CosmoStellarAtlas Routing Shell                                 |
+|                                     [Routes: /vault  and  /learn]                                  |
++----------------------------------------------------------------------------------------------------+
+                                                  |
+                 +--------------------------------+--------------------------------+
+                 |                                                                 |
+                 v                                                                 v
++----------------------------------------------------+     +-----------------------------------------+
+|                      VaultPage                     |     |               LearningPage              |
+| - Explorer Profile HUD & Privacy Disclosure Notice |     | - Curriculum Mastery Overview Hero      |
+| - Tab Navigation: Passport | Bookmarks | Shelves   |     | - 4 Structured Learning Trails Deck     |
+|   Journal | Personal Analytics | Backup & Recovery |     | - Trail Progress Bars & Quota Badges    |
++----------------------------------------------------+     +-----------------------------------------+
+       |           |           |           |                         |                   |
+       v           v           v           v                         v                   v
++-------------+ +-------------+ +-------+ +----------+     +-------------------+ +-------------------+
+| Universal   | | Collections | |Journal| | Personal |     | Interactive       | | Interactive       |
+| Bookmarks   | | Shelves     | | Notes | |Analytics |     | Lesson Modal      | | Quiz Engine Modal |
+| Grid        | | Manager     | | Log   | | (Charts) |     | - Objectives      | | - 6 Questions     |
+| - Filter Tab| | - Create    | | - Tags| | - Recharts|    | - Rich Content    | | - 70% Pass Gate   |
+| - Search    | | - Re-assign | | - Link| |   Activity|    | - Lab Shortcut    | | - Score & Review  |
+| - Route CTA | | - Delete Safe| | - CRUD| |   Mastery |    | - Complete Action | | - Retry Mechanics |
++-------------+ +-------------+ +-------+ +----------+     +-------------------+ +-------------------+
+       |           |           |           |                         |                   |
+       +-----------+-----------+-----+-----+                         +---------+---------+
+                                     |                                         |
+                                     v                                         v
++----------------------------------------------------------------------------------------------------+
+|                                      Explorer Passport & Constellation                             |
+|  - ExplorerPassportSection: Verified Telemetry Badges (Planets, Missions, Photos, Sims, Lessons)   |
+|  - ConstellationProgressSection: 12-Star Interactive SVG Starfield Map with Glowing Edges          |
+|  - Constellation Detail Popover: Badge code, requirements, current progress, ignition timestamp   |
+|  - Accessible Structured Milestones Alternative List                                               |
++----------------------------------------------------------------------------------------------------+
+                                                  |
+                                                  v
++----------------------------------------------------------------------------------------------------+
+|                                     Zustand Store: useVaultStore                                   |
+| - State: profile, favorites, collections, journalNotes, completedLessonIds, quizAttempts, events   |
+| - Derived Ranks: Levels 1–5 ('Novice Observer' .. 'Master of the Cosmos')                          |
+| - Cross-Module Hook Integration: Planet Explorer, Mission Control, Rover Lab, Asteroids, Briefings |
++----------------------------------------------------------------------------------------------------+
+                                                  |
+                                                  v
++----------------------------------------------------------------------------------------------------+
+|                                    VaultStorageService (Offline Subsystem)                         |
+| - Storage Key: cosmostellaratlas:user:v1 (Versioned LocalStorage Envelope)                         |
+| - Validation & Sanitization: Safe recovery from corrupted JSON or missing fields                   |
+| - In-Memory Fallback: Operates flawlessly in environments with disabled/restricted localStorage    |
+| - Export JSON Backup: Download timestamped JSON file (cosmostellaratlas-vault-backup-YYYY-MM-DD)    |
+| - Import JSON Backup: Schema validation with 'Merge' and 'Replace' reconciliation modes            |
+| - Storage Quota Calculation: Dynamic byte and formatted string footprint tracking                  |
+| - Double-Confirmation Reset: Reverts to initial clean state with explicit user phrase confirmation  |
++----------------------------------------------------------------------------------------------------+
+```
+
+### Architectural Subsystems & Engineering Highlights:
+
+#### 1. Versioned Client-Side Storage Subsystem (`vaultStorageService.ts`)
+- Implements single-envelope versioned persistence under `cosmostellaratlas:user:v1`.
+- **Zero Cloud Architecture:** Completely client-side, requiring no accounts, no authentication tokens, and no tracking cookies.
+- **Fail-Safe Sanitization:** Incoming data (from `localStorage` or imported files) passes through `validateAndSanitize()`, ensuring that any corrupted records or missing array fields default gracefully without crashing the UI.
+- **Quota & Memory Fallback:** When browser private mode or quota limits block `localStorage.setItem`, the service automatically falls back to an in-memory runtime cache, ensuring undisturbed session exploration.
+
+#### 2. Universal Reference-Based Bookmarking System (`UniversalFavoritesSection.tsx`)
+- Lightweight reference model storing only `{ id, entityType, entityId, title, subtitle, route, categoryBadge, colorHex, isSynthetic, addedAt, collectionIds }`.
+- Avoids dataset bloat in browser storage by referencing original entity identifiers while caching visual titles and badges for instant offline listing.
+- Deep cross-module linking: clicking "Open in Module" dynamically routes the user to `/planets?selected=...`, `/missions/...`, `/rovers`, or `/asteroids`.
+
+#### 3. Custom Personal Collections Management (`CollectionsSection.tsx`)
+- Hierarchical organization allowing explorers to group favorites into themed research shelves (e.g. "Outer Solar System Voyagers", "Impact Mitigation Candidates").
+- **Safety Guarantee:** Deleting a collection shelf removes only the grouping association (`collectionIds`); underlying bookmarked discoveries remain intact in the user's Space Vault.
+
+#### 4. Structured Astrophysics Curriculum & Interactive Quiz Engine (`learningTrails.ts`, `InteractiveLessonModal.tsx`, `InteractiveQuizModal.tsx`)
+- Four comprehensive trails:
+  1. *Journey Through the Solar System* (`SOL-CURR-01`): Planetary taxonomy, atmospheric runaway greenhouse dynamics, metallic hydrogen dynamos.
+  2. *Mission to Mars* (`MARS-CURR-02`): Martian geological epochs (Noachian to Amazonian), remote laser spectroscopy, sample caching.
+  3. *Guardians of Earth* (`NEO-CURR-03`): Near-Earth Object families (Atens, Apollos, Amors), Torino scale risk, kinetic momentum transfer physics.
+  4. *Chronicles of Space Exploration* (`HIST-CURR-04`): Sputnik, Saturn V lunar orbit rendezvous, Voyager Grand Tour interstellar boundaries, Artemis lunar base.
+- Twelve modular lessons linking directly to live simulation tools in the platform.
+- Reusable 24-question quiz engine featuring single-question steppers, 70% certification threshold, score calculation, full answer reviews, and scientific explanations.
+
+#### 5. Interactive SVG Constellation Progress Visualization (`ConstellationProgressSection.tsx`)
+- Maps 12 genuine milestones onto an interactive 2D celestial starfield canvas ($800 \times 480\text{ viewport}$).
+- **Dynamic Ignition Mechanics:** When an achievement is unlocked, its star node ignites with radial glowing gradients (`#20D9F2` or `#8565FA`) and a pulsing ring animation.
+- **Constellation Edge Illuminations:** When both endpoints of a constellation edge (`CONSTELLATION_EDGES`) are ignited, the interconnecting vector line shifts from faint dashed gray to a glowing gradient stroke.
+- **Interactive Inspection Popovers:** Clicking or hovering over any star reveals its badge code, requirement progress bar ($x / y$), and ignition timestamp.
+- **Accessibility Alternative:** A seamless toggle switches between the graphical Starfield Map and a high-contrast Structured Milestones List.
+
+#### 6. Verifiable Telemetry & Dynamic Explorer Clearance Hierarchy (`achievementDefinitions.ts`)
+- Derives metrics strictly from logged user exploration events (`planet_viewed`, `planet_comparison_completed`, `mission_viewed`, `mission_replay_completed`, `rover_image_inspected`, `asteroid_simulation_completed`, `briefing_generated`, `lesson_completed`, `quiz_passed`, `favorite_added`, `note_created`).
+- Mathematically calculated clearance level:
+  - **Level 1 (Novice Observer):** 0–1 achievements unlocked.
+  - **Level 2 (Cadet Explorer):** 2–3 achievements unlocked.
+  - **Level 3 (Orbital Cartographer):** 4–6 achievements unlocked.
+  - **Level 4 (Deep Space Voyager):** 7–9 achievements unlocked.
+  - **Level 5 (Master of the Cosmos):** 10–12 achievements unlocked.
+
+
 
 
 

@@ -1477,4 +1477,332 @@ erDiagram
     }
 ```
 
+---
+
+## 38. Phase 7 — Personal Space Vault & Learning Hub Use Case Diagram
+```mermaid
+graph TD
+    User([Cosmo Explorer])
+
+    subgraph Vault_Subsystem["Personal Space Vault Subsystem"]
+        UC_Profile["Manage Explorer Profile & Callsign"]
+        UC_Bookmark["Bookmark Celestial Discoveries Across Modules"]
+        UC_Collections["Organize Favorites into Custom Shelves"]
+        UC_Journal["Record Observational Research Notes"]
+        UC_Constellation["Inspect Achievement Constellation Starfield"]
+        UC_Analytics["Review Exploration Activity Metrics"]
+        UC_Backup["Export / Import Versioned JSON Archives"]
+        UC_Reset["Reset Browser Vault with Double-Confirmation"]
+    end
+
+    subgraph Learning_Subsystem["Learning Hub Curriculum Subsystem"]
+        UC_Trails["Explore 4 Academic Learning Trails"]
+        UC_Lessons["Read Interactive Multidisciplinary Lessons"]
+        UC_LabCTA["Launch Direct Connected Simulation Laboratories"]
+        UC_Quiz["Complete 24-Question Certification Quizzes"]
+        UC_Review["Analyze Question Review & Scientific Explanations"]
+    end
+
+    User --> UC_Profile
+    User --> UC_Bookmark
+    User --> UC_Collections
+    User --> UC_Journal
+    User --> UC_Constellation
+    User --> UC_Analytics
+    User --> UC_Backup
+    User --> UC_Reset
+
+    User --> UC_Trails
+    User --> UC_Lessons
+    User --> UC_LabCTA
+    User --> UC_Quiz
+    User --> UC_Review
 ```
+
+---
+
+## 39. Phase 7 — Universal Bookmarking & Collection Allocation Activity Diagram
+```mermaid
+flowchart TD
+    Start([User Explores Platform Module]) --> ClickStar[Click Save / Bookmark Star Button]
+    ClickStar --> CheckExists{Already in Vault Favorites?}
+    CheckExists -- Yes --> RemoveFav[Remove from Favorites Array]
+    RemoveFav --> UntagCollections[Remove from Associated Collection Shelves]
+    UntagCollections --> RecomputeRanks[Recompute Unlocked Achievements & Rank]
+    RecomputeRanks --> PersistStorage[Persist to LocalStorage cosmostellaratlas:user:v1]
+    PersistStorage --> ToastRemoved[Display Unsaved Visual Feedback]
+
+    CheckExists -- No --> BuildFavObj[Construct FavoriteItem Reference Object]
+    BuildFavObj --> PushFav[Prepend to Favorites Array]
+    PushFav --> LogFavEvent[Log favorite_added Exploration Event]
+    LogFavEvent --> RecomputeRanks
+    ToastRemoved --> End([Action Concluded])
+    PersistStorage --> ToastAdded[Display Bookmarked in Vault Visual Feedback]
+    ToastAdded --> End
+```
+
+---
+
+## 40. Phase 7 — Exploration Journal Note Lifecycle Sequence Diagram
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Explorer as User / Student
+    participant UI as ExplorationJournalSection
+    participant Store as useVaultStore (Zustand)
+    participant Storage as VaultStorageService
+    participant LocalDB as Browser LocalStorage
+
+    Explorer->>UI: Click "New Log Entry"
+    UI-->>Explorer: Display Research Note Modal
+    Explorer->>UI: Enter Title, Content, Entity Link, Tags
+    Explorer->>UI: Submit Form ("Publish Entry")
+    UI->>Store: createJournalNote(noteInput)
+    Store->>Store: Generate Unique ID & ISO Timestamp
+    Store->>Store: Prepend to journalNotes Array
+    Store->>Store: Log "note_created" Exploration Event
+    Store->>Storage: saveState(updatedVaultState)
+    Storage->>LocalDB: setItem('cosmostellaratlas:user:v1', JSON)
+    Storage-->>Store: Persistence Acknowledged (true)
+    Store-->>UI: State Updated & Re-render Triggered
+    UI-->>Explorer: Show Log Card in Observatory Logbook Grid
+```
+
+---
+
+## 41. Phase 7 — Interactive Quiz Engine Certification Activity Diagram
+```mermaid
+flowchart TD
+    Start([Explorer Initiates Trail Quiz]) --> LoadQuestions[Load 6 Validated Curriculum Questions]
+    LoadQuestions --> InitIndex[Set Current Question Index = 0]
+    InitIndex --> DisplayQ[Render Question & Multi-Choice Options]
+    DisplayQ --> SelectOpt[User Selects Option A, B, C, or D]
+    SelectOpt --> NextOrSubmit{Is Last Question?}
+    NextOrSubmit -- No --> StepNext[Increment Question Index]
+    StepNext --> DisplayQ
+    NextOrSubmit -- Yes --> SubmitQuiz[Click Submit Evaluation]
+    SubmitQuiz --> GradeQuestions[Grade User Answers against correctAnswerIndex]
+    GradeQuestions --> CalcScore[Compute Score Percentage: correct / total * 100]
+    CalcScore --> CheckPass{Score >= 70%?}
+    CheckPass -- Yes --> PassVerdict[Award Passed Status & Trail Certification]
+    PassVerdict --> LogQuizPass[Log quiz_passed Event in Vault Telemetry]
+    CheckPass -- No --> FailVerdict[Assign Retry Recommended Status]
+    LogQuizPass --> DisplayReview[Render Full Question Review with Scientific Explanations]
+    FailVerdict --> DisplayReview
+    DisplayReview --> EndOptions{Explorer Choice}
+    EndOptions -- Retry --> ResetQuiz[Reset Answers & Retry Quiz]
+    ResetQuiz --> InitIndex
+    EndOptions -- Close --> Finish([Return to Learning Hub])
+```
+
+---
+
+## 42. Phase 7 — Explorer Clearance Rank & Constellation Ignition State Machine
+```mermaid
+stateDiagram-v2
+    [*] --> Novice_Observer: Account Initialized (0–1 Stars)
+
+    Novice_Observer --> Cadet_Explorer: 2 Achievements Unlocked
+    Cadet_Explorer --> Orbital_Cartographer: 4 Achievements Unlocked
+    Orbital_Cartographer --> Deep_Space_Voyager: 7 Achievements Unlocked
+    Deep_Space_Voyager --> Master_of_the_Cosmos: 10 Achievements Unlocked
+
+    state Novice_Observer {
+        [*] --> Dim_Starfield
+        Dim_Starfield --> Single_Ignition: First Star Ignited
+    }
+
+    state Cadet_Explorer {
+        [*] --> Dual_Ignition
+        Dual_Ignition --> First_Constellation_Vector: Connected Nodes Light Up
+    }
+
+    state Orbital_Cartographer {
+        [*] --> Multi_Subsystem_Ignited
+    }
+
+    state Deep_Space_Voyager {
+        [*] --> Majority_Constellation_Illuminated
+    }
+
+    state Master_of_the_Cosmos {
+        [*] --> Full_Cosmic_Constellation_Blazing
+    }
+```
+
+---
+
+## 43. Phase 7 — Personal Space Vault Subsystem Component Diagram
+```mermaid
+graph TD
+    subgraph View_Layer["Vault & Learning View Components"]
+        VPage["VaultPage (/vault)"]
+        LPage["LearningPage (/learn)"]
+        VHero["VaultHeroSection (Profile HUD)"]
+        FavSec["UniversalFavoritesSection"]
+        ColSec["CollectionsSection"]
+        JourSec["ExplorationJournalSection"]
+        PassSec["ExplorerPassportSection"]
+        ConstSec["ConstellationProgressSection (SVG)"]
+        AnaSec["PersonalAnalyticsSection (Recharts)"]
+        BackSec["VaultBackupSection"]
+        LHero["LearningHubHero"]
+        LTrails["LearningTrailsSection"]
+        LModal["InteractiveLessonModal"]
+        QModal["InteractiveQuizModal"]
+    end
+
+    subgraph State_Layer["Reactive Store & Logic Services"]
+        VStore["useVaultStore (Zustand)"]
+        AchEngine["achievementDefinitions.ts"]
+        Curriculum["learningTrails.ts Dataset"]
+    end
+
+    subgraph Storage_Layer["Client-Side Offline Subsystem"]
+        VStorage["VaultStorageService"]
+        LS[("Browser LocalStorage Key: cosmostellaratlas:user:v1")]
+    end
+
+    VPage --> VHero
+    VPage --> FavSec
+    VPage --> ColSec
+    VPage --> JourSec
+    VPage --> PassSec
+    VPage --> ConstSec
+    VPage --> AnaSec
+    VPage --> BackSec
+
+    LPage --> LHero
+    LPage --> LTrails
+    LPage --> LModal
+    LPage --> QModal
+
+    FavSec <--> VStore
+    ColSec <--> VStore
+    JourSec <--> VStore
+    PassSec <--> VStore
+    ConstSec <--> VStore
+    AnaSec <--> VStore
+    BackSec <--> VStore
+    LTrails <--> VStore
+    LModal <--> VStore
+    QModal <--> VStore
+
+    LTrails --> Curriculum
+    VStore --> AchEngine
+    VStore <--> VStorage
+    VStorage <--> LS
+```
+
+---
+
+## 44. Phase 7 — Offline User Storage Entity Relationship Diagram (ERD)
+```mermaid
+erDiagram
+    USER_PROFILE ||--o{ FAVORITE_ITEM : "saves"
+    USER_PROFILE ||--o{ COLLECTION_ITEM : "creates"
+    USER_PROFILE ||--o{ JOURNAL_NOTE : "authors"
+    USER_PROFILE ||--o{ QUIZ_ATTEMPT : "completes"
+    USER_PROFILE ||--o{ EXPLORATION_EVENT : "logs"
+    COLLECTION_ITEM }o--o{ FAVORITE_ITEM : "categorizes"
+    LEARNING_TRAIL ||--|{ LEARNING_LESSON : "contains"
+    LEARNING_TRAIL ||--|{ QUIZ_QUESTION : "evaluates with"
+    LEARNING_TRAIL ||--o{ QUIZ_ATTEMPT : "scored on"
+
+    USER_PROFILE {
+        string id PK
+        string displayName
+        string callsign
+        string bio
+        string rank
+        int level
+        string createdAt
+        string lastActiveAt
+    }
+
+    FAVORITE_ITEM {
+        string id PK
+        string entityType
+        string entityId
+        string title
+        string subtitle
+        string route
+        string categoryBadge
+        string colorHex
+        boolean isSynthetic
+        string addedAt
+        stringArray collectionIds FK
+    }
+
+    COLLECTION_ITEM {
+        string id PK
+        string name
+        string description
+        string colorHex
+        string iconName
+        string createdAt
+        string updatedAt
+    }
+
+    JOURNAL_NOTE {
+        string id PK
+        string title
+        string content
+        string entityType
+        string entityId
+        string entityTitle
+        stringArray tags
+        string createdAt
+        string updatedAt
+    }
+
+    LEARNING_TRAIL {
+        string id PK
+        string title
+        string codeName
+        string tagline
+        string category
+        int estimatedMinutes
+        string colorHex
+        int passingScorePercent
+    }
+
+    LEARNING_LESSON {
+        string id PK
+        string trailId FK
+        int order
+        string title
+        string subtitle
+        int estimatedMinutes
+        string summary
+        string moduleRoute
+        string moduleRouteLabel
+    }
+
+    QUIZ_QUESTION {
+        string id PK
+        string trailId FK
+        string question
+        string type
+        int correctAnswerIndex
+        string explanation
+    }
+
+    QUIZ_ATTEMPT {
+        string id PK
+        string trailId FK
+        string timestamp
+        int scorePercent
+        boolean passed
+        int totalQuestions
+        int correctAnswers
+    }
+
+    EXPLORATION_EVENT {
+        string id PK
+        string eventType
+        string timestamp
+        string entityId
+    }
+```
+

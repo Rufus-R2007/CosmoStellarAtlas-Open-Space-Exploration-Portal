@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Globe,
   Compass,
@@ -9,10 +9,12 @@ import {
   Info,
   Calendar,
   Layers,
+  Star,
 } from 'lucide-react';
 import { Planet } from '../../../../types';
 import { Badge } from '../../../../components/common/Badge';
 import { Card } from '../../../../components/common/Card';
+import { useVaultStore } from '../../../../store/useVaultStore';
 import {
   formatOrbitalPeriod,
   formatRotationPeriod,
@@ -26,6 +28,14 @@ interface PlanetInfoCenterProps {
 export const PlanetInfoCenter: React.FC<PlanetInfoCenterProps> = ({ planet }) => {
   const [activeTab, setActiveTab] = useState<'physical' | 'atmosphere' | 'features'>('physical');
   const [sampleEarthWeight, setSampleEarthWeight] = useState<number>(70); // kg
+
+  const isFav = useVaultStore((s) => s.isFavorite('planet', planet.id));
+  const toggleFavorite = useVaultStore((s) => s.toggleFavorite);
+  const logExplorationEvent = useVaultStore((s) => s.logExplorationEvent);
+
+  useEffect(() => {
+    logExplorationEvent('planet_viewed', planet.id, { name: planet.name });
+  }, [planet.id, logExplorationEvent, planet.name]);
 
   return (
     <div className="space-y-4">
@@ -42,6 +52,28 @@ export const PlanetInfoCenter: React.FC<PlanetInfoCenterProps> = ({ planet }) =>
             </span>
           </div>
           <div className="flex items-center gap-1.5">
+            <button
+              onClick={() =>
+                toggleFavorite({
+                  entityType: 'planet',
+                  entityId: planet.id,
+                  title: planet.name,
+                  subtitle: `${planet.type} • Order #${planet.orderFromSun} from Sun`,
+                  route: `/planets?selected=${planet.id}`,
+                  categoryBadge: 'Planet',
+                  colorHex: planet.colorHex,
+                })
+              }
+              title={isFav ? 'Remove from Space Vault' : 'Bookmark in Space Vault'}
+              className={`px-2.5 py-1 rounded-lg border transition-all cursor-pointer flex items-center gap-1 text-xs font-mono ${
+                isFav
+                  ? 'bg-[#FFB45B]/20 border-[#FFB45B] text-[#FFB45B]'
+                  : 'bg-white/5 border-white/10 text-gray-400 hover:text-white hover:bg-white/10'
+              }`}
+            >
+              <Star className={`w-3.5 h-3.5 ${isFav ? 'fill-[#FFB45B]' : ''}`} />
+              <span>{isFav ? 'Saved' : 'Save'}</span>
+            </button>
             <Badge variant="cyan" size="sm">
               {planet.type}
             </Badge>

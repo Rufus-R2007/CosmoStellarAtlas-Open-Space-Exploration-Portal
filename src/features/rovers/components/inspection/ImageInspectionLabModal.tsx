@@ -17,10 +17,12 @@ import {
   Eye,
   EyeOff,
   Move,
+  Star,
 } from 'lucide-react';
 import { Badge } from '../../../../components/common/Badge';
 import { RoverImage, ImageAnnotation, Rover } from '../../../../types';
 import { useAppStore } from '../../../../store/useAppStore';
+import { useVaultStore } from '../../../../store/useVaultStore';
 
 interface ImageInspectionLabModalProps {
   image: RoverImage | null;
@@ -42,6 +44,21 @@ export const ImageInspectionLabModal: React.FC<ImageInspectionLabModalProps> = (
   // Store personal notes
   const userRoverNotes = useAppStore((state) => state.userRoverNotes);
   const saveUserRoverNote = useAppStore((state) => state.saveUserRoverNote);
+
+  // Space Vault Integration
+  const isFav = useVaultStore((s) => (image ? s.isFavorite('image', image.id) : false));
+  const toggleFavorite = useVaultStore((s) => s.toggleFavorite);
+  const logExplorationEvent = useVaultStore((s) => s.logExplorationEvent);
+
+  useEffect(() => {
+    if (isOpen && image) {
+      logExplorationEvent('rover_image_inspected', image.id, {
+        roverId: rover.id,
+        sol: image.sol,
+        camera: image.cameraName,
+      });
+    }
+  }, [isOpen, image, logExplorationEvent, rover.id]);
 
   // Viewport transform state
   const [zoom, setZoom] = useState(1);
@@ -243,6 +260,32 @@ export const ImageInspectionLabModal: React.FC<ImageInspectionLabModalProps> = (
               <BookOpen className="h-3.5 w-3.5" />
               <span className="hidden sm:inline">Notes</span>
             </button>
+
+            {/* Save to Personal Space Vault */}
+            {image && (
+              <button
+                onClick={() =>
+                  toggleFavorite({
+                    entityType: 'image',
+                    entityId: image.id,
+                    title: image.title || image.caption,
+                    subtitle: `${rover.name} • ${image.cameraName} (Sol ${image.sol})`,
+                    route: `/rovers`,
+                    categoryBadge: 'Rover Image',
+                    previewImage: image.assetPath || image.thumbnailPath,
+                  })
+                }
+                className={`flex items-center gap-1 rounded-lg px-2.5 py-1.5 font-mono text-xs transition-colors cursor-pointer ${
+                  isFav
+                    ? 'bg-[#FFB45B]/20 text-[#FFB45B] border border-[#FFB45B]/40'
+                    : 'bg-white/5 text-[#98A7BF] hover:bg-white/10 hover:text-white'
+                }`}
+                title={isFav ? 'Remove from Space Vault' : 'Save Image to Space Vault'}
+              >
+                <Star className={`h-3.5 w-3.5 ${isFav ? 'fill-[#FFB45B]' : ''}`} />
+                <span className="hidden sm:inline">{isFav ? 'Saved' : 'Save'}</span>
+              </button>
+            )}
 
             {/* Fullscreen Toggle */}
             <button

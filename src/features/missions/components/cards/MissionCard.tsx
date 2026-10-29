@@ -1,7 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Rocket, Calendar, Compass, Play, ArrowRight, Globe, CheckCircle2, Radio, Clock } from 'lucide-react';
+import { Rocket, Calendar, Compass, Play, ArrowRight, Globe, CheckCircle2, Radio, Clock, Star } from 'lucide-react';
 import { Mission } from '../../../../types';
+import { useVaultStore } from '../../../../store/useVaultStore';
 
 interface MissionCardProps {
   mission: Mission;
@@ -10,6 +11,8 @@ interface MissionCardProps {
 
 export const MissionCard: React.FC<MissionCardProps> = ({ mission, onLaunchReplay }) => {
   const navigate = useNavigate();
+  const isFav = useVaultStore((s) => s.isFavorite('mission', mission.id));
+  const toggleFavorite = useVaultStore((s) => s.toggleFavorite);
 
   const getStatusBadge = () => {
     switch (mission.status) {
@@ -70,7 +73,30 @@ export const MissionCard: React.FC<MissionCardProps> = ({ mission, onLaunchRepla
               {mission.missionType}
             </span>
           </div>
-          {getStatusBadge()}
+          <div className="flex items-center gap-1.5">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleFavorite({
+                  entityType: 'mission',
+                  entityId: mission.id,
+                  title: mission.name,
+                  subtitle: `${mission.agency} • ${mission.destinationName} (${mission.launchYear})`,
+                  route: `/missions/${mission.id}`,
+                  categoryBadge: 'Mission',
+                });
+              }}
+              title={isFav ? 'Remove from Space Vault' : 'Save Mission'}
+              className={`p-1 rounded-md border transition-all cursor-pointer ${
+                isFav
+                  ? 'bg-[#FFB45B]/20 border-[#FFB45B] text-[#FFB45B]'
+                  : 'bg-[#10182B] border-[#141D30] text-[#98A7BF] hover:text-white'
+              }`}
+            >
+              <Star className={`w-3.5 h-3.5 ${isFav ? 'fill-[#FFB45B]' : ''}`} />
+            </button>
+            {getStatusBadge()}
+          </div>
         </div>
 
         {/* Mission Title */}

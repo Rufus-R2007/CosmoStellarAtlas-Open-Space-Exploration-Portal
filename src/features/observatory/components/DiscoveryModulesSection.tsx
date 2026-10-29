@@ -9,6 +9,7 @@ import {
   ShieldAlert,
   Network,
   Vault,
+  BookOpen,
   ArrowRight,
 } from 'lucide-react';
 import { Card } from '../../../components/common/Card';
@@ -90,12 +91,21 @@ const modules: ModuleCardInfo[] = [
     accentGlow: 'cyan',
   },
   {
-    name: 'Learning Hub & Vault',
+    name: 'Interactive Learning Hub',
+    path: '/learn',
+    description: 'Structured educational trails, interactive orbital lessons, and validated knowledge assessments.',
+    icon: <BookOpen className="w-6 h-6 text-[#20D9F2]" />,
+    phase: 'Phase 7',
+    status: 'active',
+    accentGlow: 'cyan',
+  },
+  {
+    name: 'Personal Space Vault & Passport',
     path: '/vault',
-    description: 'Interactive educational space modules, celestial bookmarks, expedition notes, and explorer vault.',
+    description: 'Offline bookmarks, research journal, interactive achievement constellation, and verified passport.',
     icon: <Vault className="w-6 h-6 text-[#8565FA]" />,
-    phase: 'Phase 8',
-    status: 'upcoming',
+    phase: 'Phase 7',
+    status: 'active',
     accentGlow: 'violet',
   },
 ];

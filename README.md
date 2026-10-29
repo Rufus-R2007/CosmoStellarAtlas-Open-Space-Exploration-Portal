@@ -5,10 +5,10 @@
 [![Three.js](https://img.shields.io/badge/Three.js-r182-black.svg)](https://threejs.org/)
 [![Vite](https://img.shields.io/badge/Vite-6.0-purple.svg)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC.svg)](https://tailwindcss.com/)
-[![Vitest](https://img.shields.io/badge/Vitest-Passed%20(103%2F103)-brightgreen.svg)](https://vitest.dev/)
+[![Vitest](https://img.shields.io/badge/Vitest-Passed%20(128%2F128)-brightgreen.svg)](https://vitest.dev/)
 [![License](https://img.shields.io/badge/License-MIT-amber.svg)](LICENSE)
 
-> **Software Engineering Micro Project — Phase 6 Space Intelligence, Explainable Briefing Engine & Universal Smart Discovery**  
+> **Software Engineering Micro Project — Phase 7 Personal Space Vault, Interactive Learning Hub & Explorer Passport**  
 > **Developer:** Rufus Samuel R  
 > **Institution:** Karunya Institute of Technology and Sciences  
 > **GitHub Repository:** [CosmoStellarAtlas-Open-Space-Exploration-Portal](https://github.com/Rufus-R2007/CosmoStellarAtlas-Open-Space-Exploration-Portal)
@@ -296,17 +296,55 @@ Phase 5 introduces a comprehensive, aerospace-grade planetary defense operations
 
 ---
 
-## 9. System Architecture & Folder Structure
+## 9. Space Intelligence & Universal Smart Discovery (Phase 6 Flagship)
+
+Phase 6 transformed CosmoStellarAtlas into a connected, explainable exploration platform:
+- **Autonomous Cosmic Briefing Engine (`CosmicBriefingSection`):** Structured dispatches across 5 domain categories with dynamic temporal synchronization to landmark epochs (1957, 1969, 1977, 2020) and era fallbacks.
+- **Ask the Atlas Assistant (`AskTheAtlasSection`):** 100% offline natural language query assistant executing in $<3\text{ ms}$ across 14 discrete scientific intents with markdown factsheets, formatted tables, and ephemeris citations.
+- **Universal Inverted Search Index (`UniversalSearchSection`):** High-speed catalog scoring (+50 exact, +30 prefix, +20 token, +10 subtitle) across all 6 core domains with `Ctrl+K` Command Palette integration.
+- **Relational Discovery Knowledge Graph (`CosmicDiscoveryGraphSection`):** Interactive 2D directed graph with color-coded nodes, multi-hop edges, 1-hop neighborhood subgraph focus, and an accessible semantic list view alternative.
+- **Explainable Contextual Recommendations (`ExplainableRecommendationsSection`):** Suggestion engine evaluating user exploration state with transparent human-readable rationales.
+- **Transparent Algorithmic Evidence Panel (`InsightEvidencePanel`):** Real-time audit drawer exposing rules applied, records evaluated, and derivation proofs.
+
+---
+
+## 10. Personal Space Vault, Learning Hub & Explorer Passport (Phase 7 Flagship)
+
+Phase 7 introduces a comprehensive educational and personal persistent exploration ecosystem:
+- **Client-Side Personal Space Vault (`/vault`):**
+  - **Explorer Profile HUD (`VaultHeroSection`):** Displays name, callsign, clearance level (1–5), rank insignia, storage footprint, and a prominent Client-Side Data Sovereignty disclosure.
+  - **Universal Bookmarks (`UniversalFavoritesSection`):** Multi-category bookmarking (Planets, Missions, Rovers, Photos, Asteroids) with search, category tabs, and direct module routing.
+  - **Personal Collections (`CollectionsSection`):** Custom research shelves with theme colors and safe deletion (bookmarks remain safely in vault).
+  - **Exploration Journal Logbook (`ExplorationJournalSection`):** Multi-line notes editor with entity linkages, tag categorization, date sorting, and instant local editing.
+  - **Explorer Passport (`ExplorerPassportSection`):** Holographic credential card displaying verified telemetry (planets surveyed, missions logged, photos inspected, impact sims run, lessons completed, quizzes certified, total actions recorded).
+  - **Interactive Explorer Constellation (`ConstellationProgressSection`):** Flagship interactive SVG starfield map mapping 12 achievement stars with glowing dual-ignition vector edges, progress indicator rings, detail inspection popovers, and an accessible list alternative.
+  - **Personal Exploration Analytics (`PersonalAnalyticsSection`):** Dynamic Recharts charts illustrating activity distribution across 7 domains, curriculum trail performance (completed lessons vs quiz score %), and achievement category completion breakdown.
+  - **Versioned Local Backup & Recovery (`VaultBackupSection`):** JSON export (`cosmostellaratlas-vault-backup-YYYY-MM-DD.json`), schema-validated JSON import supporting 'Merge' and 'Replace' modes, storage quota calculations, and double-confirmation reset.
+- **Interactive Learning Hub (`/learn`):**
+  - **Learning Hub Hero (`LearningHubHero`):** High-level metrics tracking total lessons completed, quizzes certified, and badges earned.
+  - **4 Structured Learning Trails (`LearningTrailsSection`):**
+    - *Trail 1: Journey Through the Solar System* (`SOL-CURR-01`)
+    - *Trail 2: Mission to Mars* (`MARS-CURR-02`)
+    - *Trail 3: Guardians of Earth* (`NEO-CURR-03`)
+    - *Trail 4: Chronicles of Space Exploration* (`HIST-CURR-04`)
+  - **Interactive Lesson Reader Modal (`InteractiveLessonModal`):** 12 comprehensive lessons with learning objectives, rich content sections with styled callout boxes (scientific reality, astro-observation, explorer insights), key takeaways, and working shortcuts to connected simulation laboratories.
+  - **Reusable Certification Quiz Engine (`InteractiveQuizModal`):** 24 validated questions (6 per trail) with interactive option selection, single-question stepper, 70% passing threshold, score calculation, full question-by-question review with scientific explanations, and retry mechanics.
+- **Cross-Module Telemetry Integration:**
+  - Integrated working star bookmark buttons and genuine exploration event logging into `PlanetInfoCenter`, `PlanetaryComparisonLab`, `MissionCard`, `MissionDetailPage`, `MissionReplayEngine`, `ImageInspectionLabModal`, `AsteroidDetailModal`, `PlanetaryDefenseWhatIfLab`, and `CosmicBriefingSection`.
+
+---
+
+## 11. System Architecture & Folder Structure
 
 ```
 CosmoStellarAtlas-Open-Space-Exploration-Portal/
 ├── docs/                        # Formal Software Engineering Documentation
-│   ├── SRS.md                   # Software Requirements Specification (v1.4.0)
+│   ├── SRS.md                   # Software Requirements Specification (v1.5.0)
 │   ├── ARCHITECTURE.md          # System Architecture & Multi-Module Pipelines
-│   ├── DIAGRAMS.md              # 25+ UML, Use Case, Sequence & Activity Diagrams
-│   ├── TRACEABILITY.md          # Requirements Traceability Matrix (FR-01 to FR-52)
+│   ├── DIAGRAMS.md              # 44 UML, Use Case, Sequence & Activity Diagrams
+│   ├── TRACEABILITY.md          # Requirements Traceability Matrix (FR-01 to FR-75)
 │   ├── SCIENTIFIC_MODEL.md      # Scientific Physics & Planetary Defense Model Specification
-│   ├── DATASETS.md              # Dataset Provenance Specification (50 Asteroids)
+│   ├── DATASETS.md              # Dataset Provenance Specification
 │   └── ROADMAP.md               # 8-Phase Master Development Plan
 ├── src/
 │   ├── app/                     # Application Shell & Routing Configuration
@@ -317,14 +355,15 @@ CosmoStellarAtlas-Open-Space-Exploration-Portal/
 │   ├── data/                    # Deterministic Local Datasets
 │   │   ├── planets.ts           # 8 Major Planets with scientific & visual configurations
 │   │   ├── missions.ts          # 20 Curated Historical Missions & Milestones
-│   │   ├── rovers.ts            # 5 NASA Mars Rovers (Perseverance, Curiosity, Opportunity, etc.)
+│   │   ├── rovers.ts            # 5 NASA Mars Rovers
 │   │   ├── roverCameras.ts      # 20 Authentic Rover Camera Subsystems
 │   │   ├── roverImages.ts       # 24 Surface Captures with Normalized Annotations
 │   │   ├── roverWaypoints.ts    # 23 Traverse Waypoints across Landing Sites
 │   │   ├── roverVisualAssets.ts # High-Fidelity Scalable Vector Graphics Generator
 │   │   ├── asteroids.ts         # 50 Curated & Synthetic Near-Earth Objects
 │   │   ├── launches.ts          # 16 Illustrative Spaceflight Launches
-│   │   └── briefings.ts         # 5 Research Briefings
+│   │   ├── briefings.ts         # 5 Research Briefings
+│   │   └── learningTrails.ts    # 4 Curriculum Trails, 12 Lessons, 24 Quiz Questions
 │   ├── features/
 │   │   ├── observatory/         # Full Observatory Dashboard Implementation (Phase 1)
 │   │   ├── planets/             # Full Planet Explorer Implementation (Phase 2)
@@ -332,26 +371,18 @@ CosmoStellarAtlas-Open-Space-Exploration-Portal/
 │   │   ├── missions/            # Mission Control & Replay Implementation (Phase 3)
 │   │   ├── rovers/              # Mars Rover Explorer Console Implementation (Phase 4)
 │   │   ├── asteroids/           # Asteroid Watch & Planetary Defense Lab (Phase 5)
-│   │   │   ├── components/
-│   │   │   │   ├── education/   # Planetary Defense Academic Reference Panel
-│   │   │   │   ├── encounter/   # 2D Orbital Encounter Canvas & Close-Approach Timeline
-│   │   │   │   ├── explorer/    # Searchable Catalog Matrix & Detail Dossier Modal
-│   │   │   │   ├── hero/        # Planetary Defense Hero with Dynamic Statistics
-│   │   │   │   └── whatif/      # Flagship Planetary Defense What-If Simulation Lab
-│   │   │   ├── utils/
-│   │   │   │   └── planetaryDefenseMath.ts # Pure Deterministic Scientific Physics Engine
-│   │   │   └── AsteroidsPage.tsx # Planetary Defense Portal Container & URL Synchronization
 │   │   ├── intelligence/        # Space Intelligence & Discovery (Phase 6 Completed)
-│   │   │   ├── components/      # Hero, Briefings, AskAtlas, Search, Graph, Recs, Evidence
-│   │   │   ├── services/        # SearchIndex, QueryParser, QueryExec, Briefings, Graph, Recs
-│   │   │   └── IntelligencePage.tsx # Intelligence Portal Container
-│   │   ├── learning/            # Learning Hub (Phase 7 Roadmap)
-│   │   ├── vault/               # Personal Space Vault (Phase 8 Roadmap)
+│   │   ├── learning/            # Interactive Learning Hub (Phase 7 Completed)
+│   │   │   ├── components/      # Hero, TrailsSection, LessonModal, QuizModal
+│   │   │   └── LearningPage.tsx # Learning Hub Container
+│   │   ├── vault/               # Personal Space Vault (Phase 7 Completed)
+│   │   │   ├── components/      # Hero, Favorites, Collections, Journal, Passport, Constellation, Analytics, Backup
+│   │   │   └── VaultPage.tsx    # Space Vault Container
 │   │   └── notfound/            # 404 Route Recovery View
-│   ├── services/                # SpaceDataProvider Interface & Mock Implementation
-│   ├── store/                   # Zustand Global Store (useAppStore)
+│   ├── services/                # SpaceDataProvider, VaultStorageService, AchievementDefinitions
+│   ├── store/                   # Zustand Stores (useAppStore, useVaultStore)
 │   ├── styles/                  # Tailwind CSS & Global Styles
-│   ├── tests/                   # Vitest Test Suite (103 tests across 8 suites)
+│   ├── tests/                   # Vitest Test Suite (128 tests across 9 suites)
 │   ├── utils/                   # Mathematical utilities (planetaryMath.ts)
 │   └── types/                   # TypeScript Data Contracts and Interfaces
 ├── index.html                   # HTML Entry Point
@@ -363,7 +394,7 @@ CosmoStellarAtlas-Open-Space-Exploration-Portal/
 
 ---
 
-## 9. Offline Data Transparency & Provenance
+## 12. Offline Data Transparency & Provenance
 CosmoStellarAtlas strictly adheres to academic honesty:
 - **Curated Reference Data:** Astronomical measurements, physical constants, and historical spaceflight milestones are sourced from declassified NASA, ESA, and peer-reviewed records.
 - **Synthetic Demonstration Telemetry:** Approaching asteroid vectors and future launch logistics are deterministically modeled for educational simulation.
@@ -371,7 +402,7 @@ CosmoStellarAtlas strictly adheres to academic honesty:
 
 ---
 
-## 10. Installation, Execution & Build Instructions
+## 13. Installation, Execution & Build Instructions
 
 ### Prerequisites
 - Node.js: `v18.0.0` or higher (verified on Node `v24.21.0`)
@@ -393,7 +424,7 @@ npm run dev
 Navigate to `http://localhost:5173/` in your browser.
 
 ### Executing the Automated Test Suite
-Run the Vitest test suite covering data provider methods, mission filtering, planetary 3D rendering fallbacks, temporal synchronization, mission replay speed controls, time capsules, storytelling engine, 404 routing, Mars rover surface operations, planetary defense physics calculations, universal search indexing, natural language query intent parsing, autonomous cosmic briefings, relational discovery graph, and explainable recommendations (103 tests across 8 test suites):
+Run the Vitest test suite covering data provider methods, mission filtering, planetary 3D rendering fallbacks, temporal synchronization, mission replay speed controls, time capsules, storytelling engine, 404 routing, Mars rover surface operations, planetary defense physics calculations, universal search indexing, natural language query intent parsing, autonomous cosmic briefings, relational discovery graph, explainable recommendations, personal space vault persistence, bookmarking, collections, journal notes, learning trail curriculum, certification quiz grading, achievement unlocks, rank derivation, and JSON backup validation (128 tests across 9 test suites):
 ```bash
 npm run test
 ```
@@ -413,7 +444,7 @@ The compiled bundle will be output to the `dist/` directory, fully configured wi
 
 ---
 
-## 11. Multi-Phase Master Roadmap
+## 14. Multi-Phase Master Roadmap
 
 | Phase | Title | Focus Area | Status |
 | :---: | :--- | :--- | :---: |
@@ -423,12 +454,12 @@ The compiled bundle will be output to the `dist/` directory, fully configured wi
 | **Phase 4** | **Mars Rover Explorer & Photo Discovery Lab** | Mars Operations Dashboard Hero with atmospheric dust canvas physics, interactive rover selector across 5 explorers (Perseverance, Curiosity, Opportunity, Spirit, Sojourner), hardware specs & science instrument accordion, Martian sol timeline scrubber, multi-facet camera gallery, interactive Image Inspection Lab modal with zoom/pan and CSS image adjustments (brightness, contrast, saturation), normalized educational surface annotations, Mars surface journey topographic traverse canvas, and rover comparison lab with personal field discovery notes persisted to localStorage. | **COMPLETED** |
 | **Phase 5** | **Asteroid Watch & Planetary Defense Lab** | 50 Near-Earth Object database (8 curated benchmarks + 42 synthetic encounters), 2D Keplerian orbital encounter canvas with perigee vectors and distance HUD, chronological close-approach scrubber (2026–2035), multi-facet search/filter catalog matrix, asteroid inspection dossier modal, flagship Planetary Defense What-If Lab with deterministic physics engine ($r, V, m, v, E_k$, TNT kt/Mt), interactive Recharts curves ($E \propto d^3$, $E \propto v^2$), parameter sensitivity matrix (8x, 4x, 2x), 4 educational scenario presets, explainable physics insights, and academic planetary defense foundations. | **COMPLETED** |
 | **Phase 6** | **Space Intelligence & Smart Discovery** | Inverted token search catalog, deterministic rule-based natural language query assistant (14 discrete intents), 5-category autonomous cosmic briefing engine with historical year synchronization, 2D interactive relational discovery knowledge graph (SVG) with 1-hop neighborhood subgraph filtering and accessible list view, explainable contextual recommendation engine with human-readable rationales, and transparent algorithmic evidence audit panel. | **COMPLETED** |
-| **Phase 7** | **Trajectory & Orbital Mechanics Lab** | Dedicated gravity-assist vector calculator, Hohmann transfer orbit simulator, stage separation sequence animations, and interplanetary trajectory modeling. | *Planned* |
-| **Phase 8** | **Personal Vault & Deployment** | Explorer Passport, bookmarks, personal research notes markdown editor, and GitHub Pages release. | *Planned* |
+| **Phase 7** | **Personal Space Vault, Learning Hub & Explorer Passport** | Client-side user profile, universal bookmarks, custom collections, research journal, 4 learning trails, 12 interactive lessons, 24-question certification quiz engine, 12-badge achievement system, interactive SVG constellation progress map, and versioned JSON backup/recovery. | **COMPLETED** |
+| **Phase 8** | **Trajectory Lab & Static Cloud Deployment** | Dedicated orbital transfer simulator, Hohmann transfer orbit modeling, and GitHub Pages production deployment. | *Planned* |
 
 ---
 
-## 12. Faculty Demonstration Runbook (Step-by-Step)
+## 15. Faculty Demonstration Runbook (Step-by-Step)
 
 For faculty evaluation and live micro-project demonstrations:
 
@@ -481,17 +512,35 @@ For faculty evaluation and live micro-project demonstrations:
    - **Explainable Recommendations:** Review prioritized candidates with transparent, human-readable rationales derived from your active application state.
    - **Insight Evidence Audit Panel:** Click **Audit Rule Logic** to review the exact rule, records examined, and mathematical derivation proofs.
 
-9. **Execute Automated Quality Verification:**
-   ```bash
-   npx tsc --noEmit
-   npm test -- --run
-   npm run build
-   ```
-   Verify 0 TypeScript errors, 103 passing tests across 8 test suites, and clean static production build in `dist/`.
+9. **Experience E — Personal Space Vault & Interactive Learning Hub (`#/vault` & `#/learn`):**
+   - **Learning Hub (`#/learn`):**
+     - Navigate to **Learning Hub** in the sidebar navigation.
+     - Observe the **Learning Hub Hero** displaying real-time aggregated progress stats across all 4 curriculum trails.
+     - Explore the 4 learning trails (*Journey Through the Solar System*, *Mission to Mars*, *Guardians of Earth*, *Chronicles of Space Exploration*).
+     - Click **Start Lesson** on any trail to open the **InteractiveLessonModal**. Review objectives, styled callout boxes, and click **Mark Lesson as Completed** or click the lab shortcut.
+     - Click **Take Certification Quiz** on any trail to launch the **InteractiveQuizModal**. Answer questions, observe live step-by-step navigation, submit for immediate grading, and inspect the question-by-question review with scientific explanations.
+   - **Personal Space Vault (`#/vault`):**
+     - Click **Personal Vault** in the sidebar navigation.
+     - **Explorer Profile HUD:** Review your callsign, clearance level (Levels 1–5), rank insignia, storage quota footprint, and client-side privacy disclosure.
+     - **Universal Bookmarks:** Filter by All, Planets, Missions, Rovers, Images, and Asteroids. Test star bookmarking directly across other modules (e.g., in Planet Explorer, Mission Control, Mars Rover photo modal, Asteroid modal) and verify instant appearance here.
+     - **Personal Research Collections:** Create custom shelves (e.g., *"Outer Planets Study"*), assign bookmarks to collections, and safely delete shelves without losing underlying favorites.
+     - **Exploration Field Journal:** Create a field note with tags and entity links (e.g. `tag: astrophysics`), edit, search, and delete entries.
+     - **Explorer Passport:** Inspect the holographic credential card showing verified telemetry counts (planets surveyed, simulations run, quizzes certified).
+     - **Interactive Explorer Constellation:** Explore the interactive 800×480 SVG starfield map. Click achievement stars to inspect requirements, watch dual-ignition glowing vector lines illuminate as achievements unlock, or switch to the **Accessible List View**.
+     - **Personal Analytics:** Review dynamic Recharts visualizations showing activity distribution, curriculum performance %, and achievement completion.
+     - **Backup & Recovery:** Click **Export Vault Data (JSON)** to download a complete backup file. Test importing in 'Merge' or 'Replace' mode, or execute the double-confirmation **Reset Vault** to return to defaults.
+
+10. **Execute Automated Quality Verification:**
+    ```bash
+    npx tsc --noEmit
+    npm test -- --run
+    npm run build
+    ```
+    Verify 0 TypeScript errors, 128 passing tests across 9 test suites, and clean static production build in `dist/`.
 
 ---
 
-## 12. GitHub Pages Deployment Plan
+## 16. GitHub Pages Deployment Plan
 GitHub Pages deployment will be finalized in Phase 8. The application is pre-configured for static hosting:
 - `base: './'` in `vite.config.ts` ensures all asset paths are relative.
 - `HashRouter` in `App.tsx` guarantees that deep linking and direct page refreshes function seamlessly without server-side rewrite rules.
@@ -499,7 +548,7 @@ GitHub Pages deployment will be finalized in Phase 8. The application is pre-con
 
 ---
 
-## 13. Developer & Coursework Information
+## 17. Developer & Coursework Information
 - **Developer:** Rufus Samuel R
 - **Institution:** Karunya Institute of Technology and Sciences
 - **Project Type:** Software Engineering Micro Project

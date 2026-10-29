@@ -610,3 +610,173 @@ export interface InsightEvidence {
   sourceReferences: SourceReference[];
   algorithmicExplanation: string;
 }
+
+// ==========================================
+// PHASE 7: PERSONAL VAULT, LEARNING HUB & PASSPORT
+// ==========================================
+
+export interface UserProfile {
+  id: string;
+  displayName: string;
+  callsign: string;
+  bio?: string;
+  avatarSeed?: string;
+  createdAt: string;
+  lastActiveAt: string;
+  rank: string;
+  level: number;
+}
+
+export type VaultEntityType = 'planet' | 'mission' | 'rover' | 'image' | 'asteroid';
+
+export interface FavoriteItem {
+  id: string;
+  entityType: VaultEntityType;
+  entityId: string;
+  title: string;
+  subtitle: string;
+  route: string;
+  categoryBadge: string;
+  previewImage?: string;
+  colorHex?: string;
+  isSynthetic?: boolean;
+  addedAt: string;
+  collectionIds: string[];
+}
+
+export interface CollectionItem {
+  id: string;
+  name: string;
+  description: string;
+  colorHex: string;
+  iconName?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface JournalNote {
+  id: string;
+  title: string;
+  content: string;
+  entityType?: VaultEntityType | 'general';
+  entityId?: string;
+  entityTitle?: string;
+  tags: string[];
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface LessonContentSection {
+  title: string;
+  paragraphs: string[];
+  callout?: {
+    type: 'fact' | 'warning' | 'tip';
+    text: string;
+  };
+}
+
+export interface LearningLesson {
+  id: string;
+  trailId: string;
+  order: number;
+  title: string;
+  subtitle: string;
+  estimatedMinutes: number;
+  summary: string;
+  learningObjectives: string[];
+  contentSections: LessonContentSection[];
+  keyTakeaways: string[];
+  moduleRoute: string;
+  moduleRouteLabel: string;
+  sourceReference: string;
+}
+
+export interface QuizQuestion {
+  id: string;
+  trailId: string;
+  question: string;
+  type: 'multiple-choice' | 'true-false';
+  options: string[];
+  correctAnswerIndex: number;
+  explanation: string;
+  relatedLessonId?: string;
+}
+
+export interface LearningTrail {
+  id: string;
+  title: string;
+  codeName: string;
+  tagline: string;
+  description: string;
+  category: 'Solar System' | 'Mars Exploration' | 'Planetary Defense' | 'Spaceflight History';
+  estimatedMinutes: number;
+  colorHex: string;
+  iconName: string;
+  lessons: LearningLesson[];
+  quiz: QuizQuestion[];
+  passingScorePercent: number;
+}
+
+export interface QuizAttemptAnswer {
+  questionId: string;
+  selectedIndex: number;
+  isCorrect: boolean;
+}
+
+export interface QuizAttempt {
+  id: string;
+  trailId: string;
+  timestamp: string;
+  scorePercent: number;
+  passed: boolean;
+  totalQuestions: number;
+  correctAnswers: number;
+  userAnswers: QuizAttemptAnswer[];
+}
+
+export type ExplorationEventType =
+  | 'planet_viewed'
+  | 'planet_comparison_completed'
+  | 'mission_viewed'
+  | 'mission_replay_completed'
+  | 'rover_image_inspected'
+  | 'asteroid_simulation_completed'
+  | 'briefing_generated'
+  | 'lesson_completed'
+  | 'quiz_passed'
+  | 'favorite_added'
+  | 'note_created';
+
+export interface ExplorationEvent {
+  id: string;
+  eventType: ExplorationEventType;
+  timestamp: string;
+  entityId?: string;
+  metadata?: Record<string, string | number | boolean>;
+}
+
+export interface Achievement {
+  id: string;
+  title: string;
+  description: string;
+  badgeCode: string;
+  category: 'exploration' | 'curriculum' | 'analysis' | 'vault';
+  iconName: string;
+  unlockedAt?: string;
+  progress: number;
+  targetValue: number;
+  currentValue: number;
+  constellationCoord: { x: number; y: number };
+}
+
+export interface VaultBackupData {
+  version: 'cosmostellaratlas:user:v1';
+  exportedAt: string;
+  profile: UserProfile;
+  favorites: FavoriteItem[];
+  collections: CollectionItem[];
+  journalNotes: JournalNote[];
+  completedLessonIds: string[];
+  quizAttempts: QuizAttempt[];
+  explorationEvents: ExplorationEvent[];
+}
