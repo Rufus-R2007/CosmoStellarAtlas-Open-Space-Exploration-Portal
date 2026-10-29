@@ -69,3 +69,4 @@ $$1\text{ kt TNT} = 4.184 \times 10^{12}\text{ J}, \quad 1\text{ Mt TNT} = 4.184
 - **3D Planetary Spheres:** Generated dynamically in client-side WebGL via Three.js with procedural equirectangular shader maps synthesized in pure HTML5 Canvas (`PlanetTextureGenerator.ts`). No remote NASA photo textures are loaded at runtime.
 - **2D Canvas Fallbacks:** Rendered procedurally on standard 2D HTML5 canvas contexts to guarantee device accessibility.
 - **Mars Rover Photographs:** Curated public-domain NASA/JPL-Caltech image captures and vector-rendered tactical schematics for offline classroom reliability.
+

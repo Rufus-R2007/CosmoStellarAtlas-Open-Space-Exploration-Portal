@@ -152,3 +152,4 @@ When the user clicks the Star Bookmark button on any planet, mission, rover, ima
 - Optional zero-knowledge cloud authentication for multi-device sync.
 - Multilingual localization (Spanish, French, Hindi, Tamil).
 - Audio-narrated mission replay transcripts for enhanced accessibility.
+

@@ -158,3 +158,4 @@ dist/assets/index-D7jQvVhe.js          934.58 kB │ gzip: 234.11 kB
 ## 7. Known Limitations & Code Coverage Disclosure
 - **Code Coverage Measurement:** Full line/branch instrumentation was not executed via Istanbul/C8 in this test run to prevent overhead on Three.js WebGL procedural shaders; however, white-box branch coverage was manually verified across all mathematical and decision functions as documented in `docs/TEST_PLAN.md` and `docs/TEST_CASES.md`.
 - **Offline Limitation:** The initial load of the application requires an active web connection to retrieve static bundle chunks from GitHub Pages unless previously cached in the browser. Once loaded into memory, 100% of the platform executes completely offline without external network queries.
+

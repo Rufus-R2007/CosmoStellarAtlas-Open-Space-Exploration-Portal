@@ -66,3 +66,4 @@ In an era saturated with generative AI hallucinations and fabricated online clai
 - It declares the exact mathematical equations and unit conversions applied.
 - It clearly clarifies that miss distance is decoupled from kinetic energy calculations.
 - It promotes critical thinking and scientific inquiry among university students and future aerospace engineers.
+

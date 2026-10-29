@@ -77,3 +77,4 @@ This document contains the formalized black-box and white-box test cases for the
    - 4/6 correct ($66.7\%$) $\rightarrow$ Failed (strictly below threshold).
    - 5/6 correct ($83.3\%$) $\rightarrow$ Certified Pass (meets $\ge 70\%$).
    - 6/6 correct ($100\%$) $\rightarrow$ Certified Pass with honors.
+

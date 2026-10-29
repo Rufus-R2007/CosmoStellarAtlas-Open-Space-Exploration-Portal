@@ -112,3 +112,4 @@
   - Click **Export Vault Data (JSON)** to download your local data snapshot.
   - Upload a previously saved backup file using **Merge** or **Replace** mode.
   - Click **Reset Vault** (with double confirmation) to safely return to default state.
+

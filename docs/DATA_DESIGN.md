@@ -195,3 +195,4 @@ User state is isolated into a single root key in browser `localStorage`.
      - `merge`: Combines backup items with current local records (deduplicating by ID).
      - `replace`: Overwrites local store with imported snapshot.
    - **Double-Confirmation Reset:** Completely clears user data and reinstates initial factory defaults.
+

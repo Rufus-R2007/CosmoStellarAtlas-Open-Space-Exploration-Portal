@@ -125,3 +125,4 @@ When explaining the engineering rigor behind CosmoStellarAtlas:
 - **Small Asteroid (Chelyabinsk-Scale):** $d = 20\text{ m}, v = 19\text{ km/s} \rightarrow \approx 500\text{ kt TNT}$ (High-altitude airburst).
 - **Medium Asteroid (Tunguska-Scale):** $d = 60\text{ m}, v = 20\text{ km/s} \rightarrow \approx 13.5\text{ Mt TNT}$ (Regional devastation).
 - **Large Asteroid (DART / Dimorphos Scale):** $d = 160\text{ m}, v = 24\text{ km/s} \rightarrow \approx 362\text{ Mt TNT}$ (Kinetic impact benchmark).
+

@@ -112,3 +112,4 @@ This matrix maps every functional requirement (FR-01 through FR-78) and non-func
 | **NFR-08** | Production Build Artifact | Relative asset paths compatible with GitHub Pages | `vite.config.ts` (`base: './'`), `HashRouter` | **VERIFIED** |
 | **NFR-09** | CI/CD Deployment Automation | Automated testing and deployment to GitHub Pages | `.github/workflows/deploy.yml` | **VERIFIED** |
 | **NFR-10** | Scientific Accuracy & Ethics | Explicit provenance, Newtonian physics, no fake AI | Provenance indicators, disclaimers, explainable logic | **VERIFIED** |
+

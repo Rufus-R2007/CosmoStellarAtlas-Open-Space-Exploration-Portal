@@ -224,3 +224,4 @@ if __name__ == "__main__":
             print(f"Scaling Verification: 2x Velocity -> {multipliers['doubling_velocity_multiplier']}x Energy (Quadratic: 2²=4)")
             print(f"Scaling Verification: 2x Density  -> {multipliers['doubling_density_multiplier']}x Energy (Linear: 2¹=2)")
             print("=======================================================\n")
+
