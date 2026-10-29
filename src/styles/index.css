@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #060B19;
+    color: #F5F7FF;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Custom scrollbar matching mission-control HUD */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #060B19;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #141D30;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #20D9F2;
+  }
+}

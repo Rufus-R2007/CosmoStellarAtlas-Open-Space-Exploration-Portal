@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-dim": "#0e1321", "surface-container-lowest": "#080e1c", "primary-fixed-dim": "#22daf3", "on-surface": "#dde2f6", "surface-container-highest": "#2f3444", "on-secondary-fixed-variant": "#4b1fbe", "on-primary-fixed": "#001f24", "inverse-primary": "#006875", "background": "#0e1321", "secondary-fixed-dim": "#cbbeff", "surface-container-high": "#242a39", "on-secondary-container": "#baa9ff", "primary-fixed": "#9defff", "error-container": "#93000a", "on-primary-fixed-variant": "#004e59", "surface-container-low": "#161b2a", "surface-variant": "#2f3444", "on-tertiary": "#482900", "surface": "#0e1321", "inverse-surface": "#dde2f6", "tertiary": "#ffdcba", "outline-variant": "#3c494c", "inverse-on-surface": "#2b3040", "surface-container": "#1a1f2e", "primary-container": "#20d9f2", "secondary-fixed": "#e7deff", "tertiary-fixed": "#ffddba", "tertiary-container": "#ffb865", "on-secondary-fixed": "#1e0060", "surface-bright": "#343949", "on-primary-container": "#005b66", "on-tertiary-container": "#774700", "on-background": "#dde2f6", "on-tertiary-fixed-variant": "#673d00", "on-secondary": "#340098", "error": "#ffb4ab", "surface-tint": "#22daf3", "outline": "#859396", "tertiary-fixed-dim": "#ffb867", "primary": "#9befff", "on-surface-variant": "#bac9cc", "on-error": "#690005", "on-tertiary-fixed": "#2b1700", "secondary": "#cbbeff", "on-error-container": "#ffdad6", "secondary-container": "#4b1fbe", "on-primary": "#00363e" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin": "2rem", "gutter": "1.5rem", "margin-mobile": "1rem", "gutter-mobile": "0.75rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "space-md": "1rem", "space-xl": "2.5rem", "space-sm": "0.5rem" }, "fontFamily": { "body-lg": ["Inter"], "headline-sm": ["Space Grotesk"], "label-telemetry-sm": ["Space Grotesk"], "headline-xl-mobile": ["Space Grotesk"], "headline-md": ["Space Grotesk"], "body-sm": ["Inter"], "headline-lg": ["Space Grotesk"], "code-coords": ["Space Grotesk"], "headline-lg-mobile": ["Space Grotesk"], "label-telemetry-lg": ["Space Grotesk"], "body-md": ["Inter"], "headline-xl": ["Space Grotesk"] }, "fontSize": { "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "0.01em", "fontWeight": "600" }], "label-telemetry-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.12em", "fontWeight": "600" }], "headline-xl-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.015em", "fontWeight": "400" }], "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "code-coords": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-telemetry-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.08em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest/90 backdrop-blur-2xl z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-7 h-7 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-fixed-dim"><span class="material-symbols-outlined text-[18px]">radar</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-on-surface font-bold">CosmoStellar</span><span class="font-label-telemetry-sm text-label-telemetry-sm text-outline tracking-widest uppercase">Deep Space Atlas</span></div></div></div><div class="px-space-md py-space-sm"><div class="px-space-sm py-space-xs rounded-lg bg-surface-container-low flex items-center justify-between"><span class="font-label-telemetry-sm text-label-telemetry-sm text-outline tracking-wider uppercase">Sector Grid</span><span class="font-code-coords text-code-coords text-primary-fixed-dim">RA 19h 50m</span></div></div><nav class="flex flex-col gap-space-xs px-space-sm mt-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-[0_0_20px_rgba(32,217,242,0.3)]"><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="observatory" href="#"><span class="material-symbols-outlined text-[20px] transition-colors group-hover:text-primary-fixed-dim">explore</span><span class="font-label-telemetry-lg text-label-telemetry-lg">Observatory</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="planet-explorer" href="#"><span class="material-symbols-outlined text-[20px] transition-colors group-hover:text-primary-fixed-dim">public</span><span class="font-label-telemetry-lg text-label-telemetry-lg">Planet Explorer</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm transition-all group bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-[0_0_20px_rgba(32,217,242,0.3)]" data-path="cosmic-time-machine" href="#"><span class="material-symbols-outlined text-[20px] transition-colors group-hover:text-primary-fixed-dim">timelapse</span><span class="font-label-telemetry-lg text-label-telemetry-lg">Cosmic Time Machine</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="mission-control" href="#"><span class="material-symbols-outlined text-[20px] transition-colors group-hover:text-primary-fixed-dim">rocket_launch</span><span class="font-label-telemetry-lg text-label-telemetry-lg">Mission Control</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="mars-rover-explorer" href="#"><span class="material-symbols-outlined text-[20px] transition-colors group-hover:text-primary-fixed-dim">precision_manufacturing</span><span class="font-label-telemetry-lg text-label-telemetry-lg">Mars Rover Explorer</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="asteroid-watch-and-lab" href="#"><span class="material-symbols-outlined text-[20px] transition-colors group-hover:text-primary-fixed-dim">hub</span><span class="font-label-telemetry-lg text-label-telemetry-lg">Asteroid Watch &amp; Lab</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="space-intelligence" href="#"><span class="material-symbols-outlined text-[20px] transition-colors group-hover:text-primary-fixed-dim">memory</span><span class="font-label-telemetry-lg text-label-telemetry-lg">Space Intelligence</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="learning-hub-and-vault" href="#"><span class="material-symbols-outlined text-[20px] transition-colors group-hover:text-primary-fixed-dim">menu_book</span><span class="font-label-telemetry-lg text-label-telemetry-lg">Learning Hub &amp; Vault</span></a></nav></div><div class="p-space-md flex flex-col gap-space-sm"><div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-pulse"></span><span class="font-label-telemetry-sm text-label-telemetry-sm text-on-surface tracking-wider uppercase">Telemetry Link</span></div><span class="font-code-coords text-code-coords text-outline">104.8 Gbps</span></div><div class="flex items-center justify-between text-outline px-space-xs"><span class="font-label-telemetry-sm text-label-telemetry-sm uppercase tracking-widest">Sol Cycle 29.4</span><span class="font-code-coords text-code-coords">SYS OK</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 z-40 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-xs rounded-lg text-on-surface-variant w-80 cursor-pointer hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[18px]">search</span><span class="font-body-sm text-body-sm flex-1 text-outline">Search telemetry, pulsars, exoplanets...</span><kbd class="font-code-coords text-code-coords px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface">Ctrl + K</kbd></div><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-tertiary-container"></span><span class="font-label-telemetry-sm text-label-telemetry-sm text-on-surface tracking-wider uppercase">OFFLINE DEMO</span></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-all" type="button"><span class="material-symbols-outlined text-[16px] text-primary-fixed-dim">volume_up</span><span class="font-label-telemetry-sm text-label-telemetry-sm tracking-wider uppercase">AMBIENT ON</span></button><div class="flex items-center gap-space-sm pl-space-sm"><div class="flex flex-col text-right"><span class="font-headline-sm text-label-telemetry-lg text-on-surface leading-tight">Cmdr. V. Vance</span><span class="font-code-coords text-body-sm text-outline">Explorer Passport #4409</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Dynamic Atmosphere Layer -->
+<div class="relative w-full px-margin py-space-lg flex flex-col gap-space-xl overflow-hidden">
+<!-- Top Telemetry & Hero Section -->
+<header class="relative w-full flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg pb-space-lg">
+<div class="flex flex-col gap-space-xs max-w-4xl">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm uppercase tracking-widest text-primary">
+            CHRONO-LOG ARCHIVE // TEMPORAL ASTROGATION
+          </span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-code-coords text-code-coords text-outline">
+            SEC.TIME-LINE-ALPHA
+          </span>
+</div>
+<h1 class="font-headline-xl text-headline-xl tracking-tight text-on-surface">
+          1969 <span class="text-primary-fixed-dim">— THE YEAR OF A</span> <span class="text-tertiary-container">GIANT LEAP</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+          Explore the missions, orbital vectors, and historical leaps that redefined humanity's presence beyond Earth. Navigate reconstructed chronologies of modern aerospace exploration.
+        </p>
+</div>
+<!-- Quick Telemetry Readout Grid -->
+<div class="grid grid-cols-3 gap-space-sm bg-surface-container-low/80 backdrop-blur-xl p-space-md rounded-xl shadow-lg">
+<div class="flex flex-col pr-space-md">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase">Historic Epochs</span>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">74</span>
+<span class="font-code-coords text-code-coords text-primary-fixed-dim">Indexed Vault</span>
+</div>
+<div class="flex flex-col px-space-md">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase">Chrono Range</span>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">1957–’25</span>
+<span class="font-code-coords text-code-coords text-tertiary">Solar System Span</span>
+</div>
+<div class="flex flex-col pl-space-md">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase">Trajectories</span>
+<span class="font-headline-md text-headline-md text-primary font-semibold">100%</span>
+<span class="font-code-coords text-code-coords text-outline">Reconstructed</span>
+</div>
+</div>
+</header>
+<!-- Interactive Horizontal Chrono-Slider & Navigation Dock -->
+<section class="flex flex-col gap-space-md bg-surface-container-low/70 backdrop-blur-2xl p-space-lg rounded-xl shadow-xl">
+<!-- Decades Filter Rail -->
+<div class="flex items-center justify-between gap-space-md flex-wrap">
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1" id="decadeSelector">
+<button class="decade-btn px-space-md py-space-xs rounded font-label-telemetry-sm text-label-telemetry-sm uppercase tracking-wider text-outline hover:text-on-surface hover:bg-surface-container transition-all" type="button">1950s</button>
+<button class="decade-btn px-space-md py-space-xs rounded bg-primary-container text-on-primary-container font-label-telemetry-sm text-label-telemetry-sm uppercase tracking-wider font-bold shadow-[0_0_16px_rgba(32,217,242,0.35)]" type="button">1960s</button>
+<button class="decade-btn px-space-md py-space-xs rounded font-label-telemetry-sm text-label-telemetry-sm uppercase tracking-wider text-outline hover:text-on-surface hover:bg-surface-container transition-all" type="button">1970s</button>
+<button class="decade-btn px-space-md py-space-xs rounded font-label-telemetry-sm text-label-telemetry-sm uppercase tracking-wider text-outline hover:text-on-surface hover:bg-surface-container transition-all" type="button">1980s</button>
+<button class="decade-btn px-space-md py-space-xs rounded font-label-telemetry-sm text-label-telemetry-sm uppercase tracking-wider text-outline hover:text-on-surface hover:bg-surface-container transition-all" type="button">1990s</button>
+<button class="decade-btn px-space-md py-space-xs rounded font-label-telemetry-sm text-label-telemetry-sm uppercase tracking-wider text-outline hover:text-on-surface hover:bg-surface-container transition-all" type="button">2000s</button>
+<button class="decade-btn px-space-md py-space-xs rounded font-label-telemetry-sm text-label-telemetry-sm uppercase tracking-wider text-outline hover:text-on-surface hover:bg-surface-container transition-all" type="button">2010s</button>
+<button class="decade-btn px-space-md py-space-xs rounded font-label-telemetry-sm text-label-telemetry-sm uppercase tracking-wider text-outline hover:text-on-surface hover:bg-surface-container transition-all" type="button">2020s</button>
+<button class="decade-btn px-space-md py-space-xs rounded font-label-telemetry-sm text-label-telemetry-sm uppercase tracking-wider text-tertiary hover:bg-surface-container transition-all" type="button">Future Horizons</button>
+</div>
+<!-- Timeline Scrub Controls -->
+<div class="flex items-center gap-space-xs bg-surface-container-high px-space-sm py-1 rounded-lg">
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" id="prevBtn" title="Previous Mission">
+<span class="material-symbols-outlined text-[18px]">skip_previous</span>
+</button>
+<button class="px-space-sm py-1 rounded bg-primary text-on-primary font-label-telemetry-sm text-label-telemetry-sm flex items-center gap-1 shadow-sm transition-transform active:scale-95" id="playPauseBtn" title="Play / Pause Auto Chronology">
+<span class="material-symbols-outlined text-[16px]" id="playIcon">play_arrow</span>
+<span id="playLabel">AUTO</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" id="nextBtn" title="Next Mission">
+<span class="material-symbols-outlined text-[18px]">skip_next</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-on-surface transition-colors ml-space-xs" id="resetBtn" title="Reset Timeline">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+</button>
+</div>
+</div>
+<!-- Luminous Interactive Chrono-Track -->
+<div class="relative w-full py-space-lg select-none overflow-x-auto">
+<div class="min-w-[900px] relative px-space-md">
+<!-- Backline Vector -->
+<div class="h-1 w-full bg-surface-container-highest rounded-full relative">
+<!-- Active Fill Range (1957 to 1969) -->
+<div class="h-full bg-gradient-to-r from-secondary-fixed-dim via-primary-fixed-dim to-primary rounded-full" style="width: 32%;"></div>
+</div>
+<!-- Milestones Nodes on Track -->
+<div class="relative flex justify-between -mt-3.5">
+<!-- 1957 Sputnik 1 -->
+<div class="flex flex-col items-center group cursor-pointer" onclick="selectEpoch('1957')">
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center transition-all group-hover:scale-125 shadow-md">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+</div>
+<span class="font-headline-sm text-label-telemetry-lg text-secondary-fixed mt-2">1957</span>
+<span class="font-body-sm text-body-sm text-outline">Sputnik 1</span>
+<span class="font-code-coords text-code-coords text-outline-variant text-[10px]">LEO Insertion</span>
+</div>
+<!-- 1961 Vostok 1 -->
+<div class="flex flex-col items-center group cursor-pointer" onclick="selectEpoch('1961')">
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center transition-all group-hover:scale-125 shadow-md">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-fixed-dim"></span>
+</div>
+<span class="font-headline-sm text-label-telemetry-lg text-primary-fixed-dim mt-2">1961</span>
+<span class="font-body-sm text-body-sm text-outline">Vostok 1</span>
+<span class="font-code-coords text-code-coords text-outline-variant text-[10px]">Y. Gagarin</span>
+</div>
+<!-- 1969 Apollo 11 (ACTIVE HIGHLIGHT) -->
+<div class="flex flex-col items-center relative cursor-pointer" onclick="selectEpoch('1969')">
+<div class="relative flex items-center justify-center">
+<div class="absolute w-10 h-10 rounded-full bg-primary-container/20 animate-ping"></div>
+<div class="w-7 h-7 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-[0_0_24px_rgba(32,217,242,0.8)] ring-2 ring-primary-fixed">
+<span class="material-symbols-outlined text-[16px] font-bold">flag</span>
+</div>
+</div>
+<span class="font-headline-sm text-label-telemetry-lg text-primary-fixed-dim mt-1.5 font-bold">1969</span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-on-surface font-semibold bg-surface-container-high px-1.5 py-0.5 rounded">Apollo 11</span>
+<span class="font-code-coords text-code-coords text-tertiary text-[10px]">Mare Tranquillitatis</span>
+</div>
+<!-- 1977 Voyager 1 -->
+<div class="flex flex-col items-center group cursor-pointer" onclick="selectEpoch('1977')">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center transition-all group-hover:scale-125">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+</div>
+<span class="font-headline-sm text-label-telemetry-lg text-outline mt-2 group-hover:text-on-surface">1977</span>
+<span class="font-body-sm text-body-sm text-outline">Voyager 1</span>
+<span class="font-code-coords text-code-coords text-outline-variant text-[10px]">Interstellar</span>
+</div>
+<!-- 1990 Hubble HST -->
+<div class="flex flex-col items-center group cursor-pointer" onclick="selectEpoch('1990')">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center transition-all group-hover:scale-125">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+</div>
+<span class="font-headline-sm text-label-telemetry-lg text-outline mt-2 group-hover:text-on-surface">1990</span>
+<span class="font-body-sm text-body-sm text-outline">Hubble HST</span>
+<span class="font-code-coords text-code-coords text-outline-variant text-[10px]">Deep Field</span>
+</div>
+<!-- 2012 Curiosity -->
+<div class="flex flex-col items-center group cursor-pointer" onclick="selectEpoch('2012')">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center transition-all group-hover:scale-125">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+</div>
+<span class="font-headline-sm text-label-telemetry-lg text-outline mt-2 group-hover:text-on-surface">2012</span>
+<span class="font-body-sm text-body-sm text-outline">Curiosity</span>
+<span class="font-code-coords text-code-coords text-outline-variant text-[10px]">Gale Crater</span>
+</div>
+<!-- 2025 Artemis II -->
+<div class="flex flex-col items-center group cursor-pointer" onclick="selectEpoch('2025')">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center transition-all group-hover:scale-125">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+</div>
+<span class="font-headline-sm text-label-telemetry-lg text-tertiary mt-2">2025</span>
+<span class="font-body-sm text-body-sm text-outline">Artemis II</span>
+<span class="font-code-coords text-code-coords text-outline-variant text-[10px]">Lunar Orbit</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Editorial Display: Featured Milestone (Apollo 11 Tranquillity Base) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Left Big Card: Visual + Dossier -->
+<article class="lg:col-span-8 flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-2xl relative">
+<!-- Visual Backdrop with Header Overlay -->
+<div class="relative w-full h-80 sm:h-96 overflow-hidden">
+<img class="w-full h-full object-cover object-center" data-alt="High-fidelity cinematic photograph of the Apollo 11 Lunar Module Eagle standing proudly upon the Mare Tranquillitatis surface on the Moon, deep space cosmic darkness in the background, sharp bright sunlight casting crisp black shadows, Ion cyan reflection on gold thermal foil, ultra detailed realistic aerospace photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQepFhjoLpF7IpI-D-dc0u4hl8FRVAeHU8S6mqLezvZ1HTpwgqgF-IG_vEc-R-cllpIRh5PD0aiPjuwh_0Ge7h-FBlLOu0CWTF0oaHyvE9P3zrWnmC4zY6ucbkJQ4VJxFYZ4yHFYmeJGqB2fIGX4aD1KI6xYuB6xgwOCkFYf1fFL0o5AcEpaTqKFNNmltTKYvrQPnnyRbKFrOy6vH9yOaMbpiujgNXzDL8c5CAScLx"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-surface-container-low/40 to-transparent"></div>
+<!-- Badges Floating in Viewport -->
+<div class="absolute top-space-md left-space-md flex flex-wrap gap-space-xs">
+<span class="px-space-sm py-1 rounded bg-surface-container-lowest/80 backdrop-blur-md font-label-telemetry-sm text-label-telemetry-sm text-primary-fixed-dim flex items-center gap-1 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+              LUNAR SURFACE CONTACT VERIFIED
+            </span>
+<span class="px-space-sm py-1 rounded bg-surface-container-lowest/80 backdrop-blur-md font-code-coords text-code-coords text-on-surface">
+              0°40'27" N, 23°28'23" E
+            </span>
+</div>
+<div class="absolute bottom-space-md left-space-md right-space-md flex flex-col">
+<span class="font-code-coords text-code-coords text-tertiary-container uppercase tracking-wider">APOLLO ARCHIVE // MISSION-11</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Tranquillity Base Lunar Landing</h2>
+</div>
+</div>
+<!-- Telemetry Dossier Body -->
+<div class="p-space-lg flex flex-col gap-space-lg">
+<!-- Key Metrics Quad -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-md p-space-md rounded-lg bg-surface-container">
+<div class="flex flex-col">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase">Launch Date</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">July 16, 1969</span>
+<span class="font-code-coords text-code-coords text-outline">KSC Pad 39A</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase">Stay Duration</span>
+<span class="font-headline-sm text-headline-sm text-primary">21h 36m 20s</span>
+<span class="font-code-coords text-code-coords text-outline">Surface EVA: 2h 31m</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase">Regolith Payload</span>
+<span class="font-headline-sm text-headline-sm text-tertiary">21.55 kg</span>
+<span class="font-code-coords text-code-coords text-outline">47.5 lbs Samples</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase">Flight Crew</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold truncate">Armstrong, Aldrin, Collins</span>
+<span class="font-code-coords text-code-coords text-outline">AS-506 / CSM-107</span>
+</div>
+</div>
+<!-- Editorial Narrative and Significance Callout -->
+<div class="flex flex-col gap-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Mission Significance &amp; Astrodynamic Leap</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              At 20:17:40 UTC on July 20, 1969, the Lunar Module <em>Eagle</em> touched down in the southwestern plains of Mare Tranquillitatis. Neil Armstrong's manual pitch override navigated clear of a boulder-strewn crater field with less than 25 seconds of descent propellant remaining.
+            </p>
+<div class="p-space-md rounded-lg bg-surface-container-high/60 backdrop-blur-md flex flex-col gap-space-xs shadow-inner">
+<div class="flex items-center gap-space-xs text-primary-fixed-dim">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm uppercase tracking-wider font-bold">Why This Event Matters</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+                Apollo 11 validated trans-lunar injection vectors, active radar altimetry descent guidance, and humanity's capacity to escape Earth's gravitational well, retrieve extraterrestrial planetary samples, and execute rendezvous maneuvers in orbital lunar space.
+              </p>
+</div>
+</div>
+<!-- CTAs -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<button class="px-space-lg py-space-sm rounded bg-primary-container text-on-primary-container font-headline-sm text-label-telemetry-lg uppercase tracking-wider font-bold shadow-[0_0_20px_rgba(32,217,242,0.4)] hover:opacity-95 transition-all flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px]">play_circle</span>
+              Launch Mission Replay Lab
+            </button>
+<button class="px-space-md py-space-sm rounded bg-secondary-container/40 text-secondary-fixed-dim hover:bg-secondary-container/60 font-label-telemetry-lg text-label-telemetry-lg uppercase tracking-wider transition-all flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">public</span>
+              Inspect Lunar Destination World
+            </button>
+</div>
+</div>
+</article>
+<!-- Right Column: Trajectory Vector Arc & Real-time Chrono Feed -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Trajectory Vector Schematic Card -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-space-md shadow-xl">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[18px]">alt_route</span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm uppercase tracking-widest text-on-surface font-semibold">AS-506 Trajectory Arc</span>
+</div>
+<span class="font-code-coords text-code-coords text-outline">TLI VECTOR</span>
+</div>
+<!-- High-Contrast Vector SVG Arc -->
+<div class="relative w-full h-48 bg-surface-container-lowest rounded-lg p-space-sm flex items-center justify-center overflow-hidden">
+<svg class="w-full h-full text-outline" fill="none" stroke="currentColor" viewbox="0 0 340 160">
+<!-- Grid lines -->
+<line stroke="currentColor" stroke-dasharray="2 4" stroke-opacity="0.1" x1="10" x2="330" y1="40" y2="40"></line>
+<line stroke="currentColor" stroke-dasharray="2 4" stroke-opacity="0.1" x1="10" x2="330" y1="80" y2="80"></line>
+<line stroke="currentColor" stroke-dasharray="2 4" stroke-opacity="0.1" x1="10" x2="330" y1="120" y2="120"></line>
+<!-- Earth Grav Well -->
+<circle cx="50" cy="90" fill="#161b2a" r="28" stroke="#22daf3" stroke-opacity="0.6" stroke-width="1.5"></circle>
+<circle cx="50" cy="90" fill="#20d9f2" fill-opacity="0.3" r="14"></circle>
+<!-- Moon Well -->
+<circle cx="280" cy="50" fill="#161b2a" r="16" stroke="#ffdcba" stroke-opacity="0.6" stroke-width="1.5"></circle>
+<circle cx="280" cy="50" fill="#ffb865" fill-opacity="0.5" r="6"></circle>
+<!-- Outbound Trajectory Arc -->
+<path d="M 50 62 C 90 10, 200 15, 275 35" stroke="#20d9f2" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Lunar Orbit Insertion & Return Loop -->
+<path d="M 275 35 C 295 45, 290 65, 270 65 C 210 65, 120 140, 50 118" stroke="#859396" stroke-dasharray="4 3" stroke-width="1.5"></path>
+<!-- Spacecraft Marker Position -->
+<circle class="animate-ping" cx="200" cy="22" fill="#ffffff" r="3"></circle>
+<circle cx="200" cy="22" fill="#20d9f2" r="2.5"></circle>
+</svg>
+<div class="absolute bottom-2 left-3 font-code-coords text-code-coords text-[10px] text-outline">
+              T+75:49:50 TLI Complete
+            </div>
+<div class="absolute top-2 right-3 font-code-coords text-code-coords text-[10px] text-tertiary">
+              LOI-1 Δv 2,917 ft/s
+            </div>
+</div>
+<!-- Trajectory Checkpoint List -->
+<div class="flex flex-col gap-space-xs font-code-coords text-code-coords text-[11px]">
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container">
+<span class="text-on-surface-variant">T+00:00:00</span>
+<span class="text-on-surface">Saturn V Ignition (KSC)</span>
+<span class="text-primary-fixed-dim">NOMINAL</span>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container">
+<span class="text-on-surface-variant">T+02:44:16</span>
+<span class="text-on-surface">Translunar Injection (TLI)</span>
+<span class="text-primary-fixed-dim">35,533 km/h</span>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded bg-surface-container">
+<span class="text-on-surface-variant">T+102:45:40</span>
+<span class="text-on-surface">Eagle Touchdown (Lunar)</span>
+<span class="text-tertiary-container">Landed</span>
+</div>
+</div>
+</div>
+<!-- Secondary Chrono Snapshot Card -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-space-sm shadow-xl">
+<div class="flex items-center justify-between">
+<span class="font-label-telemetry-sm text-label-telemetry-sm uppercase tracking-widest text-outline">Historical Context</span>
+<span class="font-code-coords text-code-coords text-outline-variant">EPOCH 1969</span>
+</div>
+<div class="h-32 w-full rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Vintage 1969 NASA mission control telemetry room filled with aerospace computer banks, CRT monochromatic green and amber displays, flight engineers in classic white shirts and headsets observing lunar descent telemetry." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO0BTUYTV-F65pa6WrXnepm2xuWCOmB6UEwVXQ0LFFyv-XGlAxiN-k8BBnH5FuGWVX_MHjGQ0cmyP2fqPtVft7wDfLnEt4823UHNHC2yVWY2IFZhhglqsbJOGhZBBxzp7FFlg9DliAggfvgQ-S9wv-DZtxUYUh-pn8pfOLQ7fCbP2H0u7MVaiv7C6CBhzBYjXvhsheUlgIt_INtGpJ4zTh36KLAj6IlH8nCFZQddM9"/>
+<div class="absolute inset-0 bg-surface-container-lowest/40 backdrop-blur-[1px]"></div>
+<div class="absolute bottom-2 left-2 right-2 flex items-center justify-between">
+<span class="font-headline-sm text-label-telemetry-lg text-on-surface font-bold">Houston MCC Console</span>
+<span class="font-code-coords text-code-coords text-primary-fixed-dim">CAPCOM: Duke</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Simultaneous mission support spanned 400,000 scientists, technicians, and contractors worldwide, establishing the deep space communication network DSN Goldstone, Madrid, and Honeysuckle Creek.
+          </p>
+</div>
+</div>
+</div>
+<!-- Contemporaneous Cosmic Time Capsules (1969 Era) -->
+<section class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-primary uppercase tracking-widest">Temporal Synchronicity</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">Cosmic Time Capsules: 1969 Horizons</h2>
+</div>
+<div class="hidden sm:flex items-center gap-space-xs text-outline font-code-coords text-code-coords">
+<span class="material-symbols-outlined text-[16px]">folder_special</span>
+<span>4 MISSIONS CATALOGED IN THIS DECADE CYCLE</span>
+</div>
+</div>
+<!-- Grid of Contemporaneous Missions -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Card 1: Mariner 6 & 7 -->
+<article class="bg-surface-container-low hover:bg-surface-container transition-all rounded-xl p-space-md flex flex-col justify-between gap-space-md shadow-md group">
+<div class="flex flex-col gap-space-sm">
+<div class="h-40 w-full rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Deep space probe Mariner 6 spacecraft flying past Mars with visible cratered Martian surface below and black space horizon, solar panels glinting in sunlight, vintage planetary probe scientific illustration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA1dU9GT5T6JC8Fd_VtFGGRypz4Ycu61wblzhU8qJySRkUvlQRW8eKcojq_axCdwkMsfY_uMoJMGrpnbdpjlk_WzIUxOQTaGmTUnBNe5ip75GT-m4_7Dvwn5UNOblJ_85nGWi10kSnsgsQr7h37CfrIR-Ra26LZSxMzHrtAFQ42nkHQZ7u51Sc0lztxWSFBfdmy6OxSkszvpgWNi8-ODQb45AwkIhM1JKYEtvytXZS"/>
+<div class="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-surface-container-lowest/80 font-code-coords text-code-coords text-tertiary">
+                MARS FLYBY
+              </div>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-code-coords text-code-coords text-outline">NASA / JPL</span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-primary-fixed-dim">JUL–AUG 1969</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Mariner 6 &amp; Mariner 7</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Dual flybys captured 201 television images of the Martian surface, mapping 20% of the planet's terrain and establishing atmospheric pressure densities prior to robotic landings.
+            </p>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="font-code-coords text-code-coords text-outline">3,431 km closest approach</span>
+<button class="p-1.5 rounded bg-surface-container-high group-hover:bg-primary-container group-hover:text-on-primary-container text-on-surface-variant transition-colors" title="Inspect Capsule">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Card 2: Venera 5 & Venera 6 -->
+<article class="bg-surface-container-low hover:bg-surface-container transition-all rounded-xl p-space-md flex flex-col justify-between gap-space-md shadow-md group">
+<div class="flex flex-col gap-space-sm">
+<div class="h-40 w-full rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Soviet Venera space capsule descending through the thick hazy amber-yellow carbon dioxide cloud deck of Venus, heat shield glowing, atmospheric drag probe scientific illustration, deep space exploration aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHxXKwz46VuCKqgr7ApJL4OPvYs5K2IdN99sgicMLp1pjGTA7RUC_mnCIVNUh5okAR3bO9e6naxmdV5RJEQvLgSZNCkd8snL_8YpQnZZ3iX5QW_4B8PQk4vnAViKoLOnDrZxvZeMP6vmXbYfXQPuWo17KEqaVuUtDMt0T58_h7rwPvvfq8YE87-Vtk8JaQvcXWcbfBVWi3ZuB-SUuBsplj87t4yglLDV4xLOYql1TF"/>
+<div class="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-surface-container-lowest/80 font-code-coords text-code-coords text-tertiary-container">
+                VENUS DESCENT
+              </div>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-code-coords text-code-coords text-outline">SOVIET SPACE PROGRAM</span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-primary-fixed-dim">MAY 1969</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Venera 5 &amp; Venera 6</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Atmospheric entry probes penetrated Venusian skies to record 50 minutes of deep-crushing pressure and chemical spectrometer telemetry down to 320°C ambient temperatures.
+            </p>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="font-code-coords text-code-coords text-outline">27 atm pressure recorded</span>
+<button class="p-1.5 rounded bg-surface-container-high group-hover:bg-primary-container group-hover:text-on-primary-container text-on-surface-variant transition-colors" title="Inspect Capsule">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Card 3: Apollo 12 -->
+<article class="bg-surface-container-low hover:bg-surface-container transition-all rounded-xl p-space-md flex flex-col justify-between gap-space-md shadow-md group">
+<div class="flex flex-col gap-space-sm">
+<div class="h-40 w-full rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Apollo 12 astronaut Pete Conrad standing on the lunar surface next to the Surveyor 3 robotic probe, stark deep space black sky, golden thermal blankets reflecting solar light, high resolution Apollo lunar mission photo style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY9hVnd2Or0Fro6L0VVg49vHCpMNHJEh0PKR_lj3Ie1DmDPq9PEV7l0hTbO5kJjqcu3sIIIyUSBBfBYjZshJMJbscUJy_xegBE13FyUCtFyoODY-HIupu0ZrMBYDQTVrU0SZ4U-aWWKOzTh08ltN6xsCNcpwbsa5ypxLKhDFfvtCzl5KnnHW5Vxnd7CQpXfsaIK45KB6XNd1BPxH6euUmnjzL2hkfuH9Cj5fAgD-dA"/>
+<div class="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-surface-container-lowest/80 font-code-coords text-code-coords text-secondary-fixed">
+                PINPOINT LANDING
+              </div>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-code-coords text-code-coords text-outline">NASA APOLLO 12</span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-primary-fixed-dim">NOV 1969</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Apollo 12: Ocean of Storms</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              The second lunar landing executed unprecedented pinpoint guidance, touchdown within 180 meters of Surveyor 3, proving targeting accuracy required for rugged terrain missions.
+            </p>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="font-code-coords text-code-coords text-outline">Oceanus Procellarum</span>
+<button class="p-1.5 rounded bg-surface-container-high group-hover:bg-primary-container group-hover:text-on-primary-container text-on-surface-variant transition-colors" title="Inspect Capsule">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- Attribution and Archive Disclaimer -->
+<footer class="pt-space-md flex flex-col sm:flex-row items-center justify-between text-outline gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed-dim">history_edu</span>
+<span class="font-body-sm text-body-sm">
+          Illustrative historical chronology based on declassified archives and astrodynamic reconstructions.
+        </span>
+</div>
+<div class="font-code-coords text-code-coords text-outline-variant">
+        DSN-SYNC-ID // 1969.07.20-TRANQUILITY
+      </div>
+</footer>
+</div>
+<!-- Interactive Timeline Control Script -->
+<script>
+    (function initChronoMachine() {
+      const decadeBtns = document.querySelectorAll('.decade-btn');
+      const playPauseBtn = document.getElementById('playPauseBtn');
+      const playIcon = document.getElementById('playIcon');
+      const playLabel = document.getElementById('playLabel');
+      let isPlaying = false;
+      let timer = null;
+
+      decadeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          decadeBtns.forEach(b => {
+            b.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-bold', 'shadow-[0_0_16px_rgba(32,217,242,0.35)]');
+            b.classList.add('text-outline');
+          });
+          btn.classList.add('bg-primary-container', 'text-on-primary-container', 'font-bold', 'shadow-[0_0_16px_rgba(32,217,242,0.35)]');
+          btn.classList.remove('text-outline');
+        });
+      });
+
+      playPauseBtn.addEventListener('click', () => {
+        isPlaying = !isPlaying;
+        if (isPlaying) {
+          playIcon.textContent = 'pause';
+          playLabel.textContent = 'PAUSE';
+          playPauseBtn.classList.replace('bg-primary', 'bg-tertiary-container');
+          playPauseBtn.classList.replace('text-on-primary', 'text-on-tertiary-container');
+        } else {
+          playIcon.textContent = 'play_arrow';
+          playLabel.textContent = 'AUTO';
+          playPauseBtn.classList.replace('bg-tertiary-container', 'bg-primary');
+          playPauseBtn.classList.replace('text-on-tertiary-container', 'text-on-primary');
+        }
+      });
+
+      window.selectEpoch = function(year) {
+        console.log('Selected Epoch:', year);
+      };
+    })();
+  </script>
+</div></main></div></body></html>

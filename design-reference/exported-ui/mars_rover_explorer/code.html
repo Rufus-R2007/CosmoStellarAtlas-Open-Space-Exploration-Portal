@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-dim": "#0e1321", "surface-container-lowest": "#080e1c", "primary-fixed-dim": "#22daf3", "on-surface": "#dde2f6", "surface-container-highest": "#2f3444", "on-secondary-fixed-variant": "#4b1fbe", "on-primary-fixed": "#001f24", "inverse-primary": "#006875", "background": "#0e1321", "secondary-fixed-dim": "#cbbeff", "surface-container-high": "#242a39", "on-secondary-container": "#baa9ff", "primary-fixed": "#9defff", "error-container": "#93000a", "on-primary-fixed-variant": "#004e59", "surface-container-low": "#161b2a", "surface-variant": "#2f3444", "on-tertiary": "#482900", "surface": "#0e1321", "inverse-surface": "#dde2f6", "tertiary": "#ffdcba", "outline-variant": "#3c494c", "inverse-on-surface": "#2b3040", "surface-container": "#1a1f2e", "primary-container": "#20d9f2", "secondary-fixed": "#e7deff", "tertiary-fixed": "#ffddba", "tertiary-container": "#ffb865", "on-secondary-fixed": "#1e0060", "surface-bright": "#343949", "on-primary-container": "#005b66", "on-tertiary-container": "#774700", "on-background": "#dde2f6", "on-tertiary-fixed-variant": "#673d00", "on-secondary": "#340098", "error": "#ffb4ab", "surface-tint": "#22daf3", "outline": "#859396", "tertiary-fixed-dim": "#ffb867", "primary": "#9befff", "on-surface-variant": "#bac9cc", "on-error": "#690005", "on-tertiary-fixed": "#2b1700", "secondary": "#cbbeff", "on-error-container": "#ffdad6", "secondary-container": "#4b1fbe", "on-primary": "#00363e" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin": "2rem", "gutter": "1.5rem", "margin-mobile": "1rem", "gutter-mobile": "0.75rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "space-md": "1rem", "space-xl": "2.5rem", "space-sm": "0.5rem" }, "fontFamily": { "body-lg": ["Inter"], "headline-sm": ["Space Grotesk"], "label-telemetry-sm": ["Space Grotesk"], "headline-xl-mobile": ["Space Grotesk"], "headline-md": ["Space Grotesk"], "body-sm": ["Inter"], "headline-lg": ["Space Grotesk"], "code-coords": ["Space Grotesk"], "headline-lg-mobile": ["Space Grotesk"], "label-telemetry-lg": ["Space Grotesk"], "body-md": ["Inter"], "headline-xl": ["Space Grotesk"] }, "fontSize": { "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "0.01em", "fontWeight": "600" }], "label-telemetry-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.12em", "fontWeight": "600" }], "headline-xl-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.015em", "fontWeight": "400" }], "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "code-coords": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-telemetry-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.08em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest/90 backdrop-blur-2xl z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-7 h-7 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-fixed-dim"><span class="material-symbols-outlined text-[18px]">radar</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-on-surface font-bold">CosmoStellar</span><span class="font-label-telemetry-sm text-label-telemetry-sm text-outline tracking-widest uppercase">Deep Space Atlas</span></div></div></div><div class="px-space-md py-space-sm"><div class="px-space-sm py-space-xs rounded-lg bg-surface-container-low flex items-center justify-between"><span class="font-label-telemetry-sm text-label-telemetry-sm text-outline tracking-wider uppercase">Sector Grid</span><span class="font-code-coords text-code-coords text-primary-fixed-dim">RA 19h 50m</span></div></div><nav class="flex flex-col gap-space-xs px-space-sm mt-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-[0_0_20px_rgba(32,217,242,0.3)]"><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="observatory" href="#"><span class="material-symbols-outlined text-[20px] transition-colors group-hover:text-primary-fixed-dim">explore</span><span class="font-label-telemetry-lg text-label-telemetry-lg">Observatory</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="planet-explorer" href="#"><span class="material-symbols-outlined text-[20px] transition-colors group-hover:text-primary-fixed-dim">public</span><span class="font-label-telemetry-lg text-label-telemetry-lg">Planet Explorer</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="cosmic-time-machine" href="#"><span class="material-symbols-outlined text-[20px] transition-colors group-hover:text-primary-fixed-dim">timelapse</span><span class="font-label-telemetry-lg text-label-telemetry-lg">Cosmic Time Machine</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="mission-control" href="#"><span class="material-symbols-outlined text-[20px] transition-colors group-hover:text-primary-fixed-dim">rocket_launch</span><span class="font-label-telemetry-lg text-label-telemetry-lg">Mission Control</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm transition-all group bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-[0_0_20px_rgba(32,217,242,0.3)]" data-path="mars-rover-explorer" href="#"><span class="material-symbols-outlined text-[20px] transition-colors group-hover:text-primary-fixed-dim">precision_manufacturing</span><span class="font-label-telemetry-lg text-label-telemetry-lg">Mars Rover Explorer</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="asteroid-watch-and-lab" href="#"><span class="material-symbols-outlined text-[20px] transition-colors group-hover:text-primary-fixed-dim">hub</span><span class="font-label-telemetry-lg text-label-telemetry-lg">Asteroid Watch &amp; Lab</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="space-intelligence" href="#"><span class="material-symbols-outlined text-[20px] transition-colors group-hover:text-primary-fixed-dim">memory</span><span class="font-label-telemetry-lg text-label-telemetry-lg">Space Intelligence</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group" data-path="learning-hub-and-vault" href="#"><span class="material-symbols-outlined text-[20px] transition-colors group-hover:text-primary-fixed-dim">menu_book</span><span class="font-label-telemetry-lg text-label-telemetry-lg">Learning Hub &amp; Vault</span></a></nav></div><div class="p-space-md flex flex-col gap-space-sm"><div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-pulse"></span><span class="font-label-telemetry-sm text-label-telemetry-sm text-on-surface tracking-wider uppercase">Telemetry Link</span></div><span class="font-code-coords text-code-coords text-outline">104.8 Gbps</span></div><div class="flex items-center justify-between text-outline px-space-xs"><span class="font-label-telemetry-sm text-label-telemetry-sm uppercase tracking-widest">Sol Cycle 29.4</span><span class="font-code-coords text-code-coords">SYS OK</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 z-40 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-xs rounded-lg text-on-surface-variant w-80 cursor-pointer hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[18px]">search</span><span class="font-body-sm text-body-sm flex-1 text-outline">Search telemetry, pulsars, exoplanets...</span><kbd class="font-code-coords text-code-coords px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface">Ctrl + K</kbd></div><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-tertiary-container"></span><span class="font-label-telemetry-sm text-label-telemetry-sm text-on-surface tracking-wider uppercase">OFFLINE DEMO</span></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-all" type="button"><span class="material-symbols-outlined text-[16px] text-primary-fixed-dim">volume_up</span><span class="font-label-telemetry-sm text-label-telemetry-sm tracking-wider uppercase">AMBIENT ON</span></button><div class="flex items-center gap-space-sm pl-space-sm"><div class="flex flex-col text-right"><span class="font-headline-sm text-label-telemetry-lg text-on-surface leading-tight">Cmdr. V. Vance</span><span class="font-code-coords text-body-sm text-outline">Explorer Passport #4409</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Telemetry Sub-ribbon / Tactical HUD Band -->
+<div class="w-full bg-surface-container-lowest px-margin py-space-sm shadow-md">
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-fixed-dim animate-ping"></span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-primary uppercase tracking-widest">RELAY ODY-MRO-V4</span>
+</div>
+<div class="h-4 w-px bg-surface-container-highest"></div>
+<span class="font-code-coords text-code-coords text-on-surface-variant">SURFACE RECON // 18.38°N 77.58°E</span>
+</div>
+<!-- Quick Metrics Cluster -->
+<div class="flex flex-wrap items-center gap-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase">LMST:</span>
+<span class="font-code-coords text-code-coords text-on-surface font-semibold">14:22:08</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase">SURF TEMP:</span>
+<span class="font-code-coords text-code-coords text-tertiary-container font-semibold">-54.2°C</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase">ATMOS TAU:</span>
+<span class="font-code-coords text-code-coords text-primary-fixed font-semibold">0.42 (Nominal)</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase">ODOMETER:</span>
+<span class="font-code-coords text-code-coords text-on-surface font-semibold">24.81 km</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-margin flex flex-col gap-space-xl">
+<!-- Active Fleet Selector Bar -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-primary uppercase tracking-widest">Active Mobile Platforms</span>
+<span class="font-code-coords text-body-sm text-outline">/ ROVER-FLEET-SURVEY</span>
+</div>
+<span class="font-code-coords text-body-sm text-primary-fixed-dim">3 PLATFORMS INDEXED</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Perseverance Card (Active/Selected) -->
+<div class="group relative bg-surface-container p-space-md rounded-xl transition-all duration-300 shadow-xl cursor-pointer ring-1 ring-primary/40 bg-gradient-to-br from-surface-container via-surface-container to-primary/10">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-pulse"></span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-primary uppercase tracking-wider">Active Astrobiology</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-space-xs tracking-tight">Perseverance</h3>
+<p class="font-code-coords text-body-sm text-primary-fixed-dim">Mars 2020 • Sol 1,180</p>
+</div>
+<span class="material-symbols-outlined text-primary-fixed-dim text-headline-md">rocket_launch</span>
+</div>
+<div class="mt-space-md grid grid-cols-2 gap-space-xs pt-space-xs">
+<div class="bg-surface-container-low p-space-xs rounded-lg">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline block">TARGET REGION</span>
+<span class="font-code-coords text-body-sm text-on-surface font-semibold truncate block">Jezero Delta</span>
+</div>
+<div class="bg-surface-container-low p-space-xs rounded-lg">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline block">CORE CACHE</span>
+<span class="font-code-coords text-body-sm text-tertiary-container font-semibold truncate block">24 Samples Stored</span>
+</div>
+</div>
+</div>
+<!-- Curiosity Card -->
+<div class="group relative bg-surface-container-low hover:bg-surface-container p-space-md rounded-xl transition-all duration-300 shadow-md cursor-pointer">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-tertiary uppercase tracking-wider">Active Analytical</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-space-xs tracking-tight">Curiosity</h3>
+<p class="font-code-coords text-body-sm text-outline">MSL • Sol 4,200+</p>
+</div>
+<span class="material-symbols-outlined text-outline text-headline-md group-hover:text-primary-fixed transition-colors">precision_manufacturing</span>
+</div>
+<div class="mt-space-md grid grid-cols-2 gap-space-xs pt-space-xs">
+<div class="bg-surface-container p-space-xs rounded-lg">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline block">TARGET REGION</span>
+<span class="font-code-coords text-body-sm text-on-surface font-semibold truncate block">Gale / Mt. Sharp</span>
+</div>
+<div class="bg-surface-container p-space-xs rounded-lg">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline block">ODOMETER</span>
+<span class="font-code-coords text-body-sm text-on-surface-variant font-semibold truncate block">32.4 km Drive</span>
+</div>
+</div>
+</div>
+<!-- Opportunity Card (Completed) -->
+<div class="group relative bg-surface-container-low hover:bg-surface-container p-space-md rounded-xl transition-all duration-300 shadow-md cursor-pointer opacity-80 hover:opacity-100">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase tracking-wider">Mission Complete</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-space-xs tracking-tight">Opportunity</h3>
+<p class="font-code-coords text-body-sm text-outline">MER-B • 5,111 Sols Total</p>
+</div>
+<span class="material-symbols-outlined text-outline text-headline-md">flag</span>
+</div>
+<div class="mt-space-md grid grid-cols-2 gap-space-xs pt-space-xs">
+<div class="bg-surface-container p-space-xs rounded-lg">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline block">TARGET REGION</span>
+<span class="font-code-coords text-body-sm text-on-surface font-semibold truncate block">Meridiani Planum</span>
+</div>
+<div class="bg-surface-container p-space-xs rounded-lg">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline block">LIFETIME ODOM</span>
+<span class="font-code-coords text-body-sm text-secondary-fixed font-semibold truncate block">45.16 km (Record)</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sol Scrub & Sensor Telemetry Filtering Control Deck -->
+<section class="bg-surface-container-low p-space-md rounded-xl shadow-lg flex flex-col gap-space-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<!-- Sol Stepper and Scrubber -->
+<div class="flex flex-col gap-space-xs flex-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase">Temporal Sol Axis:</span>
+<span class="font-headline-sm text-headline-sm text-primary-fixed-dim font-bold">Sol 1042</span>
+<span class="font-code-coords text-body-sm text-outline">(Earth: 2024-01-26)</span>
+</div>
+<!-- Quick Steppers -->
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-space-xs bg-surface-container hover:bg-surface-container-high rounded-lg text-on-surface transition-all flex items-center gap-1 font-code-coords text-body-sm" id="solPrevBtn">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span> 1041
+              </button>
+<button class="px-space-sm py-space-xs bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm font-code-coords text-body-sm">
+                1042
+              </button>
+<button class="px-space-sm py-space-xs bg-surface-container hover:bg-surface-container-high rounded-lg text-on-surface transition-all flex items-center gap-1 font-code-coords text-body-sm" id="solNextBtn">
+                1043 <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Range Scrubber -->
+<div class="relative flex items-center w-full mt-space-xs">
+<input class="w-full h-1.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary-container" id="solSlider" max="1180" min="0" type="range" value="1042"/>
+</div>
+<div class="flex justify-between items-center text-outline font-label-telemetry-sm text-label-telemetry-sm uppercase">
+<span>Sol 0 (Touchdown)</span>
+<span>Sol 450 (Crater Floor)</span>
+<span>Sol 890 (Delta Rim)</span>
+<span>Sol 1180 (Latest Relay)</span>
+</div>
+</div>
+<!-- Sensor Selector Filter Pills -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase">Active Payload Imager:</span>
+<div class="flex flex-wrap gap-space-xs" id="sensorPillsContainer">
+<button class="sensor-pill active-pill px-space-sm py-space-xs rounded-lg font-label-telemetry-sm text-label-telemetry-sm uppercase bg-primary text-on-primary font-semibold transition-all">
+              Mastcam-Z (Pano)
+            </button>
+<button class="sensor-pill px-space-sm py-space-xs rounded-lg font-label-telemetry-sm text-label-telemetry-sm uppercase bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all">
+              SuperCam (Laser)
+            </button>
+<button class="sensor-pill px-space-sm py-space-xs rounded-lg font-label-telemetry-sm text-label-telemetry-sm uppercase bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all">
+              Navcam (Terrain)
+            </button>
+<button class="sensor-pill px-space-sm py-space-xs rounded-lg font-label-telemetry-sm text-label-telemetry-sm uppercase bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all">
+              PIXL (X-Ray)
+            </button>
+<button class="sensor-pill px-space-sm py-space-xs rounded-lg font-label-telemetry-sm text-label-telemetry-sm uppercase bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all">
+              WATSON (Micro)
+            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Inspection Lab Main Grid (HUD Laboratory Signature Experience) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg">
+<!-- Main High-Res Optical Viewport (8 Columns) -->
+<div class="xl:col-span-8 flex flex-col gap-space-md">
+<div class="relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-2xl flex flex-col group">
+<!-- Canvas Frame Header -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex items-center justify-between z-20">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[18px]">photo_camera</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Delta Front Layered Outcrop — Sol 1042</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-code-coords text-body-sm text-outline">Focal Length: 110mm</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-code-coords text-body-sm text-primary-fixed-dim">CALIB: RAW_L2B</span>
+</div>
+</div>
+<!-- Imagery Canvas Container with Mineral Annotation Overlays -->
+<div class="relative w-full h-[520px] overflow-hidden bg-surface-container-lowest flex items-center justify-center" id="imageryCanvas">
+<!-- Mars Surface Outcrop Placeholder Image -->
+<img class="w-full h-full object-cover transition-all duration-300 select-none pointer-events-none" data-alt="Ultra high resolution geological capture of Martian delta front bedrock outcrop inside Jezero crater, displaying distinct eroded sedimentary rock strata, orange and deep rust oxide dust, interspersed with dark basaltic sand ripples and blue-gray silicate rock fractures under the diffuse salmon-colored Martian sky with calibrated lighting." id="mainInspectImage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnTFcA13Y__uORBi3jW1x5mCihvbPMPSDKFNIJOZ_ZmEPPDE34nqM0GAiAa3YCPDMC2Ad2nyXLlt-xa7UhHt2unaT6RYiGwdXSYemDZ5lpolHjCMVmN7L93-j7qqtLDVtKyYUBoEXgGAyUibIi4r2ymKc9VZ4tVg3vWfdSecpGlcp_WSoayiQ39ET3kvtdRI7_fgspruiJUuCpCsLu-mT1eDsyPMVu7F-PsWzUx9c3"/>
+<!-- Reticle HUD & Corner Coordinates Grid -->
+<div class="absolute inset-0 pointer-events-none p-space-md flex flex-col justify-between">
+<div class="flex justify-between font-code-coords text-body-sm text-primary/60">
+<span>[AZ 312.4° // EL -14.2°]</span>
+<span>FOV: 32° × 24°</span>
+</div>
+<div class="flex justify-center items-center">
+<!-- Center Target Reticle -->
+<div class="w-12 h-12 rounded-full border border-dashed border-primary/30 flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></div>
+</div>
+</div>
+<div class="flex justify-between font-code-coords text-body-sm text-primary/60">
+<span>COORD: 77.4419E, 18.4231N</span>
+<span>RES: 0.28 mm/px</span>
+</div>
+</div>
+<!-- Mineral Spectral Overlays (Interactive Tags) -->
+<div class="mineral-tag absolute top-1/4 left-1/3 z-20 cursor-pointer transform -translate-x-1/2 transition-transform hover:scale-105" id="tagOlivine">
+<div class="flex items-center gap-space-xs bg-surface-container-lowest/90 backdrop-blur-md px-space-sm py-space-xs rounded-lg shadow-lg">
+<span class="w-2 h-2 rounded-full bg-primary-fixed-dim"></span>
+<span class="font-code-coords text-body-sm text-primary-fixed font-bold">Fe/Mg-Olivine</span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline">48%</span>
+</div>
+<div class="w-px h-8 bg-primary-fixed-dim/60 mx-auto"></div>
+</div>
+<div class="mineral-tag absolute bottom-1/3 right-1/4 z-20 cursor-pointer transform -translate-x-1/2 transition-transform hover:scale-105" id="tagSmectite">
+<div class="flex items-center gap-space-xs bg-surface-container-lowest/90 backdrop-blur-md px-space-sm py-space-xs rounded-lg shadow-lg">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+<span class="font-code-coords text-body-sm text-tertiary-container font-bold">Smectite Clay Carbonate</span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline">34%</span>
+</div>
+<div class="w-px h-10 bg-tertiary-container/60 mx-auto"></div>
+</div>
+<div class="mineral-tag absolute top-2/3 left-1/4 z-20 cursor-pointer transform -translate-x-1/2 transition-transform hover:scale-105" id="tagMudstone">
+<div class="flex items-center gap-space-xs bg-surface-container-lowest/90 backdrop-blur-md px-space-sm py-space-xs rounded-lg shadow-lg">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-code-coords text-body-sm text-secondary font-bold">Silica Mudstone Strata</span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline">18%</span>
+</div>
+<div class="w-px h-6 bg-secondary/60 mx-auto"></div>
+</div>
+</div>
+<!-- Tactical HUD Control Toolbar -->
+<div class="p-space-sm bg-surface-container-low flex flex-wrap items-center justify-between gap-space-sm z-20">
+<!-- Magnification Presets -->
+<div class="flex items-center gap-space-xs">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase mr-space-xs">Magnify:</span>
+<button class="zoom-btn px-space-sm py-1 bg-surface-container-high text-on-surface rounded font-code-coords text-body-sm font-semibold active-zoom" id="zoom100">1.0x</button>
+<button class="zoom-btn px-space-sm py-1 bg-surface-container text-on-surface-variant hover:text-on-surface rounded font-code-coords text-body-sm" id="zoom250">2.5x</button>
+<button class="zoom-btn px-space-sm py-1 bg-surface-container text-on-surface-variant hover:text-on-surface rounded font-code-coords text-body-sm" id="zoom500">5.0x</button>
+</div>
+<!-- Optical Sensor Gain & Contrast Adjusters -->
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-outline text-[16px]">brightness_6</span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase">Gain</span>
+<input class="w-20 h-1 bg-surface-container-highest rounded appearance-none cursor-pointer accent-primary-fixed-dim" id="gainSlider" max="140" min="60" type="range" value="100"/>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-outline text-[16px]">contrast</span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase">Contrast</span>
+<input class="w-20 h-1 bg-surface-container-highest rounded appearance-none cursor-pointer accent-primary-fixed-dim" id="contrastSlider" max="140" min="60" type="range" value="100"/>
+</div>
+</div>
+<!-- Spectral Filter Toggle & Fullscreen -->
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 bg-surface-container hover:bg-surface-container-high rounded text-tertiary-container flex items-center gap-1 font-label-telemetry-sm text-label-telemetry-sm uppercase transition-all" id="falseColorToggle">
+<span class="material-symbols-outlined text-[16px]">palette</span>
+<span>False-Color Band</span>
+</button>
+<button class="p-1 bg-surface-container hover:bg-surface-container-high rounded text-on-surface-variant hover:text-on-surface transition-colors" id="resetViewBtn" title="Reset Frame">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Companion Capture Sequence Ribbon (Sol 1042 Series) -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase tracking-wider">Companion Sol 1042 Frame Sequences</span>
+<span class="font-code-coords text-body-sm text-on-surface-variant">3 Companion Targets</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Thumb 1 -->
+<div class="group bg-surface-container-low hover:bg-surface-container p-space-xs rounded-xl cursor-pointer transition-all shadow-md flex items-center gap-space-sm">
+<div class="w-20 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container-lowest">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" data-alt="Close up engineering camera photograph of cylindrical hermetic titanium core sample tube safely housed inside the Perseverance belly carousel assembly on the surface of Mars." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5qslMgfCxYL_TVj_-F5kMlVHn6PzDOP77JOMIYFvENksaEfCyiVaxwML-21fV6K0t3xTF2BPI71SO0cOhuvVWl3NXLYYWkSQdTgNsy0h12UGSNl73Pyemnug9_bzIFRzEjAz9PxPGg09wMNkkDvfsUdw0m152YxO1AQqDXcxLlEEAPYTteblF6IvR5TISbRgmtO5NhrDynHHWIOFf2Hue5pZlFdbp-ukBXUb40bWn"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-primary uppercase truncate">Sample Tube #18</span>
+<span class="font-code-coords text-body-sm text-on-surface font-semibold truncate">Sediment Core Cache</span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline">WATSON / 0.05m</span>
+</div>
+</div>
+<!-- Thumb 2 -->
+<div class="group bg-surface-container-low hover:bg-surface-container p-space-xs rounded-xl cursor-pointer transition-all shadow-md flex items-center gap-space-sm">
+<div class="w-20 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container-lowest">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" data-alt="Wide perspective shot of sandy Martian desert dunes with faint distant shadow of Ingenuity Mars Helicopter rotorcraft resting on the fine sand of Jezero Delta airfield." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk4dELD6cLa_ruZNv3XzEOSJntkIbO-G4dvAP5rLpwscTfnIJ4WTEKjHahuoBe92DcNsYFdiv8IMEm-V02gD_TVTn1VIhQ9hRR3z3z5cnDqBLsQpOs5BUQe68pJJK-pQb3Pm6jNIbT_cuG6KSWgPCoqBNcB-aI_2BWYgVsQaS-BZSOfWbgesH5pbGDSL4hRhmb9J4qPEeN6ZK8-mKN2qlgtgfuGRA9dugkyMSk7nOh"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-tertiary-container uppercase truncate">Airfield Delta-Beta</span>
+<span class="font-code-coords text-body-sm text-on-surface font-semibold truncate">Ingenuity Flight 72</span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline">Navcam-L / 45m</span>
+</div>
+</div>
+<!-- Thumb 3 -->
+<div class="group bg-surface-container-low hover:bg-surface-container p-space-xs rounded-xl cursor-pointer transition-all shadow-md flex items-center gap-space-sm">
+<div class="w-20 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container-lowest">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" data-alt="Extreme macro textured photograph of dark layered micro-crystalline rock matrix with glistening crystalline silica veins at Enchanted Lake Jezero outcrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnu-BpZire36-aSUuyM1408muoSMgarErIv13mcVkYLqBViIxKuUfrqRGwakPNHsMn7qTL8AVjIW_bxooykyM5h5oHTagpL5l6HSvvUbMaKR0G5mowiV0mX0xN6flgbzP6xMfvYGIyMh8TmyFKc4B_MtpxP-n6sHVFgKCXh4iTb2-wizp7TQt9mQJDsCLn_vSrizDqQdZ4Jl3IMHKhipsZmyKJOEYCOiJlQexWVhNL"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-secondary uppercase truncate">Enchanted Lake Bed</span>
+<span class="font-code-coords text-body-sm text-on-surface font-semibold truncate">Micro-Texture Scan</span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline">SuperCam / ChemIR</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Surface Chemistry & Spectral Diagnostics Panel (4 Columns) -->
+<div class="xl:col-span-4 flex flex-col gap-space-md">
+<!-- Spectral Composition Inspector -->
+<div class="bg-surface-container-low p-space-md rounded-xl shadow-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[20px]">science</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">PIXL &amp; SuperCam Assay</h4>
+</div>
+<span class="font-code-coords text-body-sm text-primary-fixed-dim">CONF: 99.4%</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            X-Ray lithochemistry indicates ancient deltaic lacustrine deposit rich in carbonate silicates, ideal for preservation of potential biosignatures.
+          </p>
+<!-- Spectral Elemental Breakdown Bars -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div>
+<div class="flex justify-between font-label-telemetry-sm text-label-telemetry-sm mb-1">
+<span class="text-on-surface font-semibold uppercase">Silicon Dioxide (SiO₂)</span>
+<span class="text-primary-fixed font-code-coords">52.8%</span>
+</div>
+<div class="w-full h-2 rounded bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-primary-container rounded" style="width: 52.8%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-telemetry-sm text-label-telemetry-sm mb-1">
+<span class="text-on-surface font-semibold uppercase">Iron Oxide (Fe₂O₃)</span>
+<span class="text-tertiary-container font-code-coords">21.4%</span>
+</div>
+<div class="w-full h-2 rounded bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-tertiary-container rounded" style="width: 21.4%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-telemetry-sm text-label-telemetry-sm mb-1">
+<span class="text-on-surface font-semibold uppercase">Magnesium Oxide (MgO)</span>
+<span class="text-secondary font-code-coords">14.1%</span>
+</div>
+<div class="w-full h-2 rounded bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-secondary rounded" style="width: 14.1%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-telemetry-sm text-label-telemetry-sm mb-1">
+<span class="text-on-surface font-semibold uppercase">Calcium Carbonate (CaCO₃)</span>
+<span class="text-on-surface-variant font-code-coords">8.7%</span>
+</div>
+<div class="w-full h-2 rounded bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-surface-variant rounded" style="width: 8.7%"></div>
+</div>
+</div>
+</div>
+<!-- Feature Tag Layer Toggles -->
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col gap-space-xs mt-space-xs">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase">Overlay Tag Filters:</span>
+<div class="flex items-center justify-between py-1">
+<span class="font-code-coords text-body-sm text-on-surface">Fe/Mg-Olivine Layer</span>
+<input checked="" class="w-4 h-4 rounded accent-primary-container cursor-pointer" id="toggleOlivine" type="checkbox"/>
+</div>
+<div class="flex items-center justify-between py-1">
+<span class="font-code-coords text-body-sm text-on-surface">Smectite Clay Carbonate</span>
+<input checked="" class="w-4 h-4 rounded accent-primary-container cursor-pointer" id="toggleSmectite" type="checkbox"/>
+</div>
+<div class="flex items-center justify-between py-1">
+<span class="font-code-coords text-body-sm text-on-surface">Silica Mudstone Strata</span>
+<input checked="" class="w-4 h-4 rounded accent-primary-container cursor-pointer" id="toggleMudstone" type="checkbox"/>
+</div>
+</div>
+</div>
+<!-- Sample Return Sealed Cache Status -->
+<div class="bg-surface-container-low p-space-md rounded-xl shadow-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-container text-[20px]">inventory_2</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Sample Tube #18 Dossier</h4>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-tertiary-container/20 font-label-telemetry-sm text-label-telemetry-sm text-tertiary-container font-semibold uppercase">CACHED</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs text-body-sm">
+<div class="bg-surface-container p-space-xs rounded-lg">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline block">TARGET ROCK</span>
+<span class="font-code-coords text-body-sm text-on-surface font-semibold">"Kukaklek"</span>
+</div>
+<div class="bg-surface-container p-space-xs rounded-lg">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline block">CORE LENGTH</span>
+<span class="font-code-coords text-body-sm text-on-surface font-semibold">6.2 cm (Full)</span>
+</div>
+<div class="bg-surface-container p-space-xs rounded-lg">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline block">DRILL DEPTH</span>
+<span class="font-code-coords text-body-sm text-on-surface font-semibold">73 mm</span>
+</div>
+<div class="bg-surface-container p-space-xs rounded-lg">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline block">GAS HEADSPACE</span>
+<span class="font-code-coords text-body-sm text-primary-fixed font-semibold">Martian Atmos Preserved</span>
+</div>
+</div>
+<div class="mt-space-xs p-space-xs bg-surface-container rounded-lg flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[18px]">verified</span>
+<span class="font-code-coords text-body-sm text-outline">Priority 1 for Mars Sample Return (MSR) retrieval</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Jezero Crater Interactive Contour Traverse Map -->
+<section class="bg-surface-container-low p-space-md rounded-xl shadow-xl flex flex-col gap-space-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[20px]">near_me</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Jezero Crater Delta Traverse Plan</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Topographic descent tracking from Octavia E. Butler Landing Site through ancient river delta fans (Total 24.81 km Odometer).
+          </p>
+</div>
+<div class="flex items-center gap-space-sm font-code-coords text-body-sm">
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 rounded-full bg-outline"></span>
+<span class="text-outline">Historical Route</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 rounded-full bg-primary-fixed-dim"></span>
+<span class="text-primary-fixed font-semibold">Sol 1042 Position</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 border border-dashed border-tertiary-container rounded-full"></span>
+<span class="text-tertiary-container">Crater Rim Ascent</span>
+</div>
+</div>
+</div>
+<!-- Vector Contour & Waypoint Schematic Canvas -->
+<div class="relative w-full h-80 bg-surface-container-lowest rounded-xl overflow-hidden shadow-inner flex items-center justify-center">
+<!-- Background Topo Contour Pattern (Vector SVG) -->
+<svg class="absolute inset-0 w-full h-full opacity-20 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="40" id="grid" patternunits="userSpaceOnUse" width="40">
+<path d="M 40 0 L 0 0 0 40" fill="none" stroke="#25334B" stroke-width="0.7"></path>
+</pattern>
+</defs>
+<rect fill="url(#grid)" height="100%" width="100%"></rect>
+<!-- Topographic Contour Lines -->
+<ellipse cx="25%" cy="50%" fill="none" rx="180" ry="120" stroke="#859396" stroke-dasharray="3 3" stroke-width="1"></ellipse>
+<ellipse cx="40%" cy="50%" fill="none" rx="260" ry="160" stroke="#859396" stroke-width="0.8"></ellipse>
+<ellipse cx="60%" cy="45%" fill="none" rx="380" ry="220" stroke="#859396" stroke-width="0.6"></ellipse>
+<ellipse cx="75%" cy="40%" fill="none" rx="520" ry="280" stroke="#859396" stroke-width="0.4"></ellipse>
+<!-- Crater Rim Elevation Shading -->
+<path d="M 0 160 Q 200 40 450 110 T 900 80 T 1400 130" fill="none" opacity="0.3" stroke="#D96B43" stroke-width="2"></path>
+<path d="M 0 240 Q 280 180 600 220 T 1200 190" fill="none" opacity="0.2" stroke="#D96B43" stroke-width="1.5"></path>
+</svg>
+<!-- Dynamic Traverse Vector Path -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none">
+<!-- Waypoints connect path -->
+<path d="M 120 220 L 290 195 L 510 140 L 740 120" fill="none" stroke="#20D9F2" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+<!-- Projected route to Crater Rim -->
+<path d="M 740 120 L 930 90 L 1120 70" fill="none" stroke="#FFB45B" stroke-dasharray="6 6" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+<!-- Interactive Waypoint 1: Landing Site -->
+<div class="absolute left-[120px] top-[220px] -translate-x-1/2 -translate-y-1/2 group cursor-pointer">
+<div class="w-4 h-4 rounded-full bg-surface-container-highest border-2 border-outline flex items-center justify-center group-hover:scale-125 transition-transform">
+<div class="w-1.5 h-1.5 rounded-full bg-on-surface"></div>
+</div>
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 hidden group-hover:flex flex-col bg-surface-container-lowest/95 backdrop-blur-md p-space-xs rounded-lg shadow-xl w-44 z-30 pointer-events-none">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase">Sol 0 • Touchdown</span>
+<span class="font-headline-sm text-body-md text-on-surface font-semibold">Octavia E. Butler</span>
+<span class="font-code-coords text-label-telemetry-sm text-primary-fixed-dim">Crater Floor -2560m</span>
+</div>
+</div>
+<!-- Interactive Waypoint 2: Sol 450 Enchanted Lake -->
+<div class="absolute left-[290px] top-[195px] -translate-x-1/2 -translate-y-1/2 group cursor-pointer">
+<div class="w-4 h-4 rounded-full bg-surface-container-highest border-2 border-outline flex items-center justify-center group-hover:scale-125 transition-transform">
+<div class="w-1.5 h-1.5 rounded-full bg-on-surface"></div>
+</div>
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 hidden group-hover:flex flex-col bg-surface-container-lowest/95 backdrop-blur-md p-space-xs rounded-lg shadow-xl w-48 z-30 pointer-events-none">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase">Sol 450 • Delta Base</span>
+<span class="font-headline-sm text-body-md text-on-surface font-semibold">Enchanted Lake</span>
+<span class="font-code-coords text-label-telemetry-sm text-tertiary-container">Fine Mudstone Silt</span>
+</div>
+</div>
+<!-- Interactive Waypoint 3: Sol 890 Margin Carbonates -->
+<div class="absolute left-[510px] top-[140px] -translate-x-1/2 -translate-y-1/2 group cursor-pointer">
+<div class="w-4 h-4 rounded-full bg-surface-container-highest border-2 border-outline flex items-center justify-center group-hover:scale-125 transition-transform">
+<div class="w-1.5 h-1.5 rounded-full bg-on-surface"></div>
+</div>
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 hidden group-hover:flex flex-col bg-surface-container-lowest/95 backdrop-blur-md p-space-xs rounded-lg shadow-xl w-48 z-30 pointer-events-none">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase">Sol 890 • Fan Crest</span>
+<span class="font-headline-sm text-body-md text-on-surface font-semibold">Margin Carbonate</span>
+<span class="font-code-coords text-label-telemetry-sm text-primary-fixed">Shoreline Mineral Batches</span>
+</div>
+</div>
+<!-- Interactive Waypoint 4: Sol 1042 Current Position -->
+<div class="absolute left-[740px] top-[120px] -translate-x-1/2 -translate-y-1/2 group cursor-pointer">
+<div class="relative flex items-center justify-center">
+<div class="w-6 h-6 rounded-full bg-primary-fixed-dim/20 animate-ping absolute"></div>
+<div class="w-5 h-5 rounded-full bg-primary-container border-2 border-surface-container-lowest flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[12px] text-on-primary-container font-bold">navigation</span>
+</div>
+</div>
+<div class="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col bg-surface-container-lowest/95 backdrop-blur-md p-space-xs rounded-lg shadow-xl w-52 z-30">
+<div class="flex items-center justify-between">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-primary font-bold uppercase">Sol 1042 (Current)</span>
+<span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-pulse"></span>
+</div>
+<span class="font-headline-sm text-body-md text-on-surface font-semibold">Delta Front Margin</span>
+<span class="font-code-coords text-label-telemetry-sm text-on-surface-variant">Elev: -2410m (Traverse: 24.81 km)</span>
+</div>
+</div>
+<!-- Projected Ascent Destination -->
+<div class="absolute left-[1120px] top-[70px] -translate-x-1/2 -translate-y-1/2 opacity-75">
+<div class="w-3.5 h-3.5 rounded-full border border-dashed border-tertiary-container flex items-center justify-center">
+<div class="w-1 h-1 rounded-full bg-tertiary-container"></div>
+</div>
+<span class="absolute top-5 left-1/2 -translate-x-1/2 font-label-telemetry-sm text-label-telemetry-sm text-tertiary-container uppercase tracking-wider whitespace-nowrap">Crater Rim Pass</span>
+</div>
+</div>
+<!-- Waypoint Insight Micro-Bar -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-sm pt-space-xs">
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase">Elevation Profile</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">+150 m Climb</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">From Jezero crater bottom floor</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase">Steepest Gradient</span>
+<span class="font-headline-sm text-headline-sm text-tertiary-container font-bold mt-1">17.4° Pitch</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Navigated via AutoNav V2</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase">Slip Ratio Average</span>
+<span class="font-headline-sm text-headline-sm text-primary-fixed-dim font-bold mt-1">4.2% (Nominal)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Firm clay-bearing sediment</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline uppercase">Next Target Objective</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold mt-1">Bright Angel Outcrop</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Est. Arrival: Sol 1056</span>
+</div>
+</div>
+</section>
+<!-- Provenance, Data Pipeline & Mission Attribution -->
+<footer class="p-space-md bg-surface-container-lowest rounded-xl flex flex-col md:flex-row items-center justify-between gap-space-md text-outline">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed-dim">verified_user</span>
+<div class="flex flex-col">
+<span class="font-code-coords text-body-sm text-on-surface-variant">
+            Archival NASA/JPL-Caltech Public Release Imagery &amp; Calibrated Demonstration Telemetry
+          </span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-outline">
+            Illustrative tactical schematic traverse and instrument laboratory simulation
+          </span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-code-coords text-body-sm">PDS-GEOSCIENCES // ARCHIVE REV 4.2</span>
+<button class="px-space-sm py-space-xs rounded bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-code-coords text-body-sm">
+          Export Raw FITS
+        </button>
+</div>
+</footer>
+</div>
+</div>
+<script>
+  // Tactical Imagery Controls & Zoom Logic
+  const imgElement = document.getElementById('mainInspectImage');
+  const zoom100Btn = document.getElementById('zoom100');
+  const zoom250Btn = document.getElementById('zoom250');
+  const zoom500Btn = document.getElementById('zoom500');
+  const gainSlider = document.getElementById('gainSlider');
+  const contrastSlider = document.getElementById('contrastSlider');
+  const falseColorToggle = document.getElementById('falseColorToggle');
+  const resetBtn = document.getElementById('resetViewBtn');
+
+  let currentZoom = 1;
+  let isFalseColor = false;
+
+  function updateImageFilters() {
+    const brightnessVal = gainSlider.value / 100;
+    const contrastVal = contrastSlider.value / 100;
+    const hueVal = isFalseColor ? 'hue-rotate(180deg) saturate(220%)' : '';
+    imgElement.style.filter = `brightness(${brightnessVal}) contrast(${contrastVal}) ${hueVal}`;
+  }
+
+  function setZoom(scale, activeBtn) {
+    currentZoom = scale;
+    imgElement.style.transform = `scale(${scale})`;
+    [zoom100Btn, zoom250Btn, zoom500Btn].forEach(b => {
+      b.classList.remove('bg-surface-container-high', 'text-on-surface', 'font-semibold');
+      b.classList.add('bg-surface-container', 'text-on-surface-variant');
+    });
+    activeBtn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+    activeBtn.classList.add('bg-surface-container-high', 'text-on-surface', 'font-semibold');
+  }
+
+  zoom100Btn.addEventListener('click', () => setZoom(1, zoom100Btn));
+  zoom250Btn.addEventListener('click', () => setZoom(1.8, zoom250Btn));
+  zoom500Btn.addEventListener('click', () => setZoom(2.8, zoom500Btn));
+
+  gainSlider.addEventListener('input', updateImageFilters);
+  contrastSlider.addEventListener('input', updateImageFilters);
+
+  falseColorToggle.addEventListener('click', () => {
+    isFalseColor = !isFalseColor;
+    if (isFalseColor) {
+      falseColorToggle.classList.add('bg-tertiary-container', 'text-on-tertiary');
+      falseColorToggle.classList.remove('bg-surface-container', 'text-tertiary-container');
+    } else {
+      falseColorToggle.classList.remove('bg-tertiary-container', 'text-on-tertiary');
+      falseColorToggle.classList.add('bg-surface-container', 'text-tertiary-container');
+    }
+    updateImageFilters();
+  });
+
+  resetBtn.addEventListener('click', () => {
+    gainSlider.value = 100;
+    contrastSlider.value = 100;
+    isFalseColor = false;
+    falseColorToggle.classList.remove('bg-tertiary-container', 'text-on-tertiary');
+    falseColorToggle.classList.add('bg-surface-container', 'text-tertiary-container');
+    setZoom(1, zoom100Btn);
+    updateImageFilters();
+  });
+
+  // Mineral Tag Visibility Toggles
+  const toggleOlivine = document.getElementById('toggleOlivine');
+  const toggleSmectite = document.getElementById('toggleSmectite');
+  const toggleMudstone = document.getElementById('toggleMudstone');
+
+  const tagOlivine = document.getElementById('tagOlivine');
+  const tagSmectite = document.getElementById('tagSmectite');
+  const tagMudstone = document.getElementById('tagMudstone');
+
+  toggleOlivine.addEventListener('change', e => {
+    tagOlivine.style.display = e.target.checked ? 'block' : 'none';
+  });
+  toggleSmectite.addEventListener('change', e => {
+    tagSmectite.style.display = e.target.checked ? 'block' : 'none';
+  });
+  toggleMudstone.addEventListener('change', e => {
+    tagMudstone.style.display = e.target.checked ? 'block' : 'none';
+  });
+
+  // Sensor Pills Filter Behavior
+  const sensorPills = document.querySelectorAll('.sensor-pill');
+  sensorPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      sensorPills.forEach(p => {
+        p.classList.remove('bg-primary', 'text-on-primary', 'font-semibold');
+        p.classList.add('bg-surface-container', 'text-on-surface-variant');
+      });
+      pill.classList.remove('bg-surface-container', 'text-on-surface-variant');
+      pill.classList.add('bg-primary', 'text-on-primary', 'font-semibold');
+    });
+  });
+
+  // Sol Scrubber Syncing
+  const solSlider = document.getElementById('solSlider');
+  const solPrevBtn = document.getElementById('solPrevBtn');
+  const solNextBtn = document.getElementById('solNextBtn');
+
+  solSlider.addEventListener('input', (e) => {
+    const val = parseInt(e.target.value);
+    solPrevBtn.innerHTML = `<span class="material-symbols-outlined text-[16px]">chevron_left</span> ${Math.max(0, val - 1)}`;
+    solNextBtn.innerHTML = `${val + 1} <span class="material-symbols-outlined text-[16px]">chevron_right</span>`;
+  });
+</script></main></div></body></html>

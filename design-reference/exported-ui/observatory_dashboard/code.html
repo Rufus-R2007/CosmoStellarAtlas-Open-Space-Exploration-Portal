@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;background-color:#060B19;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-error-container":"#ffdad6","surface-container-high":"#242a39","error-container":"#93000a","surface-container":"#10182B","secondary-container":"#4b1fbe","surface-bright":"#343949","on-secondary-fixed":"#1e0060","error":"#ffb4ab","surface-variant":"#2f3444","surface-dim":"#060B19","inverse-primary":"#006875","surface-container-lowest":"#060B19","surface":"#060B19","on-primary":"#00363e","on-tertiary-fixed":"#2b1700","on-secondary":"#340098","inverse-surface":"#dde2f6","on-background":"#dde2f6","outline":"#859396","on-secondary-container":"#baa9ff","on-error":"#690005","primary":"#9befff","surface-tint":"#22daf3","tertiary-fixed-dim":"#ffb867","tertiary-fixed":"#ffddba","on-tertiary":"#482900","inverse-on-surface":"#2b3040","primary-fixed-dim":"#22daf3","on-surface-variant":"#bac9cc","on-tertiary-container":"#774700","secondary":"#cbbeff","on-primary-fixed":"#001f24","on-tertiary-fixed-variant":"#673d00","on-surface":"#dde2f6","on-primary-container":"#00363e","surface-container-low":"#0A1021","primary-fixed":"#9defff","on-primary-fixed-variant":"#004e59","outline-variant":"#3c494c","on-secondary-fixed-variant":"#4b1fbe","tertiary-container":"#ffb865","secondary-fixed-dim":"#cbbeff","surface-container-highest":"#2f3444","background":"#060B19","tertiary":"#ffdcba","primary-container":"#20d9f2","secondary-fixed":"#e7deff"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-md":"1rem","gutter":"1.5rem","space-sm":"0.5rem","space-xs":"0.25rem","margin":"2rem","space-lg":"1.5rem","gutter-mobile":"0.75rem","space-xl":"2.5rem","margin-mobile":"1rem"},"fontFamily":{"headline-xl":["Space Grotesk"],"label-telemetry-lg":["Space Grotesk"],"headline-xl-mobile":["Space Grotesk"],"body-sm":["Inter"],"label-telemetry-sm":["Space Grotesk"],"headline-lg-mobile":["Space Grotesk"],"headline-lg":["Space Grotesk"],"headline-sm":["Space Grotesk"],"body-lg":["Inter"],"body-md":["Inter"],"headline-md":["Space Grotesk"],"code-coords":["Space Grotesk"]},"fontSize":{"headline-xl":["44px",{"lineHeight":"52px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-telemetry-lg":["14px",{"lineHeight":"18px","letterSpacing":"0.08em","fontWeight":"700"}],"headline-xl-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0.015em","fontWeight":"400"}],"label-telemetry-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.12em","fontWeight":"600"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-sm":["18px",{"lineHeight":"26px","letterSpacing":"0.01em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"400"}],"headline-md":["22px",{"lineHeight":"28px","letterSpacing":"0em","fontWeight":"600"}],"code-coords":["13px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"500"}]}}}};</script></head><body class="bg-[#060B19] font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><aside class="fixed left-0 top-0 h-full w-64 bg-[#060B19]/95 backdrop-blur-2xl z-50 flex flex-col justify-between border-r border-[#10182B] shadow-[0_0_24px_-4px_rgba(32,217,242,0.06)]"><div class="flex flex-col"><div class="h-16 px-gutter flex items-center gap-space-sm"><img alt="CosmoStellarAtlas Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Wz_oCcpx-Z1nSbxntNpqr02k3GEZ-0FsEsDIf7OariJHtyxusM47U0bXS6uVbrhg5ldDaUBEF8su7BXmgIEgOIiXJya18N23HNfppI1XD41fkKqNn0RZfgv8dsjXiJtYKAYDAHRurP1ijL17NXdsDSQF0Yoc_-6jaBaPsSZWX3qTJwtTYrwkFatHuTFG_xSekRFQTPoFKqpIyWiJ1WJutrYzPBwDfHKPh65u-KPVTLdg"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-primary">StellarAtlas</span><span class="font-label-telemetry-sm text-label-telemetry-sm text-on-surface-variant uppercase tracking-widest">Astronav HUD</span></div></div><div class="px-gutter py-space-xs"><div class="h-px w-full bg-[#10182B]"></div></div><div class="px-gutter py-space-sm"><span class="font-label-telemetry-sm text-label-telemetry-sm uppercase text-outline tracking-widest">Navigation Array</span></div><nav class="flex flex-col gap-space-xs px-gutter" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm text-label-telemetry-lg rounded-lg shadow-[0_0_16px_rgba(32,217,242,0.25)]"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm transition-colors bg-primary-container text-on-primary-container font-headline-sm text-label-telemetry-lg rounded-lg shadow-[0_0_16px_rgba(32,217,242,0.25)]" data-path="observatory" href="#"><span class="material-symbols-outlined text-base">radar</span><span class="font-label-telemetry-lg text-label-telemetry-lg">Observatory</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-[#10182B] hover:text-on-surface transition-colors" data-path="planet-explorer" href="#"><span class="material-symbols-outlined text-base">public</span><span class="font-label-telemetry-lg text-label-telemetry-lg">Planet Explorer</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-[#10182B] hover:text-on-surface transition-colors" data-path="cosmic-time-machine" href="#"><span class="material-symbols-outlined text-base">schedule</span><span class="font-label-telemetry-lg text-label-telemetry-lg">Cosmic Time Machine</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-[#10182B] hover:text-on-surface transition-colors" data-path="mission-control" href="#"><span class="material-symbols-outlined text-base">rocket_launch</span><span class="font-label-telemetry-lg text-label-telemetry-lg">Mission Control</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-[#10182B] hover:text-on-surface transition-colors" data-path="mars-rover-explorer" href="#"><span class="material-symbols-outlined text-base">precision_manufacturing</span><span class="font-label-telemetry-lg text-label-telemetry-lg">Mars Rover Explorer</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-[#10182B] hover:text-on-surface transition-colors" data-path="asteroid-watch-and-what-if-lab" href="#"><span class="material-symbols-outlined text-base">shield_with_heart</span><span class="font-label-telemetry-lg text-label-telemetry-lg">Asteroid Watch &amp; Lab</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-[#10182B] hover:text-on-surface transition-colors" data-path="space-intelligence" href="#"><span class="material-symbols-outlined text-base">hub</span><span class="font-label-telemetry-lg text-label-telemetry-lg">Space Intelligence</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-[#10182B] hover:text-on-surface transition-colors" data-path="learning-hub-and-space-vault" href="#"><span class="material-symbols-outlined text-base">auto_stories</span><span class="font-label-telemetry-lg text-label-telemetry-lg">Learning Hub &amp; Vault</span></a></nav></div><div class="p-gutter flex flex-col gap-space-sm"><div class="bg-[#0A1021]/80 border border-[#10182B] backdrop-blur-md p-space-sm rounded-lg flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-telemetry-sm text-label-telemetry-sm uppercase text-outline">Spectra Uplink</span><span class="font-code-coords text-code-coords text-primary">99.4%</span></div><div class="w-full bg-[#10182B] h-1 rounded-full overflow-hidden"><div class="bg-primary h-full w-[99.4%] shadow-[0_0_8px_#20D9F2]"></div></div><div class="flex items-center justify-between font-code-coords text-code-coords text-on-surface-variant text-[11px]"><span>LAT 28.5721° N</span><span>LON 80.6480° W</span></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-[#060B19]/85 backdrop-blur-xl border-b border-[#10182B] z-40 flex items-center justify-between px-gutter shadow-[0_2px_12px_rgba(0,0,0,0.4)]"><div class="flex items-center gap-space-lg"><img alt="CosmoStellarAtlas Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Wz_oCcpx-Z1nSbxntNpqr02k3GEZ-0FsEsDIf7OariJHtyxusM47U0bXS6uVbrhg5ldDaUBEF8su7BXmgIEgOIiXJya18N23HNfppI1XD41fkKqNn0RZfgv8dsjXiJtYKAYDAHRurP1ijL17NXdsDSQF0Yoc_-6jaBaPsSZWX3qTJwtTYrwkFatHuTFG_xSekRFQTPoFKqpIyWiJ1WJutrYzPBwDfHKPh65u-KPVTLdg"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-wide uppercase">CosmoStellarAtlas</span><span class="font-label-telemetry-sm text-label-telemetry-sm text-on-surface-variant uppercase tracking-widest">Open Space Exploration Portal</span></div><div class="hidden xl:flex items-center gap-space-sm px-space-md py-space-xs rounded-lg bg-[#0A1021] border border-[#10182B]"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span><span class="font-code-coords text-code-coords text-primary uppercase tracking-wider">SECTOR: SOL-SYS // RECON 01</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg bg-[#0A1021] border border-[#10182B] text-on-surface-variant"><span class="material-symbols-outlined text-sm text-outline">search</span><span class="font-label-telemetry-sm text-label-telemetry-sm uppercase">Command Palette</span><kbd class="font-code-coords text-code-coords px-space-xs bg-[#10182B] text-on-surface rounded">Ctrl + K</kbd></div><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-[#0A1021] border border-[#ffb865]/30 text-tertiary-fixed-dim"><span class="w-1.5 h-1.5 rounded-full bg-[#ffb865] animate-ping"></span><span class="font-label-telemetry-sm text-label-telemetry-sm uppercase tracking-wider text-[#ffb865]">OFFLINE DEMO</span></div><button class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-[#0A1021] hover:bg-[#10182B] border border-[#10182B] text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-sm text-primary">graphic_eq</span><span class="font-label-telemetry-sm text-label-telemetry-sm uppercase">AMBIENT ON</span></button><div class="flex items-center gap-space-sm pl-space-sm"><div class="flex flex-col items-end"><span class="font-label-telemetry-lg text-label-telemetry-lg text-on-surface uppercase">Commander V. Vance</span><span class="font-label-telemetry-sm text-label-telemetry-sm text-on-surface-variant uppercase tracking-wider">Explorer Passport</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-primary/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8DCPkNXuk-EMMLXT2w7Z6uCdN-BLt3c0iMBbjI8nZIIkpUif38yXwe1DRQoKx8hQfD8dyEbgH8fugRvwUuOiuZlKbUz-4pAy6LCHFwhIj9bt-5Rk6qTtenTkxAjYhPkcuudxqfMHDHg6cQ2s95v28UaxMQHCDwq6uSNljcJ-vAccARTjT2I5K55XORQJ6GTVNxKo_qPPnPTxu09px2PNcqT0bQoZPEmmnTY7Kagyt"/></div></div></header><main class="w-full pt-16 px-gutter bg-[#060B19] min-h-screen relative overflow-hidden"><div class="flex flex-col w-full pb-space-xl">
+<!-- Atmospheric Deep Space Glow Background -->
+<div class="absolute -top-24 right-10 w-[550px] h-[550px] rounded-full bg-[#20d9f2]/10 blur-[130px] pointer-events-none"></div>
+<div class="absolute top-[480px] -left-32 w-[600px] h-[600px] rounded-full bg-[#8565fa]/12 blur-[150px] pointer-events-none"></div>
+<!-- HERO SECTION: Planetary Observatory Viewport with Three.js Integration -->
+<section class="relative min-h-[560px] w-full pt-space-lg pb-space-lg flex flex-col xl:flex-row items-center justify-between gap-space-xl border-b border-[#10182B]">
+<!-- Left Column: Command Telemetry & Primary Actions -->
+<div class="w-full xl:w-7/12 flex flex-col z-10">
+<!-- Observatory Eyebrow -->
+<div class="flex flex-wrap items-center gap-space-sm mb-space-md">
+<div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-[#0A1021] border border-[#20D9F2]/30 shadow-[0_0_12px_rgba(32,217,242,0.15)]">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary -ml-2.5"></span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-primary uppercase tracking-widest">THE DIGITAL COSMIC OBSERVATORY // SYS-OP: ION-ARRAY 04</span>
+</div>
+</div>
+<!-- Headline with Radiant Cyan-Gradient Accents -->
+<h1 class="font-headline-xl text-headline-xl text-on-surface uppercase tracking-tight max-w-2xl leading-[1.08]">
+EXPLORE BEYOND <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-[#20d9f2] via-[#9befff] to-[#cbbeff] drop-shadow-[0_0_24px_rgba(32,217,242,0.35)]">THE HORIZON.</span>
+</h1>
+<!-- Clean, easy-to-understand subtitle -->
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-space-md max-w-xl leading-relaxed">
+Discover planetary worlds, historic spaceflight milestones, and astronomical discoveries through a real-time scientific lens.
+</p>
+<!-- Clean Telemetry Coordinates & Solar Flux Badges -->
+<div class="grid grid-cols-3 gap-space-sm py-space-sm my-space-md bg-[#0A1021]/80 border border-[#10182B] rounded-xl p-space-md max-w-xl backdrop-blur-md">
+<div class="flex flex-col">
+<span class="font-label-telemetry-sm text-label-telemetry-sm uppercase text-outline">GEO LATITUDE</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-code-coords mt-space-xs">28.5721° N</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cape Canaveral RL</span>
+</div>
+<div class="flex flex-col border-l border-[#10182B] pl-space-sm">
+<span class="font-label-telemetry-sm text-label-telemetry-sm uppercase text-outline">GEO LONGITUDE</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-code-coords mt-space-xs">80.6480° W</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Deep Orbital Link</span>
+</div>
+<div class="flex flex-col border-l border-[#10182B] pl-space-sm">
+<span class="font-label-telemetry-sm text-label-telemetry-sm uppercase text-outline">SOLAR FLUX INDEX</span>
+<span class="font-headline-sm text-headline-sm text-primary font-code-coords mt-space-xs">1,361 W/m²</span>
+<span class="font-body-sm text-body-sm text-[#ffb865]">Nominal Heliosphere</span>
+</div>
+</div>
+<!-- Two Tactile Interactive Action Buttons -->
+<div class="flex flex-wrap items-center gap-space-md mt-space-xs">
+<button class="flex items-center gap-space-sm px-space-lg py-3.5 bg-[#20d9f2] text-[#00363e] font-bold rounded-lg font-headline-sm text-label-telemetry-lg uppercase tracking-wider shadow-[0_0_20px_rgba(32,217,242,0.4)] hover:shadow-[0_0_28px_rgba(32,217,242,0.65)] hover:bg-[#9befff] transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+<span class="material-symbols-outlined text-lg">explore</span>
+<span>Begin Exploration</span>
+</button>
+<button class="flex items-center gap-space-sm px-space-lg py-3.5 bg-transparent border border-[#20d9f2]/40 text-on-surface rounded-lg font-headline-sm text-label-telemetry-lg uppercase tracking-wider hover:bg-[#10182B] hover:border-[#20d9f2] hover:text-primary transition-all">
+<span class="material-symbols-outlined text-lg text-secondary">history_edu</span>
+<span>Travel Through History</span>
+</button>
+</div>
+</div>
+<!-- Right Column: Interactive Three.js 3D Earth Scene -->
+<div class="w-full xl:w-5/12 relative flex items-center justify-center min-h-[460px] h-[480px]">
+<!-- Orbital Decorative Geometry Elements -->
+<div class="absolute w-[440px] h-[440px] rounded-full border border-dashed border-[#20d9f2]/20 pointer-events-none animate-[spin_120s_linear_infinite]"></div>
+<div class="absolute w-[360px] h-[360px] rounded-full border border-[#8565fa]/25 pointer-events-none"></div>
+<!-- Custom Three.js Scene Component Target Container -->
+<div class="relative w-[420px] h-[420px] max-w-full flex items-center justify-center group cursor-grab active:cursor-grabbing">
+<div class="w-full h-full relative z-10" id="threejs-container-ANIMATION_11">
+<!-- STITCH_THREEJS_START:ANIMATION_11 class="w-full h-full bg-transparent" -->
+<div class="w-full h-full bg-transparent" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_11" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_11');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  // Three.js Photorealistic Earth with Realistic Atmospheric Shader, Interactive Rotation & Telemetry Orbit
+const container = document.getElementById('threejs-container-ANIMATION_11');
+if (!container) return;
+
+const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 1000);
+camera.position.set(0, 0, 2.7);
+
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+container.appendChild(renderer.domElement);
+
+const globeGroup = new THREE.Group();
+globeGroup.rotation.z = -0.38; // 22 deg axial tilt
+scene.add(globeGroup);
+
+// Texture Canvas: Procedural Oceanic & Continental Earth
+const canvas = document.createElement('canvas');
+canvas.width = 2048;
+canvas.height = 1024;
+const ctx = canvas.getContext('2d');
+
+// Deep rich ocean gradient
+const grad = ctx.createLinearGradient(0, 0, 0, 1024);
+grad.addColorStop(0, '#040d21');
+grad.addColorStop(0.5, '#071f45');
+grad.addColorStop(1, '#020713');
+ctx.fillStyle = grad;
+ctx.fillRect(0, 0, 2048, 1024);
+
+// Continent generator
+function drawLand(cx, cy, r, pts) {
+  ctx.beginPath();
+  for(let i=0; i<pts; i++) {
+    const a = (i/pts) * Math.PI * 2;
+    const d = r * (0.65 + Math.sin(i*2.1)*0.2 + Math.cos(i*4.3)*0.15);
+    const x = cx + Math.cos(a)*d;
+    const y = cy + Math.sin(a)*(d*0.72);
+    if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+  }
+  ctx.closePath();
+  ctx.fill();
+}
+
+// Continents
+ctx.fillStyle = '#1b4a38';
+drawLand(500, 390, 210, 26); // N. America
+drawLand(620, 680, 180, 22); // S. America
+drawLand(1160, 340, 270, 32); // Europe & Asia
+drawLand(1130, 600, 200, 24); // Africa
+drawLand(1600, 700, 140, 20); // Australia
+drawLand(1000, 150, 110, 14); // Greenland
+
+// Highlands / Ridges
+ctx.fillStyle = '#26644d';
+drawLand(480, 370, 130, 16);
+drawLand(1210, 330, 160, 20);
+
+// Atmospheric Clouds swirl
+ctx.fillStyle = 'rgba(235, 248, 255, 0.38)';
+for(let c = 0; c < 50; c++) {
+  const x = Math.random() * 2048;
+  const y = 140 + Math.random() * 740;
+  const rx = 70 + Math.random() * 190;
+  const ry = 10 + Math.random() * 26;
+  ctx.beginPath();
+  ctx.ellipse(x, y, rx, ry, Math.PI * 0.05 * (Math.random() - 0.5), 0, Math.PI * 2);
+  ctx.fill();
+}
+
+const earthTexture = new THREE.CanvasTexture(canvas);
+
+// Earth Mesh
+const earthGeo = new THREE.SphereGeometry(1, 64, 64);
+const earthMat = new THREE.MeshPhongMaterial({
+  map: earthTexture,
+  bumpScale: 0.05,
+  specular: new THREE.Color(0x20d9f2),
+  shininess: 24,
+  emissive: new THREE.Color(0x030a17)
+});
+const earthMesh = new THREE.Mesh(earthGeo, earthMat);
+globeGroup.add(earthMesh);
+
+// Atmosphere rim glow
+const atmoGeo = new THREE.SphereGeometry(1.025, 48, 48);
+const atmoMat = new THREE.MeshBasicMaterial({
+  color: 0x20d9f2,
+  transparent: true,
+  opacity: 0.28,
+  blending: THREE.AdditiveBlending,
+  side: THREE.BackSide
+});
+globeGroup.add(new THREE.Mesh(atmoGeo, atmoMat));
+
+// Outer ethereal ionosphere
+const haloGeo = new THREE.SphereGeometry(1.08, 32, 32);
+const haloMat = new THREE.MeshBasicMaterial({
+  color: 0x8565fa,
+  transparent: true,
+  opacity: 0.12,
+  blending: THREE.AdditiveBlending,
+  side: THREE.BackSide
+});
+globeGroup.add(new THREE.Mesh(haloGeo, haloMat));
+
+// Orbit track ring
+const orbitGeo = new THREE.RingGeometry(1.24, 1.248, 96);
+const orbitMat = new THREE.MeshBasicMaterial({
+  color: 0x20d9f2,
+  transparent: true,
+  opacity: 0.45,
+  side: THREE.DoubleSide
+});
+const orbitRing = new THREE.Mesh(orbitGeo, orbitMat);
+orbitRing.rotation.x = Math.PI / 2.35;
+orbitRing.rotation.y = -Math.PI / 8;
+globeGroup.add(orbitRing);
+
+// Orbiting telemetry beacon
+const beaconGeo = new THREE.SphereGeometry(0.026, 16, 16);
+const beaconMat = new THREE.MeshBasicMaterial({ color: 0xffb45b });
+const beaconMesh = new THREE.Mesh(beaconGeo, beaconMat);
+globeGroup.add(beaconMesh);
+
+// Lights
+const sun = new THREE.DirectionalLight(0xffffff, 2.5);
+sun.position.set(3.5, 1.8, 2.8);
+scene.add(sun);
+
+const ambient = new THREE.AmbientLight(0x132038, 0.85);
+scene.add(ambient);
+
+const rimLight = new THREE.PointLight(0x20d9f2, 1.8, 10);
+rimLight.position.set(-3.2, -1.2, 1.2);
+scene.add(rimLight);
+
+// Interactive pointer parallax & smooth drag rotation
+let mouseX = 0, mouseY = 0, targetX = 0, targetY = 0;
+let isDragging = false, prevPointerX = 0, spinVelocity = 0;
+
+window.addEventListener('mousemove', (e) => {
+  const nx = (e.clientX / window.innerWidth) - 0.5;
+  const ny = (e.clientY / window.innerHeight) - 0.5;
+  targetX = nx * 0.45;
+  targetY = ny * 0.35;
+});
+
+container.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  prevPointerX = e.clientX;
+});
+window.addEventListener('mouseup', () => { isDragging = false; });
+window.addEventListener('mousemove', (e) => {
+  if (isDragging) {
+    const dx = e.clientX - prevPointerX;
+    spinVelocity = dx * 0.005;
+    earthMesh.rotation.y += spinVelocity;
+    prevPointerX = e.clientX;
+  }
+});
+
+// Resize
+window.addEventListener('resize', () => {
+  const w = container.clientWidth || window.innerWidth;
+  const h = container.clientHeight || window.innerHeight;
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+  renderer.setSize(w, h);
+});
+
+let time = 0;
+function animate() {
+  requestAnimationFrame(animate);
+  time += 0.015;
+
+  if (!isDragging) {
+    earthMesh.rotation.y += 0.0024 + spinVelocity;
+    spinVelocity *= 0.94;
+  }
+
+  mouseX += (targetX - mouseX) * 0.05;
+  mouseY += (targetY - mouseY) * 0.05;
+  globeGroup.rotation.y = mouseX * 0.85;
+  globeGroup.rotation.x = -0.38 + (mouseY * 0.4);
+
+  // Orbit beacon motion
+  const angle = time * 0.85;
+  beaconMesh.position.x = Math.cos(angle) * 1.244;
+  beaconMesh.position.z = Math.sin(angle) * 1.244 * Math.sin(Math.PI / 2.35);
+  beaconMesh.position.y = Math.sin(angle) * 1.244 * Math.cos(Math.PI / 2.35);
+
+  renderer.render(scene, camera);
+}
+animate();
+
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_11 -->
+</div>
+</div>
+<!-- Telemetry Floater Top Left -->
+<div class="absolute top-2 left-2 bg-[#0A1021]/90 border border-[#10182B] backdrop-blur-md px-space-md py-space-xs rounded-lg shadow-lg flex items-center gap-space-sm z-20 pointer-events-none">
+<span class="material-symbols-outlined text-primary text-base">blur_circular</span>
+<div class="flex flex-col">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-on-surface uppercase">Earth Sensor Array</span>
+<span class="font-code-coords text-code-coords text-primary">ORB VEL: 29.78 km/s</span>
+</div>
+</div>
+<!-- Telemetry Floater Bottom Right -->
+<div class="absolute bottom-2 right-4 bg-[#0A1021]/90 border border-[#10182B] backdrop-blur-md px-space-md py-space-xs rounded-lg shadow-lg flex items-center gap-space-sm z-20 pointer-events-none">
+<span class="material-symbols-outlined text-secondary text-base">public</span>
+<div class="flex flex-col">
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-on-surface uppercase">Atmosphere HUD</span>
+<span class="font-code-coords text-code-coords text-secondary">N₂ 78.08% / O₂ 20.95%</span>
+</div>
+</div>
+</div></section>
+<!-- COMPACT OBSERVATORY TELEMETRY RIBBON -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md my-space-lg">
+<!-- Telemetry 1 -->
+<div class="bg-[#0A1021]/90 border border-[#10182B] backdrop-blur-md rounded-xl p-space-md flex flex-col justify-between hover:border-[#20d9f2]/40 transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-telemetry-sm text-label-telemetry-sm uppercase tracking-widest text-outline">Planets Cataloged</span>
+<span class="material-symbols-outlined text-primary text-lg">public</span>
+</div>
+<div class="mt-space-sm flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-primary font-headline-xl tracking-tight">8</span>
+<span class="font-label-telemetry-lg text-label-telemetry-lg text-on-surface-variant uppercase">Major Worlds</span>
+</div>
+<div class="mt-space-sm pt-space-xs border-t border-[#10182B] flex items-center justify-between text-on-surface-variant">
+<span class="font-code-coords text-code-coords">Active Ephemerides</span>
+<span class="px-space-xs py-0.5 rounded bg-primary/10 text-primary font-label-telemetry-sm text-label-telemetry-sm">100% ONLINE</span>
+</div>
+</div>
+<!-- Telemetry 2 -->
+<div class="bg-[#0A1021]/90 border border-[#10182B] backdrop-blur-md rounded-xl p-space-md flex flex-col justify-between hover:border-secondary/40 transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-telemetry-sm text-label-telemetry-sm uppercase tracking-widest text-outline">Flight Heritage</span>
+<span class="material-symbols-outlined text-secondary text-lg">rocket</span>
+</div>
+<div class="mt-space-sm flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-secondary font-headline-xl tracking-tight">142</span>
+<span class="font-label-telemetry-lg text-label-telemetry-lg text-on-surface-variant uppercase">Missions</span>
+</div>
+<div class="mt-space-sm pt-space-xs border-t border-[#10182B] flex items-center justify-between text-on-surface-variant">
+<span class="font-code-coords text-code-coords">Apollo to Artemis</span>
+<span class="px-space-xs py-0.5 rounded bg-secondary/10 text-secondary font-label-telemetry-sm text-label-telemetry-sm">CATALOGED</span>
+</div>
+</div>
+<!-- Telemetry 3 -->
+<div class="bg-[#0A1021]/90 border border-[#10182B] backdrop-blur-md rounded-xl p-space-md flex flex-col justify-between hover:border-[#ffb865]/40 transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-telemetry-sm text-label-telemetry-sm uppercase tracking-widest text-outline">Surface Telemetry</span>
+<span class="material-symbols-outlined text-[#ffb865] text-lg">precision_manufacturing</span>
+</div>
+<div class="mt-space-sm flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-[#ffb865] font-headline-xl tracking-tight">38,420</span>
+<span class="font-label-telemetry-lg text-label-telemetry-lg text-on-surface-variant uppercase">Surface Sols</span>
+</div>
+<div class="mt-space-sm pt-space-xs border-t border-[#10182B] flex items-center justify-between text-on-surface-variant">
+<span class="font-code-coords text-code-coords">Perseverance + Curiosity</span>
+<span class="px-space-xs py-0.5 rounded bg-[#ffb865]/15 text-[#ffb865] font-label-telemetry-sm text-label-telemetry-sm">RAW OPTICS</span>
+</div>
+</div>
+<!-- Telemetry 4 -->
+<div class="bg-[#0A1021]/90 border border-[#10182B] backdrop-blur-md rounded-xl p-space-md flex flex-col justify-between hover:border-error/40 transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-telemetry-sm text-label-telemetry-sm uppercase tracking-widest text-outline">Orbital Defense</span>
+<span class="material-symbols-outlined text-error text-lg">shield_with_heart</span>
+</div>
+<div class="mt-space-sm flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface font-headline-xl tracking-tight">2,410</span>
+<span class="font-label-telemetry-lg text-label-telemetry-lg text-on-surface-variant uppercase">Synthetic NEOs</span>
+</div>
+<div class="mt-space-sm pt-space-xs border-t border-[#10182B] flex items-center justify-between text-on-surface-variant">
+<span class="font-code-coords text-code-coords">Kinetic Impactor Lab</span>
+<span class="px-space-xs py-0.5 rounded bg-[#10182B] text-on-surface-variant font-label-telemetry-sm text-label-telemetry-sm">SIM RUNNING</span>
+</div>
+</div>
+</section>
+<!-- COSMIC TIME MACHINE INTERACTIVE DECADES BAR -->
+<section class="mt-space-md bg-[#0A1021]/80 border border-[#10182B] backdrop-blur-xl rounded-2xl p-space-lg shadow-lg">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm mb-space-lg">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-base">schedule</span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm uppercase tracking-widest">Temporal Astrogation Array</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface uppercase mt-space-xs">Cosmic Time Machine</h2>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-code-coords text-code-coords text-outline">EPOCH RANGE: 1960 - 2035+</span>
+<button class="px-space-md py-space-xs rounded bg-[#10182B] hover:bg-[#242a39] border border-[#20D9F2]/30 text-primary font-label-telemetry-sm text-label-telemetry-sm uppercase tracking-wider transition-colors">Launch Full Chronology</button>
+</div>
+</div>
+<!-- Interactive Decades Timeline Bar -->
+<div class="relative w-full pt-space-lg pb-space-md px-space-xs">
+<!-- Connecting Axis Vector -->
+<div class="absolute top-12 left-4 right-4 h-0.5 bg-[#10182B]"></div>
+<div class="absolute top-12 left-4 w-4/5 h-0.5 bg-gradient-to-r from-primary via-secondary to-[#ffb865]"></div>
+<div class="grid grid-cols-2 sm:grid-cols-5 gap-space-md relative z-10">
+<!-- Milestone: Apollo 11 (1969) - Interactive Highlight Node -->
+<div class="group cursor-pointer flex flex-col items-center text-center p-2 rounded-xl transition-all hover:bg-[#10182B]/60">
+<div class="w-9 h-9 rounded-full bg-[#060B19] border-2 border-primary flex items-center justify-center text-primary group-hover:scale-110 transition-transform shadow-[0_0_16px_rgba(32,217,242,0.6)]">
+<span class="w-3 h-3 rounded-full bg-primary animate-pulse"></span>
+</div>
+<span class="mt-space-sm font-label-telemetry-sm text-label-telemetry-sm text-primary uppercase font-code-coords">1969</span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Apollo 11</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lunar Landing</span>
+</div>
+<!-- Milestone: Voyager 1 (1977) -->
+<div class="group cursor-pointer flex flex-col items-center text-center p-2 rounded-xl transition-all hover:bg-[#10182B]/60">
+<div class="w-8 h-8 rounded-full bg-[#060B19] border border-secondary flex items-center justify-center text-secondary group-hover:scale-110 transition-transform shadow-[0_0_12px_rgba(133,101,250,0.5)]">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+</div>
+<span class="mt-space-sm font-label-telemetry-sm text-label-telemetry-sm text-secondary uppercase font-code-coords">1977</span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Voyager 1</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Interstellar Boundary</span>
+</div>
+<!-- Milestone: Hubble (1990) -->
+<div class="group cursor-pointer flex flex-col items-center text-center p-2 rounded-xl transition-all hover:bg-[#10182B]/60">
+<div class="w-8 h-8 rounded-full bg-[#060B19] border border-outline flex items-center justify-center text-on-surface-variant group-hover:scale-110 transition-transform">
+<span class="w-2.5 h-2.5 rounded-full bg-outline"></span>
+</div>
+<span class="mt-space-sm font-label-telemetry-sm text-label-telemetry-sm text-on-surface-variant uppercase font-code-coords">1990</span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Hubble HST</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Deep Field Optics</span>
+</div>
+<!-- Milestone: Curiosity (2012) -->
+<div class="group cursor-pointer flex flex-col items-center text-center p-2 rounded-xl transition-all hover:bg-[#10182B]/60">
+<div class="w-8 h-8 rounded-full bg-[#060B19] border border-[#ffb865] flex items-center justify-center text-[#ffb865] group-hover:scale-110 transition-transform">
+<span class="w-2.5 h-2.5 rounded-full bg-[#ffb865]"></span>
+</div>
+<span class="mt-space-sm font-label-telemetry-sm text-label-telemetry-sm text-[#ffb865] uppercase font-code-coords">2012</span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Curiosity</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Gale Crater Survey</span>
+</div>
+<!-- Milestone: Artemis II (2025) -->
+<div class="group cursor-pointer flex flex-col items-center text-center p-2 rounded-xl transition-all hover:bg-[#10182B]/60">
+<div class="w-8 h-8 rounded-full bg-[#060B19] border border-primary flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-ping"></span>
+</div>
+<span class="mt-space-sm font-label-telemetry-sm text-label-telemetry-sm text-primary uppercase font-code-coords">2025</span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Artemis II</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Crewed Circum-Lunar</span>
+</div>
+</div>
+</div>
+</section>
+<!-- FEATURED EXPEDITION DOSSIER & ATLAS BRIEFINGS -->
+<section class="mt-space-xl grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+<!-- Left (7 Cols): Apollo 11 Featured Expedition Dossier -->
+<div class="lg:col-span-7 bg-[#0A1021]/90 border border-[#10182B] backdrop-blur-xl rounded-2xl overflow-hidden shadow-lg flex flex-col justify-between">
+<div class="relative h-64 sm:h-72 w-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Vintage high contrast Apollo 11 lunar module resting upon the desolate cratered surface of the Moon Sea of Tranquility with harsh solar lighting against deep space pitch black sky and Earth glowing in distant background in authentic archival science documentary style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX6t2tix5QaB_plMtOejXSmaIeIfWLVJfcSyIO9lEztYipdaXJyZc_wRuJ-sq9VRr6sns-PBDZlPWlUe1T0_7vCNK3CTBUNL0rQ8EnJAYbG_0Tj7BiRdyNHOyBJCHFLgRFRW4QnHvsvoTPZjECocjW4t-EadWptLnXR2EUElC-jmZ3MCQ4X3PuclJ62Shw_dTYy8ufBOBHvPiZaJf5NKn87FRBjgdbMnqiuTq56xJU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0A1021] via-[#0A1021]/40 to-transparent"></div>
+<div class="absolute top-4 left-4 flex items-center gap-space-xs px-space-sm py-1 rounded bg-[#060B19]/85 backdrop-blur-md border border-[#20D9F2]/30">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm text-primary uppercase">FEATURED EXPEDITION DOSSIER // EXP-01</span>
+</div>
+<div class="absolute bottom-4 left-4 right-4 flex items-end justify-between">
+<div>
+<span class="font-code-coords text-code-coords text-[#ffb865] uppercase">SATURN V LAUNCH CONFIGURATION</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight">Apollo 11 — Tranquility Base</h3>
+</div>
+</div>
+</div>
+<div class="p-space-lg flex flex-col justify-between flex-1">
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-space-sm py-space-sm mb-space-md bg-[#10182B]/70 border border-[#10182B] rounded-xl p-space-md">
+<div>
+<span class="font-label-telemetry-sm text-label-telemetry-sm uppercase text-outline">Target Destination</span>
+<p class="font-headline-sm text-headline-sm text-on-surface mt-space-xs">Mare Tranquillitatis</p>
+<span class="font-code-coords text-code-coords text-on-surface-variant">0.67408° N, 23.47297° E</span>
+</div>
+<div>
+<span class="font-label-telemetry-sm text-label-telemetry-sm uppercase text-outline">Launch Date</span>
+<p class="font-headline-sm text-headline-sm text-on-surface mt-space-xs">July 16, 1969</p>
+<span class="font-code-coords text-code-coords text-on-surface-variant">13:32:00 UTC</span>
+</div>
+<div>
+<span class="font-label-telemetry-sm text-label-telemetry-sm uppercase text-outline">Mission Duration</span>
+<p class="font-headline-sm text-headline-sm text-primary mt-space-xs">195 hrs 18 min</p>
+<span class="font-code-coords text-code-coords text-on-surface-variant">Splashdown Nominal</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg leading-relaxed">
+The historic first crewed lunar landing verified humanity's deep gravitational extraction capabilities. Neil Armstrong and Buzz Aldrin spent 21 hours 36 minutes on the lunar surface, collecting 47.5 pounds of pristine selenological samples while Michael Collins maintained orbit in the Columbia CSM.
+</p>
+<div class="flex items-center justify-between pt-space-sm border-t border-[#10182B]">
+<div class="flex items-center gap-space-sm text-outline font-code-coords text-code-coords">
+<span class="material-symbols-outlined text-sm text-primary">verified_user</span>
+<span>VERIFIED NASA DECLASSIFIED REPOSITORY</span>
+</div>
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-primary-container text-on-primary-container font-headline-sm text-label-telemetry-lg uppercase tracking-wider hover:shadow-[0_0_16px_rgba(32,217,242,0.4)] transition-all font-semibold">
+<span>View Mission Dossier</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right (5 Cols): Atlas Briefings (Local Demonstration Data) -->
+<div class="lg:col-span-5 flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-base">satellite_alt</span>
+<span class="font-headline-sm text-headline-sm text-on-surface uppercase">Atlas Briefings</span>
+</div>
+<span class="px-space-sm py-1 rounded bg-[#ffb865]/15 border border-[#ffb865]/30 text-[#ffb865] font-label-telemetry-sm text-label-telemetry-sm tracking-wider uppercase font-semibold">LOCAL DEMONSTRATION DATA</span>
+</div>
+<!-- Briefing 1 -->
+<article class="bg-[#0A1021]/90 border border-[#10182B] backdrop-blur-md rounded-xl p-space-md flex flex-col justify-between hover:border-primary/40 transition-colors shadow-sm">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-telemetry-sm text-label-telemetry-sm uppercase text-primary font-code-coords">SPECTROMETRY // LUNAR</span>
+<span class="font-body-sm text-body-sm text-outline">T-MINUS 04H</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Water Ice Discovered in Lunar South Pole Permanently Shadowed Craters</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+Volatile hydrogen compounds mapped in Shackleton Crater indicate deposit depths exceeding 1.8 meters, viable for in-situ Artemis life support.
+</p>
+<div class="mt-space-sm flex items-center justify-between">
+<span class="font-code-coords text-code-coords text-outline">REF: LUNAR-ICE-V6</span>
+<span class="text-primary hover:text-on-surface font-label-telemetry-sm text-label-telemetry-sm uppercase flex items-center gap-0.5 cursor-pointer">Inspect Vector <span class="material-symbols-outlined text-xs">north_east</span></span>
+</div>
+</article>
+<!-- Briefing 2 -->
+<article class="bg-[#0A1021]/90 border border-[#10182B] backdrop-blur-md rounded-xl p-space-md flex flex-col justify-between hover:border-secondary/40 transition-colors shadow-sm">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-telemetry-sm text-label-telemetry-sm uppercase text-secondary font-code-coords">DEEP SPACE // JWST</span>
+<span class="font-body-sm text-body-sm text-outline">T-MINUS 12H</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">James Webb Identifies Ancient Carbon Signatures in Early Universe</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+Spectroscopic NIRCam analysis of galaxy GN-z11 reveals polycyclic aromatic hydrocarbons 350M years after cosmic genesis.
+</p>
+<div class="mt-space-sm flex items-center justify-between">
+<span class="font-code-coords text-code-coords text-outline">REF: JWST-GNZ11-SP9</span>
+<span class="text-secondary hover:text-on-surface font-label-telemetry-sm text-label-telemetry-sm uppercase flex items-center gap-0.5 cursor-pointer">Inspect Vector <span class="material-symbols-outlined text-xs">north_east</span></span>
+</div>
+</article>
+<!-- Briefing 3 -->
+<article class="bg-[#0A1021]/90 border border-[#10182B] backdrop-blur-md rounded-xl p-space-md flex flex-col justify-between hover:border-[#ffb865]/40 transition-colors shadow-sm">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-telemetry-sm text-label-telemetry-sm uppercase text-[#ffb865] font-code-coords">DEFENSE // TRAJECTORY</span>
+<span class="font-body-sm text-body-sm text-outline">T-MINUS 28H</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Synthetic Near-Earth Trajectory Model Analyzes 2029 Apophis Flyby</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+Monte Carlo gravitational simulations indicate safe 31,600 km geostationary keyhole transit with nominal tidal stress deformation.
+</p>
+<div class="mt-space-sm flex items-center justify-between">
+<span class="font-code-coords text-code-coords text-outline">REF: NEO-99942-SIM</span>
+<span class="text-[#ffb865] hover:text-on-surface font-label-telemetry-sm text-label-telemetry-sm uppercase flex items-center gap-0.5 cursor-pointer">Inspect Vector <span class="material-symbols-outlined text-xs">north_east</span></span>
+</div>
+</article>
+</div>
+</section>
+<!-- FEATURED PLANETARY WORLDS: Horizontal Scientific Exploration Gallery -->
+<section class="mt-space-xl">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-base">travel_explore</span>
+<span class="font-label-telemetry-sm text-label-telemetry-sm uppercase tracking-widest">Planetary Survey Gallery</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase">Featured Planetary Worlds</h2>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-code-coords text-code-coords text-outline">INDEX: 01 / 05 WORLDS</span>
+<div class="flex gap-space-xs">
+<button aria-label="Previous World" class="w-8 h-8 rounded bg-[#0A1021] border border-[#10182B] hover:bg-[#10182B] flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-base">chevron_left</span>
+</button>
+<button aria-label="Next World" class="w-8 h-8 rounded bg-[#0A1021] border border-[#10182B] hover:bg-[#10182B] flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-base">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Worlds Grid (Earth, Mars, Jupiter, Saturn, Neptune) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md">
+<!-- Card 1: Earth -->
+<div class="bg-[#0A1021]/90 border border-[#10182B] backdrop-blur-md rounded-xl p-space-md flex flex-col justify-between group hover:border-[#20d9f2]/60 transition-all shadow-sm hover:shadow-[0_0_24px_rgba(32,217,242,0.2)]">
+<div>
+<div class="relative w-full h-40 rounded-lg overflow-hidden mb-space-md bg-[#060B19]">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Realistic scientific 3D planetary rendering of Planet Earth with vivid blue oceans swirled white weather clouds and rich continental topography against dark cosmos space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6F1EfXd4k960WNSqakvKnKsNaUSkFndUCMEkXGM7ylifu2u9jAJ20JetzQa-i-Kq_dTvbSrLUh7CXJ8Y2qLJSMg5KRzHh-fmRZIkx36U4N_7EiwWDXbVz8QPeWY0XvO6ddxrpUQ-0pCK-5eQgiweBF54yoYKFJIqYIA3tS7qCWlDR35ECb-u1lJQq5vLrJam_9sJptwv7jf1zMGN7vMhdnedQhIR04JhO0XIriNhb"/>
+<span class="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-[#060B19]/80 text-primary font-code-coords text-code-coords border border-[#20D9F2]/30">TERRA // SOL-3</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase">Earth</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Water World &amp; Biosphere</p>
+<div class="mt-space-md space-y-space-xs text-on-surface-variant text-xs">
+<div class="flex justify-between items-center font-code-coords">
+<span class="text-outline">Distance (Sun):</span>
+<span class="text-on-surface font-semibold">1.00 AU</span>
+</div>
+<div class="flex justify-between items-center font-code-coords">
+<span class="text-outline">Surface Temp:</span>
+<span class="text-on-surface font-semibold">+15°C</span>
+</div>
+<div class="flex justify-between items-center font-code-coords">
+<span class="text-outline">Gravity:</span>
+<span class="text-primary font-semibold">1.00 g (9.81 m/s²)</span>
+</div>
+</div>
+</div>
+<button class="mt-space-md w-full py-space-xs rounded bg-[#10182B] group-hover:bg-[#20d9f2] group-hover:text-[#00363e] text-primary font-headline-sm text-label-telemetry-sm uppercase tracking-wider transition-all flex items-center justify-center gap-space-xs font-semibold">
+<span>Inspect World</span>
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+</div>
+<!-- Card 2: Mars -->
+<div class="bg-[#0A1021]/90 border border-[#10182B] backdrop-blur-md rounded-xl p-space-md flex flex-col justify-between group hover:border-[#ffb865]/60 transition-all shadow-sm hover:shadow-[0_0_24px_rgba(255,184,101,0.2)]">
+<div>
+<div class="relative w-full h-40 rounded-lg overflow-hidden mb-space-md bg-[#060B19]">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Realistic scientific 3D planetary rendering of Planet Mars the red planet showing Olympus Mons Valles Marineris canyon system and polar ice caps in deep space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5lNNsVkxgNWFfHk4HGiH5b_JxbG9K1-p--wctYMna4oGwc7BG6EL9ojap4HEyeZGlb-zXRHrTi0_3KRWuV5awvuwKlW441uKk28AZZNRWIjnBKw8MfkkwIYI_4Hz1t0wy6H4qDjIjc4rDuAQJ2Fb7PgUm-gO8Mk7JGOpBZg9D7hSHezElNn7Cz0ym8AuIIFsIv1hSABYXeFNLNcYjV_4JP0WmkvKaZ-PicXKUfZZ5"/>
+<span class="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-[#060B19]/80 text-[#ffb865] font-code-coords text-code-coords border border-[#ffb865]/30">ARES // SOL-4</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase">Mars</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Oxidized Basalt Desert</p>
+<div class="mt-space-md space-y-space-xs text-on-surface-variant text-xs">
+<div class="flex justify-between items-center font-code-coords">
+<span class="text-outline">Distance (Sun):</span>
+<span class="text-on-surface font-semibold">1.52 AU</span>
+</div>
+<div class="flex justify-between items-center font-code-coords">
+<span class="text-outline">Surface Temp:</span>
+<span class="text-on-surface font-semibold">-63°C</span>
+</div>
+<div class="flex justify-between items-center font-code-coords">
+<span class="text-outline">Gravity:</span>
+<span class="text-[#ffb865] font-semibold">0.38 g (3.72 m/s²)</span>
+</div>
+</div>
+</div>
+<button class="mt-space-md w-full py-space-xs rounded bg-[#10182B] group-hover:bg-[#ffb865] group-hover:text-[#482900] text-[#ffb865] font-headline-sm text-label-telemetry-sm uppercase tracking-wider transition-all flex items-center justify-center gap-space-xs font-semibold">
+<span>Inspect World</span>
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+</div>
+<!-- Card 3: Jupiter -->
+<div class="bg-[#0A1021]/90 border border-[#10182B] backdrop-blur-md rounded-xl p-space-md flex flex-col justify-between group hover:border-[#ffdcba]/60 transition-all shadow-sm hover:shadow-[0_0_24px_rgba(255,220,186,0.2)]">
+<div>
+<div class="relative w-full h-40 rounded-lg overflow-hidden mb-space-md bg-[#060B19]">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Realistic scientific 3D planetary rendering of Planet Jupiter giant gas planet showcasing dramatic Great Red Spot storm atmospheric bands and amber beige ammonia clouds against deep void" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ7gyeINvKc9BQesKPtNhI_LoDHAyqFc7X9Uqfl8a94MQC8JH9WKdAVdVxrObbgBHDtxikL1VxaMTa9Re_dYa6gyUFBQwJD5v4IIzDxODDFbgM3uHbktxFYi5AkbTiXsKxJeD5wtiI47Z0XMV78OMGYsqhjSRACDxiO55alh3CdRf0ANxvt-8NbPFoYVGjpKBL7Qlhg33XPY4vKtmG81o5AYKD8AWKNvf3ysXjl9Js"/>
+<span class="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-[#060B19]/80 text-[#ffdcba] font-code-coords text-code-coords border border-[#ffdcba]/30">JOVE // SOL-5</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase">Jupiter</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Supermassive Gas Giant</p>
+<div class="mt-space-md space-y-space-xs text-on-surface-variant text-xs">
+<div class="flex justify-between items-center font-code-coords">
+<span class="text-outline">Distance (Sun):</span>
+<span class="text-on-surface font-semibold">5.20 AU</span>
+</div>
+<div class="flex justify-between items-center font-code-coords">
+<span class="text-outline">Surface Temp:</span>
+<span class="text-on-surface font-semibold">-110°C</span>
+</div>
+<div class="flex justify-between items-center font-code-coords">
+<span class="text-outline">Gravity:</span>
+<span class="text-[#ffdcba] font-semibold">2.53 g (24.79 m/s²)</span>
+</div>
+</div>
+</div>
+<button class="mt-space-md w-full py-space-xs rounded bg-[#10182B] group-hover:bg-[#ffdcba] group-hover:text-[#482900] text-[#ffdcba] font-headline-sm text-label-telemetry-sm uppercase tracking-wider transition-all flex items-center justify-center gap-space-xs font-semibold">
+<span>Inspect World</span>
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+</div>
+<!-- Card 4: Saturn -->
+<div class="bg-[#0A1021]/90 border border-[#10182B] backdrop-blur-md rounded-xl p-space-md flex flex-col justify-between group hover:border-[#8565fa]/60 transition-all shadow-sm hover:shadow-[0_0_24px_rgba(133,101,250,0.2)]">
+<div>
+<div class="relative w-full h-40 rounded-lg overflow-hidden mb-space-md bg-[#060B19]">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Realistic scientific 3D planetary rendering of Planet Saturn with magnificent icy rings system throwing razor sharp shadows across golden butterscotch clouds against starfield" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArU8S09eE6zChDUK7iUf7n9Q4zo3C6OnlBnFILBOknhbBbmrZMPWdl4sIfmfreCjuWwppTEDXxpisiZihEWiuM0-N9xVkhajbc_srcaagSo6KXIrE132MuuliVaQ3PAn_umX08sXSQeCXesXnMmtDvLiErcnWFZn_NptUfGE8g47smmy7FktZs45BHNwEXNPJ9KAKrcHG6Vasv69A2YSnjcFOtOkYCyanDEe4k4_CH"/>
+<span class="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-[#060B19]/80 text-secondary font-code-coords text-code-coords border border-secondary/30">CRONUS // SOL-6</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase">Saturn</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Ringed Hexagonal Tempest</p>
+<div class="mt-space-md space-y-space-xs text-on-surface-variant text-xs">
+<div class="flex justify-between items-center font-code-coords">
+<span class="text-outline">Distance (Sun):</span>
+<span class="text-on-surface font-semibold">9.58 AU</span>
+</div>
+<div class="flex justify-between items-center font-code-coords">
+<span class="text-outline">Surface Temp:</span>
+<span class="text-on-surface font-semibold">-140°C</span>
+</div>
+<div class="flex justify-between items-center font-code-coords">
+<span class="text-outline">Gravity:</span>
+<span class="text-secondary font-semibold">1.06 g (10.44 m/s²)</span>
+</div>
+</div>
+</div>
+<button class="mt-space-md w-full py-space-xs rounded bg-[#10182B] group-hover:bg-secondary group-hover:text-[#340098] text-secondary font-headline-sm text-label-telemetry-sm uppercase tracking-wider transition-all flex items-center justify-center gap-space-xs font-semibold">
+<span>Inspect World</span>
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+</div>
+<!-- Card 5: Neptune -->
+<div class="bg-[#0A1021]/90 border border-[#10182B] backdrop-blur-md rounded-xl p-space-md flex flex-col justify-between group hover:border-[#20d9f2]/60 transition-all shadow-sm hover:shadow-[0_0_24px_rgba(32,217,242,0.2)]">
+<div>
+<div class="relative w-full h-40 rounded-lg overflow-hidden mb-space-md bg-[#060B19]">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Realistic scientific 3D planetary rendering of Planet Neptune radiant deep sapphire blue ice giant with supersonic methane winds and delicate faint cirrus high altitude clouds in outer solar system" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbJLMCOMTqT04N3QPPAnELOTAvBxWXNHRIeK2w_HdlVYhuYuGKtoRkS-UAe46AtgQ4UuSeUOZnCduG17sgTJw-N_FUKb-52F2tNzIF930eG630L8DGxGlwK4X8nAvUFQeFQfMMHTloTs1d1iN7LPFPhO_3ngkcDDahdmWkBpmhPps0TL0sUC9ounYMP2BnWgh7J-WoXzPRrMHpV0RAj006AzOv08rHWNBQQrmnZSP5"/>
+<span class="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-[#060B19]/80 text-primary font-code-coords text-code-coords border border-[#20D9F2]/30">POSEIDON // SOL-8</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase">Neptune</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Supersonic Methane Ice</p>
+<div class="mt-space-md space-y-space-xs text-on-surface-variant text-xs">
+<div class="flex justify-between items-center font-code-coords">
+<span class="text-outline">Distance (Sun):</span>
+<span class="text-on-surface font-semibold">30.07 AU</span>
+</div>
+<div class="flex justify-between items-center font-code-coords">
+<span class="text-outline">Surface Temp:</span>
+<span class="text-on-surface font-semibold">-201°C</span>
+</div>
+<div class="flex justify-between items-center font-code-coords">
+<span class="text-outline">Gravity:</span>
+<span class="text-primary font-semibold">1.14 g (11.15 m/s²)</span>
+</div>
+</div>
+</div>
+<button class="mt-space-md w-full py-space-xs rounded bg-[#10182B] group-hover:bg-[#20d9f2] group-hover:text-[#00363e] text-primary font-headline-sm text-label-telemetry-sm uppercase tracking-wider transition-all flex items-center justify-center gap-space-xs font-semibold">
+<span>Inspect World</span>
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Three.js Scene Custom Tag Initializer Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Custom tag loader for Three.js earth execution
+    const container = document.getElementById('threejs-container-ANIMATION_11');
+    if (container && typeof THREE !== 'undefined') {
+      try {
+        const width = container.clientWidth || 420;
+        const height = container.clientHeight || 420;
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 1000);
+        camera.position.set(0, 0, 2.7);
+
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(width, height);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        container.appendChild(renderer.domElement);
+
+        const globeGroup = new THREE.Group();
+        globeGroup.rotation.z = -0.38;
+        scene.add(globeGroup);
+
+        const canvas = document.createElement('canvas');
+        canvas.width = 2048;
+        canvas.height = 1024;
+        const ctx = canvas.getContext('2d');
+
+        const grad = ctx.createLinearGradient(0, 0, 0, 1024);
+        grad.addColorStop(0, '#040d21');
+        grad.addColorStop(0.5, '#071f45');
+        grad.addColorStop(1, '#020713');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, 2048, 1024);
+
+        function drawLand(cx, cy, r, pts) {
+          ctx.beginPath();
+          for(let i=0; i<pts; i++) {
+            const a = (i/pts) * Math.PI * 2;
+            const d = r * (0.65 + Math.sin(i*2.1)*0.2 + Math.cos(i*4.3)*0.15);
+            const x = cx + Math.cos(a)*d;
+            const y = cy + Math.sin(a)*(d*0.72);
+            if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+          }
+          ctx.closePath();
+          ctx.fill();
+        }
+
+        ctx.fillStyle = '#1b4a38';
+        drawLand(500, 390, 210, 26);
+        drawLand(620, 680, 180, 22);
+        drawLand(1160, 340, 270, 32);
+        drawLand(1130, 600, 200, 24);
+        drawLand(1600, 700, 140, 20);
+        drawLand(1000, 150, 110, 14);
+
+        ctx.fillStyle = '#26644d';
+        drawLand(480, 370, 130, 16);
+        drawLand(1210, 330, 160, 20);
+
+        ctx.fillStyle = 'rgba(235, 248, 255, 0.38)';
+        for(let c = 0; c < 50; c++) {
+          const x = Math.random() * 2048;
+          const y = 140 + Math.random() * 740;
+          const rx = 70 + Math.random() * 190;
+          const ry = 10 + Math.random() * 26;
+          ctx.beginPath();
+          ctx.ellipse(x, y, rx, ry, Math.PI * 0.05 * (Math.random() - 0.5), 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        const earthTexture = new THREE.CanvasTexture(canvas);
+        const earthGeo = new THREE.SphereGeometry(1, 64, 64);
+        const earthMat = new THREE.MeshPhongMaterial({
+          map: earthTexture,
+          bumpScale: 0.05,
+          specular: new THREE.Color(0x20d9f2),
+          shininess: 24,
+          emissive: new THREE.Color(0x030a17)
+        });
+        const earthMesh = new THREE.Mesh(earthGeo, earthMat);
+        globeGroup.add(earthMesh);
+
+        const atmoGeo = new THREE.SphereGeometry(1.025, 48, 48);
+        const atmoMat = new THREE.MeshBasicMaterial({
+          color: 0x20d9f2,
+          transparent: true,
+          opacity: 0.28,
+          blending: THREE.AdditiveBlending,
+          side: THREE.BackSide
+        });
+        globeGroup.add(new THREE.Mesh(atmoGeo, atmoMat));
+
+        const haloGeo = new THREE.SphereGeometry(1.08, 32, 32);
+        const haloMat = new THREE.MeshBasicMaterial({
+          color: 0x8565fa,
+          transparent: true,
+          opacity: 0.12,
+          blending: THREE.AdditiveBlending,
+          side: THREE.BackSide
+        });
+        globeGroup.add(new THREE.Mesh(haloGeo, haloMat));
+
+        const orbitGeo = new THREE.RingGeometry(1.24, 1.248, 96);
+        const orbitMat = new THREE.MeshBasicMaterial({
+          color: 0x20d9f2,
+          transparent: true,
+          opacity: 0.45,
+          side: THREE.DoubleSide
+        });
+        const orbitRing = new THREE.Mesh(orbitGeo, orbitMat);
+        orbitRing.rotation.x = Math.PI / 2.35;
+        orbitRing.rotation.y = -Math.PI / 8;
+        globeGroup.add(orbitRing);
+
+        const beaconGeo = new THREE.SphereGeometry(0.026, 16, 16);
+        const beaconMat = new THREE.MeshBasicMaterial({ color: 0xffb45b });
+        const beaconMesh = new THREE.Mesh(beaconGeo, beaconMat);
+        globeGroup.add(beaconMesh);
+
+        const sun = new THREE.DirectionalLight(0xffffff, 2.5);
+        sun.position.set(3.5, 1.8, 2.8);
+        scene.add(sun);
+
+        const ambient = new THREE.AmbientLight(0x132038, 0.85);
+        scene.add(ambient);
+
+        const rimLight = new THREE.PointLight(0x20d9f2, 1.8, 10);
+        rimLight.position.set(-3.2, -1.2, 1.2);
+        scene.add(rimLight);
+
+        let mouseX = 0, mouseY = 0, targetX = 0, targetY = 0;
+        let isDragging = false, prevPointerX = 0, spinVelocity = 0;
+
+        window.addEventListener('mousemove', (e) => {
+          const nx = (e.clientX / window.innerWidth) - 0.5;
+          const ny = (e.clientY / window.innerHeight) - 0.5;
+          targetX = nx * 0.45;
+          targetY = ny * 0.35;
+        });
+
+        container.addEventListener('mousedown', (e) => {
+          isDragging = true;
+          prevPointerX = e.clientX;
+        });
+        window.addEventListener('mouseup', () => { isDragging = false; });
+        window.addEventListener('mousemove', (e) => {
+          if (isDragging) {
+            const dx = e.clientX - prevPointerX;
+            spinVelocity = dx * 0.005;
+            earthMesh.rotation.y += spinVelocity;
+            prevPointerX = e.clientX;
+          }
+        });
+
+        window.addEventListener('resize', () => {
+          const w = container.clientWidth || 420;
+          const h = container.clientHeight || 420;
+          camera.aspect = w / h;
+          camera.updateProjectionMatrix();
+          renderer.setSize(w, h);
+        });
+
+        let time = 0;
+        function animate() {
+          requestAnimationFrame(animate);
+          time += 0.015;
+
+          if (!isDragging) {
+            earthMesh.rotation.y += 0.0024 + spinVelocity;
+            spinVelocity *= 0.94;
+          }
+
+          mouseX += (targetX - mouseX) * 0.05;
+          mouseY += (targetY - mouseY) * 0.05;
+          globeGroup.rotation.y = mouseX * 0.85;
+          globeGroup.rotation.x = -0.38 + (mouseY * 0.4);
+
+          const angle = time * 0.85;
+          beaconMesh.position.x = Math.cos(angle) * 1.244;
+          beaconMesh.position.z = Math.sin(angle) * 1.244 * Math.sin(Math.PI / 2.35);
+          beaconMesh.position.y = Math.sin(angle) * 1.244 * Math.cos(Math.PI / 2.35);
+
+          renderer.render(scene, camera);
+        }
+        animate();
+      } catch (err) {
+        console.warn('Three.js initialized', err);
+      }
+    }
+  });
+</script>
+</main></div></body></html>
