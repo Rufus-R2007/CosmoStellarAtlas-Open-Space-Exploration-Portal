@@ -1,0 +1,72 @@
+erDiagram
+    PLANET ||--o{ MISSION : targets
+    PLANET ||--o{ FAVORITE : saves
+    MISSION ||--|{ MILESTONE : contains
+    MISSION ||--o{ FAVORITE : saves
+    ROVER ||--|| MISSION : originates_from
+    ROVER ||--|{ ROVER_IMAGE : captures
+    ROVER ||--|{ ROVER_CAMERA : equips
+    ROVER ||--|{ WAYPOINT : traverses
+    ROVER ||--o{ FAVORITE : saves
+    ASTEROID ||--o{ FAVORITE : saves
+    LEARNING_TRAIL ||--|{ LESSON : delivers
+    LEARNING_TRAIL ||--|{ QUIZ_QUESTION : tests
+    USER_PROFILE ||--|{ FAVORITE : owns
+    USER_PROFILE ||--|{ COLLECTION : curates
+    COLLECTION ||--o{ FAVORITE : organizes
+    USER_PROFILE ||--|{ JOURNAL_NOTE : writes
+    USER_PROFILE ||--|{ QUIZ_ATTEMPT : submits
+    USER_PROFILE ||--|{ ACHIEVEMENT : unlocks
+
+    PLANET {
+        string id PK
+        string name
+        int orderFromSun
+        float diameterKm
+        float gravityMs2
+    }
+
+    MISSION {
+        string id PK
+        string name
+        int launchYear
+        string destinationPlanetId FK
+        string status
+    }
+
+    MILESTONE {
+        string id PK
+        string missionId FK
+        string replaySceneType
+        string title
+    }
+
+    ROVER {
+        string id PK
+        string name
+        string missionId FK
+        int totalSols
+    }
+
+    ASTEROID {
+        string id PK
+        string designation
+        float estimatedDiameterMeters
+        float missDistanceKm
+        float relativeVelocityKmS
+    }
+
+    FAVORITE {
+        string id PK
+        string entityType
+        string entityId FK
+        string collectionId FK
+        string savedAt
+    }
+
+    USER_PROFILE {
+        string callsign
+        int level
+        string rank
+        string clearanceId PK
+    }

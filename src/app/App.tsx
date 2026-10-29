@@ -12,26 +12,29 @@ import { IntelligencePage } from '../features/intelligence/IntelligencePage';
 import { LearningPage } from '../features/learning/LearningPage';
 import { VaultPage } from '../features/vault/VaultPage';
 import { NotFoundPage } from '../features/notfound/NotFoundPage';
+import { ErrorBoundary } from '../components/common/ErrorBoundary';
 
 export const App: React.FC = () => {
   return (
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={<AppLayout />}>
-          <Route index element={<ObservatoryPage />} />
-          <Route path="planets" element={<PlanetsPage />} />
-          <Route path="missions" element={<MissionsPage />} />
-          <Route path="missions/:missionId" element={<MissionDetailPage />} />
-          <Route path="timeline" element={<TimelinePage />} />
-          <Route path="rovers" element={<RoversPage />} />
-          <Route path="asteroids" element={<AsteroidsPage />} />
-          <Route path="intelligence" element={<IntelligencePage />} />
-          <Route path="learn" element={<LearningPage />} />
-          <Route path="vault" element={<VaultPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
-      </Routes>
-    </HashRouter>
+    <ErrorBoundary fallbackTitle="Portal Shell Uplink Anomaly">
+      <HashRouter>
+        <Routes>
+          <Route path="/" element={<AppLayout />}>
+            <Route index element={<ObservatoryPage />} />
+            <Route path="planets" element={<PlanetsPage />} />
+            <Route path="missions" element={<MissionsPage />} />
+            <Route path="missions/:missionId" element={<MissionDetailPage />} />
+            <Route path="timeline" element={<TimelinePage />} />
+            <Route path="rovers" element={<RoversPage />} />
+            <Route path="asteroids" element={<AsteroidsPage />} />
+            <Route path="intelligence" element={<IntelligencePage />} />
+            <Route path="learn" element={<LearningPage />} />
+            <Route path="vault" element={<VaultPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+      </HashRouter>
+    </ErrorBoundary>
   );
 };
 

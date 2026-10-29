@@ -5,13 +5,19 @@
 [![Three.js](https://img.shields.io/badge/Three.js-r182-black.svg)](https://threejs.org/)
 [![Vite](https://img.shields.io/badge/Vite-6.0-purple.svg)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC.svg)](https://tailwindcss.com/)
-[![Vitest](https://img.shields.io/badge/Vitest-Passed%20(128%2F128)-brightgreen.svg)](https://vitest.dev/)
+[![Vitest](https://img.shields.io/badge/Vitest-Passed%20(138%2F138)-brightgreen.svg)](https://vitest.dev/)
+[![Python Tests](https://img.shields.io/badge/Python%20Tests-16%2F16%20Passed-brightgreen.svg)](scripts/python/)
+[![Total Tests](https://img.shields.io/badge/Total%20Tests-154%2F154%20Passed-brightgreen.svg)](docs/TEST_RESULTS.md)
+[![Release](https://img.shields.io/badge/Release-v1.0.0-blue.svg)](https://github.com/Rufus-R2007/CosmoStellarAtlas-Open-Space-Exploration-Portal/releases)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-success.svg)](https://rufus-r2007.github.io/CosmoStellarAtlas-Open-Space-Exploration-Portal/)
 [![License](https://img.shields.io/badge/License-MIT-amber.svg)](LICENSE)
 
-> **Software Engineering Micro Project — Phase 7 Personal Space Vault, Interactive Learning Hub & Explorer Passport**  
+> **Software Engineering Micro Project — Final Production Release (Phase 8)**  
 > **Developer:** Rufus Samuel R  
+> **Registration Number:** URK25CS1090  
 > **Institution:** Karunya Institute of Technology and Sciences  
-> **GitHub Repository:** [CosmoStellarAtlas-Open-Space-Exploration-Portal](https://github.com/Rufus-R2007/CosmoStellarAtlas-Open-Space-Exploration-Portal)
+> **Live Web Application:** [https://rufus-r2007.github.io/CosmoStellarAtlas-Open-Space-Exploration-Portal/](https://rufus-r2007.github.io/CosmoStellarAtlas-Open-Space-Exploration-Portal/)  
+> **GitHub Repository:** [https://github.com/Rufus-R2007/CosmoStellarAtlas-Open-Space-Exploration-Portal](https://github.com/Rufus-R2007/CosmoStellarAtlas-Open-Space-Exploration-Portal)
 
 ---
 
@@ -29,6 +35,7 @@ The system is designed with a strict **Zero External API Dependency** architectu
   2. Implement an aerospace-grade UI/UX inspired by NASA Mission Control consoles with dark spatial palettes, custom glowing telemetry badges, and interactive HTML5 Canvas orbital visualizers.
   3. Ensure absolute data provenance transparency by clearly delineating verified curated historical facts from synthetic demonstration models.
   4. Design an extensible service architecture (`SpaceDataProvider`) that can seamlessly transition from local datasets to live REST/GraphQL APIs in future iterations.
+  5. Provide an offline Python analytical pipeline for dataset validation, statistical profiling, and Newtonian impact physics modeling.
 
 ---
 
@@ -42,8 +49,10 @@ The system is designed with a strict **Zero External API Dependency** architectu
 | **State Management**| Zustand 5 | Lightweight centralized store with localStorage persistence and zero context cascades. |
 | **Icons & Visuals** | Lucide React + HTML5 Canvas | High-precision vector icons and hardware-accelerated celestial orbital rendering. |
 | **Data Analytics** | Recharts 2 | SVG-based responsive mission charts with custom aerospace tooltips. |
-| **Testing** | Vitest + React Testing Library | Unit and component test runner with JSDOM environment. |
+| **Testing** | Vitest + React Testing Library | Unit, component, and integration test runner with JSDOM environment (138 tests). |
 | **Routing** | React Router (HashRouter) | Client-side routing with guaranteed static compatibility on GitHub Pages. |
+| **Offline Analytics**| Python 3 (Standard Library) | Dataset validation, statistics profiling, physics verification, and unit tests (16 tests). |
+| **Fault Isolation** | React Error Boundary | Aerospace-grade runtime exception interception and recovery HUD. |
 
 ---
 
@@ -407,6 +416,7 @@ CosmoStellarAtlas strictly adheres to academic honesty:
 ### Prerequisites
 - Node.js: `v18.0.0` or higher (verified on Node `v24.21.0`)
 - npm: `v9.0.0` or higher (verified on npm `11.12.0`)
+- Python: `3.8` or higher (verified on Python `3.12.x`, optional for offline analytical tools; uses Standard Library only)
 
 ### Installation
 Clone the repository and install dependencies:
@@ -423,14 +433,38 @@ npm run dev
 ```
 Navigate to `http://localhost:5173/` in your browser.
 
-### Executing the Automated Test Suite
-Run the Vitest test suite covering data provider methods, mission filtering, planetary 3D rendering fallbacks, temporal synchronization, mission replay speed controls, time capsules, storytelling engine, 404 routing, Mars rover surface operations, planetary defense physics calculations, universal search indexing, natural language query intent parsing, autonomous cosmic briefings, relational discovery graph, explainable recommendations, personal space vault persistence, bookmarking, collections, journal notes, learning trail curriculum, certification quiz grading, achievement unlocks, rank derivation, and JSON backup validation (128 tests across 9 test suites):
+### Executing the Automated Test Suites (154 Total Tests)
+
+1. **Vitest Frontend Test Suite (138 tests across 10 test suites):**
+   ```bash
+   npm test -- --run
+   ```
+   Covers data provider methods, mission filtering, planetary 3D rendering fallbacks, temporal synchronization, mission replay speed controls, time capsules, storytelling engine, 404 routing, Mars rover surface operations, planetary defense physics calculations, universal search indexing, natural language query intent parsing, autonomous cosmic briefings, relational discovery graph, explainable recommendations, personal space vault persistence, bookmarking, collections, journal notes, learning trail curriculum, certification quiz grading, achievement unlocks, rank derivation, JSON backup validation, and end-to-end multi-module user integration journeys.
+
+2. **Python Offline Analytical Test Suite (16 unit tests):**
+   ```bash
+   npm run test:python
+   # or directly: python -m unittest discover -s scripts/python -p "test_*.py"
+   ```
+   Verifies kinetic energy formulas, cubic/quadratic scaling laws, TNT equivalents, deterministic synthetic generation seeds, and data schema validation.
+
+### Python Analytical Pipeline & Dataset Utilities
 ```bash
-npm run test
+# Export active TypeScript datasets to canonical JSON files
+npm run data:export
+
+# Validate schema integrity, required fields, and ranges across all 9 datasets
+npm run data:validate
+
+# Calculate statistical profiles and verify 100% dataset completeness score
+npm run data:stats
+
+# Generate deterministic synthetic asteroids and missions (seed=42)
+npm run data:generate
 ```
 
 ### Type Checking & Linting
-Validate strict TypeScript compilation:
+Validate strict TypeScript compilation (zero errors):
 ```bash
 npx tsc --noEmit
 ```
@@ -444,7 +478,55 @@ The compiled bundle will be output to the `dist/` directory, fully configured wi
 
 ---
 
-## 14. Multi-Phase Master Roadmap
+## 14. Python Analytical Utilities & Offline Validation Pipeline (`scripts/python/`)
+
+To support rigorous software engineering and academic data verification without incurring runtime dependencies, CosmoStellarAtlas features a dedicated Python analytical utilities pipeline located in `scripts/python/`. Built strictly using the **Python Standard Library** (`argparse`, `json`, `math`, `unittest`, `re`), this pipeline runs on any machine without requiring `pip install`:
+
+| Script | Purpose & Key Capabilities |
+| :--- | :--- |
+| `asteroid_physics.py` | Standalone CLI and analytical module computing Newtonian impact physics ($r = d/2$, $V = \frac{4}{3}\pi r^3$, $m = \rho V$, $E_k = \frac{1}{2}mv^2$, Joules to kt/Mt TNT equivalence). Verifies parameter sensitivity scaling ($8\times$ energy for doubled diameter, $4\times$ for doubled velocity, $2\times$ for doubled density). |
+| `generate_demo_data.py` | Deterministic synthetic dataset generator utilizing fixed pseudo-random seeds (`seed=42`). Generates reproducible synthetic Near-Earth Asteroid encounters and deep-space missions tagged with explicit academic provenance (`source: 'synthetic'`). |
+| `validate_datasets.py` | Quality assurance dataset validator inspecting schema compliance, required fields, numerical value bounds, valid ISO 8601 date formats, cross-entity relational referential integrity, and duplicate identifier detection across all 9 canonical datasets. |
+| `dataset_statistics.py` | Data profiler and quality auditor generating comprehensive summary statistics, decade histograms, planetary target distributions, size categorization, and field completeness scores (**100.0% completeness score achieved**). |
+| `test_python.py` | Automated unit test suite utilizing Python's built-in `unittest` runner. Features 16 automated tests verifying physics calculations, scaling laws, synthetic generation reproducibility, and schema validator logic. |
+
+---
+
+## 15. Software Engineering Documentation & Formal UML Models (`docs/`)
+
+The repository contains an exhaustive academic software engineering documentation suite aligned with university project defense standards:
+
+### Formal UML Architectural Diagrams (`docs/diagrams/`)
+All diagrams are authored in formal Mermaid specification format:
+1. `use_case_diagram.mmd`: Actor relationships across Student, Researcher, and Faculty with system boundaries.
+2. `activity_planet_explorer.mmd`: Operational flow of planetary visualization, 2D fallback, and comparison synthesis.
+3. `activity_mission_replay.mmd`: Tactical scene simulation state flow and playback speed transitions.
+4. `activity_asteroid_simulation.mmd`: Kinetic energy derivation and sensitivity matrix computation pipeline.
+5. `sequence_data_retrieval.mmd`: Decoupled `SpaceDataProvider` query dispatch, cache inspection, and model returns.
+6. `sequence_vault_save.mmd`: Cross-module telemetry logging, bookmark envelope packaging, and `localStorage` persistence.
+7. `component_diagram.mmd`: Full architectural component topology from UI Presentation down to JSON data stores.
+8. `class_domain_model.mmd`: Domain model entity classes, attributes, methods, and relationships.
+9. `entity_relationship_diagram.mmd`: Relational entity schema with primary/foreign keys and cardinalities.
+10. `state_mission_replay.mmd`: Formal finite state machine of the canvas replay engine (`IDLE`, `PLAYING`, `PAUSED`, `SEEKING`, `COMPLETED`).
+
+### Academic Project Reports & Specifications (`docs/`)
+- **[Software Requirements Specification (SRS v1.6.0)](docs/SRS.md):** Complete functional (FR-01 to FR-78) and non-functional requirements (NFR-01 to NFR-10).
+- **[System Architecture Document (v1.6.0)](docs/ARCHITECTURE.md):** Complete architectural patterns, data flow, component decomposition, and Section 13 Python offline analytical pipeline.
+- **[Data Design Document](docs/DATA_DESIGN.md):** Data dictionary, schema definitions, entity mapping, and `cosmostellaratlas:user:v1` persistence envelope.
+- **[Requirements Traceability Matrix (RTM)](docs/REQUIREMENTS_TRACEABILITY.md):** Bidirectional traceability matrix mapping every requirement to source code and test cases.
+- **[Software Test Plan](docs/TEST_PLAN.md):** Quality assurance strategy, boundary value analysis, test levels, and acceptance release gates.
+- **[Formal Test Cases (TC-001 to TC-040)](docs/TEST_CASES.md):** 40 formalized test cases covering all functional modules with verified pass results.
+- **[Test Execution Report](docs/TEST_RESULTS.md):** Formal test execution report recording 154 passing tests (138 Vitest + 16 Python), zero defects, and build metrics.
+- **[User Manual](docs/USER_MANUAL.md):** Complete user operations manual for faculty and students covering all 9 modules and keyboard navigation.
+- **[Data Provenance & Scientific Transparency](docs/DATA_PROVENANCE.md):** Rigorous academic disclosure of curated historical datasets vs synthetic demonstration models and Newtonian assumptions.
+- **[Future Scope & Societal Impact](docs/FUTURE_SCOPE_AND_IMPACT.md):** Strategic roadmap for live NASA Open APIs, orbital mechanics modeling, societal STEM impact, and digital equity.
+- **[Comprehensive Project Overview](docs/PROJECT_OVERVIEW.md):** Full university micro-project submission report including abstract, problem statement, system architecture, innovation, and conclusion.
+- **[Faculty Demonstration Guide](docs/DEMO_GUIDE.md):** Step-by-step viva presentation script featuring 2-minute elevator pitch, 5-minute core walkthrough, and deep-dive scenarios.
+- **[Viva Voce Preparation Guide](docs/VIVA_PREPARATION.md):** Exhaustive defense guide answering 25 core faculty viva voce questions on architecture, design patterns, algorithms, and data provenance.
+
+---
+
+## 16. Multi-Phase Master Roadmap
 
 | Phase | Title | Focus Area | Status |
 | :---: | :--- | :--- | :---: |
@@ -455,11 +537,11 @@ The compiled bundle will be output to the `dist/` directory, fully configured wi
 | **Phase 5** | **Asteroid Watch & Planetary Defense Lab** | 50 Near-Earth Object database (8 curated benchmarks + 42 synthetic encounters), 2D Keplerian orbital encounter canvas with perigee vectors and distance HUD, chronological close-approach scrubber (2026–2035), multi-facet search/filter catalog matrix, asteroid inspection dossier modal, flagship Planetary Defense What-If Lab with deterministic physics engine ($r, V, m, v, E_k$, TNT kt/Mt), interactive Recharts curves ($E \propto d^3$, $E \propto v^2$), parameter sensitivity matrix (8x, 4x, 2x), 4 educational scenario presets, explainable physics insights, and academic planetary defense foundations. | **COMPLETED** |
 | **Phase 6** | **Space Intelligence & Smart Discovery** | Inverted token search catalog, deterministic rule-based natural language query assistant (14 discrete intents), 5-category autonomous cosmic briefing engine with historical year synchronization, 2D interactive relational discovery knowledge graph (SVG) with 1-hop neighborhood subgraph filtering and accessible list view, explainable contextual recommendation engine with human-readable rationales, and transparent algorithmic evidence audit panel. | **COMPLETED** |
 | **Phase 7** | **Personal Space Vault, Learning Hub & Explorer Passport** | Client-side user profile, universal bookmarks, custom collections, research journal, 4 learning trails, 12 interactive lessons, 24-question certification quiz engine, 12-badge achievement system, interactive SVG constellation progress map, and versioned JSON backup/recovery. | **COMPLETED** |
-| **Phase 8** | **Trajectory Lab & Static Cloud Deployment** | Dedicated orbital transfer simulator, Hohmann transfer orbit modeling, and GitHub Pages production deployment. | *Planned* |
+| **Phase 8** | **Final Production Release: System Integration, UI Polish, Testing & Deployment** | Aerospace-grade React Error Boundary fault isolation, offline Python analytical pipeline (16 tests), 10 formal UML diagrams, 13 software engineering documentation files, GitHub Actions CI/CD deployment workflow, and 154 passing automated tests. | **COMPLETED** |
 
 ---
 
-## 15. Faculty Demonstration Runbook (Step-by-Step)
+## 17. Faculty Demonstration Runbook (Step-by-Step)
 
 For faculty evaluation and live micro-project demonstrations:
 
@@ -469,87 +551,89 @@ For faculty evaluation and live micro-project demonstrations:
    ```
    Open `http://localhost:5173/` in your browser.
 
-2. **Navigate to Asteroid Watch (`#/asteroids`):**
-   - Click **Asteroid Watch & Lab** in the sidebar navigation or click the **Asteroid Watch & Defense Lab** card in the Observatory Dashboard.
-   - Observe the **Asteroid Watch Operations Hero** with the animated 2D Earth canvas, dynamic counter statistics computed from the 50 records, and transparent provenance badges (`Offline Simulation`, `Deterministic Dataset`, `Ref Date: 2026-10-01`).
+2. **Observatory Dashboard (`/`):**
+   - Review live dynamic counters (8 planets, 20 missions, 11,000+ sols, 50 asteroids).
+   - Test the interactive 3D Earth canvas centerpiece with draggable orbital rotation.
+   - Test the timeline preview and Recharts historical mission distribution chart.
 
-3. **Experience B — 2D Orbital Encounter Explorer:**
-   - Use the **Active Encounter Target** dropdown to switch between targets (e.g. `2004 MN4 — 99942 Apophis`, `SIM-2026-001`, `SIM-2026-002`).
-   - Watch the animated hyperbolic trajectory sweep past Earth and Moon ($1\text{ LD} = 384,400\text{ km}$).
-   - Test the playback controls: **Pause**, **Resume**, **0.5× / 1× / 2× speed**, **Reset Animation**, and **Zoom In / Out**.
-   - Notice the **Closest Approach Perigee Vector** with distance HUD updating continuously.
+3. **Planet Explorer & 3D Planetarium (`#/planets`):**
+   - Rotate the Three.js 3D planet view for all 8 worlds; test the accessible 2D Canvas fallback toggle.
+   - Use the **Relative Earth Weight Simulator** to compute weight variations across planets.
+   - Launch the **Planetary Comparison Lab** to benchmark any two planets side-by-side with automatic scale visualization and deterministic insight generation.
 
-4. **Experience B — Close-Approach Chronology:**
-   - Scroll to the chronological encounter scrubber (2026–2035).
-   - Click the **Next Encounter** and **Previous Encounter** stepper buttons. Notice the active encounter highlight card updating synchronously.
-   - Click **Test in What-If Lab** to pre-populate simulation inputs with the selected asteroid's parameters.
+4. **Cosmic Time Machine & Mission Control (`#/timeline` & `#/missions`):**
+   - Drag the continuous timeline scrubber (1957–Present) to observe synchronized mission epoch telemetry.
+   - Filter missions in Mission Control by agency, destination, and decade; sort by duration or launch date.
+   - Open any mission detail dossier (e.g. Apollo 11, Voyager 1, Perseverance) to inspect spacecraft hardware specs and read the 5-chapter mission story.
+   - Launch the **Interactive Mission Replay Engine** to observe tactical canvas shaders (launchpad, orbit, cruise, flyby, descent, survey) with variable speed playback (0.5×, 1×, 2×).
 
-5. **Experience A — Asteroid Catalog & Filter Matrix:**
-   - Type `"Apophis"` in the search bar. Observe instant real-time filtering to the curated Apophis record.
-   - Test multi-facet filters: Filter by **Orbit Class** (`Apollo`, `Aten`, `Amor`, `Atira`), **Category**, **Diameter Range**, or **Velocity Range**.
-   - Test sorting options: Sort by **Largest Diameter** or **Highest Velocity**.
-   - Click **Inspect Details** on any card to mount the **AsteroidDetailModal** displaying diameter uncertainty bounds, bulk density, simulated risk index, and close-approach telemetry.
+5. **Mars Rover Explorer & Inspection Lab (`#/rovers`):**
+   - Switch between all 5 NASA rovers (Perseverance, Curiosity, Opportunity, Spirit, Sojourner).
+   - Inspect science instruments, hardware specs, and Mars surface journey topographic waypoints.
+   - Open any photo in the **Image Inspection Lab Modal**: pan, zoom (1×–4×), adjust CSS brightness/contrast/saturation, inspect educational surface annotations, and record personal field notes.
 
-6. **Experience C — Flagship Planetary Defense What-If Lab:**
-   - Scroll down to the What-If Lab (`#whatif`).
-   - Adjust the **Diameter Slider** ($10\text{--}1000\text{ m}$) and watch the **Estimated Mass**, **Volume**, and **Kinetic Energy (Megatons)** update in real time.
-   - Observe the **Cubic Scaling**: Notice that doubling diameter ($100\text{m} \rightarrow 200\text{m}$) multiplies energy by $8\times$.
-   - Adjust the **Encounter Velocity Slider** ($5\text{--}40\text{ km/s}$) and observe the **Quadratic Scaling**: Doubling velocity ($10\text{ km/s} \rightarrow 20\text{ km/s}$) multiplies energy by $4\times$.
-   - Adjust the **Illustrative Miss Distance Slider**: Notice that miss distance changes visual display only, strictly **never** altering kinetic energy or fabricating impact probabilities.
-   - Test **Scenario Presets**: Click **Small Asteroid (Chelyabinsk-Scale)**, **Medium Asteroid (Tunguska-Scale)**, or **Large Asteroid (DART / Dimorphos Scale)**.
-   - Review the **Recharts Kinetic Energy Curves** with active reference dots, the **Analytical Parameter Sensitivity Table**, and the **Explainable Physics Engine** cards detailing limitations.
+6. **Asteroid Watch & Planetary Defense Lab (`#/asteroids`):**
+   - Explore the 2D Orbital Encounter Explorer with hyperbolic flyby trajectories and perigee distance HUD.
+   - Review the chronological close-approach scrubber (2026–2035).
+   - Enter the **Planetary Defense What-If Lab**: adjust diameter, velocity, and density sliders to verify cubic ($E \propto d^3$) and quadratic ($E \propto v^2$) kinetic energy scaling in real time.
+   - Test the 4 educational scenario presets (Chelyabinsk, Tunguska, Dimorphos/DART, Retrograde Comet).
 
-7. **Review Academic Foundations & Disclosures:**
-   - Review the **Planetary Defense Foundations** section detailing optical survey networks (ATLAS, Pan-STARRS, LSST), orbital uncertainty ellipses, Keplerian orbit taxonomy, and 4 deflection architectures (Kinetic Impactor, Gravity Tractor, Ion Beam, Nuclear Standoff).
+7. **Space Intelligence & Smart Discovery (`#/intelligence`):**
+   - Test the 5-category autonomous cosmic briefing engine with historical year synchronization.
+   - Ask questions in **Ask the Atlas** (e.g. *"What is Mars?"*, *"Compare Earth and Jupiter"*, *"Which planet has the most moons?"*) and observe instant local answers with source citations.
+   - Explore the interactive 2D relational knowledge graph with 1-hop neighborhood focus and accessible list view.
+   - Review explainable recommendations with human-readable rationales and audit the deterministic rule execution in the Insight Evidence panel.
 
-8. **Experience D — Space Intelligence & Explainable Smart Discovery (`#/intelligence`):**
-   - Click **Space Intelligence** in the sidebar navigation or use the quick palette (`Ctrl+K`).
-   - **Cosmo Intelligence Hero:** Observe live subsystem telemetry: 14 rule intents, <3ms latency, and 100% offline explainability proof badge.
-   - **Cosmic Briefing Engine:** Test the 5 categories (Mission Highlights, Planetary Discoveries, Mars Exploration, Asteroid Watch, Historical Exploration). In the Historical tab, drag the year slider to landmark years (e.g. 1969, 1977, 2020) and observe dynamic, year-specific dossier generation.
-   - **Ask the Atlas Assistant:** Type natural questions like *"What is Mars?"*, *"Compare Earth and Jupiter"*, *"Which planet has the most moons?"*, or *"Tell me about Apollo 11"*. Verify instant markdown answers, formatted tables, verified source citations, and follow-up prompt suggestions with zero cloud AI API dependencies.
-   - **Universal Smart Search:** Search for `"Jezero"`, `"Apophis"`, or `"Titan"` and observe weighted relevance ranking and active entity filter pills.
-   - **Cosmic Discovery Graph:** Explore the interactive 2D SVG relational network. Click any node (e.g., Mars, Apollo 11, Apophis) to highlight connections, toggle the **1-Hop Neighborhood Focus**, or switch to the **Accessible List View**.
-   - **Explainable Recommendations:** Review prioritized candidates with transparent, human-readable rationales derived from your active application state.
-   - **Insight Evidence Audit Panel:** Click **Audit Rule Logic** to review the exact rule, records examined, and mathematical derivation proofs.
+8. **Personal Space Vault & Learning Hub (`#/vault` & `#/learn`):**
+   - Complete lessons and take certification quizzes across the 4 structured curriculum trails.
+   - Track verified progress in the **Explorer Passport** and watch achievement stars ignite on the interactive SVG **Explorer Constellation Map**.
+   - Manage universal bookmarks, create custom research shelves, record field journal notes, and export/import versioned JSON vault backups.
 
-9. **Experience E — Personal Space Vault & Interactive Learning Hub (`#/vault` & `#/learn`):**
-   - **Learning Hub (`#/learn`):**
-     - Navigate to **Learning Hub** in the sidebar navigation.
-     - Observe the **Learning Hub Hero** displaying real-time aggregated progress stats across all 4 curriculum trails.
-     - Explore the 4 learning trails (*Journey Through the Solar System*, *Mission to Mars*, *Guardians of Earth*, *Chronicles of Space Exploration*).
-     - Click **Start Lesson** on any trail to open the **InteractiveLessonModal**. Review objectives, styled callout boxes, and click **Mark Lesson as Completed** or click the lab shortcut.
-     - Click **Take Certification Quiz** on any trail to launch the **InteractiveQuizModal**. Answer questions, observe live step-by-step navigation, submit for immediate grading, and inspect the question-by-question review with scientific explanations.
-   - **Personal Space Vault (`#/vault`):**
-     - Click **Personal Vault** in the sidebar navigation.
-     - **Explorer Profile HUD:** Review your callsign, clearance level (Levels 1–5), rank insignia, storage quota footprint, and client-side privacy disclosure.
-     - **Universal Bookmarks:** Filter by All, Planets, Missions, Rovers, Images, and Asteroids. Test star bookmarking directly across other modules (e.g., in Planet Explorer, Mission Control, Mars Rover photo modal, Asteroid modal) and verify instant appearance here.
-     - **Personal Research Collections:** Create custom shelves (e.g., *"Outer Planets Study"*), assign bookmarks to collections, and safely delete shelves without losing underlying favorites.
-     - **Exploration Field Journal:** Create a field note with tags and entity links (e.g. `tag: astrophysics`), edit, search, and delete entries.
-     - **Explorer Passport:** Inspect the holographic credential card showing verified telemetry counts (planets surveyed, simulations run, quizzes certified).
-     - **Interactive Explorer Constellation:** Explore the interactive 800×480 SVG starfield map. Click achievement stars to inspect requirements, watch dual-ignition glowing vector lines illuminate as achievements unlock, or switch to the **Accessible List View**.
-     - **Personal Analytics:** Review dynamic Recharts visualizations showing activity distribution, curriculum performance %, and achievement completion.
-     - **Backup & Recovery:** Click **Export Vault Data (JSON)** to download a complete backup file. Test importing in 'Merge' or 'Replace' mode, or execute the double-confirmation **Reset Vault** to return to defaults.
+9. **Global System Integration & Error Boundary Recovery:**
+   - Verify seamless cross-module links (e.g., Planet -> Mission flight heritage -> Mission Replay -> Space Vault bookmarking).
+   - Trigger the system preferences modal via the header to test reduced-motion modes and simulated fault recovery.
 
-10. **Execute Automated Quality Verification:**
+10. **Execute Python Analytical Pipeline:**
+    ```bash
+    npm run data:validate
+    npm run data:stats
+    npm run test:python
+    ```
+    Verify 100% dataset completeness score, valid schema integrity, and 16 passing Python unit tests.
+
+11. **Execute Complete Automated Test Suite (154 Total Tests):**
     ```bash
     npx tsc --noEmit
     npm test -- --run
+    npm run test:python
     npm run build
     ```
-    Verify 0 TypeScript errors, 128 passing tests across 9 test suites, and clean static production build in `dist/`.
+    Verify 0 TypeScript errors, 138 Vitest tests passing across 10 suites, 16 Python tests passing, and successful static production bundling in `dist/`.
 
 ---
 
-## 16. GitHub Pages Deployment Plan
-GitHub Pages deployment will be finalized in Phase 8. The application is pre-configured for static hosting:
-- `base: './'` in `vite.config.ts` ensures all asset paths are relative.
-- `HashRouter` in `App.tsx` guarantees that deep linking and direct page refreshes function seamlessly without server-side rewrite rules.
-- Production build verified with zero external runtime dependencies.
+## 18. GitHub Pages Deployment & CI/CD Pipeline
+
+The application is deployed publicly to GitHub Pages via an automated GitHub Actions CI/CD workflow:
+
+- **Live Application URL:** [https://rufus-r2007.github.io/CosmoStellarAtlas-Open-Space-Exploration-Portal/](https://rufus-r2007.github.io/CosmoStellarAtlas-Open-Space-Exploration-Portal/)
+- **Workflow File:** [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)
+- **Deployment Strategy:**
+  - Automated trigger on `push` to `main` branch.
+  - Multi-stage CI pipeline executing TypeScript compilation (`tsc --noEmit`), Vitest automated tests (`npm test -- --run`), Python unit tests (`python -m unittest`), and dataset integrity validation (`validate_datasets.py`).
+  - Production build generation via `npm run build` with `base: './'` for guaranteed relative asset resolution.
+  - Client-side routing powered by `HashRouter`, eliminating 404 errors on direct navigation or page refresh under static hosting.
+  - Zero server-side or third-party cloud runtime dependencies.
 
 ---
 
-## 17. Developer & Coursework Information
+## 19. Developer & Coursework Information
+
 - **Developer:** Rufus Samuel R
+- **Registration Number:** URK25CS1090
 - **Institution:** Karunya Institute of Technology and Sciences
-- **Project Type:** Software Engineering Micro Project
+- **Department:** Computer Science and Engineering
+- **Course / Project Type:** Software Engineering Micro Project
 - **Academic Year:** 2026
+- **Repository:** [https://github.com/Rufus-R2007/CosmoStellarAtlas-Open-Space-Exploration-Portal](https://github.com/Rufus-R2007/CosmoStellarAtlas-Open-Space-Exploration-Portal)
+- **Release Version:** `v1.0.0` (Production Release)

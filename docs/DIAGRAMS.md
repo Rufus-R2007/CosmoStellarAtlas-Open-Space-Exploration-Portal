@@ -1,7 +1,10 @@
 # System Design Diagrams & UML Models
 ## CosmoStellarAtlas — Open Space Exploration Portal
 **Author:** Rufus Samuel R  
+**Registration Number:** URK25CS1090  
 **Institution:** Karunya Institute of Technology and Sciences  
+**Version:** 1.6.0 (Phase 8 Final Production Release)  
+**Formal UML Models:** docs/diagrams/ (10 Formal Mermaid Model Sources)  
 
 ---
 

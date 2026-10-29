@@ -1,0 +1,552 @@
+[
+  {
+    "id": "mercury",
+    "name": "Mercury",
+    "codeName": "HERMES // SOL-1",
+    "orderFromSun": 1,
+    "type": "Terrestrial",
+    "tagline": "Sun-Scorched Cratered World",
+    "diameterKm": 4879,
+    "massKg": "3.3011 × 10²³",
+    "massEarthRel": 0.055,
+    "distanceFromSunAU": 0.39,
+    "averageDistanceFromSunKm": 57910000,
+    "surfaceTempMeanC": 167,
+    "surfaceTempRangeC": {
+      "min": -180,
+      "max": 430
+    },
+    "gravityMs2": 3.7,
+    "gravityEarthRel": 0.38,
+    "moonsCount": 0,
+    "orbitalPeriodDays": 87.97,
+    "orbitalVelocityKmS": 47.36,
+    "rotationPeriodHours": 1407.6,
+    "axialTiltDegrees": 0.034,
+    "atmosphereComposition": [
+      {
+        "gas": "Oxygen",
+        "percentage": 42
+      },
+      {
+        "gas": "Sodium",
+        "percentage": 29
+      },
+      {
+        "gas": "Hydrogen",
+        "percentage": 22
+      },
+      {
+        "gas": "Helium",
+        "percentage": 6
+      },
+      {
+        "gas": "Potassium",
+        "percentage": 0.5
+      }
+    ],
+    "summary": "The innermost planet, possessing extreme temperature swings and deep cratering due to a tenuous exosphere.",
+    "detailedDescription": "Mercury is the smallest planet in the Solar System and the closest to the Sun. Its orbit around the Sun takes 87.97 Earth days, the shortest of all the Sun's planets. It has virtually no atmosphere to retain heat, resulting in diurnal temperature shifts from 430°C in direct sunlight to -180°C on the night side.",
+    "notableFeatures": [
+      "Caloris Basin impact crater spanning 1,550 km",
+      "Tenuous surface-boundary sodium-potassium exosphere",
+      "Extreme diurnal temperature delta of 610°C",
+      "Water ice deposits preserved in permanently shadowed polar craters"
+    ],
+    "discoveryPassportHighlight": "Mercury possesses the thinnest atmosphere of any major planet and experiences the most drastic temperature variations in the solar system.",
+    "suggestedNextPlanetId": "venus",
+    "colorHex": "#8C8C8C",
+    "accentColor": "#B0B0B0",
+    "visualConfiguration": {
+      "surfaceColor": "#8C8C8C",
+      "bumpScale": 0.08,
+      "roughness": 0.9,
+      "proceduralType": "mercury"
+    },
+    "relatedMissionIds": [
+      "mariner-10",
+      "messenger",
+      "bepicolombo"
+    ],
+    "sourceReference": "NASA Planetary Fact Sheet / MESSENGER Declassified Archives (2024)",
+    "source": "curated"
+  },
+  {
+    "id": "venus",
+    "name": "Venus",
+    "codeName": "APHRODITE // SOL-2",
+    "orderFromSun": 2,
+    "type": "Terrestrial",
+    "tagline": "Superheated Runaway Greenhouse",
+    "diameterKm": 12104,
+    "massKg": "4.8675 × 10²⁴",
+    "massEarthRel": 0.815,
+    "distanceFromSunAU": 0.72,
+    "averageDistanceFromSunKm": 108200000,
+    "surfaceTempMeanC": 464,
+    "surfaceTempRangeC": {
+      "min": 438,
+      "max": 482
+    },
+    "gravityMs2": 8.87,
+    "gravityEarthRel": 0.9,
+    "moonsCount": 0,
+    "orbitalPeriodDays": 224.7,
+    "orbitalVelocityKmS": 35.02,
+    "rotationPeriodHours": -5832.5,
+    "axialTiltDegrees": 177.36,
+    "atmosphereComposition": [
+      {
+        "gas": "Carbon Dioxide",
+        "percentage": 96.5
+      },
+      {
+        "gas": "Nitrogen",
+        "percentage": 3.5
+      },
+      {
+        "gas": "Sulfur Dioxide",
+        "percentage": 0.015
+      }
+    ],
+    "summary": "Earth's twin in diameter and mass, smothered by a crushing supercritical carbon dioxide atmosphere and sulfuric acid clouds.",
+    "detailedDescription": "Venus has an oppressive surface pressure 92 times that of Earth—equivalent to the ocean depth of 900 meters. A runaway greenhouse effect produces surface temperatures capable of melting lead, making it the hottest planetary surface in the solar system.",
+    "notableFeatures": [
+      "Supercritical CO₂ runaway greenhouse atmosphere",
+      "Maxwell Montes rising 11 km above average surface level",
+      "Sulfuric acid upper cloud decks reflecting 75% of sunlight",
+      "Retrograde rotation: Sun rises in the west and sets in the east"
+    ],
+    "discoveryPassportHighlight": "A day on Venus is longer than its year! It takes 243 Earth days to rotate once, but only 225 Earth days to complete an orbit around the Sun.",
+    "suggestedNextPlanetId": "earth",
+    "colorHex": "#E3BB7B",
+    "accentColor": "#FFB45B",
+    "visualConfiguration": {
+      "surfaceColor": "#E3BB7B",
+      "atmosphereColor": "#FFB45B",
+      "bumpScale": 0.04,
+      "roughness": 0.6,
+      "proceduralType": "venus"
+    },
+    "relatedMissionIds": [
+      "venera-7",
+      "magellan",
+      "davinci"
+    ],
+    "sourceReference": "NASA Magellan Radar Mapping & Akatsuki Mission Data (2023)",
+    "source": "curated"
+  },
+  {
+    "id": "earth",
+    "name": "Earth",
+    "codeName": "TERRA // SOL-3",
+    "orderFromSun": 3,
+    "type": "Terrestrial",
+    "tagline": "Water World & Planetary Biosphere",
+    "diameterKm": 12742,
+    "massKg": "5.9724 × 10²⁴",
+    "massEarthRel": 1,
+    "distanceFromSunAU": 1,
+    "averageDistanceFromSunKm": 149600000,
+    "surfaceTempMeanC": 15,
+    "surfaceTempRangeC": {
+      "min": -89,
+      "max": 58
+    },
+    "gravityMs2": 9.807,
+    "gravityEarthRel": 1,
+    "moonsCount": 1,
+    "orbitalPeriodDays": 365.25,
+    "orbitalVelocityKmS": 29.78,
+    "rotationPeriodHours": 23.93,
+    "axialTiltDegrees": 23.44,
+    "atmosphereComposition": [
+      {
+        "gas": "Nitrogen",
+        "percentage": 78.08
+      },
+      {
+        "gas": "Oxygen",
+        "percentage": 20.95
+      },
+      {
+        "gas": "Argon",
+        "percentage": 0.93
+      },
+      {
+        "gas": "Carbon Dioxide",
+        "percentage": 0.04
+      }
+    ],
+    "summary": "The dynamic cradle of known terrestrial biology, defined by vast liquid surface oceans, active plate tectonics, and a protective magnetosphere.",
+    "detailedDescription": "Earth is the third planet from the Sun and the only astronomical object known to harbor life. Approximately 70.8% of the surface is covered by oceans. Earth's active liquid iron outer core produces a geomagnetic shield deflecting solar wind and cosmic radiation.",
+    "notableFeatures": [
+      "Liquid water hydrosphere covering 70.8% of the global crust",
+      "Active plate tectonics regulating the global carbon cycle",
+      "Convective dynamo magnetosphere shielding atmospheric gas",
+      "Dynamic biological nitrogen-oxygen atmospheric equilibrium"
+    ],
+    "discoveryPassportHighlight": "Earth is the densest major planet in our solar system (5.51 g/cm³) and the only world verified to host liquid surface oceans.",
+    "suggestedNextPlanetId": "mars",
+    "colorHex": "#20D9F2",
+    "accentColor": "#9BEFFF",
+    "visualConfiguration": {
+      "surfaceColor": "#20D9F2",
+      "atmosphereColor": "#9BEFFF",
+      "hasClouds": true,
+      "cloudSpeed": 0.002,
+      "bumpScale": 0.05,
+      "roughness": 0.5,
+      "proceduralType": "earth"
+    },
+    "relatedMissionIds": [
+      "apollo-11",
+      "iss",
+      "artemis-1",
+      "hubble"
+    ],
+    "sourceReference": "NASA Earth Observatory / NOAA Space Weather Archives (2024)",
+    "source": "curated"
+  },
+  {
+    "id": "mars",
+    "name": "Mars",
+    "codeName": "ARES // SOL-4",
+    "orderFromSun": 4,
+    "type": "Terrestrial",
+    "tagline": "Oxidized Basalt Desert & Ancient Riverbeds",
+    "diameterKm": 6779,
+    "massKg": "6.4171 × 10²³",
+    "massEarthRel": 0.107,
+    "distanceFromSunAU": 1.52,
+    "averageDistanceFromSunKm": 227900000,
+    "surfaceTempMeanC": -63,
+    "surfaceTempRangeC": {
+      "min": -140,
+      "max": 20
+    },
+    "gravityMs2": 3.721,
+    "gravityEarthRel": 0.38,
+    "moonsCount": 2,
+    "orbitalPeriodDays": 686.98,
+    "orbitalVelocityKmS": 24.07,
+    "rotationPeriodHours": 24.62,
+    "axialTiltDegrees": 25.19,
+    "atmosphereComposition": [
+      {
+        "gas": "Carbon Dioxide",
+        "percentage": 95.32
+      },
+      {
+        "gas": "Nitrogen",
+        "percentage": 2.6
+      },
+      {
+        "gas": "Argon",
+        "percentage": 1.9
+      },
+      {
+        "gas": "Oxygen",
+        "percentage": 0.13
+      }
+    ],
+    "summary": "Home to Olympus Mons and Valles Marineris, preserving mineralogical signatures of ancient catastrophic river deltas and lakes.",
+    "detailedDescription": "Mars displays a reddish appearance due to pervasive iron(III) oxide dust. It hosts Olympus Mons, the largest volcano in the Solar System, and Valles Marineris, an immense tectonic canyon system spanning over 4,000 kilometers across the equatorial crust.",
+    "notableFeatures": [
+      "Olympus Mons: tallest planetary volcano in the Solar System (21.9 km)",
+      "Valles Marineris: grand canyon system extending 4,000 km",
+      "Seasonal CO₂ and water-ice polar caps",
+      "Abundant paleo-lacustrine and river delta clay deposits"
+    ],
+    "discoveryPassportHighlight": "Olympus Mons on Mars is so colossal that its footprint would cover the entire state of Arizona, and its peak rises nearly triple the height of Mt. Everest.",
+    "suggestedNextPlanetId": "jupiter",
+    "colorHex": "#E25B36",
+    "accentColor": "#FFB865",
+    "visualConfiguration": {
+      "surfaceColor": "#E25B36",
+      "atmosphereColor": "#FFB865",
+      "bumpScale": 0.06,
+      "roughness": 0.85,
+      "proceduralType": "mars"
+    },
+    "relatedMissionIds": [
+      "mariner-9",
+      "pathfinder",
+      "curiosity",
+      "perseverance"
+    ],
+    "sourceReference": "NASA Mars Reconnaissance Orbiter / MSL Science Team (2024)",
+    "source": "curated"
+  },
+  {
+    "id": "jupiter",
+    "name": "Jupiter",
+    "codeName": "JOVE // SOL-5",
+    "orderFromSun": 5,
+    "type": "Gas Giant",
+    "tagline": "Supermassive Gas Giant & King of Storms",
+    "diameterKm": 139820,
+    "massKg": "1.8982 × 10²⁷",
+    "massEarthRel": 317.8,
+    "distanceFromSunAU": 5.2,
+    "averageDistanceFromSunKm": 778500000,
+    "surfaceTempMeanC": -110,
+    "surfaceTempRangeC": {
+      "min": -160,
+      "max": -90
+    },
+    "gravityMs2": 24.79,
+    "gravityEarthRel": 2.53,
+    "moonsCount": 95,
+    "orbitalPeriodDays": 4332.59,
+    "orbitalVelocityKmS": 13.07,
+    "rotationPeriodHours": 9.93,
+    "axialTiltDegrees": 3.13,
+    "atmosphereComposition": [
+      {
+        "gas": "Hydrogen",
+        "percentage": 89.8
+      },
+      {
+        "gas": "Helium",
+        "percentage": 10.2
+      },
+      {
+        "gas": "Methane",
+        "percentage": 0.3
+      },
+      {
+        "gas": "Ammonia",
+        "percentage": 0.026
+      }
+    ],
+    "summary": "Containing more than double the combined mass of all other solar system planets, dominated by alternating cloud belts and the centuries-old Great Red Spot anticyclone.",
+    "detailedDescription": "Jupiter lacks a well-defined solid surface. Deep below its cloudy exterior, immense atmospheric pressures transition gaseous hydrogen into a supercritical fluid and eventually an electrically conducting metallic hydrogen mantle surrounding a diffuse heavy-element core.",
+    "notableFeatures": [
+      "The Great Red Spot: persistent anticyclonic storm wider than Earth",
+      "Rapid 9.93-hour rotation causing pronounced equatorial oblateness",
+      "Enormous magnetosphere with intense radiation belts",
+      "Swarm of 95 known moons including icy ocean worlds Europa and Ganymede"
+    ],
+    "discoveryPassportHighlight": "Jupiter holds more than twice the mass of all other planets in our solar system combined and possesses the shortest day of any major planet (9.93 hours).",
+    "suggestedNextPlanetId": "saturn",
+    "colorHex": "#C88B3A",
+    "accentColor": "#FFDCBA",
+    "visualConfiguration": {
+      "surfaceColor": "#C88B3A",
+      "bumpScale": 0.02,
+      "roughness": 0.4,
+      "proceduralType": "jupiter"
+    },
+    "relatedMissionIds": [
+      "pioneer-10",
+      "voyager-1",
+      "galileo",
+      "juno"
+    ],
+    "sourceReference": "NASA Juno Mission / IAU Minor Planet Center (2024)",
+    "source": "curated"
+  },
+  {
+    "id": "saturn",
+    "name": "Saturn",
+    "codeName": "CRONUS // SOL-6",
+    "orderFromSun": 6,
+    "type": "Gas Giant",
+    "tagline": "Ringed Hexagonal Tempest",
+    "diameterKm": 116460,
+    "massKg": "5.6834 × 10²⁶",
+    "massEarthRel": 95.16,
+    "distanceFromSunAU": 9.58,
+    "averageDistanceFromSunKm": 1433500000,
+    "surfaceTempMeanC": -140,
+    "surfaceTempRangeC": {
+      "min": -178,
+      "max": -130
+    },
+    "gravityMs2": 10.44,
+    "gravityEarthRel": 1.06,
+    "moonsCount": 146,
+    "orbitalPeriodDays": 10759.22,
+    "orbitalVelocityKmS": 9.68,
+    "rotationPeriodHours": 10.7,
+    "axialTiltDegrees": 26.73,
+    "atmosphereComposition": [
+      {
+        "gas": "Hydrogen",
+        "percentage": 96.3
+      },
+      {
+        "gas": "Helium",
+        "percentage": 3.25
+      },
+      {
+        "gas": "Methane",
+        "percentage": 0.45
+      },
+      {
+        "gas": "Ammonia",
+        "percentage": 0.01
+      }
+    ],
+    "summary": "Famed for its breathtaking icy ring architecture extending hundreds of thousands of kilometers at a thickness of mere tens of meters.",
+    "detailedDescription": "Saturn is the second-largest planet in the Solar System and the least dense—having an average density less than liquid water. Its distinct ring system consists of billions of water-ice particles ranging from micrometers to meters in diameter, gravitationally sculpted by shepherd moons.",
+    "notableFeatures": [
+      "Spectacular ring system spanning 282,000 km at only ~10 meters thickness",
+      "Average density of 0.687 g/cm³ (lower than liquid water)",
+      "North polar persistent atmospheric hexagonal vortex",
+      "146 confirmed moons including Titan (dense atmosphere) and Enceladus (geysers)"
+    ],
+    "discoveryPassportHighlight": "Saturn is the only planet in the Solar System that could float in a sufficiently large ocean of water because its average density is lower than water.",
+    "suggestedNextPlanetId": "uranus",
+    "colorHex": "#C5A059",
+    "accentColor": "#CBBEFF",
+    "visualConfiguration": {
+      "surfaceColor": "#C5A059",
+      "hasRings": true,
+      "ringInnerRadius": 1.25,
+      "ringOuterRadius": 2.2,
+      "ringColor": "#CBBEFF",
+      "bumpScale": 0.02,
+      "roughness": 0.45,
+      "proceduralType": "saturn"
+    },
+    "relatedMissionIds": [
+      "pioneer-11",
+      "voyager-2",
+      "cassini-huygens"
+    ],
+    "sourceReference": "NASA Cassini-Huygens Mission Archive / IAU (2024)",
+    "source": "curated"
+  },
+  {
+    "id": "uranus",
+    "name": "Uranus",
+    "codeName": "CAELUS // SOL-7",
+    "orderFromSun": 7,
+    "type": "Ice Giant",
+    "tagline": "Tilted Aquamarine Cryo-Giant",
+    "diameterKm": 50724,
+    "massKg": "8.6810 × 10²⁵",
+    "massEarthRel": 14.54,
+    "distanceFromSunAU": 19.22,
+    "averageDistanceFromSunKm": 2872500000,
+    "surfaceTempMeanC": -195,
+    "surfaceTempRangeC": {
+      "min": -224,
+      "max": -180
+    },
+    "gravityMs2": 8.69,
+    "gravityEarthRel": 0.89,
+    "moonsCount": 28,
+    "orbitalPeriodDays": 30685.4,
+    "orbitalVelocityKmS": 6.8,
+    "rotationPeriodHours": -17.24,
+    "axialTiltDegrees": 97.77,
+    "atmosphereComposition": [
+      {
+        "gas": "Hydrogen",
+        "percentage": 82.5
+      },
+      {
+        "gas": "Helium",
+        "percentage": 15.2
+      },
+      {
+        "gas": "Methane",
+        "percentage": 2.3
+      }
+    ],
+    "summary": "An ice giant rolling along its orbital plane with an extreme 97.77-degree axial tilt, causing 42-year long seasonal solstices.",
+    "detailedDescription": "Uranus possesses the coldest planetary atmosphere in the Solar System with temperatures dipping to 49 K (-224°C). Its atmospheric methane absorbs red solar wavelengths, bestowing its pale cyan-aquamarine appearance. Its mantle consists of a dense slush of water, ammonia, and methane ices.",
+    "notableFeatures": [
+      "Extreme 97.77-degree axial tilt causing 42 years of continuous sunlight and darkness at poles",
+      "Coldest planetary upper atmosphere in the Solar System (49 K / -224°C)",
+      "Pale aquamarine color produced by atmospheric methane absorbing red photons",
+      "System of 13 narrow dark ring bands and 28 cataloged moons"
+    ],
+    "discoveryPassportHighlight": "Uranus rotates almost completely on its side relative to its orbital plane, resembling a rolling ball orbiting the Sun.",
+    "suggestedNextPlanetId": "neptune",
+    "colorHex": "#4B70DD",
+    "accentColor": "#8565FA",
+    "visualConfiguration": {
+      "surfaceColor": "#4B70DD",
+      "atmosphereColor": "#8565FA",
+      "hasRings": true,
+      "ringInnerRadius": 1.3,
+      "ringOuterRadius": 1.6,
+      "ringColor": "#8565FA",
+      "bumpScale": 0.01,
+      "roughness": 0.35,
+      "proceduralType": "uranus"
+    },
+    "relatedMissionIds": [
+      "voyager-2"
+    ],
+    "sourceReference": "NASA Voyager 2 Data System / Space Telescope Science Institute (2024)",
+    "source": "curated"
+  },
+  {
+    "id": "neptune",
+    "name": "Neptune",
+    "codeName": "POSEIDON // SOL-8",
+    "orderFromSun": 8,
+    "type": "Ice Giant",
+    "tagline": "Supersonic Methane Ice World",
+    "diameterKm": 49244,
+    "massKg": "1.02413 × 10²⁶",
+    "massEarthRel": 17.15,
+    "distanceFromSunAU": 30.07,
+    "averageDistanceFromSunKm": 4495100000,
+    "surfaceTempMeanC": -201,
+    "surfaceTempRangeC": {
+      "min": -218,
+      "max": -190
+    },
+    "gravityMs2": 11.15,
+    "gravityEarthRel": 1.14,
+    "moonsCount": 16,
+    "orbitalPeriodDays": 60189,
+    "orbitalVelocityKmS": 5.43,
+    "rotationPeriodHours": 16.11,
+    "axialTiltDegrees": 28.32,
+    "atmosphereComposition": [
+      {
+        "gas": "Hydrogen",
+        "percentage": 80
+      },
+      {
+        "gas": "Helium",
+        "percentage": 19
+      },
+      {
+        "gas": "Methane",
+        "percentage": 1.5
+      }
+    ],
+    "summary": "The outermost major world, swept by extreme supersonic windstorms exceeding 2,100 km/h and home to the retrograde cryovolcanic moon Triton.",
+    "detailedDescription": "Neptune is more than 30 times as far from the Sun as Earth is. Discovered through mathematical perturbation predictions by Le Verrier and Adams, it features intense dynamic storm systems such as the Great Dark Spot, driven by internal geothermal energy release.",
+    "notableFeatures": [
+      "Supersonic wind speeds surpassing 2,100 km/h (fastest in the Solar System)",
+      "Internal thermal core radiating 2.61× more energy than received from the distant Sun",
+      "Dynamic transient Great Dark Spot anticyclonic vortex systems",
+      "Large captured retrograde Kuiper Belt moon Triton exhibiting nitrogen cryogeysers"
+    ],
+    "discoveryPassportHighlight": "Neptune was the first planet discovered through mathematical prediction rather than direct visual observation after irregularities were noticed in Uranus's orbit.",
+    "suggestedNextPlanetId": "mercury",
+    "colorHex": "#274687",
+    "accentColor": "#20D9F2",
+    "visualConfiguration": {
+      "surfaceColor": "#274687",
+      "atmosphereColor": "#20D9F2",
+      "bumpScale": 0.02,
+      "roughness": 0.35,
+      "proceduralType": "neptune"
+    },
+    "relatedMissionIds": [
+      "voyager-2"
+    ],
+    "sourceReference": "NASA Voyager 2 Archive / Hubble OPAL Atmospheric Program (2024)",
+    "source": "curated"
+  }
+]

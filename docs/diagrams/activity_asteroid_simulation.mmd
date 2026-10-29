@@ -1,0 +1,31 @@
+flowchart TD
+    Start([User Opens Planetary Defense What-If Lab]) --> LoadDefaults[Load Default Parameters: d=100m, v=20km/s, rho=2500kg/m3]
+    LoadDefaults --> UserInput{User Action}
+    
+    UserInput -- Select Preset --> ApplyPreset[Load Scenario: Chelyabinsk / Tunguska / Dimorphos]
+    ApplyPreset --> CalculatePhysics
+    
+    UserInput -- Adjust Sliders --> UpdateSlider[Modify Diameter, Velocity, or Density Slider]
+    UpdateSlider --> CalculatePhysics
+    
+    UserInput -- Adjust Miss Distance --> UpdateMissDistance[Update Illustrative Miss Distance Display]
+    UpdateMissDistance --> DecoupledNotice[Maintain Decoupling: Zero Impact on Kinetic Energy]
+    DecoupledNotice --> UserInput
+    
+    subgraph PhysicsEngine["Deterministic Classical Physics Engine"]
+        CalculatePhysics[Validate Parameters: d > 0, v > 0, rho > 0]
+        CalculatePhysics --> Radius["r = d / 2  (meters)"]
+        Radius --> Volume["V = (4/3) * pi * r^3  (cubic meters)"]
+        Volume --> Mass["m = rho * V  (kilograms)"]
+        Mass --> Velocity["v_ms = v_kms * 1000  (meters/second)"]
+        Velocity --> EnergyJoules["E_k = 0.5 * m * (v_ms)^2  (Joules)"]
+        EnergyJoules --> TNTConversion["Convert to Kilotons (4.184e12 J) & Megatons (4.184e15 J)"]
+    end
+    
+    TNTConversion --> RenderOutputs[Update Kinetic Energy Readouts & Recharts Curves]
+    RenderOutputs --> UpdateSensitivity[Recalculate Parameter Sensitivity Multipliers: 8x, 4x, 2x]
+    UpdateSensitivity --> LogSim[Log asteroid_simulation_completed Telemetry Event]
+    LogSim --> UserInput
+    
+    UserInput -- Save Bookmark --> SaveAsteroid[Bookmark Asteroid in Space Vault]
+    SaveAsteroid --> UserInput

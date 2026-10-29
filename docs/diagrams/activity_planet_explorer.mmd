@@ -1,0 +1,36 @@
+flowchart TD
+    Start([User Navigates to Planet Explorer]) --> LoadData[Load Planetary Dataset via SpaceDataProvider]
+    LoadData --> CheckWebGL{WebGL 3D Context Available?}
+    
+    CheckWebGL -- Yes --> InitThree[Initialize Three.js WebGL Spherical Viewport]
+    CheckWebGL -- No --> Init2D[Initialize 2D HTML5 Canvas Fallback Viewport]
+    
+    InitThree --> RenderPlanet[Render Procedural Surface Texture, Tilt & Solar Lighting]
+    Init2D --> RenderPlanet
+    
+    RenderPlanet --> UserAction{User Interaction}
+    
+    UserAction -- Rotate/Zoom --> UpdateCamera[Update Viewport Rotation / Orbit Controls]
+    UpdateCamera --> RenderPlanet
+    
+    UserAction -- Switch Planet --> SelectPlanet[Select Target from Navigator Array]
+    SelectPlanet --> UpdateStore[Update Zustand selectedPlanetId]
+    UpdateStore --> RenderPlanet
+    
+    UserAction -- Calculate Weight --> WeightSim[Enter Earth Weight in Simulator]
+    WeightSim --> ComputeWeight["Compute W = W_earth * (g_planet / 9.81)"]
+    ComputeWeight --> DisplayWeight[Display Relative Weight and Gravity Ratio]
+    
+    UserAction -- Launch Comparison --> SelectSecond[Select Second Comparison Planet]
+    SelectSecond --> ComputeRatios[Calculate Diameter, Mass & Orbital Ratios]
+    ComputeRatios --> DisplayInsights[Generate Deterministic Scientific Comparison Insights]
+    
+    UserAction -- Save Favorite --> ToggleBookmark[Click Star Bookmark Button]
+    ToggleBookmark --> SaveVault[Persist FavoriteItem to localStorage Vault]
+    SaveVault --> LogEvent[Log planet_viewed Telemetry Event]
+    
+    DisplayWeight --> UserAction
+    DisplayInsights --> UserAction
+    LogEvent --> UserAction
+    
+    UserAction -- Exit Module --> Finish([User Navigates Away])

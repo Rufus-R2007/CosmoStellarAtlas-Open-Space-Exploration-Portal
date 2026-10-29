@@ -360,3 +360,4 @@ export const ConstellationProgressSection: React.FC = () => {
     </div>
   );
 };
+

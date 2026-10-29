@@ -9,6 +9,11 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:python": "python -m unittest discover -s scripts/python -p \"test_*.py\"",
+    "data:export": "vite-node scripts/export_datasets.ts",
+    "data:generate": "python scripts/python/generate_demo_data.py",
+    "data:validate": "python scripts/python/validate_datasets.py",
+    "data:stats": "python scripts/python/dataset_statistics.py",
     "lint": "tsc --noEmit"
   },
   "dependencies": {

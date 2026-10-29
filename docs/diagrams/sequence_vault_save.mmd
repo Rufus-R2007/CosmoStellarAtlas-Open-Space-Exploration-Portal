@@ -1,0 +1,25 @@
+sequenceDiagram
+    autonumber
+    actor User as Explorer
+    participant UI as Planet / Mission / Rover Card
+    participant VaultStore as Zustand Store (useVaultStore)
+    participant Engine as Achievement Definitions (computeAchievements)
+    participant Storage as VaultStorageService (localStorage)
+
+    User->>UI: Click Bookmark Star ("Save")
+    UI->>VaultStore: toggleFavorite(favoriteItemPayload)
+    activate VaultStore
+    VaultStore->>VaultStore: Append FavoriteItem to favorites[]
+    VaultStore->>VaultStore: logExplorationEvent('planet_viewed', entityId)
+    VaultStore->>Engine: computeAchievements(currentContext)
+    activate Engine
+    Engine->>Engine: Evaluate 12 Achievement Evaluators
+    Engine->>Engine: Derive Clearance Level & Rank
+    Engine-->>VaultStore: Return Updated Achievements[] & Rank
+    deactivate Engine
+    VaultStore->>Storage: saveState(versionedEnvelope)
+    Storage->>Storage: Serialize to JSON ('cosmostellaratlas:user:v1')
+    Storage-->>VaultStore: Persistence Confirmation
+    VaultStore-->>UI: Reactive State Emitted
+    deactivate VaultStore
+    UI-->>User: Button State Changes to "Saved" (Glowing Gold Star)

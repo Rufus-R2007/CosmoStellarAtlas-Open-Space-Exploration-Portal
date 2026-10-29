@@ -369,3 +369,4 @@ export const InteractiveQuizModal: React.FC<InteractiveQuizModalProps> = ({ trai
     </div>
   );
 };
+

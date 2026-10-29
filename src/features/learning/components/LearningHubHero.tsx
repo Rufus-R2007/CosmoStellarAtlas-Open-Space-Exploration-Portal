@@ -127,3 +127,4 @@ export const LearningHubHero: React.FC<LearningHubHeroProps> = ({ onExploreTrail
     </div>
   );
 };
+

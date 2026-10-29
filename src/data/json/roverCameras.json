@@ -1,0 +1,182 @@
+[
+  {
+    "id": "per-mastcam-z",
+    "roverId": "perseverance",
+    "name": "Mast Camera Zoom System",
+    "abbreviation": "Mastcam-Z",
+    "purpose": "Multispectral stereoscopic imaging with 3:1 optical zoom for geologic context and atmospheric monitoring.",
+    "description": "Twin zoomable cameras mounted on the remote sensing mast at 2-meter eye height, producing 3D panoramas and true-color stellar/solar observations.",
+    "cameraType": "Science"
+  },
+  {
+    "id": "per-supercam",
+    "roverId": "perseverance",
+    "name": "SuperCam Remote Micro-Imager",
+    "abbreviation": "SuperCam RMI",
+    "purpose": "High-resolution telescopic imaging of rock and regolith targets irradiated by pulsed laser spectroscopy.",
+    "description": "Fires an infrared laser at targets up to 7 meters away to vaporize microscopic pinpoints of rock, recording elemental plasma emissions and acoustic sound.",
+    "cameraType": "Science"
+  },
+  {
+    "id": "per-navcam",
+    "roverId": "perseverance",
+    "name": "Color Engineering Navigation Cameras",
+    "abbreviation": "Navcam",
+    "purpose": "Autonomous hazard avoidance and long-range terrain mapping for auto-navigation algorithms.",
+    "description": "High-resolution color stereo cameras on the mast providing wide 96° horizontal field of view to evaluate drive paths.",
+    "cameraType": "Engineering"
+  },
+  {
+    "id": "per-hazcam",
+    "roverId": "perseverance",
+    "name": "Front & Rear Hazard Avoidance Cameras",
+    "abbreviation": "Hazcam",
+    "purpose": "Close-proximity optical detection of boulders, trenches, and wheel entanglements.",
+    "description": "Four wide-angle fisheye cameras on the lower chassis monitoring ground clearance within 3 meters of the rover wheels.",
+    "cameraType": "Engineering"
+  },
+  {
+    "id": "per-watson",
+    "roverId": "perseverance",
+    "name": "SHERLOC Wide Angle Topographic Sensor",
+    "abbreviation": "WATSON",
+    "purpose": "Extreme close-up color texture imaging of natural rock veneers and core-drill tailings.",
+    "description": "Turret-mounted optical companion to the ultraviolet Raman laser, resolving rock grain sizes down to 30 microns.",
+    "cameraType": "Microscopic"
+  },
+  {
+    "id": "per-pixl",
+    "roverId": "perseverance",
+    "name": "PIXL Optical Micro-Context Camera",
+    "abbreviation": "PIXL MCC",
+    "purpose": "Sub-millimeter scale registration of X-ray lithochemical spot analyses.",
+    "description": "High-magnification camera synchronized with PIXL’s X-ray beam to map mineral crystal distribution within rock matrices.",
+    "cameraType": "Microscopic"
+  },
+  {
+    "id": "cur-mastcam",
+    "roverId": "curiosity",
+    "name": "Mast Camera Dual-Focal Array",
+    "abbreviation": "Mastcam",
+    "purpose": "Scientific terrain surveying, sedimentary facies documentation, and regional stratigraphy.",
+    "description": "Left eye (34mm focal length, wide angle) and Right eye (100mm telephoto lens) capturing multispectral landscape and outcrop photography.",
+    "cameraType": "Science"
+  },
+  {
+    "id": "cur-chemcam",
+    "roverId": "curiosity",
+    "name": "ChemCam Remote Micro-Imager",
+    "abbreviation": "ChemCam RMI",
+    "purpose": "Ultra-high-resolution black-and-white telescopic verification of laser-induced breakdown targets.",
+    "description": "Resolves millimeter-scale features such as veins, laminae, and laser interrogation pits on distant bedrock up to 10 meters away.",
+    "cameraType": "Science"
+  },
+  {
+    "id": "cur-navcam",
+    "roverId": "curiosity",
+    "name": "Stereo Navigation Cameras",
+    "abbreviation": "Navcam",
+    "purpose": "3D spatial geometry acquisition for path planning and traverse verification.",
+    "description": "Monochrome mast cameras delivering 45° field-of-view stereo pairs used by ground drivers to plan robotic drive maneuvers.",
+    "cameraType": "Engineering"
+  },
+  {
+    "id": "cur-hazcam",
+    "roverId": "curiosity",
+    "name": "Hazard Avoidance Cameras",
+    "abbreviation": "Hazcam",
+    "purpose": "Robotic arm placement safety and wheel clearance monitoring.",
+    "description": "Eight chassis-mounted fisheye cameras with 124° optical coverage protecting against rocky obstacles and wheel damage.",
+    "cameraType": "Engineering"
+  },
+  {
+    "id": "cur-mahli",
+    "roverId": "curiosity",
+    "name": "Mars Hand Lens Imager",
+    "abbreviation": "MAHLI",
+    "purpose": "Handheld-lens resolution imaging of sand grains, rock textures, and robotic self-inspection.",
+    "description": "Arm-mounted autofocus camera with white and ultraviolet LED illumination, resolving features thinner than human hair (14 microns/pixel).",
+    "cameraType": "Microscopic"
+  },
+  {
+    "id": "cur-mardi",
+    "roverId": "curiosity",
+    "name": "Mars Descent Imager",
+    "abbreviation": "MARDI",
+    "purpose": "Dynamic color motion capture of landing site during final rocket descent and ground-level geological surveys.",
+    "description": "Underside-mounted camera that recorded the historic sky-crane landing sequence at Gale Crater.",
+    "cameraType": "Descent & Navigation"
+  },
+  {
+    "id": "opp-pancam",
+    "roverId": "opportunity",
+    "name": "Panoramic Multispectral Camera",
+    "abbreviation": "Pancam",
+    "purpose": "High-resolution color and multispectral imaging of Martian plains and crater walls across 11 narrowband filters.",
+    "description": "Stereo imaging system on the Pancam Mast Assembly that discovered hematite spherules at Meridiani Planum.",
+    "cameraType": "Science"
+  },
+  {
+    "id": "opp-navcam",
+    "roverId": "opportunity",
+    "name": "Navigation Camera",
+    "abbreviation": "Navcam",
+    "purpose": "Wide-angle terrain surveys and traverse navigation along crater rims.",
+    "description": "Mast-mounted stereo cameras used during Opportunity’s record-breaking 45.16-kilometer marathon drive.",
+    "cameraType": "Engineering"
+  },
+  {
+    "id": "opp-hazcam",
+    "roverId": "opportunity",
+    "name": "Hazard Avoidance Camera",
+    "abbreviation": "Hazcam",
+    "purpose": "Visual monitoring of sand dune traps and rocky slopes.",
+    "description": "Wide-angle cameras assisting Opportunity in safely extricating from the \"Purgatory Dune\" sand ripple.",
+    "cameraType": "Engineering"
+  },
+  {
+    "id": "opp-mi",
+    "roverId": "opportunity",
+    "name": "Microscopic Imager",
+    "abbreviation": "MI",
+    "purpose": "Sub-millimeter close-up microscopy of mineral grains and rock abraded surfaces.",
+    "description": "Combination microscope and CCD sensor on the instrument arm revealing microscopic hematite concretions.",
+    "cameraType": "Microscopic"
+  },
+  {
+    "id": "spi-pancam",
+    "roverId": "spirit",
+    "name": "Panoramic Camera",
+    "abbreviation": "Pancam",
+    "purpose": "Spectroscopic geology and atmospheric dust opacity surveying at Gusev Crater.",
+    "description": "Provided summit panoramas from Husband Hill and documented basaltic volcanic plains.",
+    "cameraType": "Science"
+  },
+  {
+    "id": "spi-navcam",
+    "roverId": "spirit",
+    "name": "Navigation Camera",
+    "abbreviation": "Navcam",
+    "purpose": "Terrain traversal and dynamic atmospheric dust devil detection.",
+    "description": "Recorded transient dust devil vortices sweeping across the floor of Gusev Crater.",
+    "cameraType": "Engineering"
+  },
+  {
+    "id": "spi-mi",
+    "roverId": "spirit",
+    "name": "Microscopic Imager",
+    "abbreviation": "MI",
+    "purpose": "Micro-structural analysis of volcanic basalts and hydrothermal silica deposits.",
+    "description": "Instrument arm microscope that validated 90%+ pure hydrothermal silica deposits churned up by Spirit’s stalled right front wheel.",
+    "cameraType": "Microscopic"
+  },
+  {
+    "id": "soj-apxs-cam",
+    "roverId": "sojourner",
+    "name": "APXS Deployment Imager",
+    "abbreviation": "APXS-CAM",
+    "purpose": "Contact confirmation for alpha-proton X-ray spectrometer placement against Martian boulders.",
+    "description": "Monochrome optics providing close-up verification during pioneer robotic rock contacts.",
+    "cameraType": "Science"
+  }
+]

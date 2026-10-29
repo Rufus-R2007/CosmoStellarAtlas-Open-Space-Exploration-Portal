@@ -1,0 +1,19 @@
+sequenceDiagram
+    autonumber
+    actor User as Explorer / Student
+    participant UI as Module View / Component
+    participant Store as Zustand Store (useAppStore)
+    participant Service as SpaceDataProvider (spaceService)
+    participant LocalData as Local Datasets (data/*.ts & data/json/*.json)
+
+    User->>UI: Select Celestial Target (e.g. Mars)
+    UI->>Store: setSelectedPlanetId('mars')
+    Store-->>UI: State Updated (selectedPlanetId = 'mars')
+    UI->>Service: getPlanetById('mars')
+    activate Service
+    Service->>LocalData: Query planetsData.find(id === 'mars')
+    LocalData-->>Service: Return Planet Record
+    Service-->>UI: Resolve Promise with Planet Object
+    deactivate Service
+    UI->>UI: Render 3D Viewport, Telemetry HUD & Atmosphere Bars
+    UI-->>User: Display Planet Dossier

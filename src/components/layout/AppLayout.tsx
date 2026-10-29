@@ -5,6 +5,7 @@ import { Sidebar } from './Sidebar';
 import { Footer } from './Footer';
 import { StarfieldCanvas } from '../common/StarfieldCanvas';
 import { CommandPalette } from '../common/CommandPalette';
+import { ErrorBoundary } from '../common/ErrorBoundary';
 
 export const AppLayout: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -37,10 +38,12 @@ export const AppLayout: React.FC = () => {
       {/* Command Palette Modal */}
       <CommandPalette />
 
-      {/* Main Content Area */}
+      {/* Main Content Area Protected by Module-Level Error Boundary */}
       <div className="lg:pl-64 pt-16 flex flex-col min-h-screen relative z-10">
         <main className="flex-1 w-full px-4 sm:px-6 lg:px-8 py-6 max-w-7xl mx-auto">
-          <Outlet />
+          <ErrorBoundary>
+            <Outlet />
+          </ErrorBoundary>
         </main>
         <Footer />
       </div>

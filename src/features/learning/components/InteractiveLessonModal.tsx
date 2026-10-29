@@ -267,3 +267,4 @@ export const InteractiveLessonModal: React.FC<InteractiveLessonModalProps> = ({
     </div>
   );
 };
+

@@ -1,0 +1,50 @@
+flowchart LR
+    subgraph Users["Primary Stakeholders"]
+        Astrophysicist["Astrophysicist / Student"]
+        Faculty["Faculty Evaluator"]
+        Public["Space Enthusiast"]
+    end
+
+    subgraph System["CosmoStellarAtlas Exploration Portal"]
+        UC01(["UC-01: View Observatory Dashboard & Telemetry"])
+        UC02(["UC-02: Explore 3D Planetary Worlds & Fallbacks"])
+        UC03(["UC-03: Compare Planets Side-by-Side"])
+        UC04(["UC-04: Navigate Historical Timeline (1957-Present)"])
+        UC05(["UC-05: Replay Milestone Canvas Missions"])
+        UC06(["UC-06: Inspect Mars Rover Telemetry & Photos"])
+        UC07(["UC-07: Simulate Asteroid Planetary Defense"])
+        UC08(["UC-08: Execute Natural Language Query Assistant"])
+        UC09(["UC-09: Explore Relational Knowledge Graph"])
+        UC10(["UC-10: Save Celestial Bookmarks to Vault"])
+        UC11(["UC-11: Complete Learning Trails & Lessons"])
+        UC12(["UC-12: Pass Certification Quizzes"])
+        UC13(["UC-13: Track Explorer Passport & Constellation"])
+        UC14(["UC-14: Export/Import JSON Vault Backup"])
+    end
+
+    Astrophysicist --> UC01
+    Astrophysicist --> UC02
+    Astrophysicist --> UC03
+    Astrophysicist --> UC06
+    Astrophysicist --> UC07
+    Astrophysicist --> UC08
+    Astrophysicist --> UC09
+    Astrophysicist --> UC10
+
+    Faculty --> UC01
+    Faculty --> UC04
+    Faculty --> UC05
+    Faculty --> UC07
+    Faculty --> UC08
+    Faculty --> UC12
+    Faculty --> UC13
+    Faculty --> UC14
+
+    Public --> UC01
+    Public --> UC02
+    Public --> UC04
+    Public --> UC05
+    Public --> UC06
+    Public --> UC11
+    Public --> UC12
+    Public --> UC13

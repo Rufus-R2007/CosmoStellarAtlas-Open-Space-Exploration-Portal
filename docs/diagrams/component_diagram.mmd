@@ -1,0 +1,64 @@
+flowchart TD
+    subgraph ClientApp["Browser Client Application (SPA)"]
+        subgraph Shell["Core Application Shell"]
+            App["App.tsx (HashRouter)"]
+            AppLayout["AppLayout.tsx"]
+            ErrorBoundary["ErrorBoundary.tsx"]
+            Navbar["Navbar.tsx"]
+            Sidebar["Sidebar.tsx"]
+            CommandPalette["CommandPalette.tsx"]
+        end
+
+        subgraph FeatureModules["Specialized Exploration Modules"]
+            Observatory["ObservatoryPage"]
+            Planets["PlanetsPage (3D & 2D)"]
+            Timeline["TimelinePage (Time Machine)"]
+            Missions["MissionsPage & Replay Engine"]
+            Rovers["RoversPage & Photo Lab"]
+            Asteroids["AsteroidsPage & What-If Lab"]
+            Intelligence["IntelligencePage & Query Assistant"]
+            Learning["LearningPage & Quiz Engine"]
+            Vault["VaultPage & Passport Dossier"]
+        end
+
+        subgraph StateManagement["Client Reactive State Stores"]
+            AppStore["useAppStore (Zustand: Ephemeral UI & Active Epoch)"]
+            VaultStore["useVaultStore (Zustand: User Profile, Favorites, Notes)"]
+        end
+
+        subgraph Services["Core Domain Services & Algorithms"]
+            DataProvider["MockSpaceDataProvider (spaceService)"]
+            StorageService["VaultStorageService (localStorage Envelope)"]
+            AchievementDef["AchievementDefinitions (Rank Engine)"]
+            PhysicsMath["planetaryDefenseMath (Kinetic Physics)"]
+            SearchService["Search Indexing & Scoring Algorithms"]
+        end
+
+        subgraph Datasets["Deterministic Bundled Datasets"]
+            PlanetsData["planets.ts / planets.json"]
+            MissionsData["missions.ts / missions.json"]
+            RoversData["rovers.ts / rovers.json"]
+            AsteroidsData["asteroids.ts / asteroids.json"]
+            CurriculumData["learningTrails.ts / learningTrails.json"]
+        end
+    end
+
+    subgraph OfflineTools["Offline Development & Scientific Reference Tools"]
+        PythonPhys["scripts/python/asteroid_physics.py"]
+        PythonVal["scripts/python/validate_datasets.py"]
+        PythonGen["scripts/python/generate_demo_data.py"]
+        PythonStats["scripts/python/dataset_statistics.py"]
+    end
+
+    App --> AppLayout
+    AppLayout --> ErrorBoundary
+    ErrorBoundary --> FeatureModules
+    FeatureModules --> AppStore
+    FeatureModules --> VaultStore
+    FeatureModules --> DataProvider
+    VaultStore --> StorageService
+    VaultStore --> AchievementDef
+    Asteroids --> PhysicsMath
+    Intelligence --> SearchService
+    DataProvider --> Datasets
+    OfflineTools -. Validates & Formats .-> Datasets

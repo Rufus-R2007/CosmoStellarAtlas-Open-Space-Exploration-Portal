@@ -201,3 +201,4 @@ export const LearningTrailsSection: React.FC<LearningTrailsSectionProps> = ({
     </div>
   );
 };
+

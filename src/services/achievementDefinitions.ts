@@ -299,3 +299,4 @@ export function computeExplorerRank(achievements: Achievement[]): {
 
   return { rank, level, unlockedCount, totalCount };
 }
+

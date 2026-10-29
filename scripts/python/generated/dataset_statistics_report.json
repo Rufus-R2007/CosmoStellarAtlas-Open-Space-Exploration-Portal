@@ -1,0 +1,88 @@
+{
+  "metadata": {
+    "project": "CosmoStellarAtlas \u2014 Open Space Exploration Portal",
+    "developer": "Rufus Samuel R (URK25CS1090)",
+    "institution": "Karunya Institute of Technology and Sciences",
+    "completenessScorePercent": 100.0
+  },
+  "planetary_statistics": {
+    "totalPlanetsCataloged": 8,
+    "typeDistribution": {
+      "Terrestrial": 4,
+      "Gas Giant": 2,
+      "Ice Giant": 2
+    },
+    "averageDiameterKm": 49094.0
+  },
+  "mission_heritage_statistics": {
+    "totalMissions": 20,
+    "distributionByDecade": {
+      "1950s": 1,
+      "1960s": 2,
+      "1970s": 4,
+      "1990s": 4,
+      "2000s": 2,
+      "2010s": 2,
+      "2020s": 5
+    },
+    "distributionByDestination": {
+      "Low Earth Orbit": 2,
+      "The Moon (Mare Tranquillitatis)": 1,
+      "Mars": 1,
+      "Jupiter & Outer Solar System": 1,
+      "Jupiter, Saturn, & Interstellar Space": 1,
+      "Jupiter, Saturn, Uranus, Neptune, & Interstellar Space": 1
+    },
+    "distributionByAgency": {
+      "NASA": 7,
+      "NASA / JPL": 4,
+      "Soviet Space Program": 2,
+      "NASA / ESA": 2,
+      "NASA / ESA / ASI": 1,
+      "NASA / Roscosmos / ESA / JAXA / CSA": 1
+    },
+    "distributionByArchitecture": {
+      "Orbiter": 4,
+      "Crewed": 4,
+      "Flyby": 4,
+      "Space Observatory": 3,
+      "Rover": 3,
+      "Impactor": 1,
+      "Lander": 1
+    }
+  },
+  "surface_exploration_statistics": {
+    "totalMarsRovers": 5,
+    "totalRoverImages": 24,
+    "totalCameraSubsystems": 20,
+    "totalTraverseWaypoints": 23
+  },
+  "planetary_defense_statistics": {
+    "totalNearEarthObjects": 50,
+    "sourceBreakdown": {
+      "curated": 8,
+      "synthetic": 42
+    },
+    "potentiallyHazardousCount": 25,
+    "orbitClassDistribution": {
+      "Aten": 7,
+      "Apollo": 33,
+      "Main Belt": 1,
+      "Amor": 8,
+      "Atira": 1
+    },
+    "diameterSizeDistribution": {
+      "<50m (Chelyabinsk-Scale)": 12,
+      "50-140m (Tunguska-Scale)": 11,
+      "140-500m (City-Killer)": 15,
+      ">500m (Regional Impact)": 12
+    },
+    "averageDiameterMeters": 5293.3,
+    "averageVelocityKmS": 18.92
+  },
+  "learning_hub_statistics": {
+    "totalCurriculumTrails": 4,
+    "totalModularLessons": 12,
+    "totalQuizCertificationQuestions": 24
+  }
+}

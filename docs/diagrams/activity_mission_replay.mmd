@@ -1,0 +1,31 @@
+flowchart TD
+    Start([User Opens Mission Detail Dossier]) --> LoadMission[Fetch Mission Specs & Milestones]
+    LoadMission --> InitCanvas[Initialize HTML5 Canvas 2D Replay Engine]
+    InitCanvas --> SetMilestone0[Set Active Milestone Index = 0]
+    
+    SetMilestone0 --> RenderScene[Identify Milestone sceneType & Render Tactical Shader]
+    RenderScene --> PlaybackState{Playback Active?}
+    
+    PlaybackState -- Paused --> WaitInput[Wait for User Control Input]
+    
+    WaitInput -- Click Play --> SetPlaying[Set IsPlaying = true]
+    SetPlaying --> AdvanceTimer[Advance Animation Frame & Increment Elapsed Time]
+    
+    AdvanceTimer --> CheckDuration{Milestone Duration Reached?}
+    CheckDuration -- No --> RenderScene
+    CheckDuration -- Yes --> CheckNext{More Milestones Exist?}
+    
+    CheckNext -- Yes --> IncrementMilestone[Increment Active Milestone Index]
+    IncrementMilestone --> RenderScene
+    
+    CheckNext -- No --> MissionComplete[Trigger mission_replay_completed Event]
+    MissionComplete --> UnlockAchievement[Evaluate Timeline Traveler Achievement in Vault]
+    UnlockAchievement --> WaitInput
+    
+    WaitInput -- Scrub Milestone --> SeekMilestone[Set Active Milestone Directly]
+    SeekMilestone --> RenderScene
+    
+    WaitInput -- Change Speed --> SetSpeed[Set Speed Multiplier: 0.5x, 1x, 2x]
+    SetSpeed --> RenderScene
+    
+    WaitInput -- Reset --> SetMilestone0

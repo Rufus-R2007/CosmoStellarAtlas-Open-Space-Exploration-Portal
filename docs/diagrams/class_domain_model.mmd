@@ -1,0 +1,103 @@
+classDiagram
+    class Planet {
+        +string id
+        +string name
+        +string codeName
+        +number orderFromSun
+        +string type
+        +number diameterKm
+        +number distanceFromSunAU
+        +number gravityMs2
+        +number orbitalPeriodDays
+        +string[] relatedMissionIds
+        +VisualConfiguration visualConfiguration
+    }
+
+    class Mission {
+        +string id
+        +string name
+        +string agency
+        +number launchYear
+        +string launchDate
+        +string status
+        +string destinationPlanetId
+        +string missionType
+        +SpacecraftDetails spacecraftDetails
+        +MissionMilestone[] milestones
+    }
+
+    class MissionMilestone {
+        +string id
+        +string missionId
+        +number year
+        +string date
+        +string title
+        +string eventType
+        +string replaySceneType
+    }
+
+    class Rover {
+        +string id
+        +string name
+        +string agency
+        +string landingDate
+        +string landingSite
+        +string status
+        +number totalSols
+        +number distanceTraveledKm
+        +RoverSpecification specifications
+        +ScienceInstrument[] instruments
+    }
+
+    class Asteroid {
+        +string id
+        +string name
+        +string designation
+        +number estimatedDiameterMeters
+        +boolean isPotentiallyHazardous
+        +string closeApproachDate
+        +number missDistanceKm
+        +number missDistanceLunar
+        +number relativeVelocityKmS
+        +string orbitClass
+        +string source
+    }
+
+    class LearningTrail {
+        +string id
+        +string title
+        +string codeName
+        +string category
+        +number passingScorePercent
+        +LearningLesson[] lessons
+        +QuizQuestion[] quiz
+    }
+
+    class FavoriteItem {
+        +string id
+        +VaultEntityType entityType
+        +string entityId
+        +string title
+        +string subtitle
+        +string route
+        +string savedAt
+    }
+
+    class Achievement {
+        +string id
+        +string title
+        +string badgeCode
+        +string category
+        +number progress
+        +number targetValue
+        +number currentValue
+        +string unlockedAt
+    }
+
+    Planet "1" --> "*" Mission : relatedMissions
+    Mission "1" --> "*" MissionMilestone : milestones
+    Rover "1" --> "1" Mission : flightHeritage
+    LearningTrail "1" --> "*" FavoriteItem : bookmarkedIn
+    Planet "1" --> "*" FavoriteItem : bookmarkedIn
+    Mission "1" --> "*" FavoriteItem : bookmarkedIn
+    Asteroid "1" --> "*" FavoriteItem : bookmarkedIn

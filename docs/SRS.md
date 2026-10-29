@@ -2,8 +2,9 @@
 ## CosmoStellarAtlas — Open Space Exploration Portal
 **Project Type:** Software Engineering Micro Project  
 **Author:** Rufus Samuel R  
+**Registration Number:** URK25CS1090  
 **Institution:** Karunya Institute of Technology and Sciences  
-**Version:** 1.4.0 (Phase 5 Asteroid Watch & Planetary Defense Simulation Lab)  
+**Version:** 1.6.0 (Phase 8 Final Production Release)  
 **Date:** October 2026  
 
 ---
@@ -249,6 +250,9 @@ Public interfaces for astronomical data and mission archives are often fragmente
 | **FR-73** | Dynamic Explorer Rank & Clearance Level | The system shall calculate explorer rank ('Novice Observer' through 'Master of the Cosmos') and clearance levels 1–5 derived deterministically from ignited achievement stars. | High |
 | **FR-74** | Personal Exploration Analytics | The system shall display interactive Recharts charts illustrating activity distributions, curriculum progress, and milestone achievement velocities. | High |
 | **FR-75** | Versioned Local Backup & Recovery | The system shall support versioned JSON export and import (`cosmostellaratlas:user:v1`) with merge/replace options, schema validation, storage quota calculations, and double-confirmation reset. | High |
+| **FR-76** | Global React Error Boundary | The system shall encapsulate the application shell and module viewports within a React Error Boundary component with graceful HUD fault isolation and recovery controls. | High |
+| **FR-77** | Python Analytical Tools Pipeline | The system shall include an offline Python development tool suite for deterministic synthetic data generation, dataset schema validation, and reference kinetic impact physics calculations. | High |
+| **FR-78** | Cross-Module Integration Scenarios | The system shall maintain seamless state synchronization and parameter passing across all 9 primary exploration modules, verified through automated integration test suites. | High |
 
 ## 7. Non-Functional Requirements (NFR)
 
@@ -259,9 +263,11 @@ Public interfaces for astronomical data and mission archives are often fragmente
 | **NFR-03** | Portability & Deployment | Static build deployable to GitHub Pages with relative asset addressing and hash-based client routing. |
 | **NFR-04** | Accessibility & Motion | Supports semantic HTML, ARIA attributes, keyboard navigation, and reduced-motion user preferences. |
 | **NFR-05** | Maintainability & Types | 100% TypeScript compilation with zero type errors and strict type safety. |
-| **NFR-06** | Test Coverage | Automated test coverage spanning 128 unit and component test cases across 9 suites verifying all core features. |
+| **NFR-06** | Test Coverage | Automated test coverage spanning 154 unit, component, integration, and analytical test cases (138 Vitest + 16 Python) with a 100% pass rate. |
 | **NFR-07** | Browser Compatibility | Fully operational across Chrome, Edge, Firefox, Safari, and mobile WebKit viewports. |
 | **NFR-08** | Visual Cohesion | Adherence to the AstroNav design specification (Hex tokens: #060B19, #20D9F2, #8565FA, #FFB45B, #D76B35, #9C4229, #E3A66B). |
+| **NFR-09** | CI/CD Automation | Automated GitHub Actions workflow (`deploy.yml`) executing linting, Vitest tests, Python tests, dataset validation, and production build for GitHub Pages. |
+| **NFR-10** | Scientific Accuracy & Ethics | Absolute transparency regarding dataset provenance, Newtonian physics modeling boundaries, and decoupled miss distance. |
 
 ## 8. Assumptions & Constraints
 - The platform executes entirely on the client side in modern evergreen web browsers.

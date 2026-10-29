@@ -1,0 +1,388 @@
+[
+  {
+    "id": "per-wp-1",
+    "roverId": "perseverance",
+    "title": "Octavia E. Butler Landing Site",
+    "description": "Touchdown point on the basaltic volcanic floor of Jezero Crater following sky-crane descent.",
+    "sol": 0,
+    "orderIndex": 1,
+    "positionX": 18,
+    "positionY": 65,
+    "imageIds": [
+      "per-img-5"
+    ],
+    "missionSignificance": "Historical landing site named in honor of groundbreaking science-fiction author Octavia E. Butler.",
+    "elevationMeters": -2570,
+    "distanceFromLandingKm": 0,
+    "sourceType": "curated"
+  },
+  {
+    "id": "per-wp-2",
+    "roverId": "perseverance",
+    "title": "Wright Brothers Field Airfield",
+    "description": "Designated flat 10x10-meter runway where Ingenuity was deployed and completed its first historic flights.",
+    "sol": 70,
+    "orderIndex": 2,
+    "positionX": 28,
+    "positionY": 58,
+    "imageIds": [
+      "per-img-1"
+    ],
+    "missionSignificance": "First powered atmospheric aviation on another celestial world.",
+    "elevationMeters": -2568,
+    "distanceFromLandingKm": 0.5,
+    "sourceType": "curated"
+  },
+  {
+    "id": "per-wp-3",
+    "roverId": "perseverance",
+    "title": "South Séítah Geologic Unit",
+    "description": "Rugged terrain dominated by layered olivine-rich cumulate rocks of ancient volcanic origin.",
+    "sol": 198,
+    "orderIndex": 3,
+    "positionX": 38,
+    "positionY": 72,
+    "imageIds": [
+      "per-img-3"
+    ],
+    "missionSignificance": "Core sample drilling proving that Jezero’s lowest rocks are volcanic rather than sedimentary.",
+    "elevationMeters": -2585,
+    "distanceFromLandingKm": 3.2,
+    "sourceType": "curated"
+  },
+  {
+    "id": "per-wp-4",
+    "roverId": "perseverance",
+    "title": "Kodiak Butte Promontory",
+    "description": "Observation waypoint surveying the eroded river delta scarp with telephoto super-resolution spectroscopy.",
+    "sol": 433,
+    "orderIndex": 4,
+    "positionX": 52,
+    "positionY": 48,
+    "imageIds": [
+      "per-img-4"
+    ],
+    "missionSignificance": "Conclusive stratigraphy verifying ancient delta formation into a lake with varying water depth.",
+    "elevationMeters": -2530,
+    "distanceFromLandingKm": 7.8,
+    "sourceType": "curated"
+  },
+  {
+    "id": "per-wp-5",
+    "roverId": "perseverance",
+    "title": "Three Forks Sample Depot",
+    "description": "Flat staging area where 10 hermetically sealed titanium sample tubes were dropped onto the surface.",
+    "sol": 654,
+    "orderIndex": 5,
+    "positionX": 68,
+    "positionY": 38,
+    "imageIds": [
+      "per-img-2"
+    ],
+    "missionSignificance": "First backup sample depot for the Mars Sample Return mission.",
+    "elevationMeters": -2515,
+    "distanceFromLandingKm": 14.1,
+    "sourceType": "curated"
+  },
+  {
+    "id": "per-wp-6",
+    "roverId": "perseverance",
+    "title": "Upper Delta Front Ascent",
+    "description": "Traverse up the winding channels of the delta front to reach the ancient crater rim and carbonate margin units.",
+    "sol": 740,
+    "orderIndex": 6,
+    "positionX": 84,
+    "positionY": 25,
+    "imageIds": [
+      "per-img-6"
+    ],
+    "missionSignificance": "Climbing beyond the lake level to investigate ancient hydrothermal minerals.",
+    "elevationMeters": -2460,
+    "distanceFromLandingKm": 29.4,
+    "sourceType": "curated"
+  },
+  {
+    "id": "cur-wp-1",
+    "roverId": "curiosity",
+    "title": "Bradbury Landing",
+    "description": "Landed via sky-crane inside northern Gale Crater on an ancient alluvial fan of smoothed river pebbles.",
+    "sol": 0,
+    "orderIndex": 1,
+    "positionX": 15,
+    "positionY": 70,
+    "imageIds": [
+      "cur-img-3"
+    ],
+    "missionSignificance": "Named in honor of author Ray Bradbury; verified immediate presence of ancient flowing water streams.",
+    "elevationMeters": -4450,
+    "distanceFromLandingKm": 0,
+    "sourceType": "curated"
+  },
+  {
+    "id": "cur-wp-2",
+    "roverId": "curiosity",
+    "title": "Yellowknife Bay Lacustrine Basin",
+    "description": "Shallow depression where Curiosity drilled into fine-grained mudstone (target John Klein).",
+    "sol": 125,
+    "orderIndex": 2,
+    "positionX": 25,
+    "positionY": 62,
+    "imageIds": [],
+    "missionSignificance": "Discovered that ancient Mars was habitable with fresh water, carbon, nitrogen, sulfur, and phosphorus.",
+    "elevationMeters": -4520,
+    "distanceFromLandingKm": 1.8,
+    "sourceType": "curated"
+  },
+  {
+    "id": "cur-wp-3",
+    "roverId": "curiosity",
+    "title": "Dingo Gap Dune Pass",
+    "description": "Carefully planned drive over a 1-meter active windblown sand dune connecting two rocky valleys.",
+    "sol": 582,
+    "orderIndex": 3,
+    "positionX": 40,
+    "positionY": 55,
+    "imageIds": [
+      "cur-img-4",
+      "cur-img-6"
+    ],
+    "missionSignificance": "Strategic test of rover mobility over loose dunes to preserve aluminum wheel longevity.",
+    "elevationMeters": -4480,
+    "distanceFromLandingKm": 6.4,
+    "sourceType": "curated"
+  },
+  {
+    "id": "cur-wp-4",
+    "roverId": "curiosity",
+    "title": "Pahrump Hills & Buckskin Site",
+    "description": "First foothill outcrops of Mount Sharp composed of fine-laminated clay-rich mudstones.",
+    "sol": 1065,
+    "orderIndex": 4,
+    "positionX": 55,
+    "positionY": 48,
+    "imageIds": [
+      "cur-img-1",
+      "cur-img-5"
+    ],
+    "missionSignificance": "Confirmation of billions of years of persistent lacustrine sedimentary deposition.",
+    "elevationMeters": -4420,
+    "distanceFromLandingKm": 11.2,
+    "sourceType": "curated"
+  },
+  {
+    "id": "cur-wp-5",
+    "roverId": "curiosity",
+    "title": "Vera Rubin Ridge Iron Ridge",
+    "description": "Prominent 200-meter high topographic ridge rich in gray hematite crystals resistant to wind erosion.",
+    "sol": 1800,
+    "orderIndex": 5,
+    "positionX": 70,
+    "positionY": 38,
+    "imageIds": [],
+    "missionSignificance": "Targeted hematite-bearing layer identified from orbit before launch.",
+    "elevationMeters": -4280,
+    "distanceFromLandingKm": 19.5,
+    "sourceType": "curated"
+  },
+  {
+    "id": "cur-wp-6",
+    "roverId": "curiosity",
+    "title": "Sulfate-Bearing Layer High Slopes",
+    "description": "High-elevation geological transition into salty evaporite minerals representing Mars’s global drying epoch.",
+    "sol": 3260,
+    "orderIndex": 6,
+    "positionX": 86,
+    "positionY": 28,
+    "imageIds": [
+      "cur-img-2"
+    ],
+    "missionSignificance": "Reading the final climatic transition from wet habitable lakes to hyper-arid desert.",
+    "elevationMeters": -3980,
+    "distanceFromLandingKm": 32.8,
+    "sourceType": "curated"
+  },
+  {
+    "id": "opp-wp-1",
+    "roverId": "opportunity",
+    "title": "Eagle Crater Hole-in-One",
+    "description": "Airbag-cushioned landing directly inside a 22-meter impact crater exposing layered bedrock.",
+    "sol": 0,
+    "orderIndex": 1,
+    "positionX": 12,
+    "positionY": 75,
+    "imageIds": [
+      "opp-img-1"
+    ],
+    "missionSignificance": "Immediate discovery of \"Martian Blueberries\" (hematite concretions) proving groundwater.",
+    "elevationMeters": -1420,
+    "distanceFromLandingKm": 0,
+    "sourceType": "curated"
+  },
+  {
+    "id": "opp-wp-2",
+    "roverId": "opportunity",
+    "title": "Endurance Crater Basin Descent",
+    "description": "130-meter wide stadium-sized crater whose steep sandstone walls were traversed by Opportunity.",
+    "sol": 180,
+    "orderIndex": 2,
+    "positionX": 28,
+    "positionY": 65,
+    "imageIds": [
+      "opp-img-3"
+    ],
+    "missionSignificance": "Detailed vertical slice through ancient sulfate and dune rock beds.",
+    "elevationMeters": -1450,
+    "distanceFromLandingKm": 2.1,
+    "sourceType": "curated"
+  },
+  {
+    "id": "opp-wp-3",
+    "roverId": "opportunity",
+    "title": "Victoria Crater Duck Bay",
+    "description": "Epic 750-meter diameter impact crater rim with scalloped cliffs of eolian sandstone.",
+    "sol": 954,
+    "orderIndex": 3,
+    "positionX": 48,
+    "positionY": 50,
+    "imageIds": [
+      "opp-img-2"
+    ],
+    "missionSignificance": "Surveyed the deepest geological layer exposed in Meridiani Planum.",
+    "elevationMeters": -1390,
+    "distanceFromLandingKm": 9.3,
+    "sourceType": "curated"
+  },
+  {
+    "id": "opp-wp-4",
+    "roverId": "opportunity",
+    "title": "Santa Maria Crater Pit",
+    "description": "Fresh 90-meter impact crater with unweathered ejecta boulders on the rim.",
+    "sol": 1167,
+    "orderIndex": 4,
+    "positionX": 62,
+    "positionY": 42,
+    "imageIds": [
+      "opp-img-4"
+    ],
+    "missionSignificance": "Detailed spectroscopy of fresh impact breccia minerals.",
+    "elevationMeters": -1360,
+    "distanceFromLandingKm": 18.7,
+    "sourceType": "curated"
+  },
+  {
+    "id": "opp-wp-5",
+    "roverId": "opportunity",
+    "title": "Cape York at Endeavour Rim",
+    "description": "The rim of the giant 22-kilometer Endeavour Crater exposing pre-Noachian clay rocks.",
+    "sol": 2888,
+    "orderIndex": 5,
+    "positionX": 78,
+    "positionY": 32,
+    "imageIds": [
+      "opp-img-5"
+    ],
+    "missionSignificance": "Discovered smectite clays formed in neutral, non-acidic potable water.",
+    "elevationMeters": -1310,
+    "distanceFromLandingKm": 34.2,
+    "sourceType": "curated"
+  },
+  {
+    "id": "opp-wp-6",
+    "roverId": "opportunity",
+    "title": "Perseverance Valley (Marathon Over)",
+    "description": "Carved fluid-cut valley on the rim of Endeavour Crater where Opportunity concluded its 45.16-km marathon drive.",
+    "sol": 5111,
+    "orderIndex": 6,
+    "positionX": 92,
+    "positionY": 22,
+    "imageIds": [
+      "opp-img-6"
+    ],
+    "missionSignificance": "Record-setting planetary distance record for any wheeled robotic vehicle in history.",
+    "elevationMeters": -1290,
+    "distanceFromLandingKm": 45.16,
+    "sourceType": "curated"
+  },
+  {
+    "id": "spi-wp-1",
+    "roverId": "spirit",
+    "title": "Columbia Memorial Station",
+    "description": "Airbag touchdown on the basalt-strewn plains of Gusev Crater, dedicated to the fallen astronauts of STS-107.",
+    "sol": 0,
+    "orderIndex": 1,
+    "positionX": 15,
+    "positionY": 72,
+    "imageIds": [
+      "spi-img-1"
+    ],
+    "missionSignificance": "Pioneered robotic navigation across treacherous volcanic boulder fields.",
+    "elevationMeters": -1930,
+    "distanceFromLandingKm": 0,
+    "sourceType": "curated"
+  },
+  {
+    "id": "spi-wp-2",
+    "roverId": "spirit",
+    "title": "Bonneville Crater Rim",
+    "description": "200-meter wide crater rim surveyed in search of lakebed strata beneath basalt lava flows.",
+    "sol": 65,
+    "orderIndex": 2,
+    "positionX": 30,
+    "positionY": 62,
+    "imageIds": [],
+    "missionSignificance": "Confirmed that the crater floor was buried under thick volcanic lavas.",
+    "elevationMeters": -1925,
+    "distanceFromLandingKm": 0.4,
+    "sourceType": "curated"
+  },
+  {
+    "id": "spi-wp-3",
+    "roverId": "spirit",
+    "title": "Husband Hill Mountain Summit",
+    "description": "Ascended 107 meters up the rocky scree of Husband Hill, conquering the highest planetary summit.",
+    "sol": 586,
+    "orderIndex": 3,
+    "positionX": 52,
+    "positionY": 45,
+    "imageIds": [
+      "spi-img-2",
+      "spi-img-3"
+    ],
+    "missionSignificance": "First mountain climbed on another planet, discovering ancient hydrothermal alteration on slopes.",
+    "elevationMeters": -1820,
+    "distanceFromLandingKm": 4.8,
+    "sourceType": "curated"
+  },
+  {
+    "id": "spi-wp-4",
+    "roverId": "spirit",
+    "title": "Home Plate Hydrothermal Plateau",
+    "description": "Layered plateau of volcanic ash and pyroclastic deposits formed by ancient hot spring geysers.",
+    "sol": 1150,
+    "orderIndex": 4,
+    "positionX": 74,
+    "positionY": 34,
+    "imageIds": [
+      "spi-img-4"
+    ],
+    "missionSignificance": "Serendipitous discovery of 91% pure hydrothermal silica churned up by Spirit’s locked front wheel.",
+    "elevationMeters": -1880,
+    "distanceFromLandingKm": 7.2,
+    "sourceType": "curated"
+  },
+  {
+    "id": "spi-wp-5",
+    "roverId": "spirit",
+    "title": "Troy Sand Trap (Final Resting Site)",
+    "description": "Soft sulfate sand pocket where Spirit became immobilized in 2009, continuing as a stationary science platform.",
+    "sol": 2210,
+    "orderIndex": 5,
+    "positionX": 88,
+    "positionY": 26,
+    "imageIds": [],
+    "missionSignificance": "Transformed into a static geophysical station studying Martian core wobble before final winter sunset.",
+    "elevationMeters": -1895,
+    "distanceFromLandingKm": 7.73,
+    "sourceType": "curated"
+  }
+]

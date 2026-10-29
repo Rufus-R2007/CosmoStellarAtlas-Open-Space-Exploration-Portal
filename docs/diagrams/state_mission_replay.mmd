@@ -1,0 +1,21 @@
+stateDiagram-v2
+    [*] --> Idle : Load Mission Dossier
+    
+    Idle --> Buffering : Initialize Replay Engine
+    Buffering --> Ready : Assets Loaded & Milestone 0 Indexed
+    
+    Ready --> Playing : User Clicks Play
+    Ready --> Scrubbing : User Drags Milestone Slider
+    
+    Playing --> Paused : User Clicks Pause
+    Paused --> Playing : User Clicks Resume
+    
+    Playing --> AdvancingMilestone : Milestone Duration Elapsed
+    AdvancingMilestone --> Playing : More Milestones Remaining
+    AdvancingMilestone --> Completed : Final Milestone Concluded
+    
+    Completed --> Ready : User Clicks Reset / Replay
+    Completed --> [*] : User Exits Mission Dossier
+    
+    Scrubbing --> Ready : User Releases Slider
+    Playing --> Scrubbing : User Jumps to Landmark Milestone

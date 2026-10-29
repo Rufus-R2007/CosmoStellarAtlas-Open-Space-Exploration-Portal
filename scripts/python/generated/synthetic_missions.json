@@ -1,0 +1,182 @@
+[
+  {
+    "id": "synth-exp-2037-01",
+    "name": "Project Aether 1 (SYNTH-EXP-2037-01)",
+    "agency": "CNSA",
+    "launchYear": 2037,
+    "launchDate": "2037-08-10",
+    "status": "Planned",
+    "destinationPlanetId": "moon",
+    "destinationName": "Moon",
+    "missionType": "Lander",
+    "description": "Illustrative conceptual mission studying Moon via Lander architecture. Generated for future mission trajectory simulation.",
+    "objectives": [
+      "Simulate interplanetary transfer window to Moon",
+      "Evaluate autonomous aerobraking and orbital insertion profiles",
+      "Model multi-spectral surface composition mapping"
+    ],
+    "achievements": [
+      "Preliminary concept architecture reviewed",
+      "Demonstration orbital trajectory synthesized"
+    ],
+    "spacecraftDetails": {
+      "name": "Aether-1 Deep Space Vehicle",
+      "type": "Advanced Lander Bus",
+      "massKg": 2264,
+      "launchVehicle": "Next-Gen Commercial Heavy Lifter",
+      "powerSource": "Next-Gen Solar Concentrator Array / RTG Auxiliary",
+      "operatingEnvironment": "Moon Orbit / Vicinity",
+      "instruments": [
+        "Multispectral Imager",
+        "Laser Altimeter",
+        "Magnetometer Suite"
+      ]
+    },
+    "outcome": "Demonstration simulation profile ready for orbital analysis.",
+    "source": "synthetic"
+  },
+  {
+    "id": "synth-exp-2033-02",
+    "name": "Project Aether 2 (SYNTH-EXP-2033-02)",
+    "agency": "JAXA",
+    "launchYear": 2033,
+    "launchDate": "2033-05-06",
+    "status": "Planned",
+    "destinationPlanetId": "mercury",
+    "destinationName": "Mercury",
+    "missionType": "Orbiter",
+    "description": "Illustrative conceptual mission studying Mercury via Orbiter architecture. Generated for future mission trajectory simulation.",
+    "objectives": [
+      "Simulate interplanetary transfer window to Mercury",
+      "Evaluate autonomous aerobraking and orbital insertion profiles",
+      "Model multi-spectral surface composition mapping"
+    ],
+    "achievements": [
+      "Preliminary concept architecture reviewed",
+      "Demonstration orbital trajectory synthesized"
+    ],
+    "spacecraftDetails": {
+      "name": "Aether-2 Deep Space Vehicle",
+      "type": "Advanced Orbiter Bus",
+      "massKg": 3196,
+      "launchVehicle": "Next-Gen Commercial Heavy Lifter",
+      "powerSource": "Next-Gen Solar Concentrator Array / RTG Auxiliary",
+      "operatingEnvironment": "Mercury Orbit / Vicinity",
+      "instruments": [
+        "Multispectral Imager",
+        "Laser Altimeter",
+        "Magnetometer Suite"
+      ]
+    },
+    "outcome": "Demonstration simulation profile ready for orbital analysis.",
+    "source": "synthetic"
+  },
+  {
+    "id": "synth-exp-2036-03",
+    "name": "Project Aether 3 (SYNTH-EXP-2036-03)",
+    "agency": "ESA",
+    "launchYear": 2036,
+    "launchDate": "2036-04-04",
+    "status": "Planned",
+    "destinationPlanetId": "mercury",
+    "destinationName": "Mercury",
+    "missionType": "Flyby",
+    "description": "Illustrative conceptual mission studying Mercury via Flyby architecture. Generated for future mission trajectory simulation.",
+    "objectives": [
+      "Simulate interplanetary transfer window to Mercury",
+      "Evaluate autonomous aerobraking and orbital insertion profiles",
+      "Model multi-spectral surface composition mapping"
+    ],
+    "achievements": [
+      "Preliminary concept architecture reviewed",
+      "Demonstration orbital trajectory synthesized"
+    ],
+    "spacecraftDetails": {
+      "name": "Aether-3 Deep Space Vehicle",
+      "type": "Advanced Flyby Bus",
+      "massKg": 3669,
+      "launchVehicle": "Next-Gen Commercial Heavy Lifter",
+      "powerSource": "Next-Gen Solar Concentrator Array / RTG Auxiliary",
+      "operatingEnvironment": "Mercury Orbit / Vicinity",
+      "instruments": [
+        "Multispectral Imager",
+        "Laser Altimeter",
+        "Magnetometer Suite"
+      ]
+    },
+    "outcome": "Demonstration simulation profile ready for orbital analysis.",
+    "source": "synthetic"
+  },
+  {
+    "id": "synth-exp-2033-04",
+    "name": "Project Aether 4 (SYNTH-EXP-2033-04)",
+    "agency": "Roscosmos",
+    "launchYear": 2033,
+    "launchDate": "2033-02-16",
+    "status": "Planned",
+    "destinationPlanetId": "uranus",
+    "destinationName": "Uranus",
+    "missionType": "Orbiter",
+    "description": "Illustrative conceptual mission studying Uranus via Orbiter architecture. Generated for future mission trajectory simulation.",
+    "objectives": [
+      "Simulate interplanetary transfer window to Uranus",
+      "Evaluate autonomous aerobraking and orbital insertion profiles",
+      "Model multi-spectral surface composition mapping"
+    ],
+    "achievements": [
+      "Preliminary concept architecture reviewed",
+      "Demonstration orbital trajectory synthesized"
+    ],
+    "spacecraftDetails": {
+      "name": "Aether-4 Deep Space Vehicle",
+      "type": "Advanced Orbiter Bus",
+      "massKg": 4042,
+      "launchVehicle": "Next-Gen Commercial Heavy Lifter",
+      "powerSource": "Next-Gen Solar Concentrator Array / RTG Auxiliary",
+      "operatingEnvironment": "Uranus Orbit / Vicinity",
+      "instruments": [
+        "Multispectral Imager",
+        "Laser Altimeter",
+        "Magnetometer Suite"
+      ]
+    },
+    "outcome": "Demonstration simulation profile ready for orbital analysis.",
+    "source": "synthetic"
+  },
+  {
+    "id": "synth-exp-2038-05",
+    "name": "Project Aether 5 (SYNTH-EXP-2038-05)",
+    "agency": "NASA",
+    "launchYear": 2038,
+    "launchDate": "2038-12-01",
+    "status": "Planned",
+    "destinationPlanetId": "saturn",
+    "destinationName": "Saturn",
+    "missionType": "Lander",
+    "description": "Illustrative conceptual mission studying Saturn via Lander architecture. Generated for future mission trajectory simulation.",
+    "objectives": [
+      "Simulate interplanetary transfer window to Saturn",
+      "Evaluate autonomous aerobraking and orbital insertion profiles",
+      "Model multi-spectral surface composition mapping"
+    ],
+    "achievements": [
+      "Preliminary concept architecture reviewed",
+      "Demonstration orbital trajectory synthesized"
+    ],
+    "spacecraftDetails": {
+      "name": "Aether-5 Deep Space Vehicle",
+      "type": "Advanced Lander Bus",
+      "massKg": 4107,
+      "launchVehicle": "Next-Gen Commercial Heavy Lifter",
+      "powerSource": "Next-Gen Solar Concentrator Array / RTG Auxiliary",
+      "operatingEnvironment": "Saturn Orbit / Vicinity",
+      "instruments": [
+        "Multispectral Imager",
+        "Laser Altimeter",
+        "Magnetometer Suite"
+      ]
+    },
+    "outcome": "Demonstration simulation profile ready for orbital analysis.",
+    "source": "synthetic"
+  }
+]

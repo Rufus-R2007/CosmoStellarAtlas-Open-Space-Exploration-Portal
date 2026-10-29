@@ -1,0 +1,1940 @@
+[
+  {
+    "id": "sputnik-1",
+    "name": "Sputnik 1",
+    "agency": "Soviet Space Program",
+    "launchYear": 1957,
+    "launchDate": "1957-10-04",
+    "status": "Completed",
+    "destinationPlanetId": "earth",
+    "destinationName": "Low Earth Orbit",
+    "missionType": "Orbiter",
+    "description": "The first artificial satellite to orbit Earth, inaugurating the Space Age and verifying radio ionospheric transmission capabilities.",
+    "objectives": [
+      "Test optical and radio tracking methods for orbital spacecraft",
+      "Provide empirical data on upper atmospheric density through orbital drag measurement",
+      "Evaluate radio frequency propagation through the ionosphere"
+    ],
+    "achievements": [
+      "First human-made satellite successfully placed into Earth orbit",
+      "Transmitted characteristic 20.005 and 40.002 MHz radio pulses for 21 days worldwide",
+      "Completed 1,440 orbits over a 92-day mission duration"
+    ],
+    "spacecraftDetails": {
+      "name": "Prosteyshiy Sputnik-1 (PS-1)",
+      "type": "Polished Hermetic Sphere Satellite",
+      "massKg": 83.6,
+      "launchVehicle": "Sputnik-PS (Modified R-7 Semyorka ICBM)",
+      "powerSource": "Silver-Zinc Chemical Batteries (21-day operating lifetime)",
+      "operatingEnvironment": "Low Earth Elliptical Orbit (215 × 939 km)",
+      "instruments": [
+        "Radio Beacons (20.005 & 40.002 MHz)",
+        "Internal Barometric Switch",
+        "Thermal Resistance Sensors"
+      ]
+    },
+    "outcome": "Completed 1,440 orbits and reentered Earth's atmosphere on January 4, 1958, fundamentally transforming global science and geopolitics.",
+    "storyline": {
+      "theChallenge": "In the mid-1950s, scientists debated whether an artificial object could withstand the extreme vibrational shear of orbital velocity and survive the vacuum of space.",
+      "theMission": "Chief Designer Sergei Korolev stripped down complex scientific payloads to create a sleek, pressurized aluminum-copper sphere capable of immediate orbital verification.",
+      "theJourney": "Launched on an R-7 rocket from the Baikonur steppe at midnight, Sputnik accelerated to 28,000 km/h, achieving orbit in under five minutes.",
+      "theDiscovery": "Analysis of the fading radio signal gave humanity its first accurate model of the upper atmosphere's density and ionized plasma structure.",
+      "theLegacy": "Sputnik ignited the international Space Race, leading directly to the establishment of NASA, civilian satellite telecommunications, and the dawn of orbital exploration."
+    },
+    "milestones": [
+      {
+        "id": "ms-sp-1",
+        "missionId": "sputnik-1",
+        "year": 1957,
+        "date": "1957-10-04",
+        "title": "Historic Orbital Liftoff",
+        "description": "R-7 rocket launched Sputnik 1 from Site 1/5 at Baikonur Cosmodrome.",
+        "significance": "First artificial satellite launched into outer space.",
+        "eventType": "launch",
+        "chronologicalOrder": 1,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "launchpad",
+        "sourceReference": "Korolev Space Rocket Corporation Archive (1957)"
+      },
+      {
+        "id": "ms-sp-2",
+        "missionId": "sputnik-1",
+        "year": 1957,
+        "date": "1957-10-04",
+        "title": "First Orbital Telemetry Beep",
+        "description": "Sputnik 1 deployed its 4 whip antennas and began broadcasting radio beeps on 20.005 MHz.",
+        "significance": "Confirmed stable low Earth orbit insertion.",
+        "eventType": "orbit",
+        "chronologicalOrder": 2,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "orbital_insertion",
+        "sourceReference": "Pravda Official Press Release (1957)"
+      },
+      {
+        "id": "ms-sp-3",
+        "missionId": "sputnik-1",
+        "year": 1958,
+        "date": "1958-01-04",
+        "title": "Atmospheric Reentry",
+        "description": "After completing 1,440 orbits and traveling 70 million km, orbital decay led to atmospheric reentry.",
+        "significance": "Completed the inaugural mission of the Space Age.",
+        "eventType": "conclusion",
+        "chronologicalOrder": 3,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "surface_descent",
+        "sourceReference": "Soviet Academy of Sciences Bulletin (1958)"
+      }
+    ],
+    "sourceReference": "NASA History Division / Korolev Declassified Records (1957)",
+    "source": "curated"
+  },
+  {
+    "id": "vostok-1",
+    "name": "Vostok 1",
+    "agency": "Soviet Space Program",
+    "launchYear": 1961,
+    "launchDate": "1961-04-12",
+    "status": "Completed",
+    "destinationPlanetId": "earth",
+    "destinationName": "Low Earth Orbit",
+    "missionType": "Crewed",
+    "description": "Carried cosmonaut Yuri Gagarin, the first human being to travel into outer space and complete a full Earth orbit.",
+    "objectives": [
+      "Perform the first orbital human spaceflight mission",
+      "Assess the psychological and physiological impacts of microgravity and high-g reentry",
+      "Verify automated orbital guidance and emergency manual control systems"
+    ],
+    "achievements": [
+      "Yuri Gagarin completed a 108-minute single-orbit flight around the Earth",
+      "Safely ejected at 7 km altitude and parachuted safely near Saratov, USSR",
+      "Established international aviation and spaceflight records for human orbital flight"
+    ],
+    "spacecraftDetails": {
+      "name": "Vostok 3KA (Vostok 1)",
+      "type": "Crewed Spherical Descent Module with Conical Instrument Compartment",
+      "massKg": 4725,
+      "launchVehicle": "Vostok-K (8K72K)",
+      "powerSource": "Internal Chemical Batteries",
+      "operatingEnvironment": "Elliptical Low Earth Orbit (169 × 327 km)",
+      "instruments": [
+        "Optical Vzor Navigational Periscope",
+        "Signal Radio Transmitter",
+        "Biomedical Telemetry Sensors"
+      ]
+    },
+    "outcome": "Pioneered human presence in outer space; Yuri Gagarin returned to Earth unharmed after a historic 108-minute orbital voyage.",
+    "storyline": {
+      "theChallenge": "Before April 1961, medical authorities feared weightlessness would blind astronauts, stop blood circulation, or cause immediate psychological collapse.",
+      "theMission": "Engineers placed Yuri Gagarin inside an automated spherical cabin equipped with life support and an instrument module.",
+      "theJourney": "At 09:07 Moscow time, Gagarin famously radioed \"Poyekhali!\" as five rocket engines ignited, carrying him over Siberia, the Pacific, and South America.",
+      "theDiscovery": "Gagarin looked out the Vzor periscope and observed Earth’s curvature: \"The sky is very dark; the Earth is bluish. Everything is clearly visible.\"",
+      "theLegacy": "Demonstrated that human beings could thrive in microgravity, setting the foundation for space stations, lunar landings, and human space exploration."
+    },
+    "milestones": [
+      {
+        "id": "ms-v1-1",
+        "missionId": "vostok-1",
+        "year": 1961,
+        "date": "1961-04-12",
+        "title": "Launch of First Human Spaceflight",
+        "description": "Vostok-K rocket launched Yuri Gagarin into orbit from Baikonur Cosmodrome.",
+        "significance": "First human propelled into Earth orbit.",
+        "eventType": "launch",
+        "chronologicalOrder": 1,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "launchpad",
+        "sourceReference": "FAI Certified Flight Records (1961)"
+      },
+      {
+        "id": "ms-v1-2",
+        "missionId": "vostok-1",
+        "year": 1961,
+        "date": "1961-04-12",
+        "title": "Orbital Transatlantic Horizon Crossing",
+        "description": "Gagarin entered orbit at 175 km altitude, observing daybreak over the Pacific.",
+        "significance": "Verified human vision and motor faculties in microgravity.",
+        "eventType": "orbit",
+        "chronologicalOrder": 2,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "orbital_insertion",
+        "sourceReference": "Vostok 1 Flight Transcript (1961)"
+      },
+      {
+        "id": "ms-v1-3",
+        "missionId": "vostok-1",
+        "year": 1961,
+        "date": "1961-04-12",
+        "title": "Retrofire & Safe Touchdown",
+        "description": "TDU liquid rocket engine fired over Africa; Gagarin ejected at 7,000 meters and parachuted to safety in the Saratov region.",
+        "significance": "Concluded the historic 108-minute journey.",
+        "eventType": "landing",
+        "chronologicalOrder": 3,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "surface_descent",
+        "sourceReference": "Soviet Government Announcement (1961)"
+      }
+    ],
+    "sourceReference": "FAI Aeronautical Records / Roscosmos State Archives (1961)",
+    "source": "curated"
+  },
+  {
+    "id": "apollo-11",
+    "name": "Apollo 11",
+    "agency": "NASA",
+    "launchYear": 1969,
+    "launchDate": "1969-07-16",
+    "status": "Completed",
+    "destinationPlanetId": "earth",
+    "destinationName": "The Moon (Mare Tranquillitatis)",
+    "missionType": "Crewed",
+    "description": "The monumental American mission that landed the first two astronauts, Neil Armstrong and Buzz Aldrin, on the lunar surface.",
+    "objectives": [
+      "Perform a crewed lunar landing and return the crew safely to Earth",
+      "Deploy the Early Apollo Scientific Experiments Package (EASEP)",
+      "Collect selenological samples and surface photographic documentation"
+    ],
+    "achievements": [
+      "First human footsteps on another celestial body",
+      "Collected 21.55 kg of pristine lunar regolith and rock samples",
+      "Worldwide live television broadcast witnessed by over 650 million people"
+    ],
+    "spacecraftDetails": {
+      "name": "Apollo Command/Service Module (Columbia) & Lunar Module (Eagle)",
+      "type": "Crewed Two-Stage Lunar Excursion Vehicle and CSM",
+      "massKg": 49735,
+      "launchVehicle": "Saturn V (SA-506)",
+      "powerSource": "Fuel Cells (CSM) & Silver-Zinc Batteries (LM)",
+      "operatingEnvironment": "Trans-lunar Space & Lunar Vacuum Surface (Mare Tranquillitatis)",
+      "instruments": [
+        "Passive Seismic Experiment",
+        "Laser Ranging Retroreflector",
+        "Solar Wind Composition Collector"
+      ]
+    },
+    "outcome": "Successfully fulfilled President Kennedy's goal, returning Neil Armstrong, Buzz Aldrin, and Michael Collins safely to Earth with pristine lunar regolith.",
+    "storyline": {
+      "theChallenge": "Landing humans on an airless celestial body 384,000 km away required mastering translunar navigation, cryogenic rocketry, and lunar descent guidance.",
+      "theMission": "Commander Neil Armstrong, Lunar Module Pilot Buzz Aldrin, and Command Module Pilot Michael Collins launched atop the 111-meter Saturn V.",
+      "theJourney": "After four days in transit, Eagle separated from Columbia and fired its descent engine toward the cratered terrain of Mare Tranquillitatis.",
+      "theDiscovery": "Manual piloting bypassed boulder-strewn craters to touch down with 25 seconds of fuel remaining. Armstrong reported: \"The Eagle has landed.\"",
+      "theLegacy": "Over two hours on the lunar surface proved that humans can navigate and conduct field science on alien worlds, inspiring generations of explorers."
+    },
+    "milestones": [
+      {
+        "id": "ms-ap11-1",
+        "missionId": "apollo-11",
+        "year": 1969,
+        "date": "1969-07-16",
+        "title": "Saturn V Liftoff from Launch Complex 39A",
+        "description": "Saturn V SA-506 generated 7.5 million pounds of thrust, lifting Apollo 11 toward lunar orbit.",
+        "significance": "Flawless launch and translunar injection burn.",
+        "eventType": "launch",
+        "chronologicalOrder": 1,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "launchpad",
+        "sourceReference": "NASA Apollo 11 Mission Report SP-238 (1969)"
+      },
+      {
+        "id": "ms-ap11-2",
+        "missionId": "apollo-11",
+        "year": 1969,
+        "date": "1969-07-19",
+        "title": "Lunar Orbit Insertion",
+        "description": "Service Propulsion System fired behind the Moon, placing Columbia and Eagle into lunar orbit.",
+        "significance": "Arrival in lunar gravity well.",
+        "eventType": "orbit",
+        "chronologicalOrder": 2,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "orbital_insertion",
+        "sourceReference": "NASA Flight Operations Timeline (1969)"
+      },
+      {
+        "id": "ms-ap11-3",
+        "missionId": "apollo-11",
+        "year": 1969,
+        "date": "1969-07-20",
+        "title": "Lunar Module \"Eagle\" Touchdown",
+        "description": "Neil Armstrong radioed \"Houston, Tranquility Base here. The Eagle has landed.\"",
+        "significance": "First human touchdown on the lunar surface.",
+        "eventType": "landing",
+        "chronologicalOrder": 3,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "surface_descent",
+        "sourceReference": "NASA Apollo 11 Voice Transcript (1969)"
+      },
+      {
+        "id": "ms-ap11-4",
+        "missionId": "apollo-11",
+        "year": 1969,
+        "date": "1969-07-21",
+        "title": "First Moonwalk & Sample Gathering",
+        "description": "Armstrong and Aldrin spent 2 hours 31 minutes on the surface, collecting 21.5 kg of rocks and deploying scientific instruments.",
+        "significance": "First extravehicular surface activity on an extraterrestrial body.",
+        "eventType": "discovery",
+        "chronologicalOrder": 4,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "scientific_survey",
+        "sourceReference": "Lunar Surface Journal / EAS Experiments Summary (1969)"
+      },
+      {
+        "id": "ms-ap11-5",
+        "missionId": "apollo-11",
+        "year": 1969,
+        "date": "1969-07-24",
+        "title": "Pacific Ocean Splashdown",
+        "description": "Columbia entered Earth's atmosphere at 40,000 km/h, splashing down southwest of Hawaii to be recovered by USS Hornet.",
+        "significance": "Safe return of all three astronauts.",
+        "eventType": "conclusion",
+        "chronologicalOrder": 5,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "surface_descent",
+        "sourceReference": "USS Hornet Recovery Log (1969)"
+      }
+    ],
+    "sourceReference": "NASA Apollo 11 Official Mission Report (1969)",
+    "source": "curated"
+  },
+  {
+    "id": "mariner-9",
+    "name": "Mariner 9",
+    "agency": "NASA",
+    "launchYear": 1971,
+    "launchDate": "1971-05-30",
+    "status": "Completed",
+    "destinationPlanetId": "mars",
+    "destinationName": "Mars",
+    "missionType": "Orbiter",
+    "description": "The first spacecraft to successfully enter orbit around another planet, discovering massive Martian volcanoes and canyon networks.",
+    "objectives": [
+      "Map 70% of the Martian surface at high resolution from orbit",
+      "Study temporal atmospheric variations and dust storm mechanics",
+      "Examine the gravitational and thermal environment of Mars"
+    ],
+    "achievements": [
+      "Returned 7,329 images mapping 85% of the red planet",
+      "Discovered Olympus Mons, Valles Marineris, and ancient dry river channels",
+      "Captured first close-up images of Martian moons Phobos and Deimos"
+    ],
+    "spacecraftDetails": {
+      "name": "Mariner Mars 71 (Mariner 9)",
+      "type": "Three-Axis Stabilized Interplanetary Orbiter",
+      "massKg": 997.9,
+      "launchVehicle": "Atlas-Centaur (SLV-3C)",
+      "powerSource": "Four Solar Panels (800 W at Earth, 500 W at Mars)",
+      "operatingEnvironment": "Elliptical Mars Orbit (1,650 × 16,860 km)",
+      "instruments": [
+        "Wide & Narrow-Angle Television Cameras",
+        "Infrared Radiometer",
+        "Ultraviolet Spectrometer",
+        "Infrared Interferometer Spectrometer"
+      ]
+    },
+    "outcome": "Transformed humanity's perception of Mars from a dormant Moon-like world into a dynamic planet with past volcanic and hydrological activity.",
+    "storyline": {
+      "theChallenge": "When Mariner 9 arrived at Mars, the entire planet was concealed beneath a catastrophic, planet-wide dust storm.",
+      "theMission": "Engineers commanded the spacecraft to delay mapping and wait in orbit for months while atmospheric dust settled.",
+      "theJourney": "Traveling 398 million km over 167 days, Mariner 9 fired its 1,300-newton engine to enter Martian orbit on November 14, 1971.",
+      "theDiscovery": "As the dust cleared, immense volcanic peaks like Olympus Mons and a canyon four times deeper than the Grand Canyon (Valles Marineris) emerged.",
+      "theLegacy": "Provided the foundational global photographic survey that enabled all subsequent Viking, Pathfinder, and rover missions to Mars."
+    },
+    "milestones": [
+      {
+        "id": "ms-m9-1",
+        "missionId": "mariner-9",
+        "year": 1971,
+        "date": "1971-05-30",
+        "title": "Atlas-Centaur Liftoff",
+        "description": "Launched from Cape Canaveral LC-36B on a direct trajectory to Mars.",
+        "significance": "Commenced the Mariner 71 mission.",
+        "eventType": "launch",
+        "chronologicalOrder": 1,
+        "relatedCelestialBodyId": "mars",
+        "replaySceneType": "launchpad",
+        "sourceReference": "NASA JPL Mariner 9 Launch Log (1971)"
+      },
+      {
+        "id": "ms-m9-2",
+        "missionId": "mariner-9",
+        "year": 1971,
+        "date": "1971-11-14",
+        "title": "First Planetary Orbit Insertion",
+        "description": "Mariner 9 fired its retro-engine for 15 minutes, entering Mars orbit amid a global dust storm.",
+        "significance": "First spacecraft to orbit another planet in solar system history.",
+        "eventType": "orbit",
+        "chronologicalOrder": 2,
+        "relatedCelestialBodyId": "mars",
+        "replaySceneType": "orbital_insertion",
+        "sourceReference": "JPL Technical Memorandum 33-585 (1972)"
+      },
+      {
+        "id": "ms-m9-3",
+        "missionId": "mariner-9",
+        "year": 1972,
+        "date": "1972-01-10",
+        "title": "Global Mapping of Volcanoes & Canyons",
+        "description": "High-resolution cameras surveyed Valles Marineris and Olympus Mons as dust cleared.",
+        "significance": "Revealed evidence of ancient hydrological and volcanic activity on Mars.",
+        "eventType": "discovery",
+        "chronologicalOrder": 3,
+        "relatedCelestialBodyId": "mars",
+        "replaySceneType": "scientific_survey",
+        "sourceReference": "Science Magazine Mariner 9 Special Issue (1972)"
+      }
+    ],
+    "sourceReference": "NASA JPL Mariner Mars 1971 Final Project Report (1973)",
+    "source": "curated"
+  },
+  {
+    "id": "pioneer-10",
+    "name": "Pioneer 10",
+    "agency": "NASA",
+    "launchYear": 1972,
+    "launchDate": "1972-03-03",
+    "status": "Completed",
+    "destinationPlanetId": "jupiter",
+    "destinationName": "Jupiter & Outer Solar System",
+    "missionType": "Flyby",
+    "description": "First probe to navigate through the Asteroid Belt and make direct close-range observations of Jupiter and its radiation belts.",
+    "objectives": [
+      "Explore the interplanetary medium beyond Mars and determine hazard levels in the Asteroid Belt",
+      "Provide direct flyby analysis of Jupiter's atmosphere, magnetosphere, and radiation belts",
+      "Test solar system escape trajectory navigation"
+    ],
+    "achievements": [
+      "First spacecraft to traverse the Asteroid Belt safely",
+      "Returned first direct close-up images of Jupiter's Great Red Spot",
+      "First human-built artifact to achieve solar system escape velocity"
+    ],
+    "spacecraftDetails": {
+      "name": "Pioneer F (Pioneer 10)",
+      "type": "Spin-Stabilized Interplanetary Space Probe",
+      "massKg": 258,
+      "launchVehicle": "Atlas-Centaur with TE-M-364-4 Solid Third Stage",
+      "powerSource": "Four SNAP-19 Radioisotope Thermoelectric Generators (RTGs)",
+      "operatingEnvironment": "Deep Space Vacuum & Jovian Magnetosphere",
+      "instruments": [
+        "Imaging Photopolarimeter",
+        "Helium Vector Magnetometer",
+        "Plasma Analyzer",
+        "Charged Particle Instrument",
+        "Cosmic Ray Telescope"
+      ]
+    },
+    "outcome": "Paved the way for the Voyager and Galileo missions by proving the Asteroid Belt was passable and mapping Jupiter's intense magnetic field.",
+    "storyline": {
+      "theChallenge": "Astrophysicists feared the dense Asteroid Belt between Mars and Jupiter would pulverize any spacecraft attempting to cross it.",
+      "theMission": "Equipped with nuclear RTG power and a 2.74-meter parabolic antenna, Pioneer 10 aimed directly for the heart of the Jovian system.",
+      "theJourney": "Accelerated to 51,682 km/h at launch—the fastest human artifact to date—Pioneer 10 crossed the Moon's orbit in 11 hours and traversed the Asteroid Belt without incident.",
+      "theDiscovery": "Encountered Jupiter in December 1973, surviving radiation belts ten times stronger than expected and measuring the colossal Jovian magnetosphere.",
+      "theLegacy": "Carried the Carl Sagan-designed gold plaque depicting humanity, Earth's location, and atomic hydrogen, continuing toward the star Aldebaran."
+    },
+    "milestones": [
+      {
+        "id": "ms-p10-1",
+        "missionId": "pioneer-10",
+        "year": 1972,
+        "date": "1972-03-03",
+        "title": "Launch on Record Escape Velocity Trajectory",
+        "description": "Atlas-Centaur launch from Cape Canaveral LC-36A propelled Pioneer 10 at 51,682 km/h.",
+        "significance": "Fastest human artifact at its time of launch.",
+        "eventType": "launch",
+        "chronologicalOrder": 1,
+        "relatedCelestialBodyId": "jupiter",
+        "replaySceneType": "launchpad",
+        "sourceReference": "NASA Ames Research Center Pioneer Project Log (1972)"
+      },
+      {
+        "id": "ms-p10-2",
+        "missionId": "pioneer-10",
+        "year": 1973,
+        "date": "1973-02-15",
+        "title": "Safe Transit Across Asteroid Belt",
+        "description": "Exited the Asteroid Belt without micrometeorite damage, proving safe transit for future missions.",
+        "significance": "Opened the outer solar system to human robotic probes.",
+        "eventType": "transit",
+        "chronologicalOrder": 2,
+        "relatedCelestialBodyId": "jupiter",
+        "replaySceneType": "deep_space_cruise",
+        "sourceReference": "Science Magazine Pioneer 10 Asteroid Belt Survey (1973)"
+      },
+      {
+        "id": "ms-p10-3",
+        "missionId": "pioneer-10",
+        "year": 1973,
+        "date": "1973-12-04",
+        "title": "Closest Jovian Approach",
+        "description": "Passed within 130,000 km of Jupiter's cloud tops, detecting intense radiation belts and imaging the Great Red Spot.",
+        "significance": "Paved the way for Voyager grand tour missions.",
+        "eventType": "flyby",
+        "chronologicalOrder": 3,
+        "relatedCelestialBodyId": "jupiter",
+        "replaySceneType": "planetary_flyby",
+        "sourceReference": "NASA SP-349 Pioneer Odyssey (1974)"
+      }
+    ],
+    "sourceReference": "NASA Ames Research Center / Pioneer Project Summary (1974)",
+    "source": "curated"
+  },
+  {
+    "id": "voyager-1",
+    "name": "Voyager 1",
+    "agency": "NASA / JPL",
+    "launchYear": 1977,
+    "launchDate": "1977-09-05",
+    "status": "Active",
+    "destinationPlanetId": "jupiter",
+    "destinationName": "Jupiter, Saturn, & Interstellar Space",
+    "missionType": "Flyby",
+    "description": "The farthest human-made object from Earth, continuing telemetry transmissions from the interstellar medium beyond the heliopause.",
+    "objectives": [
+      "Conduct exploratory flybys of the Jovian and Saturnian systems",
+      "Perform close reconnaissance of Saturn's giant moon Titan",
+      "Determine the structure of the heliospheric termination shock and interstellar boundary"
+    ],
+    "achievements": [
+      "Discovered active volcanism on Io (the first active extraterrestrial volcanoes found)",
+      "Captured the legendary \"Pale Blue Dot\" solar system family portrait",
+      "Crossed the heliopause into interstellar space in August 2012"
+    ],
+    "spacecraftDetails": {
+      "name": "Voyager 1 (Mariner Jupiter/Saturn 77)",
+      "type": "Three-Axis Stabilized Interstellar Robotic Probe",
+      "massKg": 825.5,
+      "launchVehicle": "Titan IIIE-Centaur",
+      "powerSource": "Three Multi-Hundred-Watt Radioisotope Thermoelectric Generators (MHW-RTGs)",
+      "operatingEnvironment": "Outer Solar System & Local Interstellar Medium (VLISM)",
+      "instruments": [
+        "Imaging Science System (ISS)",
+        "Magnetometer (MAG)",
+        "Plasma Wave Subsystem (PWS)",
+        "Low-Energy Charged Particle (LECP)",
+        "Cosmic Ray Subsystem (CRS)"
+      ]
+    },
+    "outcome": "Operating continuously for over 47 years; currently exploring the interstellar medium at over 24 billion kilometers from Earth.",
+    "storyline": {
+      "theChallenge": "A rare alignment of the outer planets occurring only once every 175 years offered an opportunity to visit all four gas giants with gravity assists.",
+      "theMission": "NASA launched twin Voyager probes carrying a 12-inch gold-plated copper phonograph record encoded with Earth sounds, greetings, and images.",
+      "theJourney": "Voyager 1 sped past Jupiter in March 1979 and Saturn in November 1980, using Saturn's gravity to slingshot northward out of the ecliptic plane.",
+      "theDiscovery": "Discovered sulphur cryovolcanism on Io, braided rings at Saturn, and verified that Titan possesses an extraordinarily thick nitrogen atmosphere.",
+      "theLegacy": "In 2012, Voyager 1 became the first human artifact to enter interstellar space, serving as an immortal cosmic messenger from Earth."
+    },
+    "milestones": [
+      {
+        "id": "ms-v1-1",
+        "missionId": "voyager-1",
+        "year": 1977,
+        "date": "1977-09-05",
+        "title": "Titan IIIE-Centaur Launch",
+        "description": "Launched from Cape Canaveral LC-41 on a high-velocity trajectory toward Jupiter.",
+        "significance": "Inaugurated the Voyager Interstellar Mission.",
+        "eventType": "launch",
+        "chronologicalOrder": 1,
+        "relatedCelestialBodyId": "jupiter",
+        "replaySceneType": "launchpad",
+        "sourceReference": "NASA JPL Voyager Launch Press Kit (1977)"
+      },
+      {
+        "id": "ms-v1-1979",
+        "missionId": "voyager-1",
+        "year": 1979,
+        "date": "1979-03-05",
+        "title": "Jupiter Flyby & Discovery of Io Volcanism",
+        "description": "Closest approach within 349,000 km of Jupiter; discovered active cryovolcanoes on Io and Jovian rings.",
+        "significance": "First evidence of active volcanism beyond Earth.",
+        "eventType": "flyby",
+        "chronologicalOrder": 2,
+        "relatedCelestialBodyId": "jupiter",
+        "replaySceneType": "planetary_flyby",
+        "sourceReference": "Science Magazine Voyager 1 Jupiter Special Issue (1979)"
+      },
+      {
+        "id": "ms-v1-1980",
+        "missionId": "voyager-1",
+        "year": 1980,
+        "date": "1980-11-12",
+        "title": "Saturn & Titan Encounter",
+        "description": "Passed within 6,490 km of Titan's dense atmosphere before swinging above Saturn's rings.",
+        "significance": "Revealed Titan's nitrogen atmosphere and propelled probe toward interstellar trajectory.",
+        "eventType": "flyby",
+        "chronologicalOrder": 3,
+        "relatedCelestialBodyId": "saturn",
+        "replaySceneType": "planetary_flyby",
+        "sourceReference": "Science Magazine Voyager 1 Saturn Encounter (1981)"
+      },
+      {
+        "id": "ms-v1-1990",
+        "missionId": "voyager-1",
+        "year": 1990,
+        "date": "1990-02-14",
+        "title": "The \"Pale Blue Dot\" Portrait",
+        "description": "Turned cameras back toward the inner solar system to capture Earth as a tiny speck of light in a sunbeam.",
+        "significance": "Created the iconic environmental and philosophical image of humanity.",
+        "eventType": "discovery",
+        "chronologicalOrder": 4,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "deep_space_cruise",
+        "sourceReference": "NASA JPL Solar System Family Portrait (1990)"
+      },
+      {
+        "id": "ms-v1-2012",
+        "missionId": "voyager-1",
+        "year": 2012,
+        "date": "2012-08-25",
+        "title": "Interstellar Space Entry (Heliopause Crossing)",
+        "description": "Plasma wave instruments detected a forty-fold increase in interstellar plasma density.",
+        "significance": "First human object to depart the Sun's magnetic bubble and enter interstellar space.",
+        "eventType": "milestone",
+        "chronologicalOrder": 5,
+        "relatedCelestialBodyId": "jupiter",
+        "replaySceneType": "deep_space_cruise",
+        "sourceReference": "Science Magazine Heliopause Crossing Papers (2013)"
+      }
+    ],
+    "sourceReference": "NASA JPL Voyager Interstellar Mission Archive (1977-2024)",
+    "source": "curated"
+  },
+  {
+    "id": "voyager-2",
+    "name": "Voyager 2",
+    "agency": "NASA / JPL",
+    "launchYear": 1977,
+    "launchDate": "1977-08-20",
+    "status": "Active",
+    "destinationPlanetId": "neptune",
+    "destinationName": "Jupiter, Saturn, Uranus, Neptune, & Interstellar Space",
+    "missionType": "Flyby",
+    "description": "The only spacecraft to have visited all four gas and ice giants: Jupiter, Saturn, Uranus, and Neptune.",
+    "objectives": [
+      "Complete the historic planetary Grand Tour across all four giant planets",
+      "Conduct the first close-range reconnaissance of Uranus and Neptune",
+      "Measure interstellar magnetic fields and cosmic rays beyond the heliosphere"
+    ],
+    "achievements": [
+      "Only spacecraft in history to explore Uranus (1986) and Neptune (1989)",
+      "Discovered 11 new moons at Uranus and 6 new moons at Neptune",
+      "Entered interstellar space in November 2018"
+    ],
+    "spacecraftDetails": {
+      "name": "Voyager 2",
+      "type": "Three-Axis Stabilized Interplanetary Probe",
+      "massKg": 825.5,
+      "launchVehicle": "Titan IIIE-Centaur",
+      "powerSource": "Three MHW-RTGs (Radioisotope Thermoelectric Generators)",
+      "operatingEnvironment": "Outer Solar System & Interstellar Space",
+      "instruments": [
+        "Wide & Narrow-Angle Cameras",
+        "Cosmic Ray Subsystem",
+        "Low-Energy Charged Particle Sensor",
+        "Magnetometer"
+      ]
+    },
+    "outcome": "Sole explorer of the ice giant worlds; remains in active contact from interstellar space over 20 billion kilometers from Earth.",
+    "storyline": {
+      "theChallenge": "Navigating four consecutive planetary flybys required unprecedented trajectory precision and reprogrammable on-board computers.",
+      "theMission": "Launched 16 days before Voyager 1, Voyager 2 took a longer, slower trajectory that preserved the option to divert toward Uranus and Neptune.",
+      "theJourney": "Executed gravity-assist slingshots around Jupiter (1979) and Saturn (1981), steering toward Uranus in 1986 and Neptune in 1989.",
+      "theDiscovery": "Revealed Miranda's shattered tectonic cliffs, Uranus's tilted magnetic field, Neptune's Great Dark Spot, and cryogeysers on Triton.",
+      "theLegacy": "Provided the only close-up data humanity possesses for Uranus and Neptune, shaping ice-giant astrophysics for half a century."
+    },
+    "milestones": [
+      {
+        "id": "ms-v2-1",
+        "missionId": "voyager-2",
+        "year": 1977,
+        "date": "1977-08-20",
+        "title": "Launch on the Grand Tour",
+        "description": "Titan IIIE-Centaur lifted Voyager 2 from Launch Complex 41.",
+        "significance": "Began the Grand Tour of four outer planets.",
+        "eventType": "launch",
+        "chronologicalOrder": 1,
+        "relatedCelestialBodyId": "neptune",
+        "replaySceneType": "launchpad",
+        "sourceReference": "NASA JPL Voyager 2 Launch Records (1977)"
+      },
+      {
+        "id": "ms-v2-1986",
+        "missionId": "voyager-2",
+        "year": 1986,
+        "date": "1986-01-24",
+        "title": "Historic Uranus Flyby",
+        "description": "Passed within 81,500 km of Uranus's cloud tops, discovering 10 moons, two rings, and a tilted magnetic field.",
+        "significance": "First and only spacecraft visit to the seventh planet.",
+        "eventType": "flyby",
+        "chronologicalOrder": 2,
+        "relatedCelestialBodyId": "uranus",
+        "replaySceneType": "planetary_flyby",
+        "sourceReference": "Science Magazine Uranus Flyby Special Issue (1986)"
+      },
+      {
+        "id": "ms-v2-1989",
+        "missionId": "voyager-2",
+        "year": 1989,
+        "date": "1989-08-25",
+        "title": "Historic Neptune & Triton Flyby",
+        "description": "Dipped within 4,950 km of Neptune's north pole, discovering active liquid nitrogen cryogeysers on moon Triton.",
+        "significance": "Completed the Grand Tour of all four giant worlds.",
+        "eventType": "flyby",
+        "chronologicalOrder": 3,
+        "relatedCelestialBodyId": "neptune",
+        "replaySceneType": "planetary_flyby",
+        "sourceReference": "Science Magazine Neptune Flyby Issue (1989)"
+      },
+      {
+        "id": "ms-v2-2018",
+        "missionId": "voyager-2",
+        "year": 2018,
+        "date": "2018-11-05",
+        "title": "Interstellar Medium Insertion",
+        "description": "Crossed the heliopause into interstellar space with working plasma instruments.",
+        "significance": "Second human spacecraft in history to operate in interstellar space.",
+        "eventType": "milestone",
+        "chronologicalOrder": 4,
+        "relatedCelestialBodyId": "neptune",
+        "replaySceneType": "deep_space_cruise",
+        "sourceReference": "Nature Astronomy Heliopause Crossing (2019)"
+      }
+    ],
+    "sourceReference": "NASA Voyager Project Archive / JPL Planetary Data System (2024)",
+    "source": "curated"
+  },
+  {
+    "id": "hubble",
+    "name": "Hubble Space Telescope",
+    "agency": "NASA / ESA",
+    "launchYear": 1990,
+    "launchDate": "1990-04-24",
+    "status": "Active",
+    "destinationPlanetId": "earth",
+    "destinationName": "Low Earth Orbit (540 km)",
+    "missionType": "Space Observatory",
+    "description": "The world's premier orbital observatory, operating above atmospheric distortion to revolutionize modern astrophysics and cosmology.",
+    "objectives": [
+      "Resolve the cosmological expansion rate and Hubble constant ($H_0$)",
+      "Characterize stellar birth and death across deep lookback times",
+      "Provide diffraction-limited optical, UV, and near-infrared astronomical observations"
+    ],
+    "achievements": [
+      "Determined the age of the universe to within 13.8 billion years",
+      "Captured the legendary Hubble Deep Field and Ultra Deep Field images",
+      "Directly verified the accelerating expansion of the universe driven by Dark Energy"
+    ],
+    "spacecraftDetails": {
+      "name": "Hubble Space Telescope (HST)",
+      "type": "Ritchey-Chrétien Cassegrain Orbital Reflecting Telescope",
+      "massKg": 11110,
+      "launchVehicle": "Space Shuttle Discovery (STS-31)",
+      "powerSource": "Two Gallium-Arsenide Solar Arrays (5,500 W)",
+      "operatingEnvironment": "Circular Low Earth Orbit (540 km, 28.5° inclination)",
+      "instruments": [
+        "Wide Field Camera 3 (WFC3)",
+        "Cosmic Origins Spectrograph (COS)",
+        "Advanced Camera for Surveys (ACS)",
+        "STIS Spectrograph"
+      ]
+    },
+    "outcome": "Over 34 years of continuous science operations, producing more than 1.5 million astronomical observations and 20,000 peer-reviewed papers.",
+    "storyline": {
+      "theChallenge": "Earth's turbulent atmosphere blurs starlight, preventing ground-based telescopes from resolving distant galaxies and faint stellar structures.",
+      "theMission": "Astrophysicist Lyman Spitzer's 1946 vision materialized as a 2.4-meter primary mirror telescope designed to be serviced by Space Shuttle astronauts.",
+      "theJourney": "Launched on STS-31 in April 1990, initial images were blurred due to spherical aberration until the heroic STS-61 servicing mission installed corrective optics.",
+      "theDiscovery": "Hubble probed deep into cosmic time, discovering that nearly every large galaxy harbors a supermassive black hole and proving dark energy accelerates cosmic expansion.",
+      "theLegacy": "Redefined human culture's relationship with the universe through iconic images like the Pillars of Creation and Deep Field."
+    },
+    "milestones": [
+      {
+        "id": "ms-hst-1990",
+        "missionId": "hubble",
+        "year": 1990,
+        "date": "1990-04-24",
+        "title": "STS-31 Space Shuttle Deployment",
+        "description": "Space Shuttle Discovery carried Hubble to a 612 km deployment orbit.",
+        "significance": "First major optical telescope deployed in space.",
+        "eventType": "launch",
+        "chronologicalOrder": 1,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "launchpad",
+        "sourceReference": "NASA STS-31 Mission Report (1990)"
+      },
+      {
+        "id": "ms-hst-1993",
+        "missionId": "hubble",
+        "year": 1993,
+        "date": "1993-12-04",
+        "title": "STS-61 First Servicing Mission (COSTAR)",
+        "description": "Spacewalkers installed the COSTAR corrective optics module, restoring diffraction-limited optical performance.",
+        "significance": "Rescued Hubble's optical capabilities and proved in-space telescope maintenance.",
+        "eventType": "milestone",
+        "chronologicalOrder": 2,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "scientific_survey",
+        "sourceReference": "NASA STS-61 Mission Log (1993)"
+      },
+      {
+        "id": "ms-hst-1995",
+        "missionId": "hubble",
+        "year": 1995,
+        "date": "1995-12-18",
+        "title": "Hubble Deep Field Observation",
+        "description": "Stared at an empty patch of Ursa Major for 10 consecutive days, discovering over 3,000 previously unseen galaxies.",
+        "significance": "Revolutionized observational cosmology and deep cosmic lookback studies.",
+        "eventType": "discovery",
+        "chronologicalOrder": 3,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "scientific_survey",
+        "sourceReference": "Astronomical Journal Deep Field Paper (1996)"
+      }
+    ],
+    "sourceReference": "Space Telescope Science Institute (STScI) Archive (1990-2024)",
+    "source": "curated"
+  },
+  {
+    "id": "pathfinder",
+    "name": "Mars Pathfinder",
+    "agency": "NASA",
+    "launchYear": 1996,
+    "launchDate": "1996-12-04",
+    "status": "Completed",
+    "destinationPlanetId": "mars",
+    "destinationName": "Mars (Ares Vallis)",
+    "missionType": "Rover",
+    "description": "Demonstrated low-cost airbag landing systems and delivered Sojourner, the first wheeled micro-rover to explore the Martian surface.",
+    "objectives": [
+      "Demonstrate airbag landing technology on Mars at low cost",
+      "Deploy the Sojourner microrover for surface mobility and geology",
+      "Conduct geochemical analysis of rocks in the ancient Ares Vallis floodplain"
+    ],
+    "achievements": [
+      "First wheeled rover to drive on another planet (Sojourner)",
+      "Tested airbag impact attenuation without dedicated landing retro-rockets",
+      "Analyzed chemical composition of iconic Martian rocks \"Barnacle Bill\" and \"Yogi\""
+    ],
+    "spacecraftDetails": {
+      "name": "Mars Pathfinder & Sojourner Microrover",
+      "type": "Tetrahedral Airbag Lander with 10.6 kg Six-Wheeled Rover",
+      "massKg": 890,
+      "launchVehicle": "Delta II 7925",
+      "powerSource": "Gallium-Arsenide Solar Arrays & Primary D-Cell Batteries",
+      "operatingEnvironment": "Ares Vallis Martian Floodplain",
+      "instruments": [
+        "Alpha Proton X-ray Spectrometer (APXS)",
+        "Imager for Mars Pathfinder (IMP)",
+        "Atmospheric Structure Instrument"
+      ]
+    },
+    "outcome": "Completed its mission with 100% success; returned 16,500 images and proved mobile surface robotics was viable on Mars.",
+    "storyline": {
+      "theChallenge": "Following decades without a successful American Mars landing, NASA needed to prove low-cost exploration was possible.",
+      "theMission": "Engineers designed an innovative cocoon of giant airbags to absorb the 50 km/h landing bounce on the Martian surface.",
+      "theJourney": "Launched on a Delta II rocket, Pathfinder arrived at Mars on July 4, 1997, bouncing 15 times before settling in Ares Vallis.",
+      "theDiscovery": "The lander opened its solar petals and deployed the microwave-sized Sojourner rover, which analyzed rocks shaped by catastrophic ancient floods.",
+      "theLegacy": "Pioneered the rover technology that paved the way for Spirit, Opportunity, Curiosity, and Perseverance."
+    },
+    "milestones": [
+      {
+        "id": "ms-mpf-1",
+        "missionId": "pathfinder",
+        "year": 1996,
+        "date": "1996-12-04",
+        "title": "Delta II Liftoff to Mars",
+        "description": "Pathfinder launched from Cape Canaveral LC-17B.",
+        "significance": "Began the modern era of Mars robotic mobility.",
+        "eventType": "launch",
+        "chronologicalOrder": 1,
+        "relatedCelestialBodyId": "mars",
+        "replaySceneType": "launchpad",
+        "sourceReference": "NASA JPL Pathfinder Launch Press Kit (1996)"
+      },
+      {
+        "id": "ms-mpf-2",
+        "missionId": "pathfinder",
+        "year": 1997,
+        "date": "1997-07-04",
+        "title": "Airbag Landing in Ares Vallis",
+        "description": "Parachute and rocket-assisted deceleration followed by airbag bounce touchdown in Ares Vallis.",
+        "significance": "First successful Mars landing in 21 years.",
+        "eventType": "landing",
+        "chronologicalOrder": 2,
+        "relatedCelestialBodyId": "mars",
+        "replaySceneType": "surface_descent",
+        "sourceReference": "JPL Mars Pathfinder Mission Operations (1997)"
+      },
+      {
+        "id": "ms-mpf-3",
+        "missionId": "pathfinder",
+        "year": 1997,
+        "date": "1997-07-06",
+        "title": "Sojourner Rover Roll-Out",
+        "description": "Sojourner rolled down the lander ramp onto Martian soil, conducting APXS spectroscopy of \"Barnacle Bill\".",
+        "significance": "First wheeled traversal on extraterrestrial planetary terrain.",
+        "eventType": "discovery",
+        "chronologicalOrder": 3,
+        "relatedCelestialBodyId": "mars",
+        "replaySceneType": "scientific_survey",
+        "sourceReference": "Science Magazine Pathfinder Special Issue (1997)"
+      }
+    ],
+    "sourceReference": "NASA JPL Mars Pathfinder Final Mission Report (1998)",
+    "source": "curated"
+  },
+  {
+    "id": "cassini-huygens",
+    "name": "Cassini-Huygens",
+    "agency": "NASA / ESA / ASI",
+    "launchYear": 1997,
+    "launchDate": "1997-10-15",
+    "status": "Completed",
+    "destinationPlanetId": "saturn",
+    "destinationName": "Saturn, Titan, & Enceladus",
+    "missionType": "Orbiter",
+    "description": "Flagship international mission that orbited Saturn for 13 years, deployed the European Huygens probe to Titan, and discovered water plumes on Enceladus.",
+    "objectives": [
+      "Conduct comprehensive orbital exploration of Saturn's rings, atmosphere, and magnetosphere",
+      "Deploy the ESA Huygens probe to descend into Titan's dense methane atmosphere",
+      "Investigate the dynamic icy satellites, including Enceladus, Iapetus, and Rhea"
+    ],
+    "achievements": [
+      "First spacecraft to enter orbit around Saturn (July 2004)",
+      "Huygens landed on Titan—the most distant soft landing in human history",
+      "Discovered hydrothermal liquid water cryogeysers erupting from Enceladus's subsurface ocean"
+    ],
+    "spacecraftDetails": {
+      "name": "Cassini Saturn Orbiter & Huygens Titan Probe",
+      "type": "Flagship Three-Axis Planetary Orbiter with Atmospheric Descent Probe",
+      "massKg": 5712,
+      "launchVehicle": "Titan IVB-Centaur",
+      "powerSource": "Three GPHS-RTGs (Radioisotope Thermoelectric Generators, 885 W)",
+      "operatingEnvironment": "Saturnian Ring Plane & Cryogenic Magnetosphere",
+      "instruments": [
+        "Composite Infrared Spectrometer (CIRS)",
+        "Imaging Science Subsystem (ISS)",
+        "Cassini Radar Mapper",
+        "Ion & Neutral Mass Spectrometer (INMS)",
+        "Huygens DISR Camera"
+      ]
+    },
+    "outcome": "Concluded with the \"Grand Finale\" in September 2017: 22 daring dives between Saturn and its innermost rings before intentional vaporizing atmospheric entry.",
+    "storyline": {
+      "theChallenge": "Reaching Saturn with a 5.7-ton spacecraft required four gravitational slingshots past Venus (twice), Earth, and Jupiter.",
+      "theMission": "A partnership between NASA, ESA, and the Italian Space Agency created the largest and most sophisticated interplanetary probe ever built.",
+      "theJourney": "Traveling nearly 3.5 billion km over seven years, Cassini fired its main engine to slip through a gap in Saturn's rings on June 30, 2004.",
+      "theDiscovery": "Huygens sent back images of river valleys carved by liquid methane on Titan, while Cassini flew through ocean plumes shooting from Enceladus.",
+      "theLegacy": "Proved ocean worlds harboring hydrothermal activity exist in the outer solar system, revolutionizing our search for habitable environments."
+    },
+    "milestones": [
+      {
+        "id": "ms-cas-1997",
+        "missionId": "cassini-huygens",
+        "year": 1997,
+        "date": "1997-10-15",
+        "title": "Titan IVB-Centaur Liftoff",
+        "description": "Launched from Cape Canaveral LC-40 on a complex interplanetary trajectory.",
+        "significance": "Began the flagship mission to Saturn.",
+        "eventType": "launch",
+        "chronologicalOrder": 1,
+        "relatedCelestialBodyId": "saturn",
+        "replaySceneType": "launchpad",
+        "sourceReference": "NASA Cassini Launch Operations (1997)"
+      },
+      {
+        "id": "ms-cas-2004",
+        "missionId": "cassini-huygens",
+        "year": 2004,
+        "date": "2004-07-01",
+        "title": "Saturn Orbit Insertion (SOI)",
+        "description": "Cassini fired its main engine for 96 minutes, slipping through the gap between F and G rings.",
+        "significance": "First spacecraft to enter orbit around the ringed planet.",
+        "eventType": "orbit",
+        "chronologicalOrder": 2,
+        "relatedCelestialBodyId": "saturn",
+        "replaySceneType": "orbital_insertion",
+        "sourceReference": "JPL Cassini Orbit Insertion Flight Log (2004)"
+      },
+      {
+        "id": "ms-cas-2005",
+        "missionId": "cassini-huygens",
+        "year": 2005,
+        "date": "2005-01-14",
+        "title": "Huygens Descent & Touchdown on Titan",
+        "description": "ESA's Huygens probe descended for 2.5 hours through Titan's nitrogen clouds, landing on frozen mud soaked in liquid hydrocarbons.",
+        "significance": "Farthest landing from Earth in human history.",
+        "eventType": "landing",
+        "chronologicalOrder": 3,
+        "relatedCelestialBodyId": "saturn",
+        "replaySceneType": "surface_descent",
+        "sourceReference": "Nature Huygens Titan Landing Results (2005)"
+      },
+      {
+        "id": "ms-cas-2005b",
+        "missionId": "cassini-huygens",
+        "year": 2005,
+        "date": "2005-07-14",
+        "title": "Discovery of Enceladus Cryogeysers",
+        "description": "Cassini flew within 175 km of Enceladus, detecting giant plumes of water vapor and organic molecules erupting from south polar fractures.",
+        "significance": "Confirmed subsurface liquid ocean on Enceladus.",
+        "eventType": "discovery",
+        "chronologicalOrder": 4,
+        "relatedCelestialBodyId": "saturn",
+        "replaySceneType": "scientific_survey",
+        "sourceReference": "Science Magazine Enceladus Cryovolcanism (2006)"
+      },
+      {
+        "id": "ms-cas-2017",
+        "missionId": "cassini-huygens",
+        "year": 2017,
+        "date": "2017-09-15",
+        "title": "The Grand Finale Atmospheric Entry",
+        "description": "Plunged into Saturn's upper atmosphere to protect potentially habitable moons Enceladus and Titan from biological contamination.",
+        "significance": "Concluded 13 years of transformative Jovian-Saturnian exploration.",
+        "eventType": "conclusion",
+        "chronologicalOrder": 5,
+        "relatedCelestialBodyId": "saturn",
+        "replaySceneType": "surface_descent",
+        "sourceReference": "NASA Cassini Grand Finale Overview (2017)"
+      }
+    ],
+    "sourceReference": "NASA JPL / ESA Cassini-Huygens Mission Archive (1997-2017)",
+    "source": "curated"
+  },
+  {
+    "id": "iss",
+    "name": "International Space Station",
+    "agency": "NASA / Roscosmos / ESA / JAXA / CSA",
+    "launchYear": 1998,
+    "launchDate": "1998-11-20",
+    "status": "Active",
+    "destinationPlanetId": "earth",
+    "destinationName": "Low Earth Orbit (400 km)",
+    "missionType": "Crewed",
+    "description": "A continuously inhabited microgravity laboratory built by 15 nations, conducting biomedical, physical, and astronomical experiments.",
+    "objectives": [
+      "Maintain continuous human presence in low Earth orbit",
+      "Conduct long-duration microgravity physical, biological, and material science",
+      "Test life support and exploration technologies required for lunar and Martian expeditions"
+    ],
+    "achievements": [
+      "Continuously occupied by rotational crews since November 2, 2000",
+      "Hosted over 270 individuals from 21 countries",
+      "Supported more than 3,000 scientific investigations across 24 years"
+    ],
+    "spacecraftDetails": {
+      "name": "International Space Station (ISS)",
+      "type": "Modular Orbital Space Station Laboratory",
+      "massKg": 450000,
+      "launchVehicle": "Proton-K (Zarya FGB) & Space Shuttle Endeavour (Unity Node 1)",
+      "powerSource": "Eight Solar Array Wings (producing 120 kW electrical power)",
+      "operatingEnvironment": "Low Earth Orbit (418 × 422 km, 51.6° inclination)",
+      "instruments": [
+        "Alpha Magnetic Spectrometer (AMS-02)",
+        "NICER X-ray Telescope",
+        "Cold Atom Lab (CAL)",
+        "Microgravity Science Glovebox",
+        "Cupola Observational Module"
+      ]
+    },
+    "outcome": "Humanity's most complex international engineering achievement, scheduled to operate through 2030.",
+    "storyline": {
+      "theChallenge": "Assembling a football-field-sized laboratory in space required joining pressurized modules built to different tolerances across the globe.",
+      "theMission": "In November 1998, a Russian Proton rocket launched the Zarya control module, followed weeks later by Shuttle Endeavour mating the American Unity node.",
+      "theJourney": "Over 40 assembly flights by Space Shuttles, Proton, and Soyuz rockets joined trusses, solar arrays, and laboratories like Destiny, Columbus, and Kibo.",
+      "theDiscovery": "Scientists discovered new states of matter in the Cold Atom Lab, studied gene expression in zero-g, and monitored global climate dynamics.",
+      "theLegacy": "Proved international cooperation can sustain continuous human space habitation for over a quarter of a century."
+    },
+    "milestones": [
+      {
+        "id": "ms-iss-1",
+        "missionId": "iss",
+        "year": 1998,
+        "date": "1998-11-20",
+        "title": "Zarya Module Launch",
+        "description": "Proton rocket launched the Zarya Functional Cargo Block from Baikonur Cosmodrome.",
+        "significance": "Inaugural building block of the International Space Station.",
+        "eventType": "launch",
+        "chronologicalOrder": 1,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "launchpad",
+        "sourceReference": "NASA ISS Reference Guide (1998)"
+      },
+      {
+        "id": "ms-iss-2",
+        "missionId": "iss",
+        "year": 2000,
+        "date": "2000-11-02",
+        "title": "Expedition 1 Permanent Crew Arrival",
+        "description": "William Shepherd, Yuri Gidzenko, and Sergei Krikalev docked aboard Soyuz TM-31.",
+        "significance": "Initiated uninterrupted continuous human residency in space.",
+        "eventType": "orbit",
+        "chronologicalOrder": 2,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "orbital_insertion",
+        "sourceReference": "NASA Expedition 1 Flight Log (2000)"
+      },
+      {
+        "id": "ms-iss-3",
+        "missionId": "iss",
+        "year": 2011,
+        "date": "2011-05-27",
+        "title": "Assembly Complete with Alpha Magnetic Spectrometer",
+        "description": "Shuttle Endeavour installed the AMS-02 particle physics detector during STS-134.",
+        "significance": "Marked completion of the main structural US/International laboratory truss.",
+        "eventType": "milestone",
+        "chronologicalOrder": 3,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "scientific_survey",
+        "sourceReference": "CERN / NASA AMS-02 Operations (2011)"
+      }
+    ],
+    "sourceReference": "NASA International Space Station Operations Archive (1998-2024)",
+    "source": "curated"
+  },
+  {
+    "id": "new-horizons",
+    "name": "New Horizons",
+    "agency": "NASA",
+    "launchYear": 2006,
+    "launchDate": "2006-01-19",
+    "status": "Active",
+    "destinationPlanetId": "earth",
+    "destinationName": "Pluto & Kuiper Belt Object Arrokoth",
+    "missionType": "Flyby",
+    "description": "First probe to explore the dwarf planet Pluto, its moon Charon, and primitive Kuiper Belt planetesimal Arrokoth.",
+    "objectives": [
+      "Map global geology and surface morphology of Pluto and Charon",
+      "Characterize Pluto's nitrogen-methane atmosphere and escape rate",
+      "Perform close-range flyby reconnaissance of a primordial Kuiper Belt object"
+    ],
+    "achievements": [
+      "Fastest spacecraft launched from Earth (58,536 km/h burnout velocity)",
+      "Revealed active nitrogen-ice convective glaciers in Sputnik Planitia on Pluto",
+      "Conducted closest flyby of a primordial contact binary (Arrokoth) in January 2019"
+    ],
+    "spacecraftDetails": {
+      "name": "New Horizons",
+      "type": "Compact Interplanetary Flyby Probe",
+      "massKg": 478,
+      "launchVehicle": "Atlas V 551 with Star 48B Solid Third Stage",
+      "powerSource": "Single GPHS-RTG (Radioisotope Thermoelectric Generator)",
+      "operatingEnvironment": "Deep Kuiper Belt Outer Solar System (30–55 AU)",
+      "instruments": [
+        "LORRI High-Resolution Camera",
+        "Ralph Multicolor Imager/Spectrometer",
+        "Alice UV Spectrometer",
+        "SWAP Solar Wind Analyzer",
+        "Venetia Burney Student Dust Counter"
+      ]
+    },
+    "outcome": "Operating in the outer Kuiper Belt past 58 AU, studying the interstellar boundary and heliophysics.",
+    "storyline": {
+      "theChallenge": "Pluto was a mysterious frozen dot 5 billion km from the Sun, so distant that even Hubble could only resolve blurry pixel clusters.",
+      "theMission": "Engineers built a lightweight, piano-sized probe powered by an Atlas V rocket configured with five solid boosters.",
+      "theJourney": "Reached Jupiter in just 13 months, gaining a gravity boost that cut three years off its nine-year journey across the solar system.",
+      "theDiscovery": "On July 14, 2015, New Horizons revealed a giant nitrogen-ice heart (Sputnik Planitia), 3,500-meter water-ice peaks, and blue atmospheric hazes on Pluto.",
+      "theLegacy": "Transformed our understanding of the Kuiper Belt from a dormant junkyard into a dynamic region of complex icy worlds."
+    },
+    "milestones": [
+      {
+        "id": "ms-nh-2006",
+        "missionId": "new-horizons",
+        "year": 2006,
+        "date": "2006-01-19",
+        "title": "Record Velocity Launch",
+        "description": "Atlas V 551 hurled New Horizons toward the outer solar system at 58,536 km/h.",
+        "significance": "Fastest departure speed of any spacecraft launched from Earth.",
+        "eventType": "launch",
+        "chronologicalOrder": 1,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "launchpad",
+        "sourceReference": "NASA JPL New Horizons Launch Kit (2006)"
+      },
+      {
+        "id": "ms-nh-2007",
+        "missionId": "new-horizons",
+        "year": 2007,
+        "date": "2007-02-28",
+        "title": "Jupiter Gravity Assist Flyby",
+        "description": "Passed within 2.3 million km of Jupiter, gaining 14,000 km/h velocity while photographing volcanic plumes on Io.",
+        "significance": "Shortened transit time to Pluto by three full years.",
+        "eventType": "flyby",
+        "chronologicalOrder": 2,
+        "relatedCelestialBodyId": "jupiter",
+        "replaySceneType": "planetary_flyby",
+        "sourceReference": "Science Magazine Jupiter Gravity Assist (2007)"
+      },
+      {
+        "id": "ms-nh-2015",
+        "missionId": "new-horizons",
+        "year": 2015,
+        "date": "2015-07-14",
+        "title": "Historic Pluto System Reconnaissance",
+        "description": "Flew within 12,500 km of Pluto's surface at 49,600 km/h, resolving the heart-shaped nitrogen glacier Sputnik Planitia.",
+        "significance": "Completed initial reconnaissance of the classical solar system.",
+        "eventType": "flyby",
+        "chronologicalOrder": 3,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "planetary_flyby",
+        "sourceReference": "Science Magazine Pluto Encounter Papers (2015)"
+      },
+      {
+        "id": "ms-nh-2019",
+        "missionId": "new-horizons",
+        "year": 2019,
+        "date": "2019-01-01",
+        "title": "Kuiper Belt Object Arrokoth Flyby",
+        "description": "Flew within 3,538 km of primitive contact binary 486958 Arrokoth at 43.4 AU.",
+        "significance": "Farthest exploration of a celestial object in human history.",
+        "eventType": "discovery",
+        "chronologicalOrder": 4,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "deep_space_cruise",
+        "sourceReference": "Science Magazine Arrokoth Results (2019)"
+      }
+    ],
+    "sourceReference": "JHUAPL / NASA New Horizons Mission Archive (2006-2024)",
+    "source": "curated"
+  },
+  {
+    "id": "kepler",
+    "name": "Kepler Space Telescope",
+    "agency": "NASA",
+    "launchYear": 2009,
+    "launchDate": "2009-03-07",
+    "status": "Completed",
+    "destinationPlanetId": "earth",
+    "destinationName": "Earth-Trailing Heliocentric Orbit",
+    "missionType": "Space Observatory",
+    "description": "A planet-hunting space photometer that revolutionized exoplanet science by discovering thousands of worlds orbiting distant stars.",
+    "objectives": [
+      "Determine the frequency of Earth-size planets in the habitable zones of Sun-like stars",
+      "Measure planet radii, orbital periods, and semi-major axes via transit photometry",
+      "Survey over 150,000 stars simultaneously in the Cygnus-Lyra starfield"
+    ],
+    "achievements": [
+      "Discovered 2,662 confirmed alien worlds outside our solar system",
+      "Proved that planets outnumber stars in the Milky Way galaxy",
+      "Discovered the first Earth-size planet in a habitable zone (Kepler-186f)"
+    ],
+    "spacecraftDetails": {
+      "name": "Kepler Space Observatory (Discovery 10)",
+      "type": "Schmidt Telescope with 95-Megapixel CCD Photometer Array",
+      "massKg": 1052,
+      "launchVehicle": "Delta II 7925-10L",
+      "powerSource": "Fixed Solar Panels (1,100 W)",
+      "operatingEnvironment": "Earth-Trailing Heliocentric Orbit (372-day period)",
+      "instruments": [
+        "0.95-meter Photometer Aperture with 42 CCD Image Sensors"
+      ]
+    },
+    "outcome": "Concluded operations in October 2018 after depleting fuel; proved that rocky, habitable-zone planets are common across the cosmos.",
+    "storyline": {
+      "theChallenge": "Before Kepler, astronomers did not know whether rocky planets orbiting in temperate zones were cosmic rarities or commonplace.",
+      "theMission": "Equipped with a 95-megapixel mosaic detector, Kepler stared unblinkingly at 150,000 stars in Cygnus, detecting minute dips in starlight caused by crossing planets.",
+      "theJourney": "Launched into an Earth-trailing orbit, Kepler measured brightness drops as small as 80 parts per million—equivalent to spotting a flea crossing a car headlight.",
+      "theDiscovery": "Revealed entirely unexpected classes of worlds: super-Earths, mini-Neptunes, circumbinary planets orbiting two suns, and compact multi-planet systems.",
+      "theLegacy": "Overturned classical planetary models, establishing that most stars in our galaxy host planetary systems."
+    },
+    "milestones": [
+      {
+        "id": "ms-kep-1",
+        "missionId": "kepler",
+        "year": 2009,
+        "date": "2009-03-07",
+        "title": "Delta II Launch from Cape Canaveral",
+        "description": "Kepler launched into an Earth-trailing heliocentric orbit.",
+        "significance": "Inaugurated dedicated transit exoplanet survey.",
+        "eventType": "launch",
+        "chronologicalOrder": 1,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "launchpad",
+        "sourceReference": "NASA Kepler Launch Report (2009)"
+      },
+      {
+        "id": "ms-kep-2",
+        "missionId": "kepler",
+        "year": 2014,
+        "date": "2014-04-17",
+        "title": "Discovery of Kepler-186f",
+        "description": "Discovered the first validated Earth-size planet orbiting in the habitable zone of an alien star.",
+        "significance": "Milestone in the search for potentially habitable worlds.",
+        "eventType": "discovery",
+        "chronologicalOrder": 2,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "scientific_survey",
+        "sourceReference": "Science Magazine Kepler-186f Paper (2014)"
+      },
+      {
+        "id": "ms-kep-3",
+        "missionId": "kepler",
+        "year": 2018,
+        "date": "2018-10-30",
+        "title": "Mission Retirement with 2,662 Confirmed Planets",
+        "description": "NASA officially retired Kepler after it exhausted its attitude-control hydrazine propellant.",
+        "significance": "Left a legacy confirming that planets are ubiquitous in the Milky Way.",
+        "eventType": "conclusion",
+        "chronologicalOrder": 3,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "deep_space_cruise",
+        "sourceReference": "NASA Ames Press Release 18-092 (2018)"
+      }
+    ],
+    "sourceReference": "NASA Ames Research Center / Kepler Science Archive (2009-2018)",
+    "source": "curated"
+  },
+  {
+    "id": "curiosity",
+    "name": "Curiosity (Mars Science Laboratory)",
+    "agency": "NASA / JPL",
+    "launchYear": 2011,
+    "launchDate": "2011-11-26",
+    "status": "Active",
+    "destinationPlanetId": "mars",
+    "destinationName": "Mars (Gale Crater)",
+    "missionType": "Rover",
+    "description": "A car-sized robotic field geologist powered by an RTG, exploring Gale Crater to investigate past habitability and ancient lakebeds.",
+    "objectives": [
+      "Assess biological potential and ancient habitability of Gale Crater",
+      "Investigate planetary processes and atmospheric evolution on Mars",
+      "Characterize broad spectrum surface radiation for future human missions"
+    ],
+    "achievements": [
+      "Pioneered the rocket-powered Sky Crane landing architecture",
+      "Discovered ancient freshwater lakebeds with organic carbon molecules in Yellowknife Bay",
+      "Traversed over 32 km and climbed 500 vertical meters up Mount Sharp (Aeolis Mons)"
+    ],
+    "spacecraftDetails": {
+      "name": "Curiosity Rover (MSL)",
+      "type": "Six-Wheeled Nuclear-Powered Mobile Science Laboratory",
+      "massKg": 899,
+      "launchVehicle": "Atlas V 541",
+      "powerSource": "Multi-Mission Radioisotope Thermoelectric Generator (MMRTG)",
+      "operatingEnvironment": "Martian Surface (Gale Crater lake sediments and sand dunes)",
+      "instruments": [
+        "Sample Analysis at Mars (SAM)",
+        "Chemistry and Camera (ChemCam)",
+        "Mast Camera (Mastcam)",
+        "Radiation Assessment Detector (RAD)",
+        "Mars Hand Lens Imager (MAHLI)"
+      ]
+    },
+    "outcome": "Operating for over 12 Earth years (4,300+ Martian sols); proved ancient Mars had environmental conditions suited to microbial life.",
+    "storyline": {
+      "theChallenge": "Landing a one-ton rover required decelerating from 21,000 km/h to zero in the thin Martian atmosphere without using airbags.",
+      "theMission": "Engineers devised the audacious Sky Crane: a rocket pack that hovered over the surface and lowered Curiosity on nylon tethers.",
+      "theJourney": "Launched on an Atlas V in November 2011, Curiosity touched down on August 5, 2012, within 2 km of its target inside Gale Crater.",
+      "theDiscovery": "Drilled into mudstones at Yellowknife Bay, identifying sulfur, nitrogen, oxygen, phosphorus, and carbon—the essential ingredients for life.",
+      "theLegacy": "Established that Mars was once a warm, wet, habitable world, setting the scientific foundation for the Perseverance sample return campaign."
+    },
+    "milestones": [
+      {
+        "id": "ms-cur-1",
+        "missionId": "curiosity",
+        "year": 2011,
+        "date": "2011-11-26",
+        "title": "Atlas V Liftoff from Cape Canaveral",
+        "description": "Launched from LC-41 on a direct interplanetary injection trajectory to Mars.",
+        "significance": "Commenced the Mars Science Laboratory mission.",
+        "eventType": "launch",
+        "chronologicalOrder": 1,
+        "relatedCelestialBodyId": "mars",
+        "replaySceneType": "launchpad",
+        "sourceReference": "NASA JPL MSL Launch Press Kit (2011)"
+      },
+      {
+        "id": "ms-cur-2012",
+        "missionId": "curiosity",
+        "year": 2012,
+        "date": "2012-08-06",
+        "title": "Sky Crane Touchdown in Gale Crater",
+        "description": "Rocket backpack lowered Curiosity to the surface of Gale Crater at 1.5 mph before cutting cords and flying away.",
+        "significance": "Revolutionary planetary entry, descent, and landing achievement.",
+        "eventType": "landing",
+        "chronologicalOrder": 2,
+        "relatedCelestialBodyId": "mars",
+        "replaySceneType": "surface_descent",
+        "sourceReference": "NASA JPL MSL Seven Minutes of Terror Engineering Report (2012)"
+      },
+      {
+        "id": "ms-cur-2013",
+        "missionId": "curiosity",
+        "year": 2013,
+        "date": "2013-03-12",
+        "title": "Yellowknife Bay Habitability Confirmation",
+        "description": "SAM and CheMin instruments detected ancient freshwater lake clays containing organic carbon and low salinity.",
+        "significance": "First definitive proof that ancient Mars could have supported microbial life.",
+        "eventType": "discovery",
+        "chronologicalOrder": 3,
+        "relatedCelestialBodyId": "mars",
+        "replaySceneType": "scientific_survey",
+        "sourceReference": "Science Magazine Yellowknife Bay Papers (2013)"
+      }
+    ],
+    "sourceReference": "NASA JPL Mars Science Laboratory Public Archives (2011-2024)",
+    "source": "curated"
+  },
+  {
+    "id": "parker-solar-probe",
+    "name": "Parker Solar Probe",
+    "agency": "NASA",
+    "launchYear": 2018,
+    "launchDate": "2018-08-12",
+    "status": "Active",
+    "destinationPlanetId": "earth",
+    "destinationName": "The Sun (Solar Corona)",
+    "missionType": "Orbiter",
+    "description": "Humanity's first mission to \"touch the Sun\", flying through the outer corona at speeds exceeding 600,000 km/h.",
+    "objectives": [
+      "Trace the flow of energy that heats the solar corona and accelerates the solar wind",
+      "Determine the magnetic field structure at the sources of fast and slow solar winds",
+      "Explore mechanisms that accelerate high-energy energetic particles"
+    ],
+    "achievements": [
+      "Fastest human-made object in history (speeds reaching 692,000 km/h)",
+      "Closest approach of any spacecraft to the Sun (within 6.1 million km of the photosphere)",
+      "First spacecraft to fly directly through the magnetic boundary of the solar corona"
+    ],
+    "spacecraftDetails": {
+      "name": "Parker Solar Probe",
+      "type": "Solar Heliocentric Orbiter with Carbon-Composite Thermal Protection System",
+      "massKg": 685,
+      "launchVehicle": "Delta IV Heavy with Star 48BV Third Stage",
+      "powerSource": "Liquid-Cooled Photovoltaic Arrays",
+      "operatingEnvironment": "Extreme Solar Corona (temperatures reaching 1,400°C)",
+      "instruments": [
+        "FIELDS Magnetic Suite",
+        "ISʘIS Energetic Particle Detectors",
+        "WISPR Wide-Field Imager",
+        "SWEAP Solar Wind Plasma Detectors"
+      ]
+    },
+    "outcome": "Currently completing gravity-assist perihelion passes; unlocking the 70-year mystery of why the Sun's corona is hundreds of times hotter than its surface.",
+    "storyline": {
+      "theChallenge": "Approaching the Sun requires surviving temperatures of 1,400°C and radiation levels hundreds of times greater than at Earth.",
+      "theMission": "Engineers protected the probe with an 11.4-centimeter carbon-composite foam shield coated in white ceramic paint.",
+      "theJourney": "Using seven Venus gravity assists over seven years, Parker progressively shrinks its orbit, accelerating to over 600,000 km/h.",
+      "theDiscovery": "Discovered S-shaped magnetic \"switchbacks\" in the solar wind where magnetic fields reverse completely in seconds, releasing plasma bursts.",
+      "theLegacy": "Named after astrophysicist Eugene Parker, who predicted the solar wind in 1958; the first NASA mission named after a living scientist."
+    },
+    "milestones": [
+      {
+        "id": "ms-psp-1",
+        "missionId": "parker-solar-probe",
+        "year": 2018,
+        "date": "2018-08-12",
+        "title": "Delta IV Heavy Liftoff",
+        "description": "Delta IV Heavy launched from Cape Canaveral SLC-37B on high-energy solar trajectory.",
+        "significance": "Began the voyage to humanity's closest solar encounter.",
+        "eventType": "launch",
+        "chronologicalOrder": 1,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "launchpad",
+        "sourceReference": "NASA Launch Operations Report (2018)"
+      },
+      {
+        "id": "ms-psp-2021",
+        "missionId": "parker-solar-probe",
+        "year": 2021,
+        "date": "2021-04-28",
+        "title": "First Flight Through the Solar Corona",
+        "description": "Dipped below the Alfvén critical surface at 18.8 solar radii, directly entering the Sun's upper atmosphere.",
+        "significance": "First human spacecraft to \"touch\" the Sun.",
+        "eventType": "discovery",
+        "chronologicalOrder": 2,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "scientific_survey",
+        "sourceReference": "Physical Review Letters Parker Solar Probe Corona Entry (2021)"
+      },
+      {
+        "id": "ms-psp-2024",
+        "missionId": "parker-solar-probe",
+        "year": 2024,
+        "date": "2024-12-24",
+        "title": "Record Perihelion at 6.1 Million Kilometers",
+        "description": "Closest planned approach to the Sun at 692,000 km/h (192 km/s).",
+        "significance": "Fastest human-made object and closest stellar approach.",
+        "eventType": "milestone",
+        "chronologicalOrder": 3,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "deep_space_cruise",
+        "sourceReference": "JHUAPL Parker Flight Telemetry Status (2024)"
+      }
+    ],
+    "sourceReference": "JHUAPL / NASA Parker Solar Probe Project (2018-2024)",
+    "source": "curated"
+  },
+  {
+    "id": "perseverance",
+    "name": "Perseverance (Mars 2020)",
+    "agency": "NASA / JPL",
+    "launchYear": 2020,
+    "launchDate": "2020-07-30",
+    "status": "Active",
+    "destinationPlanetId": "mars",
+    "destinationName": "Mars (Jezero Crater)",
+    "missionType": "Rover",
+    "description": "Advanced astrobiology rover collecting Martian rock core samples for future return to Earth, accompanied by the Ingenuity Mars Helicopter.",
+    "objectives": [
+      "Search for biosignatures of ancient microbial life in Jezero river delta sediments",
+      "Drill, hermetically seal, and cache rock and regolith core samples for Mars Sample Return",
+      "Demonstrate in-situ oxygen production from the Martian atmosphere using MOXIE"
+    ],
+    "achievements": [
+      "Successfully deployed Ingenuity, achieving the first powered aircraft flight on another planet",
+      "Demonstrated extraction of breathable $O_2$ from atmospheric $CO_2$ with MOXIE",
+      "Cached 24 hermetically sealed rock cores containing sedimentary delta minerals"
+    ],
+    "spacecraftDetails": {
+      "name": "Perseverance Rover & Ingenuity Helicopter",
+      "type": "Six-Wheeled Astrobiology Rover with 1.8 kg Coaxial Helicopter",
+      "massKg": 1025,
+      "launchVehicle": "Atlas V 541",
+      "powerSource": "MMRTG (Nuclear Radioisotope Power) & Lithium-Ion Batteries",
+      "operatingEnvironment": "Jezero Crater Paleolake Basin & Delta Front",
+      "instruments": [
+        "SuperCam Laser Spectrometer",
+        "PIXL X-ray Lithochemistry",
+        "SHERLOC UV Raman Biosignature Spectrometer",
+        "MOXIE Oxygen Generator",
+        "RIMFAX Ground-Penetrating Radar"
+      ]
+    },
+    "outcome": "Operating in Jezero Crater; confirmed an ancient river delta fed a 250-meter deep lake, storing pristine rock cores for Earth laboratories.",
+    "storyline": {
+      "theChallenge": "Finding ancient microscopic fossils on Mars requires pristine rock cores sealed inside ultra-clean titanium tubes without terrestrial contamination.",
+      "theMission": "Perseverance carried a robotic coring turret, a sample-caching belly system, and an experimental 1.8 kg helicopter named Ingenuity.",
+      "theJourney": "Launched in July 2020, Perseverance utilized Terrain-Relative Navigation to target a hazardous boulder field on the Jezero delta.",
+      "theDiscovery": "Ingenuity flew 72 times across the Martian sky, while MOXIE produced 122 grams of oxygen from the thin carbon-dioxide atmosphere.",
+      "theLegacy": "The cached samples represent humanity's best opportunity to resolve whether life ever existed beyond Earth."
+    },
+    "milestones": [
+      {
+        "id": "ms-per-1",
+        "missionId": "perseverance",
+        "year": 2020,
+        "date": "2020-07-30",
+        "title": "Launch from Cape Canaveral Space Force Station",
+        "description": "Atlas V 541 lifted Perseverance on a Mars transfer orbit.",
+        "significance": "Began the Mars 2020 Astrobiology Mission.",
+        "eventType": "launch",
+        "chronologicalOrder": 1,
+        "relatedCelestialBodyId": "mars",
+        "replaySceneType": "launchpad",
+        "sourceReference": "NASA Mars 2020 Launch Press Kit (2020)"
+      },
+      {
+        "id": "ms-per-2021",
+        "missionId": "perseverance",
+        "year": 2021,
+        "date": "2021-02-18",
+        "title": "Touchdown in Jezero Crater",
+        "description": "Executed Terrain-Relative Navigation touchdown at Octavia E. Butler Landing site.",
+        "significance": "Safe delivery of the rover and Ingenuity helicopter in a paleolake delta.",
+        "eventType": "landing",
+        "chronologicalOrder": 2,
+        "relatedCelestialBodyId": "mars",
+        "replaySceneType": "surface_descent",
+        "sourceReference": "NASA JPL Jezero Landing Operations Log (2021)"
+      },
+      {
+        "id": "ms-per-2021b",
+        "missionId": "perseverance",
+        "year": 2021,
+        "date": "2021-04-19",
+        "title": "First Powered Flight of Ingenuity Helicopter",
+        "description": "Ingenuity climbed to 3 meters, hovered, and landed softly, proving aerodynamic flight in Mars's thin air.",
+        "significance": "Wright Brothers moment of extraterrestrial aviation.",
+        "eventType": "discovery",
+        "chronologicalOrder": 3,
+        "relatedCelestialBodyId": "mars",
+        "replaySceneType": "scientific_survey",
+        "sourceReference": "NASA JPL Ingenuity Flight Log #1 (2021)"
+      },
+      {
+        "id": "ms-per-2022",
+        "missionId": "perseverance",
+        "year": 2022,
+        "date": "2022-12-21",
+        "title": "First Sample Depot Established on Mars",
+        "description": "Deposited the first of 10 backup titanium sample tubes onto the surface at \"Three Forks\".",
+        "significance": "First sample cache laid down for interplanetary retrieval.",
+        "eventType": "milestone",
+        "chronologicalOrder": 4,
+        "relatedCelestialBodyId": "mars",
+        "replaySceneType": "scientific_survey",
+        "sourceReference": "NASA Mars Sample Return Depot Announcement (2022)"
+      }
+    ],
+    "sourceReference": "NASA JPL Mars 2020 Public Data Portal (2020-2024)",
+    "source": "curated"
+  },
+  {
+    "id": "jwst",
+    "name": "James Webb Space Telescope",
+    "agency": "NASA / ESA / CSA",
+    "launchYear": 2021,
+    "launchDate": "2021-12-25",
+    "status": "Active",
+    "destinationPlanetId": "earth",
+    "destinationName": "Sun-Earth L2 Lagrange Point (1.5M km)",
+    "missionType": "Space Observatory",
+    "description": "Humanity's flagship infrared space observatory, featuring a 6.5-meter gold-coated beryllium mirror to observe the first stars and early universe.",
+    "objectives": [
+      "Search for the first stars and galaxies that formed after the Big Bang",
+      "Study galaxy assembly and dark matter distribution across cosmic time",
+      "Observe stellar and protoplanetary system formation through interstellar dust",
+      "Perform atmospheric transmission spectroscopy on exoplanets to detect water, $CO_2$, and potential biosignatures"
+    ],
+    "achievements": [
+      "Largest and most powerful telescope ever launched into space (6.5-meter primary aperture)",
+      "Imaged the earliest galaxies known, dating to just 300 million years after the Big Bang",
+      "Detected atmospheric carbon dioxide, water vapor, and sulfur dioxide on distant exoplanets"
+    ],
+    "spacecraftDetails": {
+      "name": "James Webb Space Telescope (JWST)",
+      "type": "Cryogenic Infrared Space Telescope with 5-Layer Kapton Sunshield",
+      "massKg": 6161,
+      "launchVehicle": "Ariane 5 ECA (Flight VA256)",
+      "powerSource": "Deployable 2 kW Solar Array",
+      "operatingEnvironment": "Halo Orbit around the Sun-Earth L2 Lagrange Point (-233°C operating temperature)",
+      "instruments": [
+        "NIRCam (Near-Infrared Camera)",
+        "NIRSpec (Near-Infrared Spectrograph)",
+        "MIRI (Mid-Infrared Instrument with Cryocooler)",
+        "FGS/NIRISS (Fine Guidance Sensor)"
+      ]
+    },
+    "outcome": "Operating flawlessly at the L2 point with over 20 years of fuel remaining; revolutionizing astronomy daily.",
+    "storyline": {
+      "theChallenge": "Building a 6.5-meter mirror that could fold inside an Ariane 5 rocket fairing and unfurl 344 single-point-of-failure mechanisms in deep space.",
+      "theMission": "NASA, ESA, and CSA constructed 18 hexagonal beryllium segments coated in vapor-deposited gold, protected by a tennis-court-sized sunshield.",
+      "theJourney": "Launched on Christmas Day 2021 from Kourou, Webb executed a month-long unfolding sequence while cruising 1.5 million kilometers to the L2 point.",
+      "theDiscovery": "Webb looked deeper into the cosmos than ever before, uncovering luminous early galaxies that challenge conventional models of galaxy formation.",
+      "theLegacy": "Provides unprecedented clarity into cosmic origins and the atmospheres of alien worlds throughout the 2020s and 2030s."
+    },
+    "milestones": [
+      {
+        "id": "ms-jwst-2021",
+        "missionId": "jwst",
+        "year": 2021,
+        "date": "2021-12-25",
+        "title": "Christmas Ariane 5 Launch from Kourou",
+        "description": "Ariane 5 flight VA256 achieved textbook translunar injection toward the Sun-Earth L2 point.",
+        "significance": "Precision launch conserved propellant, extending Webb's operational life to 20+ years.",
+        "eventType": "launch",
+        "chronologicalOrder": 1,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "launchpad",
+        "sourceReference": "Arianespace Launch Kit VA256 (2021)"
+      },
+      {
+        "id": "ms-jwst-2022a",
+        "missionId": "jwst",
+        "year": 2022,
+        "date": "2022-01-08",
+        "title": "Primary Mirror Deployment & Sunshield Tensioning",
+        "description": "Completed 344 single-point-of-failure deployments, latching both mirror wings into place.",
+        "significance": "Most complex robotic unfolding sequence in aerospace history.",
+        "eventType": "milestone",
+        "chronologicalOrder": 2,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "deep_space_cruise",
+        "sourceReference": "NASA Goddard JWST Commissioning Report (2022)"
+      },
+      {
+        "id": "ms-jwst-2022",
+        "missionId": "jwst",
+        "year": 2022,
+        "date": "2022-07-12",
+        "title": "First Operational Deep Field Release",
+        "description": "NASA, ESA, and CSA unveiled the first full-color images, including galaxy cluster SMACS 0723.",
+        "significance": "Deepest and sharpest infrared image of the distant universe to date.",
+        "eventType": "discovery",
+        "chronologicalOrder": 3,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "scientific_survey",
+        "sourceReference": "White House & NASA Joint Briefing (2022)"
+      }
+    ],
+    "sourceReference": "Space Telescope Science Institute / NASA JWST Archive (2021-2024)",
+    "source": "curated"
+  },
+  {
+    "id": "dart",
+    "name": "DART (Double Asteroid Redirection Test)",
+    "agency": "NASA / JHUAPL",
+    "launchYear": 2021,
+    "launchDate": "2021-11-24",
+    "status": "Completed",
+    "destinationPlanetId": "earth",
+    "destinationName": "Didymos & Dimorphos Binary Asteroid",
+    "missionType": "Impactor",
+    "description": "The world's first planetary defense test mission, intentionally impacting an asteroid moonlet to demonstrate kinetic orbital deflection.",
+    "objectives": [
+      "Demonstrate autonomous kinetic impact navigation onto a small asteroid target",
+      "Measure momentum transfer efficiency and ejecta plume dynamics",
+      "Alter the 11.9-hour binary orbital period of Dimorphos around Didymos by at least 73 seconds"
+    ],
+    "achievements": [
+      "First intentional human deflection of a celestial body's orbital trajectory",
+      "Shortened Dimorphos's orbital period by 33 minutes (exceeding minimum target by 25×)",
+      "Captured high-resolution imagery of Dimorphos's boulder-strewn rubble-pile surface up to 1 second before impact"
+    ],
+    "spacecraftDetails": {
+      "name": "DART Kinetic Impactor Spacecraft",
+      "type": "Kinetic Impactor Spacecraft with LICIACube CubeSat Deployer",
+      "massKg": 550,
+      "launchVehicle": "Falcon 9 Full Thrust",
+      "powerSource": "Roll-Out Solar Arrays (ROSA, 3.5 kW)",
+      "operatingEnvironment": "Deep Space Interplanetary Transfer & Binary Asteroid Encounter",
+      "instruments": [
+        "DRACO High-Resolution Reconnaissance Camera",
+        "SMART Nav Autonomous Kinetic Guidance System"
+      ]
+    },
+    "outcome": "Collided directly into Dimorphos at 6.1 km/s on September 26, 2022, permanently changing its orbit and proving kinetic deflection viable for planetary defense.",
+    "storyline": {
+      "theChallenge": "Hitting a 160-meter asteroid 11 million km from Earth at 22,000 km/h required autonomous visual targeting without real-time human control.",
+      "theMission": "NASA and Johns Hopkins APL designed DART with SMART Nav computer vision to distinguish between Didymos and its tiny moonlet Dimorphos.",
+      "theJourney": "Launched on a Falcon 9 in November 2021, DART cruised for 10 months toward the binary asteroid system.",
+      "theDiscovery": "DRACO transmitted live streaming images until the camera impacted Dimorphos at 6.1 km/s. Ground telescopes detected a 10,000-km debris tail.",
+      "theLegacy": "Proved for the first time that humanity has the technical capability to deflect a hazardous asteroid away from an Earth collision path."
+    },
+    "milestones": [
+      {
+        "id": "ms-dart-1",
+        "missionId": "dart",
+        "year": 2021,
+        "date": "2021-11-24",
+        "title": "Falcon 9 Liftoff from Vandenberg",
+        "description": "Launched from Space Launch Complex 4E on an asteroid intercept vector.",
+        "significance": "Inaugural planetary defense test flight.",
+        "eventType": "launch",
+        "chronologicalOrder": 1,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "launchpad",
+        "sourceReference": "NASA DART Launch Press Release (2021)"
+      },
+      {
+        "id": "ms-dart-2022",
+        "missionId": "dart",
+        "year": 2022,
+        "date": "2022-09-26",
+        "title": "Kinetic Impact into Asteroid Dimorphos",
+        "description": "Collided squarely into Dimorphos at 6.1 km/s (14,000 mph) under autonomous SMART Nav control.",
+        "significance": "First intentional planetary defense deflection impact in human history.",
+        "eventType": "conclusion",
+        "chronologicalOrder": 2,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "impact",
+        "sourceReference": "NASA / JHUAPL DART Impact Statement (2022)"
+      },
+      {
+        "id": "ms-dart-2022b",
+        "missionId": "dart",
+        "year": 2022,
+        "date": "2022-10-11",
+        "title": "Orbital Period Deflection Confirmation",
+        "description": "Worldwide observatories confirmed Dimorphos's orbital period was altered by 33 minutes.",
+        "significance": "Proved kinetic impactors can successfully divert hazardous asteroids.",
+        "eventType": "discovery",
+        "chronologicalOrder": 3,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "scientific_survey",
+        "sourceReference": "Nature DART Planetary Defense Results Papers (2023)"
+      }
+    ],
+    "sourceReference": "NASA Planetary Defense Coordination Office / JHUAPL (2021-2023)",
+    "source": "curated"
+  },
+  {
+    "id": "chandrayaan-3",
+    "name": "Chandrayaan-3",
+    "agency": "ISRO",
+    "launchYear": 2023,
+    "launchDate": "2023-07-14",
+    "status": "Completed",
+    "destinationPlanetId": "earth",
+    "destinationName": "Lunar South Pole Region (Shiv Shakti Point)",
+    "missionType": "Lander",
+    "description": "Historic Indian lunar exploration mission making India the first nation to achieve a soft touchdown in the unexplored lunar south polar highlands.",
+    "objectives": [
+      "Demonstrate safe and soft landing near lunar south polar latitude (~69.37° S)",
+      "Deploy the Pragyan rover for in-situ laser-induced breakdown spectroscopy of polar regolith",
+      "Conduct thermo-physical and seismic characterization of the lunar south polar surface"
+    ],
+    "achievements": [
+      "First nation in human history to land near the lunar south pole",
+      "Directly confirmed sulfur in the south polar regolith using LIBS and APXS sensors",
+      "Measured lunar surface thermophysical gradient demonstrating extreme thermal insulation of lunar soil"
+    ],
+    "spacecraftDetails": {
+      "name": "Chandrayaan-3 (Vikram Lander & Pragyan Rover)",
+      "type": "Lunar Soft Lander with Six-Wheeled 26 kg Rover",
+      "massKg": 3900,
+      "launchVehicle": "LVM3-M4 (Fat Boy)",
+      "powerSource": "Solar Panels (738 W Lander, 50 W Rover)",
+      "operatingEnvironment": "Lunar South Pole High Latitude (Shiv Shakti Point, 69.37° S)",
+      "instruments": [
+        "LIBS Laser Spectroscope",
+        "APXS Alpha Particle X-ray Spectrometer",
+        "ChaSTE Thermal Probe",
+        "ILSA Lunar Seismic Instrument"
+      ]
+    },
+    "outcome": "Successfully executed all primary mission goals across one lunar day (14 Earth days), cementing India's position as a premier spacefaring nation.",
+    "storyline": {
+      "theChallenge": "The lunar south pole features rugged craters, steep slopes, and long shadows, making soft landing far more perilous than equatorial Apollo sites.",
+      "theMission": "ISRO redesigned Vikram with reinforced legs, hazard-detection algorithms, and extra propellant after learning from Chandrayaan-2.",
+      "theJourney": "Launched on the LVM3 rocket from Sriharikota, Chandrayaan-3 used fuel-efficient Earth and Moon orbits before deboosting for landing.",
+      "theDiscovery": "On August 23, 2023, Vikram touched down gently at Shiv Shakti Point. Pragyan deployed and flashed laser pulses onto rocks, confirming elemental sulfur.",
+      "theLegacy": "Opened the resource-rich lunar south polar region for the next era of permanent lunar outposts and water-ice harvesting."
+    },
+    "milestones": [
+      {
+        "id": "ms-ch3-1",
+        "missionId": "chandrayaan-3",
+        "year": 2023,
+        "date": "2023-07-14",
+        "title": "LVM3-M4 Liftoff from Sriharikota",
+        "description": "LVM3 heavy-lift rocket launched Chandrayaan-3 into Earth orbit from Satish Dhawan Space Centre.",
+        "significance": "Initiated India's third lunar exploration mission.",
+        "eventType": "launch",
+        "chronologicalOrder": 1,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "launchpad",
+        "sourceReference": "ISRO Chandrayaan-3 Launch Press Release (2023)"
+      },
+      {
+        "id": "ms-ch3-2",
+        "missionId": "chandrayaan-3",
+        "year": 2023,
+        "date": "2023-08-05",
+        "title": "Lunar Orbit Insertion",
+        "description": "Propulsion module retro-fired to enter an elliptical lunar orbit.",
+        "significance": "Arrival in lunar orbit.",
+        "eventType": "orbit",
+        "chronologicalOrder": 2,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "orbital_insertion",
+        "sourceReference": "ISRO Orbit Maneuvers Log (2023)"
+      },
+      {
+        "id": "ms-ch3-2023",
+        "missionId": "chandrayaan-3",
+        "year": 2023,
+        "date": "2023-08-23",
+        "title": "Historic Lunar South Pole Touchdown",
+        "description": "Vikram lander touched down softly at Shiv Shakti Point (69.37° S, 32.35° E).",
+        "significance": "First landing in human history near the lunar south pole.",
+        "eventType": "landing",
+        "chronologicalOrder": 3,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "surface_descent",
+        "sourceReference": "ISRO Official Landing Announcement (2023)"
+      },
+      {
+        "id": "ms-ch3-4",
+        "missionId": "chandrayaan-3",
+        "year": 2023,
+        "date": "2023-08-28",
+        "title": "Laser In-Situ Sulfur Detection by Pragyan",
+        "description": "Pragyan's Laser-Induced Breakdown Spectroscopy (LIBS) instrument unambiguously detected sulfur and iron in south polar soil.",
+        "significance": "First in-situ compositional confirmation at lunar south polar latitudes.",
+        "eventType": "discovery",
+        "chronologicalOrder": 4,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "scientific_survey",
+        "sourceReference": "ISRO Science Operations Update (2023)"
+      }
+    ],
+    "sourceReference": "ISRO Chandrayaan-3 Mission Operations Documentation (2023)",
+    "source": "curated"
+  },
+  {
+    "id": "artemis-1",
+    "name": "Artemis I",
+    "agency": "NASA / ESA",
+    "launchYear": 2022,
+    "launchDate": "2022-11-16",
+    "status": "Completed",
+    "destinationPlanetId": "earth",
+    "destinationName": "Distant Retrograde Lunar Orbit",
+    "missionType": "Crewed",
+    "description": "Inaugural uncrewed integrated flight test of the Space Launch System (SLS) mega-rocket and Orion spacecraft around the Moon.",
+    "objectives": [
+      "Validate SLS rocket flight performance during translunar injection",
+      "Test Orion heat shield integrity during high-speed lunar reentry (40,000 km/h)",
+      "Demonstrate deep space navigation and communications in Distant Retrograde Orbit (DRO)"
+    ],
+    "achievements": [
+      "Orion traveled 432,210 km from Earth, farther than any human-rated spacecraft in history",
+      "Tested the European Service Module (ESM) providing life support power and propulsion",
+      "Flawless skip reentry and Pacific Ocean recovery off the coast of Baja California"
+    ],
+    "spacecraftDetails": {
+      "name": "Orion Spacecraft & European Service Module (ESM)",
+      "type": "Human-Rated Deep Space Capsule and Service Module",
+      "massKg": 33446,
+      "launchVehicle": "Space Launch System (SLS Block 1)",
+      "powerSource": "Four Solar Array Wings (producing 11 kW electrical power)",
+      "operatingEnvironment": "Translunar Deep Space & Distant Retrograde Lunar Orbit",
+      "instruments": [
+        "Optical Navigation Cameras",
+        "Matroshka AstroRad Radiation Phantoms",
+        "Artemis CubeSat Payloads"
+      ]
+    },
+    "outcome": "Completed a 25.5-day flight traveling 2.25 million kilometers, proving the SLS and Orion flight architecture ready for crewed Artemis II mission.",
+    "storyline": {
+      "theChallenge": "Returning humans to the Moon required building the most powerful operational rocket since the Saturn V, generating 8.8 million pounds of thrust.",
+      "theMission": "NASA and the European Space Agency integrated the SLS rocket with the Orion crew capsule for an uncrewed shakedown cruise.",
+      "theJourney": "Launched in the Florida night on November 16, 2022, Orion performed a close lunar flyby just 130 km above the surface before entering Distant Retrograde Orbit.",
+      "theDiscovery": "Orion shattered Apollo 13's distance record, capturing stunning vistas of the Moon with Earth rising in the background.",
+      "theLegacy": "Proved the transportation architecture that will land the next astronauts, including the first woman and first person of color, on the Moon."
+    },
+    "milestones": [
+      {
+        "id": "ms-art1-2022",
+        "missionId": "artemis-1",
+        "year": 2022,
+        "date": "2022-11-16",
+        "title": "Space Launch System Maiden Liftoff",
+        "description": "SLS generated 8.8 million pounds of thrust, lifting Orion from Launch Pad 39B at Kennedy Space Center.",
+        "significance": "Began the modern international deep space lunar architecture.",
+        "eventType": "launch",
+        "chronologicalOrder": 1,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "launchpad",
+        "sourceReference": "NASA Artemis I Launch Report (2022)"
+      },
+      {
+        "id": "ms-art1-2",
+        "missionId": "artemis-1",
+        "year": 2022,
+        "date": "2022-11-28",
+        "title": "Maximum Distance from Earth",
+        "description": "Orion reached 432,210 km from Earth in Distant Retrograde Orbit.",
+        "significance": "Farthest distance from Earth traveled by a spacecraft designed for humans.",
+        "eventType": "orbit",
+        "chronologicalOrder": 2,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "deep_space_cruise",
+        "sourceReference": "NASA Orion Deep Space Operations Log (2022)"
+      },
+      {
+        "id": "ms-art1-3",
+        "missionId": "artemis-1",
+        "year": 2022,
+        "date": "2022-12-11",
+        "title": "Skip Entry & Pacific Ocean Splashdown",
+        "description": "Orion performed a skip reentry maneuver into the atmosphere at 40,000 km/h, splashing down safely near Guadalupe Island.",
+        "significance": "Validated the lunar reentry heat shield for future crewed flights.",
+        "eventType": "conclusion",
+        "chronologicalOrder": 3,
+        "relatedCelestialBodyId": "earth",
+        "replaySceneType": "surface_descent",
+        "sourceReference": "NASA Artemis I Recovery Operations (2022)"
+      }
+    ],
+    "sourceReference": "NASA Artemis I Final Flight Assessment Report (2023)",
+    "source": "curated"
+  }
+]

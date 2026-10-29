@@ -2,8 +2,9 @@
 ## CosmoStellarAtlas — Open Space Exploration Portal
 **Architecture Style:** Modular Component-Driven Client-Side Architecture  
 **Author:** Rufus Samuel R  
+**Registration Number:** URK25CS1090  
 **Institution:** Karunya Institute of Technology and Sciences  
-**Version:** 1.3.0 (Phase 4 Mars Rover Explorer & Photo Discovery Lab)  
+**Version:** 1.6.0 (Phase 8 Final Production Release)  
 
 ---
 
@@ -636,8 +637,56 @@ Phase 7 elevates CosmoStellarAtlas into a personalized, self-directed educationa
   - **Level 4 (Deep Space Voyager):** 7–9 achievements unlocked.
   - **Level 5 (Master of the Cosmos):** 10–12 achievements unlocked.
 
+---
 
+## 13. Phase 8 Architecture: System Integration, Fault Isolation & Python Tooling Pipeline
 
+Phase 8 elevates the platform to production readiness by introducing formal fault-isolation boundaries, cross-module integration verifications, automated CI/CD deployment pipelines, and a dedicated offline Python analytical tooling suite.
 
+```
++----------------------------------------------------------------------------------------------------+
+|                           OFFLINE DEVELOPMENT & VALIDATION PIPELINE                                |
+|                                                                                                    |
+|   [Python Data Utilities]                                                                          |
+|     ├── generate_demo_data.py   --> Generates reproducible synthetic records with seed=42          |
+|     ├── asteroid_physics.py     --> Reference Newtonian kinetic impact & TNT calculations          |
+|     ├── validate_datasets.py    --> Validates schema, types, duplicate IDs & referential checks    |
+|     └── dataset_statistics.py   --> Profiles dataset metrics, decades, and completeness score      |
+|                                                                                                    |
+|                                                │                                                   |
+|                                                ▼                                                   |
+|                             [Canonical JSON Datasets (src/data/json/)]                             |
+|                             planets.json  missions.json  rovers.json                               |
+|                             asteroids.json launches.json learningTrails.json                       |
+|                                                                                                    |
+|                                                │                                                   |
+|                                                ▼                                                   |
+|                                [TypeScript Static Provider Bridge]                                 |
+|                                      MockSpaceDataProvider (spaceService)                          |
+|                                                                                                    |
+|                                                │                                                   |
+|                                                ▼                                                   |
+|                       [Global Error Boundary (ErrorBoundary.tsx)]                                  |
+|                         Isolates component exceptions & renders recovery HUD                       |
+|                                                                                                    |
+|                                                │                                                   |
+|                                                ▼                                                   |
+|                           [Production Single Page Application]                                     |
+|                                      Vite 6 + HashRouter                                           |
+|                                                                                                    |
+|                                                │                                                   |
+|                                                ▼                                                   |
+|                        [GitHub Actions CI/CD (deploy.yml)]                                         |
+|                         Tests, Builds & Deploys to GitHub Pages Static Host                        |
++----------------------------------------------------------------------------------------------------+
+```
 
+### Architectural Highlights:
+1. **Zero-Dependency Python Offline Pipeline:**
+   - Operates purely using the Python standard library (`argparse`, `json`, `math`, `unittest`, `re`).
+   - Never acts as a live server or production runtime dependency; rather, it guarantees dataset provenance and mathematical calculation parity during development and continuous integration.
+2. **React Global Error Boundary:**
+   - Prevents white screens by capturing runtime anomalies in any sub-module or WebGL canvas, providing tactile AstroNav buttons to safely "Re-initialize Subsystem" or "Return to Observatory".
+3. **Hash-Based Static Routing:**
+   - `HashRouter` with relative asset addressing (`base: './'`) in `vite.config.ts` ensures deep linking and direct page refreshes function flawlessly on GitHub Pages without requiring server-side rewrite rules.
 
