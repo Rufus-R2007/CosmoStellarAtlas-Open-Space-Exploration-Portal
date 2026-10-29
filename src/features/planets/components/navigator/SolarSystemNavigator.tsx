@@ -168,3 +168,4 @@ export const SolarSystemNavigator: React.FC<SolarSystemNavigatorProps> = ({
     </div>
   );
 };
+

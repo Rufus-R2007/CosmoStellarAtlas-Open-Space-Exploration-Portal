@@ -313,5 +313,299 @@ flowchart TD
     Synthesize --> RenderView["Render Side-by-Side Scale Circles, Metric Bars, and Insight Cards"]
 ```
 
+---
+
+
+## 9. Use Case Model: Phase 3 Cosmic Time Machine & Mission Control
+```mermaid
+flowchart LR
+    User["Explorer / Flight Historian"]
+
+    subgraph TimeMachine["Cosmic Time Machine (/timeline)"]
+        UC_Scrub["Scrub Continuous Historical Timeline (1957–Present)"]
+        UC_Decade["Jump Between Epoch Decades (1950s–2020s)"]
+        UC_PlayAdvance["Auto-Advance Timeline Playback"]
+        UC_EpochReview["Inspect Contemporaneous Spaceflight Telemetry"]
+        UC_Capsules["Explore Curated Cosmic Time Capsules"]
+    end
+
+    subgraph MissionControl["Mission Control Archive (/missions)"]
+        UC_Search["Search Missions by Name, Agency, or Goal"]
+        UC_Filters["Filter by Agency, Destination, Type, or Decade"]
+        UC_EpochSync["Toggle Synchronized Temporal Epoch Filter"]
+        UC_Sort["Sort by Date, Duration, or Alphabetical"]
+        UC_Analytics["Analyze Historical Distribution Charts"]
+        UC_Insights["Inspect Deterministic Historical Insights"]
+    end
+
+    subgraph MissionDossier["Mission Dossier & Replay (/missions/:id)"]
+        UC_Specs["Examine Spacecraft Hardware & Payload Specs"]
+        UC_Story["Read 5-Chapter Mission Narrative"]
+        UC_Milestones["Review Chronological Milestones Timeline"]
+        UC_Replay["Execute Interactive Canvas Mission Replay"]
+        UC_Speed["Adjust Replay Speed (0.5x, 1x, 2x)"]
+    end
+
+    User --> UC_Scrub
+    User --> UC_Decade
+    User --> UC_PlayAdvance
+    User --> UC_EpochReview
+    User --> UC_Capsules
+
+    User --> UC_Search
+    User --> UC_Filters
+    User --> UC_EpochSync
+    User --> UC_Sort
+    User --> UC_Analytics
+    User --> UC_Insights
+
+    User --> UC_Specs
+    User --> UC_Story
+    User --> UC_Milestones
+    User --> UC_Replay
+    User --> UC_Speed
 ```
 
+---
+
+## 10. Activity Diagram: Cosmic Time Machine Scrubbing & Cross-Module Filtering
+```mermaid
+flowchart TD
+    Start(["User Opens Cosmic Time Machine"]) --> LoadState["Read selectedYear from useAppStore"]
+    LoadState --> RenderScrubber["Render TimelineScrubber with Landmark Markers"]
+    RenderScrubber --> RenderOverview["Render EpochOverviewPanel for selectedYear"]
+    RenderOverview --> RenderCapsules["Render TimeCapsuleCarousel Highlights"]
+
+    RenderScrubber --> UserInput{"User Action"}
+    UserInput -- "Drag Scrubber Slider" --> UpdateLocalYear["Update Scrubber Value"]
+    UserInput -- "Click Decade Jump Pill" --> SetDecadeYear["Set selectedYear to Decade Base (e.g. 1970)"]
+    UserInput -- "Click Milestone Step" --> StepMilestoneYear["Set selectedYear to Target Milestone Year"]
+    UserInput -- "Toggle Play / Pause" --> AutoLoop["Increment Year on 1200ms Interval"]
+
+    UpdateLocalYear --> SyncStore["Call useAppStore.setSelectedYear(year)"]
+    SetDecadeYear --> SyncStore
+    StepMilestoneYear --> SyncStore
+    AutoLoop --> SyncStore
+
+    SyncStore --> RefreshOverview["EpochOverviewPanel Recalculates Operating Missions & Milestones"]
+    RefreshOverview --> CrossModuleNav{"User Clicks 'Open in Mission Control'"}
+    CrossModuleNav -- Yes --> NavMissions["Navigate to /missions with Epoch Filter Active"]
+    NavMissions --> FilterMissions["Missions Grid Constrained to Selected Historical Epoch"]
+```
+
+---
+
+## 11. State Machine Diagram: Mission Replay Engine Lifecycle
+```mermaid
+stateDiagram-v2
+    [*] --> Idle: Mount MissionReplayEngine
+
+    state Idle {
+        [*] --> Milestone0: Set milestone index = 0
+        Milestone0 --> ReadyForPlayback: Parse tactical scene parameters
+    }
+
+    Idle --> Playing: User clicks Play
+    Playing --> Paused: User clicks Pause
+    Paused --> Playing: User clicks Resume
+
+    state Playing {
+        [*] --> RenderTacticalScene: Draw scene on 2D Canvas
+        RenderTacticalScene --> AnimateTrajectory: Advance particles & telemetry
+        AnimateTrajectory --> CheckInterval: Milestone duration elapsed?
+        CheckInterval --> StepNext: Yes - Increment milestone index
+        StepNext --> RenderTacticalScene: Has next milestone
+        StepNext --> Finished: Reached final milestone
+    }
+
+    Playing --> Playing: User changes Speed (0.5x, 1x, 2x)
+    Playing --> MilestoneSelected: User drags scrubber or clicks milestone tick
+    Paused --> MilestoneSelected: User drags scrubber or clicks milestone tick
+
+    state MilestoneSelected {
+        [*] --> UpdateIndex: Set milestone index
+        UpdateIndex --> RenderNewScene: Re-render tactical canvas
+    }
+
+    MilestoneSelected --> Paused: If was paused
+    MilestoneSelected --> Playing: If was playing
+
+    Finished --> Paused: Mark playback finished
+    Paused --> Idle: User clicks Restart (Replay from 0)
+    Playing --> Idle: User clicks Restart (Replay from 0)
+
+    Idle --> [*]: Unmount / Close Modal
+    Paused --> [*]: Unmount / Close Modal
+```
+
+---
+
+## 12. Sequence Diagram: Mission Archive Navigation & Replay Launch
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as User / Flight Director
+    participant MPage as MissionsPage
+    participant MStore as useAppStore
+    participant MCard as MissionCard
+    participant DPage as MissionDetailPage
+    participant Story as MissionStoryteller
+    participant Replay as MissionReplayEngine
+
+    User->>MPage: Open /missions
+    MPage->>MStore: Read selectedYear & filters
+    MPage->>MPage: Filter 20 missions across criteria
+    MPage->>User: Display Filtered Mission Dossier Cards
+
+    alt Launch Replay Direct from Card
+        User->>MCard: Click "Launch Replay"
+        MCard->>MPage: onSelectForReplay(mission)
+        MPage->>Replay: Open Replay Modal(mission)
+        Replay->>User: Play Animated Tactical Milestones
+    else Navigate to Detail Dossier
+        User->>MCard: Click "Mission Dossier"
+        MPage->>DPage: Navigate to /missions/:missionId
+        DPage->>DPage: Resolve mission by ID from MockSpaceDataProvider
+        DPage->>Story: Render 5-Chapter Narrative Sections
+        DPage->>User: Display Full Technical Identity & Milestones
+        User->>DPage: Click "Replay Flight Trajectory"
+        DPage->>Replay: Mount MissionReplayEngine(mission)
+        Replay->>User: Interactive Tactical Canvas Simulation
+    end
+```
+
+---
+
+## 13. Component Diagram: Mission Control & Time Machine Subsystems
+```mermaid
+graph TD
+    subgraph Routes["Application Routes"]
+        R_Timeline["/timeline (TimelinePage)"]
+        R_Missions["/missions (MissionsPage)"]
+        R_Detail["/missions/:missionId (MissionDetailPage)"]
+    end
+
+    subgraph TimeMachine_Components["Time Machine Subsystem"]
+        Scrubber["TimelineScrubber"]
+        EpochPanel["EpochOverviewPanel"]
+        CapsulesCarousel["TimeCapsuleCarousel"]
+        CapsuleCard["TimeCapsuleCard"]
+    end
+
+    subgraph MissionControl_Components["Mission Control Subsystem"]
+        MStats["Archive Summary Header"]
+        MFilters["MissionFilters"]
+        MAnalytics["MissionAnalyticsSection (Recharts)"]
+        InsightsEngine["HistoricalInsightsEngine"]
+        MGrid["MissionCard Array"]
+    end
+
+    subgraph Dossier_Components["Dossier & Replay Subsystem"]
+        DossierHeader["Identity & Flight Heritage Header"]
+        SpecsPanel["Spacecraft Technical Specs"]
+        Storyteller["MissionStoryteller (5 Chapters)"]
+        MilestonesList["Chronological Milestones Timeline"]
+        ReplayEngine["MissionReplayEngine (Canvas)"]
+    end
+
+    subgraph Store_Service["Global Store & Services"]
+        AppStore["useAppStore (Zustand)"]
+        Provider["SpaceDataProvider (MockSpaceDataProvider)"]
+        Datasets["missionsData & timeCapsulesData"]
+    end
+
+    R_Timeline --> Scrubber
+    R_Timeline --> EpochPanel
+    R_Timeline --> CapsulesCarousel
+    CapsulesCarousel --> CapsuleCard
+
+    R_Missions --> MStats
+    R_Missions --> MFilters
+    R_Missions --> MAnalytics
+    MAnalytics --> InsightsEngine
+    R_Missions --> MGrid
+    R_Missions --> ReplayEngine
+
+    R_Detail --> DossierHeader
+    R_Detail --> SpecsPanel
+    R_Detail --> Storyteller
+    R_Detail --> MilestonesList
+    R_Detail --> ReplayEngine
+
+    Scrubber <--> AppStore
+    EpochPanel --> Provider
+    CapsulesCarousel --> Datasets
+    MFilters <--> AppStore
+    MGrid --> Provider
+    DPage --> Provider
+    Provider --> Datasets
+```
+
+---
+
+## 14. Enriched Entity Relationship Diagram (ERD): Phase 3 Data Model
+```mermaid
+erDiagram
+    PLANET ||--o{ MISSION : "associated with"
+    MISSION ||--|{ MISSION_MILESTONE : "chronological sequence"
+    MISSION ||--o| SPACECRAFT_DETAILS : "hardware specs"
+    MISSION ||--o| MISSION_STORYLINE : "5-chapter narrative"
+    TIME_CAPSULE }o--|| MISSION : "optional link to"
+
+    MISSION {
+        string id PK
+        string name
+        string agency
+        int launchYear
+        string launchDate
+        string status
+        string destinationPlanetId FK
+        string destinationName
+        string missionType
+        string description
+        string outcome
+        string primaryObjective
+        string source
+    }
+
+    MISSION_MILESTONE {
+        string id PK
+        string missionId FK
+        int year
+        string date
+        string title
+        string description
+        string significance
+        string replaySceneType
+        string eventType
+        int chronologicalOrder
+        string sourceReference
+    }
+
+    SPACECRAFT_DETAILS {
+        string dryMassKg
+        string launchMassKg
+        string powerSource
+        string instrumentsList
+        string trajectoryType
+    }
+
+    MISSION_STORYLINE {
+        string theChallenge
+        string theMission
+        string theJourney
+        string theDiscovery
+        string theLegacy
+    }
+
+    TIME_CAPSULE {
+        string id PK
+        int year
+        string title
+        string category
+        string description
+        string significance
+        string relatedMissionId FK
+        string sourceReference
+    }
+```

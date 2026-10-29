@@ -4,6 +4,7 @@ import { AppLayout } from '../components/layout/AppLayout';
 import { ObservatoryPage } from '../features/observatory/ObservatoryPage';
 import { PlanetsPage } from '../features/planets/PlanetsPage';
 import { MissionsPage } from '../features/missions/MissionsPage';
+import { MissionDetailPage } from '../features/missions/MissionDetailPage';
 import { TimelinePage } from '../features/timeline/TimelinePage';
 import { RoversPage } from '../features/rovers/RoversPage';
 import { AsteroidsPage } from '../features/asteroids/AsteroidsPage';
@@ -20,6 +21,7 @@ export const App: React.FC = () => {
           <Route index element={<ObservatoryPage />} />
           <Route path="planets" element={<PlanetsPage />} />
           <Route path="missions" element={<MissionsPage />} />
+          <Route path="missions/:missionId" element={<MissionDetailPage />} />
           <Route path="timeline" element={<TimelinePage />} />
           <Route path="rovers" element={<RoversPage />} />
           <Route path="asteroids" element={<AsteroidsPage />} />

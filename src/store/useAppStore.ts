@@ -6,9 +6,13 @@ export type VisualEffectsLevel = 'high' | 'minimal' | 'off';
 export type TelemetryUnits = 'metric' | 'imperial';
 
 interface AppState {
-  // Flagship Temporal State
+  // Flagship Temporal & Mission State
   selectedYear: number;
   setSelectedYear: (year: number) => void;
+  selectedMissionId: string | null;
+  setSelectedMissionId: (id: string | null) => void;
+  timelineDecadeFilter: string | null;
+  setTimelineDecadeFilter: (decade: string | null) => void;
 
   // Visual Effects & System Accessibility
   visualEffects: VisualEffectsLevel;
@@ -40,6 +44,10 @@ export const useAppStore = create<AppState>()(
     (set) => ({
       selectedYear: 1969,
       setSelectedYear: (year: number) => set({ selectedYear: year }),
+      selectedMissionId: null,
+      setSelectedMissionId: (id: string | null) => set({ selectedMissionId: id }),
+      timelineDecadeFilter: null,
+      setTimelineDecadeFilter: (decade: string | null) => set({ timelineDecadeFilter: decade }),
 
       visualEffects: 'high',
       setVisualEffects: (level: VisualEffectsLevel) => set({ visualEffects: level }),

@@ -141,3 +141,4 @@ export const ViewerControls: React.FC<ViewerControlsProps> = ({
     </div>
   );
 };
+

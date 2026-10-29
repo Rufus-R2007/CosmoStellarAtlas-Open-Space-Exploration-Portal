@@ -64,6 +64,25 @@ export interface Planet {
   source: DataSourceType;
 }
 
+export type MilestoneEventType =
+  | 'launch'
+  | 'transit'
+  | 'flyby'
+  | 'orbit'
+  | 'landing'
+  | 'discovery'
+  | 'milestone'
+  | 'conclusion';
+
+export type ReplaySceneType =
+  | 'launchpad'
+  | 'orbital_insertion'
+  | 'deep_space_cruise'
+  | 'planetary_flyby'
+  | 'surface_descent'
+  | 'scientific_survey'
+  | 'impact';
+
 export interface MissionMilestone {
   id: string;
   missionId: string;
@@ -72,10 +91,34 @@ export interface MissionMilestone {
   title: string;
   description: string;
   significance: string;
+  eventType?: MilestoneEventType;
+  chronologicalOrder?: number;
+  relatedCelestialBodyId?: string;
+  replaySceneType?: ReplaySceneType;
+  sourceType?: DataSourceType;
+  sourceReference?: string;
 }
 
 export type MissionStatus = 'Completed' | 'Active' | 'Planned' | 'En Route';
 export type MissionType = 'Orbiter' | 'Lander' | 'Rover' | 'Flyby' | 'Crewed' | 'Space Observatory' | 'Impactor';
+
+export interface SpacecraftDetails {
+  name?: string;
+  type?: string;
+  massKg?: number;
+  launchVehicle?: string;
+  powerSource?: string;
+  operatingEnvironment?: string;
+  instruments?: string[];
+}
+
+export interface MissionStoryline {
+  theChallenge: string;
+  theMission: string;
+  theJourney: string;
+  theDiscovery: string;
+  theLegacy: string;
+}
 
 export interface Mission {
   id: string;
@@ -91,7 +134,37 @@ export interface Mission {
   objectives: string[];
   achievements: string[];
   milestones: MissionMilestone[];
+  spacecraftDetails?: SpacecraftDetails;
+  outcome?: string;
+  storyline?: MissionStoryline;
+  sourceReference?: string;
   source: DataSourceType;
+}
+
+export type TimeCapsuleCategory =
+  | 'Artificial Satellites'
+  | 'Human Spaceflight'
+  | 'Lunar Exploration'
+  | 'Planetary Flybys'
+  | 'Space Telescopes'
+  | 'Mars Exploration'
+  | 'Outer Solar System'
+  | 'Planetary Defense';
+
+export interface TimeCapsule {
+  id: string;
+  year: number;
+  date: string;
+  title: string;
+  associatedMissionId: string;
+  agency: string;
+  destination: string;
+  category: TimeCapsuleCategory;
+  shortExplanation: string;
+  scientificSignificance: string;
+  relatedCelestialBodyId: string;
+  sourceReference: string;
+  badgeText?: string;
 }
 
 export interface RoverImage {

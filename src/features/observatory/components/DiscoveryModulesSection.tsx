@@ -41,7 +41,7 @@ const modules: ModuleCardInfo[] = [
     description: 'High-fidelity planetary survey with multi-layered atmospheric, gravitational, and orbital ephemerides.',
     icon: <Globe className="w-6 h-6 text-[#20D9F2]" />,
     phase: 'Phase 2',
-    status: 'upcoming',
+    status: 'active',
     accentGlow: 'cyan',
   },
   {
@@ -50,7 +50,7 @@ const modules: ModuleCardInfo[] = [
     description: 'Chronological timeline navigating 70+ years of historic robotic and crewed spaceflight milestones.',
     icon: <Clock className="w-6 h-6 text-[#8565FA]" />,
     phase: 'Phase 3',
-    status: 'upcoming',
+    status: 'active',
     accentGlow: 'violet',
   },
   {
@@ -58,8 +58,8 @@ const modules: ModuleCardInfo[] = [
     path: '/missions',
     description: 'Detailed expedition dossiers, flight trajectories, and mission archive intelligence.',
     icon: <Rocket className="w-6 h-6 text-[#8565FA]" />,
-    phase: 'Phase 4',
-    status: 'upcoming',
+    phase: 'Phase 3',
+    status: 'active',
     accentGlow: 'violet',
   },
   {

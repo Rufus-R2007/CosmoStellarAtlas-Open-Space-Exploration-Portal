@@ -296,3 +296,4 @@ export const ScaleExplorer: React.FC<ScaleExplorerProps> = ({ planets }) => {
     </section>
   );
 };
+

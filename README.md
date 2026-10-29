@@ -8,7 +8,7 @@
 [![Vitest](https://img.shields.io/badge/Vitest-Passed%20(21%2F21)-brightgreen.svg)](https://vitest.dev/)
 [![License](https://img.shields.io/badge/License-MIT-amber.svg)](LICENSE)
 
-> **Software Engineering Micro Project — Phase 2 Interactive Planet Explorer**  
+> **Software Engineering Micro Project — Phase 3 Cosmic Time Machine & Mission Control**  
 > **Developer:** Rufus Samuel R  
 > **Institution:** Karunya Institute of Technology and Sciences  
 > **GitHub Repository:** [CosmoStellarAtlas-Open-Space-Exploration-Portal](https://github.com/Rufus-R2007/CosmoStellarAtlas-Open-Space-Exploration-Portal)
@@ -116,9 +116,80 @@ The system is designed with a strict **Zero External API Dependency** architectu
 10. **Deep Linking:**
     - Full URL search query support (`#/planets?id=saturn`) enabling persistent bookmarking and direct links to any planet.
 
+
 ---
 
-## 6. System Architecture & Folder Structure
+## 6. Cosmic Time Machine, Mission Control & Mission Replay (Phase 3 Flagship)
+
+Phase 3 introduces an interconnected historical exploration suite uniting the **Cosmic Time Machine**, **Mission Control Archive**, and the **Interactive Mission Replay Engine**:
+
+### 1. Cosmic Time Machine (`/timeline`)
+- **Temporal Chronology Scrubber (`TimelineScrubber`):**
+  - Continuous slider spanning 1957 through present with landmark tick marks (1957 Sputnik, 1969 Apollo 11, 1977 Voyager, 1990 Hubble, 1997 Cassini, 2011 Curiosity, 2020 Perseverance, 2021 JWST, 2023 Chandrayaan-3).
+  - Quick decade jump navigation buttons (1950s through 2020s), previous/next milestone stepping, and reset to current epoch.
+  - Auto-advancing timeline playback loop with play/pause toggle.
+  - Bidirectional state synchronization with Zustand store (`selectedYear`), propagating temporal changes across the Observatory, Planet Explorer, and Mission Control.
+- **Epoch Overview Panel (`EpochOverviewPanel`):**
+  - Displays real-time situational telemetry for the selected epoch: active operating missions, contemporaneous milestones, and cumulative spaceflight statistics.
+  - Deep-link cards enabling instant one-click navigation to full mission dossiers.
+- **Curated Cosmic Time Capsules (`TimeCapsuleCarousel` & `TimeCapsuleCard`):**
+  - Showcases 13 landmark spaceflight achievements categorized into Firsts, Deep Space, Planetary, Lunar, and Telescopes.
+  - Category filter pills, significance summaries, and primary source citations.
+
+### 2. Mission Control Archive (`/missions`)
+- **Comprehensive Mission Directory:**
+  - Tracks 20 curated historical missions spanning 6 international agencies: NASA, ESA, JAXA, Roscosmos, ISRO, and CNSA.
+  - Global summary header displaying total archive records, active operational missions, and planetary destination coverage.
+- **Multi-Attribute Filter Matrix (`MissionFilters`):**
+  - Free-text search matching mission names, agency tags, and objective descriptions.
+  - Quick agency filter pills (NASA, ESA, JAXA, Roscosmos, ISRO, CNSA).
+  - Destination dropdown (Sun, Mercury, Venus, Earth, Moon, Mars, Jupiter, Saturn, Outer Solar System, Deep Space).
+  - Mission type dropdown (Orbiter, Lander, Rover, Flyby, Space Telescope, Sample Return, Kinetic Impactor).
+  - Decade pills (1950s through 2020s).
+  - Synchronized temporal epoch toggle (`Filter to active epoch <= YYYY`).
+  - Multi-property sorting: Launch Date (Newest / Oldest), Mission Duration, and Mission Name (A–Z).
+- **Historical Insights & Analytics Engine (`MissionAnalyticsSection` & `HistoricalInsightsEngine`):**
+  - Interactive Recharts bar and pie visualizations detailing mission distribution by decade and destination.
+  - Automated deterministic analytical observations highlighting historical spaceflight trends without non-deterministic AI generation.
+- **Mission Dossier Cards (`MissionCard`):**
+  - High-density cards featuring agency badges, destination tags, launch dates, key objectives, and direct actions to open the full dossier or launch the replay simulation.
+
+### 3. Mission Detail Dossier (`/missions/:missionId`)
+- **Identity & Engineering Specifications:**
+  - Full mission header with flight patch, launch vehicle, operational timeframe, status badge, and target celestial body.
+  - Technical engineering hardware specifications: dry mass (kg), launch mass (kg), power source, scientific payload instruments array, and trajectory architecture.
+- **Interactive Storytelling Engine (`MissionStoryteller`):**
+  - Chapter-based narrative reader dividing mission history into 5 structured educational sections:
+    1. *The Challenge:* The scientific question or historical impetus.
+    2. *The Mission:* Technical objectives and mission architecture.
+    3. *The Journey:* Trajectory, orbital transfers, and flight dynamics.
+    4. *The Discovery:* Scientific findings and breakthroughs.
+    5. *The Legacy:* Enduring impact on astrophysics and human exploration.
+- **Chronological Milestones Timeline:**
+  - Step-by-step milestone log detailing flight events, scene classifications, and primary historical references.
+
+### 4. Interactive Mission Replay Engine (`MissionReplayEngine` — Flagship Feature)
+- **Data-Driven HTML5 Canvas Simulation:**
+  - Renders specialized procedural 2D canvas scenes tailored to 7 distinct milestone event types:
+    - `launchpad`: Launch pad structure, ascending vehicle silhouette, particle exhaust plumes, altitude vectors.
+    - `orbital_insertion`: Central gravitational body, elliptical transfer trajectories, orbital capture burns.
+    - `deep_space_cruise`: Infinite starfield warp vectors, high-gain antenna communication pulses to Earth.
+    - `planetary_flyby`: Hyperbolic flyby path, limb shading, close-approach periapsis telemetry.
+    - `surface_descent`: Atmospheric entry heat trail, radar altimeter telemetry, terrain elevation grid.
+    - `scientific_survey`: Scanning sensor cones, multispectral wavelength sweeping lines, instrument payload telemetry.
+    - `impact`: Target body surface, kinetic approach vector, shockwave expansion rings.
+- **Playback Controls:**
+  - Play, pause, resume, reset to milestone 0, previous/next milestone skip.
+  - Variable playback speed controls: `0.5×`, `1×`, and `2×`.
+  - Interactive milestone scrubber with clickable milestone markers and progress bar.
+- **Accessibility & Transparency:**
+  - Fullscreen expansion toggle for immersive demonstration presentations.
+  - Accessible reduced-motion fallback that replaces high-frequency particle animations with stable tactical schematics.
+  - Educational simulation disclaimers clearly stating that animations represent illustrative visualizations rather than live real-time spacecraft telemetry.
+
+---
+
+## 7. System Architecture & Folder Structure
 
 ```
 CosmoStellarAtlas-Open-Space-Exploration-Portal/
@@ -158,8 +229,22 @@ CosmoStellarAtlas-Open-Space-Exploration-Portal/
 │   │   │   │   └── viewer/      # Three.js 3D viewport, fallback & procedural textures
 │   │   │   ├── services/        # Deterministic PlanetaryInsightsEngine
 │   │   │   └── PlanetsPage.tsx  # Flagship Planet Explorer container
-│   │   ├── timeline/            # Cosmic Time Machine (Phase 3 Roadmap)
-│   │   ├── missions/            # Mission Control Center (Phase 4 Roadmap)
+│   │   ├── timeline/            # Cosmic Time Machine Implementation (Phase 3)
+│   │   │   ├── components/
+│   │   │   │   ├── capsules/    # Curated Cosmic Time Capsules carousel & cards
+│   │   │   │   ├── epoch/       # Real-time Epoch Overview Telemetry Panel
+│   │   │   │   └── scrubber/    # Continuous Chronological Scrubber & Playback
+│   │   │   └── TimelinePage.tsx # Cosmic Time Machine hub
+│   │   ├── missions/            # Mission Control & Replay Implementation (Phase 3)
+│   │   │   ├── components/
+│   │   │   │   ├── analytics/   # Recharts decade & destination distribution charts
+│   │   │   │   ├── cards/       # Dense Mission Dossier cards & launch action
+│   │   │   │   ├── filters/     # Search, agency pills, destination & sorting
+│   │   │   │   ├── replay/      # Canvas-based MissionReplayEngine with 7 scenes
+│   │   │   │   └── storytelling/# 5-Chapter MissionStoryteller narrative reader
+│   │   │   ├── services/        # Deterministic HistoricalInsightsEngine
+│   │   │   ├── MissionsPage.tsx # Mission Control directory hub
+│   │   │   └── MissionDetailPage.tsx # Comprehensive Mission Dossier route
 │   │   ├── rovers/              # Mars Rover Explorer (Phase 5 Roadmap)
 │   │   ├── asteroids/           # Asteroid Watch & Defense Lab (Phase 6 Roadmap)
 │   │   ├── intelligence/        # Space Intelligence (Phase 7 Roadmap)
@@ -181,7 +266,7 @@ CosmoStellarAtlas-Open-Space-Exploration-Portal/
 
 ---
 
-## 7. Offline Data Transparency & Provenance
+## 8. Offline Data Transparency & Provenance
 CosmoStellarAtlas strictly adheres to academic honesty:
 - **Curated Reference Data:** Astronomical measurements, physical constants, and historical spaceflight milestones are sourced from declassified NASA, ESA, and peer-reviewed records.
 - **Synthetic Demonstration Telemetry:** Approaching asteroid vectors and future launch logistics are deterministically modeled for educational simulation.
@@ -189,7 +274,7 @@ CosmoStellarAtlas strictly adheres to academic honesty:
 
 ---
 
-## 7. Installation, Execution & Build Instructions
+## 9. Installation, Execution & Build Instructions
 
 ### Prerequisites
 - Node.js: `v18.0.0` or higher (verified on Node `v24.21.0`)
@@ -211,7 +296,7 @@ npm run dev
 Navigate to `http://localhost:5173/` in your browser.
 
 ### Executing the Automated Test Suite
-Run the Vitest test suite covering data provider methods, mission filtering, stats computation, state synchronization, 404 routing, and error boundaries:
+Run the Vitest test suite covering data provider methods, mission filtering, planetary 3D rendering fallbacks, temporal synchronization, mission replay speed controls, time capsules, storytelling engine, 404 routing, and error boundaries (37 tests across 5 suites):
 ```bash
 npm run test
 ```
@@ -231,13 +316,13 @@ The compiled bundle will be output to the `dist/` directory, fully configured wi
 
 ---
 
-## 8. Multi-Phase Master Roadmap
+## 10. Multi-Phase Master Roadmap
 
 | Phase | Title | Focus Area | Status |
 | :---: | :--- | :--- | :---: |
 | **Phase 1** | **Foundation & Observatory Dashboard** | Core architecture, local provider, Observatory dashboard, 9-module shell, tests, and documentation. | **COMPLETED** |
 | **Phase 2** | **Planet Explorer & 3D Planetarium** | Interactive Three.js 3D viewport, procedural surface textures, accessible 2D fallback, dual-mode navigator, weight calculator, side-by-side comparison lab, insights engine, scale explorer, and historical epoch filtering. | **COMPLETED** |
-| **Phase 3** | **Cosmic Time Machine** | Full chronological scrubber, historical video/audio cards, and breakthrough markers. | *Planned* |
+| **Phase 3** | **Cosmic Time Machine & Mission Control** | Continuous chronological timeline scrubber (1957–Present), decade jump navigation, epoch overview panel, curated time capsules carousel, 20-mission Mission Control archive with multi-filters and sorting, Recharts historical analytics, deterministic HistoricalInsightsEngine, mission detail dossiers with spacecraft hardware specs, 5-chapter Mission Storytelling Engine, and interactive HTML5 Canvas Mission Replay Engine with tactical scene shaders and variable speed playback. | **COMPLETED** |
 | **Phase 4** | **Mission Control Center** | Detailed technical dossiers for Apollo, Voyager, Cassini, JWST; trajectory maps. | *Planned* |
 | **Phase 5** | **Mars Rover Explorer** | Tele-robotics deck, sol-by-sol raw optics viewer, sample tube cache tracker, Ingenuity logs. | *Planned* |
 | **Phase 6** | **Asteroid Watch & Defense Lab** | Near-Earth Object 3D radar plot, Torino hazard calculations, and DART kinetic deflection sandbox. | *Planned* |
@@ -246,7 +331,7 @@ The compiled bundle will be output to the `dist/` directory, fully configured wi
 
 ---
 
-## 9. GitHub Pages Deployment Plan
+## 11. GitHub Pages Deployment Plan
 GitHub Pages deployment will be finalized in Phase 8. The application is pre-configured for static hosting:
 - `base: './'` in `vite.config.ts` ensures all asset paths are relative.
 - `HashRouter` in `App.tsx` guarantees that deep linking and direct page refreshes function seamlessly without server-side rewrite rules.
@@ -254,7 +339,7 @@ GitHub Pages deployment will be finalized in Phase 8. The application is pre-con
 
 ---
 
-## 10. Developer & Coursework Information
+## 12. Developer & Coursework Information
 - **Developer:** Rufus Samuel R
 - **Institution:** Karunya Institute of Technology and Sciences
 - **Project Type:** Software Engineering Micro Project

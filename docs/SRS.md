@@ -3,7 +3,7 @@
 **Project Type:** Software Engineering Micro Project  
 **Author:** Rufus Samuel R  
 **Institution:** Karunya Institute of Technology and Sciences  
-**Version:** 1.1.0 (Phase 2 Interactive Planet Explorer)  
+**Version:** 1.2.0 (Phase 3 Cosmic Time Machine & Mission Control)  
 **Date:** October 2026  
 
 ---
@@ -54,9 +54,30 @@ Public interfaces for astronomical data and mission archives are often fragmente
 - **Planet Discovery Passport (`PlanetDiscoveryPassport`):** Scientific fact highlight with one-click navigation to suggested planetary targets.
 - **Deep Linking:** URL search query parameter synchronization (`/planets?id=mars`) with bidirectional state synchronization.
 
-### Out of Scope for Phase 1 & 2 (Scheduled for Phases 3–8):
-- Full interactive temporal scrubber and audio archives (Phase 3).
-- Dedicated mission trajectory analyzer (Phase 4).
+### Implemented in Phase 3 (Cosmic Time Machine, Mission Control & Mission Replay):
+- **Cosmic Time Machine (`/timeline`):**
+  - **Temporal Chronology Scrubber (`TimelineScrubber`):** Interactive continuous timeline slider (1957–present) with landmark ticks, decade jump navigation (1950s–2020s), previous/next milestone stepping, auto-advancing play/pause playback loop, reset to current epoch, and keyboard accessibility.
+  - **Epoch Overview Panel (`EpochOverviewPanel`):** Real-time situational telemetry for the active temporal epoch (`selectedYear`), displaying operational mission count, cumulative milestones, active missions in space, and contemporaneous milestone cards with deep-link navigation.
+  - **Cosmic Time Capsules (`TimeCapsuleCarousel` & `TimeCapsuleCard`):** Curated showcase of 13 landmark spaceflight achievements categorized by Firsts, Deep Space, Planetary, Lunar, and Telescopes, complete with primary source references.
+  - **Cross-Module Linkage:** Direct bidirectional launch buttons linking timeline years to Mission Control and Planet Explorer.
+- **Mission Control Archive (`/missions`):**
+  - **Archive Directory & Statistics:** Global header displaying 20 curated missions across 6 space agencies, active flight status, and destination distribution metrics.
+  - **Multi-Attribute Filter Matrix (`MissionFilters`):** Free-text keyword search, quick agency filter pills (NASA, ESA, JAXA, Roscosmos, ISRO, CNSA), celestial destination dropdown, mission type dropdown, decade pills, timeline epoch synchronization toggle, and sorting options (Newest First, Oldest First, Mission Duration, Mission Name A-Z).
+  - **Historical Insights & Analytics Engine (`MissionAnalyticsSection` & `HistoricalInsightsEngine`):** Recharts visualization panels for Missions by Decade and Missions by Destination, paired with automated deterministic historical observations.
+  - **Responsive Mission Dossier Cards (`MissionCard`):** High-density cards featuring agency badges, destination tag, flight status indicator, launch date, key objectives, and direct actions to open the full dossier or launch the replay engine.
+- **Mission Detail Dossier (`/missions/:missionId`):**
+  - **Identity & Heritage Header:** Flight patch, official designation, launch vehicle, operational timeframe, mission type, and target celestial body.
+  - **Spacecraft Hardware Specifications:** Dry mass, launch mass, primary electrical power system, science instrument payload payload array, and trajectory architecture.
+  - **Chronological Milestones Log:** Milestone timeline with date, title, description, and scene classifications.
+  - **Mission Storytelling Engine (`MissionStoryteller`):** Interactive narrative chapter reader dividing historical missions into The Challenge, The Mission, The Journey, The Discovery, and The Legacy.
+- **Interactive Mission Replay Engine (`MissionReplayEngine`):**
+  - **Deterministic Scene Visualizations:** Canvas-based tactical scene animations tailored for 7 distinct event types (`launchpad`, `orbital_insertion`, `deep_space_cruise`, `planetary_flyby`, `surface_descent`, `scientific_survey`, `impact`).
+  - **Playback Controls:** Play, pause, resume, reset to milestone 0, previous/next milestone skip, and variable playback speeds (0.5×, 1×, 2×).
+  - **Interactive Scrubber:** Progress bar with clickable milestone markers and active milestone indicator.
+  - **Accessibility & Transparency:** Fullscreen expansion toggle, canvas fallback for reduced motion, and educational simulation disclaimers clarifying that trajectories represent illustrative visualizations rather than live telemetry.
+
+### Out of Scope for Phase 1, 2 & 3 (Scheduled for Phases 4–8):
+- Dedicated mission trajectory gravity-assist vector calculator (Phase 4).
 - Sol-by-sol Martian camera viewer (Phase 5).
 - Kinetic impactor planetary defense simulation sandbox (Phase 6).
 - Force-directed knowledge graph and curriculum quizzes (Phase 7).
@@ -93,6 +114,16 @@ Public interfaces for astronomical data and mission archives are often fragmente
 | **FR-20** | Flight Heritage & Epoch Filtering | The system shall display historical space missions associated with the target planet and filter records according to the global Cosmic Time Machine epoch. | High |
 | **FR-21** | Planet Search & Multi-Filters | The system shall enable search filtering across planet name, codename, summary, and classification (Terrestrial, Gas Giant, Ice Giant) with an empty state recovery action. | High |
 | **FR-22** | Planet Discovery Passport | The system shall showcase an intriguing scientific fact highlight and suggest immediate one-click navigation to adjacent planetary worlds. | Medium |
+| **FR-23** | Temporal Chronology Scrubber | The system shall provide an interactive continuous timeline slider (1957–present) with landmark ticks, decade jump navigation, milestone stepping, play/pause auto-advance, and reset to current epoch. | High |
+| **FR-24** | Global Temporal Synchronization | The system shall synchronize the timeline scrubber year bidirectionally with shared Zustand state (`selectedYear`) and provide an active epoch toggle to filter mission archives. | High |
+| **FR-25** | Epoch Telemetry Overview | The system shall display real-time situational telemetry for the selected epoch, including operating spacecraft count, milestone count, contemporaneous achievements, and direct navigation links. | High |
+| **FR-26** | Curated Cosmic Time Capsules | The system shall provide a curated showcase of landmark historical spaceflight achievements categorized by Firsts, Deep Space, Planetary, Lunar, and Telescopes with primary references. | Medium |
+| **FR-27** | Mission Control Archive Directory | The system shall provide a searchable, multi-filtered mission directory supporting queries across name, agency, celestial destination, mission type, decade, and epoch synchronization. | High |
+| **FR-28** | Multi-Attribute Mission Sorting & Metrics | The system shall calculate aggregate catalog metrics dynamically and permit sorting by launch date, operational duration, and mission name. | High |
+| **FR-29** | Historical Insights & Analytics Engine | The system shall compute mission distributions across decades and destinations using Recharts charts and formulate deterministic historical observations via rule-based heuristics. | High |
+| **FR-30** | Comprehensive Mission Detail Dossier | The system shall display a dedicated mission dossier route (`/missions/:missionId`) with objectives, agency badges, target worlds, spacecraft engineering hardware specifications, and milestone chronology. | High |
+| **FR-31** | Mission Storytelling Engine | The system shall render an interactive narrative chapter reader organizing mission history into The Challenge, The Mission, The Journey, The Discovery, and The Legacy. | High |
+| **FR-32** | Interactive Mission Replay Engine | The system shall provide a data-driven HTML5 Canvas replay engine featuring specialized tactical space scenes, variable speed controls (0.5×, 1×, 2×), milestone scrub bar, fullscreen mode, and simulation disclaimers. | High |
 
 ## 7. Non-Functional Requirements (NFR)
 
